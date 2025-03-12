@@ -1,0 +1,37 @@
+/* Koyu Mod */
+.dark-mode {
+  background-color: #181818 !important;
+  color: #ffffff !important;
+}
+
+/* Kartların koyu modda görünmesi için */
+.dark-mode .card {
+  background-color: #222 !important;
+  color: #fff !important;
+  border: 1px solid #444;
+}
+
+/* Sidebar */
+.dark-mode .sidebar {
+  background-color: #121212 !important;
+  color: #fff !important;
+}
+
+/* Navbar */
+.dark-mode .header {
+  background-color: #1a1a1a !important;
+  color: #fff !important;
+}
+
+/* Butonlar */
+.dark-mode .btn {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+/* Input ve Arama */
+.dark-mode input {
+  background-color: #222 !important;
+  color: #fff !important;
+  border: 1px solid #555;
+}
