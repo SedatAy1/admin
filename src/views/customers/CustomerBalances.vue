@@ -20,7 +20,7 @@
         <tbody>
           <tr v-if="balances.length === 0">
             <td colspan="8" class="empty-state">
-              <img src="/Users/sedat/ecommerce-dashboard/src/assets/no-data.png" alt="No Data" class="no-data-img" />
+              <img :src="noDataImage" alt="No Data" class="no-data-img" />
               <p>Kayıt bulunamadı.</p>
             </td>
           </tr>
@@ -42,29 +42,21 @@
   </CustomersLayout>
 </template>
 
-<script>
+<script setup>
 import CustomersLayout from "@/views/customers/CustomersLayout.vue";
+import noDataImage from "@/assets/no-data.png"; // ✅ Vite yolu ile import
+import { ref, computed } from "vue";
 
-export default {
-  components: {
-    CustomersLayout,
-  },
-  data() {
-    return {
-      searchQuery: "",
-      balances: [],
-    };
-  },
-  computed: {
-    filteredBalances() {
-      return this.balances.filter((balance) =>
-        Object.values(balance).some((value) =>
-          String(value).toLowerCase().includes(this.searchQuery.toLowerCase())
-        )
-      );
-    },
-  },
-};
+const searchQuery = ref("");
+const balances = ref([]); // API'den çekilecek veriler buraya
+
+const filteredBalances = computed(() =>
+  balances.value.filter((balance) =>
+    Object.values(balance).some((value) =>
+      String(value).toLowerCase().includes(searchQuery.value.toLowerCase())
+    )
+  )
+);
 </script>
 
 <style scoped>
