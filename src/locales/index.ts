@@ -4,9 +4,12 @@ import tr from "./tr.json";
 
 const i18n = createI18n({
   legacy: false,
-  locale: localStorage.getItem("lang") || "en",
-  fallbackLocale: "en",
-  messages: { en, tr },
+  locale: localStorage.getItem("lang") || "tr",
+  fallbackLocale: "tr",
+  messages: {
+    en,
+    tr
+  }
 });
 
 export default i18n;
