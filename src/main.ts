@@ -9,6 +9,11 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "@vuepic/vue-datepicker/dist/main.css";
 import "./assets/main.css";
 import "./assets/css/global.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import './assets/main.css'; // veya styles.css, hangi ismi verdiysen
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 
 const app = createApp(App);

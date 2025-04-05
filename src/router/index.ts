@@ -50,25 +50,28 @@ import SalesTerminals from '@/views/orders/SalesTerminals.vue'
 import BulkActions from '@/views/orders/BulkActions.vue'
 import QuickPayments from '@/views/orders/QuickSales.vue'
 // Kampanyalar Sayfaları
-import Coupons from '@/views/campaigns/campaigns/Coupons.vue'
-import Promotions from '@/views/campaigns/campaigns/Coupons.vue'
-import MemberDiscounts from '@/views/campaigns/campaigns/MemberDiscounts.vue'
-import DealerDiscounts from '@/views/campaigns/campaigns/DealerDiscounts.vue'
-import DealerCommissions from '@/views/campaigns/campaigns/DealerDiscounts.vue'
-import FixedDiscounts from '@/views/campaigns/campaigns/FixedDiscount.vue'
-import OrderLimits from '@/views/campaigns/campaigns/OrderLimits.vue'
-import SalesQuotas from '@/views/campaigns/campaigns/SalesQuotas.vue'
+import CampaignsLayout from "@/views/campaigns/CampaignsLayout.vue";
+import Promotions from "@/views/campaigns/campaigns/Promotions.vue";
+import Coupons from "@/views/campaigns/campaigns/Coupons.vue";
+import MemberDiscounts from "@/views/campaigns/campaigns/MemberDiscounts.vue";
+import DealerDiscounts from "@/views/campaigns/campaigns/DealerDiscounts.vue";
+import DealerCommissions from "@/views/campaigns/campaigns/DealerCommissions.vue";
+import FixedDiscounts from "@/views/campaigns/campaigns/FixedDiscount.vue";
+import OrderLimits from "@/views/campaigns/campaigns/OrderLimits.vue";
+import SalesQuotas from "@/views/campaigns/campaigns/SalesQuotas.vue";
 
 // E-Posta Araçları
-import EmailList from '@/views/campaigns/email-tools/EmailList.vue'
-import EmailGroups from '@/views/campaigns/email-tools/EmailGroups.vue'
-import EmailSend from '@/views/campaigns/email-tools/EmailSend.vue'
+import EmailList from "@/views/campaigns/email-tools/EmailList.vue";
+import EmailGroups from "@/views/campaigns/email-tools/EmailGroups.vue";
+import EmailSend from "@/views/campaigns/email-tools/EmailSend.vue";
 
 // SMS Araçları
-import SmsList from '@/views/campaigns/sms-tools/SmsList.vue'
-import SmsGroups from '@/views/campaigns/sms-tools/SmsGroups.vue'
-import SmsSend from '@/views/campaigns/sms-tools/SmsSend.vue'
-import CampaignsLayout from '@/views/campaigns/CampaignsLayout.vue'
+import SmsList from "@/views/campaigns/sms-tools/SmsList.vue";
+import SmsGroups from "@/views/campaigns/sms-tools/SmsGroups.vue";
+import SmsSend from "@/views/campaigns/sms-tools/SmsSend.vue";
+
+
+
 
 // **İçerik Yönetimi Sayfaları**
 import Pages from "@/views/contents/content-management/Pages.vue";
@@ -79,6 +82,7 @@ import Slides from "@/views/contents/content-management/Slides.vue";
 import Banners from "@/views/contents/content-management/Banners.vue";
 import Popup from "@/views/contents/content-management/Popup.vue";
 import Upload from "@/views/contents/content-management/Upload.vue";
+import ContentLayout from '/Users/sedat/ecommerce-dashboard/src/views/contents/content-management/ContentLayout.vue'
 
 // **URL Yönetimi Sayfaları**
 import UrlRedirect from "@/views/contents/url-management/UrlRedirect.vue";
@@ -93,6 +97,7 @@ import DealerTransactions from "@/views/customers/DealerTransactions.vue";
 
 import LayoutComponent from "@/views/Customers/LayoutComponent.vue";
 
+
 // Entegrasyon Sayfalarını Import Et
 import Marketplace from "@/views/integrations/Marketplace.vue";
 import Accounting from "@/views/integrations/Accounting.vue";
@@ -102,6 +107,7 @@ import XmlExport from "@/views/integrations/XmlExport.vue";
 import BulkMarketplace from "@/views/integrations/BulkMarketplace.vue";
 import Hepsiburada from "@/views/integrations/Hepsiburada.vue";
 import Monitor from "@/views/integrations/Monitor.vue";
+import MarketLayout from "@/views/integrations/MarketLayout.vue";
 
 // Design Sayfalarını Import Et
 import ThemeSettings from "@/views/design/ThemeSettings.vue";
@@ -190,6 +196,10 @@ import AdminAccounts from "@/views/settings/AdminAccounts.vue";
 import Security from "@/views/settings/Security.vue";
 import Site from "@/views/settings/Site.vue";
 
+
+
+
+
 const routes: Array<RouteRecordRaw> = [
   { path: '/', name: 'Dashboard', component: Dashboard },
   { path: '/sales', name: 'Sales', component: Sales },
@@ -197,6 +207,33 @@ const routes: Array<RouteRecordRaw> = [
   { path: '/ecommerce', name: 'Ecommerce', component: Ecommerce },
   { path: '/customers', name: 'Customers', component: Customers },
   { path: '/settings', name: 'Settings', component: Settings },
+  {
+    path: "/campaigns/coupons",
+    component: Coupons,
+  },
+  // router/index.js veya routes/design.js içinde
+{
+  path: '/design',
+  component: () => import('@/views/design/DesignLayout.vue'),
+  children: [
+    {
+      path: 'theme-settings',
+      component: () => import('@/views/design/ThemeSettings.vue')
+    },
+    {
+      path: 'module-layout',
+      component: () => import('@/views/design/ModuleLayout.vue')
+    },
+    {
+      path: 'print-templates',
+      component: () => import('@/views/design/PrintTemplates.vue')
+    },
+    {
+      path: 'email-templates',
+      component: () => import('@/views/design/EmailTemplates.vue')
+    }
+  ]
+},
 
   // **Ürünler Route'u**
   {
@@ -262,35 +299,23 @@ const routes: Array<RouteRecordRaw> = [
     ],
   },
   {
-    path: '/campaigns',
+    path: "/campaigns",
     component: CampaignsLayout,
     children: [
-      { path: 'coupons', name: 'Coupons', component: Coupons },
-      { path: 'promotions', name: 'Promotions', component: Promotions },
-      { path: 'member-discounts', name: 'MemberDiscounts', component: MemberDiscounts },
-      { path: 'dealer-discounts', name: 'DealerDiscounts', component: DealerDiscounts },
-      { path: 'dealer-commissions', name: 'DealerCommissions', component: DealerCommissions },
-      { path: 'fixed-discounts', name: 'FixedDiscounts', component: FixedDiscounts },
-      { path: 'order-limits', name: 'OrderLimits', component: OrderLimits },
-      { path: 'sales-quotas', name: 'SalesQuotas', component: SalesQuotas },
-    ],
-  },
-  {
-    path: '/campaigns',
-    component: CampaignsLayout,
-    children: [
-      { path: 'email-list', name: 'EmailList', component: EmailList },
-      { path: 'email-groups', name: 'EmailGroups', component: EmailGroups },
-      { path: 'email-send', name: 'EmailSend', component: EmailSend },
-    ],
-  },
-  {
-    path: '/campaigns',
-    component: CampaignsLayout,
-    children: [
-      { path: 'sms-list', name: 'SmsList', component: SmsList },
-      { path: 'sms-groups', name: 'SmsGroups', component: SmsGroups },
-      { path: 'sms-send', name: 'SmsSend', component: SmsSend },
+      { path: "coupons", name: "Coupons", component: Coupons },
+      { path: "promotions", name: "Promotions", component: Promotions },
+      { path: "member-discounts", name: "MemberDiscounts", component: MemberDiscounts },
+      { path: "dealer-discounts", name: "DealerDiscounts", component: DealerDiscounts },
+      { path: "dealer-commissions", name: "DealerCommissions", component: DealerCommissions },
+      { path: "fixed-discounts", name: "FixedDiscounts", component: FixedDiscounts },
+      { path: "order-limits", name: "OrderLimits", component: OrderLimits },
+      { path: "sales-quotas", name: "SalesQuotas", component: SalesQuotas },
+      { path: "email-list", name: "EmailList", component: EmailList },
+      { path: "email-groups", name: "EmailGroups", component: EmailGroups },
+      { path: "email-send", name: "EmailSend", component: EmailSend },
+      { path: "sms-list", name: "SmsList", component: SmsList },
+      { path: "sms-groups", name: "SmsGroups", component: SmsGroups },
+      { path: "sms-send", name: "SmsSend", component: SmsSend },
     ],
   },
   {
@@ -348,6 +373,8 @@ const routes: Array<RouteRecordRaw> = [
       },
     ],
   },
+
+
   {
     path: "/customers",
     children: [
@@ -381,28 +408,114 @@ const routes: Array<RouteRecordRaw> = [
       { path: "email-templates", name: "EmailTemplates", component: EmailTemplates },
     ],
   },
-  // **Rapor Sayfaları**
+
   {
     path: "/reports/orders",
     children: [
-      { path: "daily", name: "DailyOrders", component: DailyOrders },
-      { path: "weekly", name: "WeeklyOrders", component: WeeklyOrders },
-      { path: "monthly", name: "MonthlyOrders", component: MonthlyOrders },
-      { path: "yearly", name: "YearlyOrders", component: YearlyOrders },
-      { path: "platform", name: "PlatformOrders", component: PlatformOrders },
-      { path: "store", name: "StoreOrders", component: StoreOrders },
-      { path: "product-sales", name: "ProductSales", component: ProductSales },
-      { path: "variant-sales", name: "VariantSales", component: VariantSales },
-      { path: "category-sales", name: "CategorySales", component: CategorySales },
-      { path: "brand-sales", name: "BrandSales", component: BrandSales },
-      { path: "payment", name: "PaymentOrders", component: PaymentOrders },
-      { path: "source", name: "SourceOrders", component: SourceOrders },
-      { path: "city", name: "CityOrders", component: CityOrders },
-      { path: "country", name: "CountryOrders", component: CountryOrders },
-      { path: "accounting", name: "AccountingOrders", component: AccountingOrders },
-      { path: "list", name: "OrdersList", component: OrdersList },
-      { path: "fast-delivery", name: "FastDelivery", component: FastDelivery },
-    ],
+      {
+        path: "",
+        redirect: "daily"
+      },
+      {
+        path: "daily",
+        name: "DailyOrders",
+        component: () => import("@/views/reports/order-reports/Daily.vue")
+      },
+      {
+        path: "weekly",
+        name: "WeeklyOrders",
+        component: () => import("@/views/reports/order-reports/Weekly.vue")
+      },
+      {
+        path: "monthly",
+        name: "MonthlyOrders",
+        component: () => import("@/views/reports/order-reports/Monthly.vue")
+      },
+      {
+        path: "yearly",
+        name: "YearlyOrders",
+        component: () => import("@/views/reports/order-reports/Yearly.vue")
+      },
+      {
+        path: "platform",
+        name: "PlatformOrders",
+        component: () => import("@/views/reports/order-reports/Platform.vue")
+      },
+      {
+        path: "store",
+        name: "StoreOrders",
+        component: () => import("@/views/reports/order-reports/Store.vue")
+      },
+      {
+        path: "product-sales",
+        name: "ProductSales",
+        component: () => import("@/views/reports/order-reports/ProductSales.vue")
+      },
+      {
+        path: "variant-sales",
+        name: "VariantSales",
+        component: () => import("@/views/reports/order-reports/VariantSales.vue")
+      },
+      {
+        path: "category-sales",
+        name: "CategorySales",
+        component: () => import("@/views/reports/order-reports/CategorySales.vue")
+      },
+      {
+        path: "brand-sales",
+        name: "BrandSales",
+        component: () => import("@/views/reports/order-reports/BrandSales.vue")
+      },
+      {
+        path: "payment",
+        name: "PaymentOrders",
+        component: () => import("@/views/reports/order-reports/Payment.vue")
+      },
+      {
+        path: "source",
+        name: "SourceOrders",
+        component: () => import("@/views/reports/order-reports/Source.vue")
+      },
+      {
+        path: "city",
+        name: "CityOrders",
+        component: () => import("@/views/reports/order-reports/City.vue")
+      },
+      {
+        path: "country",
+        name: "CountryOrders",
+        component: () => import("@/views/reports/order-reports/Country.vue")
+      },
+      {
+        path: "accounting",
+        name: "AccountingOrders",
+        component: () => import("@/views/reports/order-reports/Accounting.vue")
+      },
+      {
+        path: "list",
+        name: "OrdersList",
+        component: () => import("@/views/reports/order-reports/List.vue")
+      },
+      {
+        path: "fast-delivery",
+        name: "FastDelivery",
+        component: () => import("@/views/reports/order-reports/FastDelivery.vue")
+      }
+    ]
+  },
+  {
+    path: '/reports/product-reports',
+    component: () => import('@/views/reports/product-reports/ProductsLayout.vue'),
+    children: [
+      { path: '', redirect: 'stock' },
+      { path: 'stock', component: () => import('@/views/reports/product-reports/Stock.vue') },
+      { path: 'stock-movements', component: () => import('@/views/reports/product-reports/StockMovements.vue') },
+      { path: 'sales', component: () => import('@/views/reports/product-reports/Sales.vue') },
+      { path: 'recommended', component: () => import('@/views/reports/product-reports/Recommended.vue') },
+      { path: 'top-rated', component: () => import('@/views/reports/product-reports/TopRated.vue') },
+      { path: 'summary', component: () => import('@/views/reports/product-reports/Summary.vue') },
+      { path: 'price-alerts', component: () => import('@/views/reports/product-reports/PriceAlerts.vue') }
+    ]
   },
   {
     path: "/reports/products",
@@ -426,17 +539,18 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/reports/members",
+
     children: [
-      { path: "new", name: "NewMembers", component: NewMembers },
-      { path: "login", name: "MemberLogin", component: MemberLogin },
-      { path: "orders", name: "MemberOrders", component: MemberOrders },
-      { path: "dealer-orders", name: "DealerOrders", component: DealerOrders },
-      { path: "dealer-balance", name: "DealerBalance", component: DealerBalance },
-      { path: "dealer-deposits", name: "DealerDeposits", component: DealerDeposits },
-      { path: "dealer-activities", name: "DealerActivities", component: DealerActivities },
-      { path: "price-alerts", name: "MemberPriceAlerts", component: MemberPriceAlerts },
-      { path: "stock-alerts", name: "MemberStockAlerts", component: MemberStockAlerts },
-    ],
+      { path: "new", name: "NewMembers", component: () => import('@/views/reports/member-dealer-reports/New.vue') },
+      { path: "login", name: "MemberLogin", component: () => import('@/views/reports/member-dealer-reports/Login.vue') },
+      { path: "orders", name: "MemberOrders", component: () => import('@/views/reports/member-dealer-reports/Orders.vue') },
+      { path: "dealer-orders", name: "DealerOrders", component: () => import('@/views/reports/member-dealer-reports/DealerOrders.vue') },
+      { path: "dealer-balance", name: "DealerBalance", component: () => import('@/views/reports/member-dealer-reports/DealerBalance.vue') },
+      { path: "dealer-deposits", name: "DealerDeposits", component: () => import('@/views/reports/member-dealer-reports/DealerDeposits.vue') },
+      { path: "dealer-activities", name: "DealerActivities", component: () => import('@/views/reports/member-dealer-reports/DealerActivities.vue') },
+      { path: "price-alerts", name: "MemberPriceAlerts", component: () => import('@/views/reports/member-dealer-reports/PriceAlerts.vue') },
+      { path: "stock-alerts", name: "MemberStockAlerts", component: () => import('@/views/reports/member-dealer-reports/StockAlerts.vue') }
+    ]
   },
   // Ayarlar **
   {
@@ -477,6 +591,9 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-})
+});
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
 
-export default router
+export default router;
