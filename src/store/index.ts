@@ -1,17 +1,21 @@
 import { createStore } from "vuex";
 
-export default createStore({
+interface State {
+  language: string;
+}
+
+const store = createStore<State>({
   state: {
     language: localStorage.getItem("lang") || "en"
   },
   mutations: {
-    setLanguage(state, lang) {
+    setLanguage(state, lang: string) {
       state.language = lang;
       localStorage.setItem("lang", lang);
     }
   },
   actions: {
-    changeLanguage({ commit }, lang) {
+    changeLanguage({ commit }, lang: string) {
       commit("setLanguage", lang);
     }
   },
@@ -19,3 +23,5 @@ export default createStore({
     getLanguage: (state) => state.language
   }
 });
+
+export default store;

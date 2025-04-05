@@ -1,11 +1,14 @@
 {
-  "dashboard": "Gösterge Paneli",
+  "dashboard": "Paneller",
   "sales": "Satışlar",
-  "analytics": "Analitikler",
+  "analytics": "Analitik",
   "ecommerce": "E-Ticaret",
   "apps": "Uygulamalar",
-  "fullCalendar": "Tam Takvim",
+  "fullCalendar": "Takvim",
   "gallery": "Galeri",
   "customers": "Müşteriler",
-  "settings": "Ayarlar"
+  "settings": "Ayarlar",
+  "searchPlaceholder": "Ara...",
+  "profile": "Profil",
+  "logout": "Çıkış"
 }

@@ -7,5 +7,8 @@
   "fullCalendar": "Full Calendar",
   "gallery": "Gallery",
   "customers": "Customers",
-  "settings": "Settings"
+  "settings": "Settings",
+  "searchPlaceholder": "Search...",
+  "profile": "Profile",
+  "logout": "Logout"
 }

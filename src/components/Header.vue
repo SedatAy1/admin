@@ -45,14 +45,13 @@
           <img src="/user-avatar.png" alt="User Avatar" class="avatar">
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">{{ $t("profile") }}</a></li>
-          <li><a class="dropdown-item" href="#">{{ $t("settings") }}</a></li>
-          <li><a class="dropdown-item text-danger" href="#">{{ $t("logout") }}</a></li>
+          <li><a class="dropdown-item" href="#">{{ $t('profile') }}</a></li>
+          <li><a class="dropdown-item" href="#">{{ $t('settings') }}</a></li>
+          <li><a class="dropdown-item text-danger" href="#">{{ $t('logout') }}</a></li>
         </ul>
       </div>
     </div>
   </header>
-
 </template>
 
 <script>
@@ -60,9 +59,12 @@ export default {
   name: "HeaderComponent",
   data() {
     return {
-      isDarkMode: localStorage.getItem("darkMode") === "true", // Koyu mod durumunu localStorage'dan al
-      currentLanguage: this.$i18n.locale
+      isDarkMode: localStorage.getItem("darkMode") === "true",
+      currentLanguage: "en" // Başlangıç değeri
     };
+  },
+  created() {
+    this.currentLanguage = this.$i18n.locale;
   },
   mounted() {
     this.applyDarkMode();
@@ -73,25 +75,25 @@ export default {
     },
     toggleTheme() {
       this.isDarkMode = !this.isDarkMode;
-      localStorage.setItem("darkMode", this.isDarkMode); // Yeni durumu kaydet
+      localStorage.setItem("darkMode", this.isDarkMode);
       this.applyDarkMode();
     },
     applyDarkMode() {
+      const html = document.documentElement;
+      const body = document.body;
       if (this.isDarkMode) {
-        document.documentElement.classList.add("dark-mode"); // Tüm sayfaya uygula
-        document.body.classList.add("dark-mode");
+        html.classList.add("dark-mode");
+        body.classList.add("dark-mode");
       } else {
-        document.documentElement.classList.remove("dark-mode");
-        document.body.classList.remove("dark-mode");
+        html.classList.remove("dark-mode");
+        body.classList.remove("dark-mode");
       }
     },
     toggleFullscreen() {
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
+      } else if (document.exitFullscreen) {
+        document.exitFullscreen();
       }
     },
     changeLanguage() {
