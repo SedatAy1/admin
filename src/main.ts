@@ -2,11 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import i18n from "@/locales"; // uzantı yazmana gerek yok, otomatik index.ts okur
-
-// i18n import - HATA almamak için "default" olarak alındığından emin oluyoruz
-import * as i18nModule from "@/locales";
-const i18n = (i18nModule as any).default;
+import i18n from "@/locales"; // sadece bu satır yeterli!
 
 // Stil dosyaları
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -20,5 +16,5 @@ const app = createApp(App);
 
 app.use(router);
 app.use(store);
-app.use(i18n);
+app.use(i18n); // import edilen i18n burada kullanılıyor
 app.mount("#app");
