@@ -136,8 +136,8 @@ import General from '@/views/settings/General.vue';
 import Seo from '@/views/settings/Seo.vue';
 import Marketing from '@/views/settings/Marketing.vue';
 import Contracts from '@/views/settings/Contracts.vue';
-import OrdersSettings from '@/views/settings/Orders.vue';
-import ProductsSettings from '@/views/settings/Products.vue';
+import Orders from '@/views/settings/Orders.vue';
+import Products from '@/views/settings/Products.vue';
 import PaymentMethods from '@/views/settings/PaymentMethods.vue';
 import ExchangeRates from '@/views/settings/ExchangeRates.vue';
 import ShippingCompanies from '@/views/settings/ShippingCompanies.vue';
@@ -148,7 +148,7 @@ import Languages from '@/views/settings/Languages.vue';
 import Sms from '@/views/settings/Sms.vue';
 import SmsTemplates from '@/views/settings/SmsTemplates.vue';
 import Email from '@/views/settings/Email.vue';
-import EmailTemplatesSettings from '@/views/settings/EmailTemplates.vue';
+import EmailTemplates from '@/views/settings/EmailTemplates.vue'
 import Maintenance from '@/views/settings/Maintenance.vue';
 import Balance from '@/views/settings/Balance.vue';
 import Dealer from '@/views/settings/Dealer.vue';
@@ -158,6 +158,7 @@ import WebService from '@/views/settings/WebService.vue';
 import AdminAccounts from '@/views/settings/AdminAccounts.vue';
 import Security from '@/views/settings/Security.vue';
 import Site from '@/views/settings/Site.vue';
+import Orders from "@/views/settings/Orders.vue";
 
 import ManageCustomers from '@/views/customers/ManageCustomers.vue'
 import RiskCustomers from '@/views/customers/RiskCustomers.vue'
@@ -174,6 +175,8 @@ import XmlExport from '@/views/integrations/XmlExport.vue'
 import BulkMarketplace from '@/views/integrations/BulkMarketplace.vue'
 import Hepsiburada from '@/views/integrations/Hepsiburada.vue'
 import Monitor from '@/views/integrations/Monitor.vue'
+import SettingsLayout from "@/views/settings/SettingsLayout.vue";
+
 
 import EmailTemplates from '@/views/design/EmailTemplates.vue';
 const routes: Array<RouteRecordRaw> = [
@@ -501,6 +504,7 @@ const routes: Array<RouteRecordRaw> = [
 // AYARLAR
 {
   path: "/settings",
+  component: SettingsLayout, // Ayarlar Layout'u buraya eklendi!
   children: [
     { path: "general", name: "General", component: General },
     { path: "seo", name: "Seo", component: Seo },
@@ -530,10 +534,7 @@ const routes: Array<RouteRecordRaw> = [
     { path: "site", name: "Site", component: Site }
   ]
 }
-// ... (AYARLAR PATH'İ BURADA BİTİYOR)
-// ... (AYARLAR PATH'İ BURADA BİTİYOR)
 ];
-// ... (AYARLAR PATH'İ BURADA BİTİYOR)
 
 const router = createRouter({
   history: createWebHistory(),

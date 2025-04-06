@@ -42,21 +42,52 @@
       <!-- Kullanıcı Profili -->
       <div class="dropdown">
         <button class="btn btn-light dropdown-toggle user-btn" type="button" id="profileDropdown" data-bs-toggle="dropdown">
-          <img src="/user-avatar.png" alt="User Avatar" class="avatar">
+          <img src="https://static-00.iconduck.com/assets.00/user-icon-1024x1024-dtzturco.png" alt="User Avatar" class="avatar">
         </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">{{ $t('profile') }}</a></li>
-          <li><a class="dropdown-item" href="#">{{ $t('settings') }}</a></li>
-          <li><a class="dropdown-item text-danger" href="#">{{ $t('logout') }}</a></li>
-        </ul>
+        <ul class="dropdown-menu user-dropdown shadow p-3 border-0 rounded-4 show">
+  <li class="d-flex align-items-center gap-2 mb-2">
+    <User class="text-muted" size="20" />
+    <span>Hesabım</span>
+  </li>
+  <li class="d-flex align-items-center gap-2 mb-2">
+    <Mail class="text-muted" size="20" />
+    <span>Gelen Kutusu</span>
+    <span class="badge bg-success ms-auto">27</span>
+  </li>
+  <li class="d-flex align-items-center gap-2 mb-2">
+    <ClipboardList class="text-muted" size="20" />
+    <span>Görevler</span>
+  </li>
+  <li class="d-flex align-items-center gap-2 mb-2">
+    <Settings class="text-muted" size="20" />
+    <span>Ayarlar</span>
+  </li>
+  <li class="d-flex align-items-center gap-2 mb-2">
+    <Headphones class="text-muted" size="20" />
+    <span>Destek</span>
+  </li>
+  <li class="d-flex align-items-center gap-2 text-danger fw-semibold">
+    <LogOut class="text-danger" size="20" />
+    <span>Çıkış Yap</span>
+  </li>
+</ul>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import { User, Mail, ClipboardList, Settings, Headphones, LogOut } from 'lucide-vue-next';
 export default {
   name: "HeaderComponent",
+  components: {
+  User,
+  Mail,
+  ClipboardList,
+  Settings,
+  Headphones,
+  LogOut
+},
   data() {
     return {
       isDarkMode: localStorage.getItem("darkMode") === "true",
@@ -105,6 +136,21 @@ export default {
 </script>
 
 <style scoped>
+.user-dropdown {
+  min-width: 220px;
+  right: 0; /* sağa hizalıysa bunu sıfırla */
+  left: auto;
+  transform: translateX(-10%);
+  white-space: nowrap;
+  z-index: 9999;
+}
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
 .header {
   background: white;
   display: flex;
