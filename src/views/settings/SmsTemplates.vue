@@ -62,12 +62,24 @@ const selectedTemplate = ref('')
 .sms-templates-page {
   font-family: 'Inter', sans-serif;
   padding: 24px;
+  background-color: #fff;
+  transition: background 0.3s ease, color 0.3s ease;
 }
+html.dark .sms-templates-page {
+  background-color: #1f1f1f;
+  color: #f1f1f1;
+}
+
 .title {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 16px;
+  color: #1e293b;
 }
+html.dark .title {
+  color: #f9fafb;
+}
+
 .template-selector {
   background-color: #3b82f6;
   padding: 24px;
@@ -75,11 +87,17 @@ const selectedTemplate = ref('')
   color: white;
   margin-bottom: 16px;
 }
+html.dark .template-selector {
+  background-color: #2563eb;
+}
+
 .selector-label {
   display: block;
   font-weight: 500;
   margin-bottom: 8px;
+  color: white;
 }
+
 .template-dropdown {
   width: 100%;
   padding: 10px;
@@ -88,9 +106,36 @@ const selectedTemplate = ref('')
   border: none;
   color: #1e293b;
 }
+html.dark .template-dropdown {
+  background-color: #f8fafc;
+  color: #1f2937;
+}
+
 .selected-info {
   margin-top: 12px;
   font-size: 14px;
   color: #334155;
+}
+html.dark .selected-info {
+  color: #cbd5e1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .template-selector {
+    padding: 16px;
+  }
+
+  .template-dropdown {
+    font-size: 13px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .selected-info {
+    font-size: 13px;
+  }
 }
 </style>

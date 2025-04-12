@@ -1,13 +1,13 @@
 <template>
   <div class="email-list-container">
     <div class="header-section">
-      <input type="text" class="search-input" placeholder="🔍 Ara...">
+      <input type="text" class="search-input" :placeholder="$t('emailList.search')" />
       <div class="buttons">
         <button class="btn btn-primary" @click="openNewEmailModal">
-          ➕ Yeni Kayıt
+          ➕ {{ $t('emailList.new') }}
         </button>
         <button class="btn btn-success" @click="openExcelModal">
-          📊 Excel İşlemleri
+          📊 {{ $t('emailList.excel') }}
         </button>
       </div>
     </div>
@@ -17,13 +17,13 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Kayıt No</th>
-            <th>E-Posta</th>
-            <th>Adı</th>
-            <th>Grup</th>
-            <th>IP</th>
-            <th>Tarih</th>
-            <th>İşlemler</th>
+            <th>{{ $t('emailList.id') }}</th>
+            <th>{{ $t('emailList.email') }}</th>
+            <th>{{ $t('emailList.name') }}</th>
+            <th>{{ $t('emailList.group') }}</th>
+            <th>{{ $t('emailList.ip') }}</th>
+            <th>{{ $t('emailList.date') }}</th>
+            <th>{{ $t('common.actions') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -36,14 +36,14 @@
             <td>{{ email.ip }}</td>
             <td>{{ email.date }}</td>
             <td>
-              <button class="btn btn-sm btn-danger" @click="deleteEmail(index)">❌ Sil</button>
+              <button class="btn btn-sm btn-danger" @click="deleteEmail(index)">❌ {{ $t('common.delete') }}</button>
             </td>
           </tr>
         </tbody>
       </table>
       <div v-else class="empty-state">
         <img src="@/assets/empty.svg" alt="No Data" />
-        <p>Kayıt bulunamadı.</p>
+        <p>{{ $t('common.noData') }}</p>
       </div>
     </div>
   </div>
@@ -51,49 +51,53 @@
   <!-- Yeni Kayıt Modalı -->
   <div v-if="showNewEmailModal" class="modal-overlay">
     <div class="modal">
-      <h2>Yeni Bülten Kaydı</h2>
+      <h2>{{ $t('emailList.newTitle') }}</h2>
       <div class="form-group">
-        <label>E-Posta Adresi:</label>
+        <label>{{ $t('emailList.email') }}:</label>
         <input type="email" v-model="newEmail.email" required />
       </div>
       <div class="form-group">
-        <label>Adı:</label>
+        <label>{{ $t('emailList.name') }}:</label>
         <input type="text" v-model="newEmail.name" />
       </div>
       <div class="form-group">
-        <label>Bülten Grubu:</label>
+        <label>{{ $t('emailList.group') }}:</label>
         <select v-model="newEmail.group">
-          <option>Hiçbiri</option>
+          <option>{{ $t('common.none') }}</option>
           <option>Grup 1</option>
           <option>Grup 2</option>
         </select>
       </div>
       <div class="form-group">
-        <label>Dil:</label>
+        <label>{{ $t('emailList.language') }}:</label>
         <select v-model="newEmail.language">
-          <option>Hiçbiri</option>
-          <option>Türkçe</option>
-          <option>İngilizce</option>
+          <option>{{ $t('common.none') }}</option>
+          <option>{{ $t('common.turkish') }}</option>
+          <option>{{ $t('common.english') }}</option>
         </select>
       </div>
-      <button class="btn btn-primary" @click="saveEmail">Kaydet</button>
-      <button class="btn btn-secondary" @click="closeNewEmailModal">İptal</button>
+      <button class="btn btn-primary" @click="saveEmail">{{ $t('common.save') }}</button>
+      <button class="btn btn-secondary" @click="closeNewEmailModal">{{ $t('common.cancel') }}</button>
     </div>
   </div>
 
-  <!-- Excel İşlemleri Modalı -->
+  <!-- Excel Modalı -->
   <div v-if="showExcelModal" class="modal-overlay">
     <div class="modal">
-      <h2>E-Posta E-Bülten Listesi - Excel İşlemleri</h2>
+      <h2>{{ $t('emailList.excelTitle') }}</h2>
       <div class="tab-buttons">
-        <button :class="{ active: activeTab === 'export' }" @click="activeTab = 'export'">Dışa Aktar</button>
-        <button :class="{ active: activeTab === 'import' }" @click="activeTab = 'import'">İçe Aktar</button>
+        <button :class="{ active: activeTab === 'export' }" @click="activeTab = 'export'">
+          {{ $t('common.export') }}
+        </button>
+        <button :class="{ active: activeTab === 'import' }" @click="activeTab = 'import'">
+          {{ $t('common.import') }}
+        </button>
       </div>
       <div class="tab-content">
-        <p v-if="activeTab === 'export'">Tüm veriler Excel olarak dışa aktarılacaktır.</p>
-        <p v-if="activeTab === 'import'">Excel dosyanızı yükleyerek içe aktarım yapabilirsiniz.</p>
+        <p v-if="activeTab === 'export'">{{ $t('emailList.exportInfo') }}</p>
+        <p v-if="activeTab === 'import'">{{ $t('emailList.importInfo') }}</p>
       </div>
-      <button class="btn btn-secondary" @click="closeExcelModal">Kapat</button>
+      <button class="btn btn-secondary" @click="closeExcelModal">{{ $t('common.close') }}</button>
     </div>
   </div>
 </template>
@@ -151,177 +155,241 @@ export default {
 </script>
 
 <style scoped>
+/* Genel Yapı */
+.email-list-container {
+  padding: 20px;
+  background-color: #f9fafb;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
 /* Üst Kısım */
 .header-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
   background: white;
-  border-bottom: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
 }
 
 .search-input {
-  width: 250px;
-  padding: 8px;
+  flex: 1;
+  min-width: 220px;
+  padding: 10px 12px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
+/* Butonlar */
 .buttons {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .btn {
-  padding: 8px 14px;
+  padding: 10px 16px;
   font-size: 14px;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
 }
 
 .btn-primary {
   background: #3b82f6;
   color: white;
 }
-
 .btn-primary:hover {
   background: #2563eb;
 }
-
 .btn-success {
   background: #22c55e;
   color: white;
 }
-
 .btn-success:hover {
   background: #16a34a;
+}
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+.btn-danger:hover {
+  background: #dc2626;
 }
 
 /* Tablo */
 .table-container {
   background: white;
   padding: 20px;
-  border-radius: 10px;
-  margin-top: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 800px;
 }
 
 th, td {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
   text-align: left;
 }
 
 th {
   background: #f3f4f6;
-  font-weight: bold;
+  font-weight: 600;
+  color: #374151;
 }
 
+/* Boş Durum */
 .empty-state {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
 }
-
 .empty-state img {
   width: 100px;
   opacity: 0.5;
+  margin-bottom: 10px;
 }
 
 /* Modal */
-/* Modal Overlay */
-/* Modal Overlay (Arka Plan) */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Daha koyu yap, şeffaflık artırıldı */
-  z-index: 99998 !important; /* Üst katmanda olsun */
-  display: flex !important; /* Emin olmak için */
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
   justify-content: center;
   align-items: center;
-  visibility: visible !important; /* Eğer gizliyse göster */
 }
-
-/* Modal İçeriği */
 .modal {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 500px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 99999 !important; /* Modal her şeyin üstünde olsun */
-  display: block !important; /* Eğer hala görünmüyorsa, ekle */
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   position: relative;
-  transform: translateY(0); /* Modal kaybolmasın */
-  opacity: 1 !important;
 }
 
-/* Kapat Butonu */
-.close-btn {
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  float: right;
+.form-group {
+  margin-bottom: 16px;
 }
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
 }
-
-.modal-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-input {
+input,
+select {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
-/* Excel Modal Stili */
-.excel-modal {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 400px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 100000;
-}
-
-.excel-tabs {
+/* Sekme Butonları */
+.tab-buttons {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 15px;
+  justify-content: space-between;
+  margin: 10px 0;
 }
-
-.excel-tab {
+.tab-buttons button {
+  flex: 1;
   padding: 10px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: #e5e7eb;
+  color: #1f2937;
   cursor: pointer;
-  font-weight: bold;
-  border-radius: 5px;
+  margin: 0 5px;
 }
-
-.excel-tab.active {
+.tab-buttons button.active {
   background: #3b82f6;
   color: white;
 }
-
-.excel-content {
-  padding: 10px;
+.tab-content {
+  padding: 10px 0;
 }
+
+/* Dark Mode */
+:root.dark .email-list-container {
+  background-color: #111827;
+}
+:root.dark .header-section,
+:root.dark .table-container,
+:root.dark .modal {
+  background-color: #1f2937;
+  color: #dbdfe2;
+}
+:root.dark .search-input,
+:root.dark input,
+:root.dark select {
+  background: #0f172a;
+  color: white;
+  border-color: #334155;
+}
+:root.dark th {
+  background-color: #374151;
+  color: white;
+}
+:root.dark td {
+  color: #e5e7eb;
+}
+:root.dark .btn-primary {
+  background: #2563eb;
+}
+:root.dark .btn-success {
+  background: #16a34a;
+}
+:root.dark .btn-danger {
+  background: #dc2626;
+}
+:root.dark .tab-buttons button {
+  background: #334155;
+  color: white;
+}
+:root.dark .tab-buttons button.active {
+  background: #3b82f6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .table-container {
+    padding: 10px;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  .modal {
+    width: 95%;
+  }
+}
+
 </style>

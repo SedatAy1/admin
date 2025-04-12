@@ -133,7 +133,55 @@ const saveSettings = () => {
   alert('Ayarlar başarıyla kaydedildi.')
 }
 </script>
+<style scoped>
+.general-settings {
+  padding: 30px;
+  background-color: #f8fafc;
+  transition: background-color 0.3s ease;
+}
+html.dark .general-settings {
+  background-color: #1e1e1e;
+}
 
+/* Kart */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+html.dark .card {
+  background: #2c2c2c;
+  color: #f1f1f1;
+}
+
+/* Başlık */
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+html.dark .card-title {
+  color: #f1f1f1;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .general-settings {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+}
+</style>
 <style scoped>
 .general-settings {
   padding: 30px;

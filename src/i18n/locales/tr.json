@@ -1,0 +1,3068 @@
+{
+  "sidebar": {
+    "orders": "Siparişler",
+    "title": "Admin Panel",
+    "orders_sub": {
+      "orders": "Siparişler",
+      "new": "Yeni Siparişler",
+      "preparing": "Hazırlanan Siparişler",
+      "shipped": "Kargolanan Siparişler",
+      "delivered": "Teslim Edilen Siparişler",
+      "requests": "Sipariş Talepleri",
+      "cancelled": "İptal Edilenler",
+      "incomplete": "Tamamlanmayan Siparişler",
+      "other": "Diğer",
+      "quick_sales": "Hızlı Satış",
+      "phone_orders": "Telefonla Sipariş Talepleri",
+      "active_carts": "Aktif Sepetler",
+      "bank_transfer": "Havale Bildirimleri",
+      "fault_reports": "Arıza Bildirimleri",
+      "sales_terminals": "Satış Terminalleri",
+      "bulk_actions": "Toplu İşlemler",
+      "quick_payments": "Hızlı Ödemeler"
+    },
+
+    "products": "Ürünler",
+    "products_sub": {
+      "products": "Ürünler",
+      "manage": "Ürün Yönetimi",
+      "categories": "Kategori Yönetimi",
+      "brands": "Marka Yönetimi",
+      "attributes": "Nitelik Yönetimi",
+      "custom_fields": "Özel Alan Yönetimi",
+      "compatibility_groups": "Uyumluluk Grupları",
+      "tags": "Ürün Etiketleri",
+      "search_matching": "Arama Eşleştirme",
+      "search_console": "Arama Konsolu",
+      "other": "Diğer",
+      "marketplace_matching": "Pazaryeri Eşleştirmeleri",
+      "reviews": "Ürün Yorumları",
+      "recommendations": "Ürün Önerileri",
+      "advanced_sorting": "Gelişmiş Ürün Sıralama",
+      "bulk_actions": "Toplu Ürün İşlemleri",
+      "bulk_seo": "Toplu SEO Güncelleme"
+    },
+
+    "campaigns": "Kampanyalar",
+    "campaigns_sub": {
+      "campaigns": "Kampanyalar",
+      "coupons": "Kupon Yönetimi",
+      "promotions": "Promosyonlar",
+      "member_discounts": "Üye İndirimleri",
+      "dealer_discounts": "Bayi İndirimleri",
+      "dealer_commissions": "Bayi Komisyonları",
+      "fixed_discounts": "Sabit İndirim",
+      "order_limits": "Sipariş Limitleri",
+      "sales_quotas": "Satış Kotaları",
+      "email_tools": "E-Posta Araçları",
+      "email_list": "Bülten Listesi",
+      "email_groups": "Bülten Grupları",
+      "email_send": "E-Posta Gönderimi",
+      "sms_tools": "SMS Araçları",
+      "sms_list": "Bülten Listesi",
+      "sms_groups": "Bülten Grupları",
+      "sms_send": "SMS Gönderimi"
+    },
+
+    "contents": "İçerikler",
+    "contents_sub": {
+      "content_management": "İçerik Yönetimi",
+      "pages": "Sayfalar",
+      "help": "Yardım İçerikleri",
+      "faq": "Sıkça Sorulan Sorular",
+      "blog": "Blog Yönetimi",
+      "slides": "Slayt Yönetimi",
+      "banners": "Afiş Yönetimi",
+      "popup": "Popup",
+      "upload": "Görsel Yükle",
+      "url_management": "URL Yönetimi",
+      "url_redirect": "URL Yönlendirme",
+      "reports_404": "404 URL Raporları"
+    },
+
+    "customers": "Müşteriler",
+    "customers_sub": {
+      "manage": "Müşteri Yönetimi",
+      "risk": "Riskli Müşteri Yönetimi",
+      "balances": "Müşteri Bakiyeleri",
+      "dealers": "Bayi Yönetimi",
+      "groups": "Bayi Grupları",
+      "transactions": "Bayi İşlemleri"
+    },
+
+    "integrations": "Entegrasyonlar",
+    "integrations_sub": {
+      "marketplace": "Pazaryeri Entegrasyonları",
+      "accounting": "Muhasebe Entegrasyonları",
+      "excel": "Hızlı Excel İşlemleri",
+      "xml_import": "XML İçeri Aktar",
+      "xml_export": "XML Dışarı Aktar",
+      "bulk_marketplace": "Toplu Pazaryeri İşlemleri",
+      "hepsiburada": "Hepsiburada İşlemleri",
+      "monitor": "Pazaryeri Monitorü"
+    },
+
+    "design": "Tasarım",
+    "design_sub": {
+      "theme_settings": "Tema Ayarları",
+      "module_layout": "Modül Yerleşimi",
+      "print_templates": "Yazdırma Şablonları",
+      "email_templates": "E-Posta Tasarımları"
+    },
+
+    "reports": "Raporlar",
+    "reports_sub": {
+      "orders": "Sipariş Raporları",
+      "daily": "Günlük Sipariş Raporu",
+      "weekly": "Haftalık Sipariş Raporu",
+      "monthly": "Aylık Sipariş Raporu",
+      "yearly": "Yıllık Sipariş Raporu",
+      "platform": "Platform Bazlı Rapor",
+      "store": "Mağaza Bazlı Rapor",
+      "product_sales": "Ürün Bazlı Satış Raporu",
+      "variant_sales": "Varyant Bazlı Satış Raporu",
+      "category_sales": "Kategori Satış Raporu",
+      "brand_sales": "Marka Satış Raporu",
+      "payment": "Ödeme Yöntemi Raporu",
+      "source": "Ürün Kaynağı Raporu",
+      "city": "Şehir Bazlı Rapor",
+      "country": "Ülke Bazlı Rapor",
+      "accounting": "Muhasebe Raporu",
+      "list": "Sipariş Listesi",
+      "fast_delivery": "Hızlı Teslimat Listesi",
+
+      "products": "Ürün Raporları",
+      "stock": "Stok Raporu",
+      "variant_stock": "Varyant Stok Raporu",
+      "stock_movements": "Stok Hareketleri",
+      "product_sales_report": "Ürün Satış Raporu",
+      "variant_sales_report": "Ürün Satış Raporu (Varyantlı)",
+      "product_category_sales": "Kategori Satış Raporu",
+      "product_brand_sales": "Marka Satış Raporu",
+      "tag_sales": "Etiket Satış Raporu",
+      "source_sales": "Kaynak Satış Raporu",
+      "top_rated": "En Çok Puanlanan Ürünler",
+      "favorites": "Favori Ürünler Raporu",
+      "summary": "Ürün Özet Raporu",
+      "recommended": "Tavsiye Edilen Ürünler",
+      "price_alerts": "Fiyat Alarmı Kurulan Ürünler",
+      "stock_alerts": "Stok Alarmı Kurulan Ürünler",
+
+      "members": "Üye / Bayi Raporları",
+      "member_new": "Yeni Üyelik Raporu",
+      "member_login": "Üye Giriş Raporu",
+      "member_orders": "Üye Sipariş Raporu",
+      "dealer_orders": "Bayi Sipariş Raporu",
+      "dealer_balance": "Bayi Bakiye Raporu",
+      "dealer_deposits": "Bayi Bakiye Yükleme Raporu",
+      "dealer_activities": "Bayi Hareketleri",
+      "price_alerts_member": "Fiyat Alarmları",
+      "stock_alerts_member": "Stok Alarmları",
+
+      "system": "Sistem Raporları",
+      "logs": "Yönetici Logları"
+    },
+
+    "settings": "Ayarlar",
+    "settings_sub": {
+      "general": "Genel Ayarlar",
+      "seo": "SEO Ayarları",
+      "marketing": "Pazarlama Araçları",
+      "contracts": "Sözleşmeler",
+      "orders": "Sipariş Ayarları",
+      "products": "Ürün Ayarları",
+      "payment_methods": "Ödeme Yöntemleri",
+      "exchange_rates": "Döviz Kurları",
+      "shipping_companies": "Kargo Firmaları",
+      "shipping": "Kargo Ayarları",
+      "assembly_points": "Montaj Noktaları",
+      "countries": "Ülkeler",
+      "languages": "Diller",
+      "sms": "SMS Ayarları",
+      "sms_templates": "SMS Şablonları",
+      "email": "E-Posta Ayarları",
+      "email_templates": "E-Posta Şablonları",
+      "maintenance": "Bakım Modu",
+      "balance": "Bakiye Ayarları",
+      "dealer": "Bayi Ayarları",
+      "dealer_xml": "Bayi XML Ayarları",
+      "quick_payment": "Hızlı Ödeme Ayarları",
+      "web_service": "Web Servis Ayarları",
+      "admin_accounts": "Yönetici Hesapları",
+      "security": "Güvenlik Ayarları",
+      "site": "Site Ayarları"
+    }
+  },
+
+  "header": {
+    "search": "Arama yap...",
+    "account": "Hesabım",
+    "inbox": "Gelen Kutusu",
+    "tasks": "Görevlerim",
+    "settings": "Ayarlar",
+    "support": "Destek",
+    "logout": "Çıkış Yap"
+  },
+  "analytics": {
+    "title": "Analitik Genel Bakış",
+    "chart_title": "Ziyaretçi ve Satışlar",
+    "traffic_title": "Trafik Kaynakları",
+    "stats": {
+      "total_visitors": "Toplam Ziyaretçi",
+      "bounce_rate": "Hemen Çıkma Oranı",
+      "avg_session": "Ortalama Oturum"
+    },
+    "traffic": {
+      "source": "Kaynak",
+      "visitors": "Ziyaretçi",
+      "conversion": "Dönüşüm Oranı"
+    },
+    "traffic_sources": {
+      "organic": "Organik Arama",
+      "social": "Sosyal Medya",
+      "direct": "Direkt"
+    }
+  },
+  "dashboard": {
+    "dateRangePlaceholder": "Tarih aralığı seçin",
+    "filter": "Filtrele",
+    "thisWeek": "Bu hafta",
+    "cards": {
+      "revenue": "Toplam Gelir",
+      "customers": "Toplam Müşteri",
+      "transactions": "Toplam İşlem",
+      "products": "Toplam Ürün"
+    },
+    "salesChart": "Satış İstatistikleri",
+    "deviceChart": "Cihaza Göre Ziyaretçiler",
+    "recentOrders": "Son Siparişler",
+    "recentTransactions": "Son İşlemler",
+    "table": {
+      "product": "Ürün",
+      "category": "Kategori",
+      "status": "Durum",
+      "customer": "Müşteri",
+      "qty": "Adet",
+      "date": "Sipariş Tarihi"
+    }
+  },
+  "coupon": {
+    "searchPlaceholder": "🔍 Ara...",
+    "new": "Yeni Hediye Çeki",
+    "excel": "Excel İşlemleri",
+    "delete": "Sil",
+    "noData": "Kayıt bulunamadı.",
+    "export": "Dışa Aktar",
+    "import": "İçe Aktar",
+    "exportInfo": "Tüm veriler Excel olarak dışa aktarılacaktır.",
+    "importInfo": "Excel dosyanızı yükleyerek içe aktarım yapabilirsiniz.",
+    "modal": {
+      "newTitle": "Yeni Kupon",
+      "code": "Kupon Kodu:",
+      "excelTitle": "Hediye Çekleri - Excel İşlemleri"
+    },
+    "table": {
+      "id": "Çek No",
+      "name": "Tanım",
+      "code": "Çek Kodu",
+      "freeShipping": "Ücretsiz Kargo",
+      "minCart": "Min Sepet",
+      "maxUsage": "Max Kullanım",
+      "totalUsage": "Toplam Kullanım",
+      "startDate": "Başlangıç Tarihi",
+      "endDate": "Bitiş Tarihi",
+      "status": "Durum",
+      "action": "İşlem"
+    }
+  },
+  "common": {
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "close": "Kapat",
+    "required": "zorunludur."
+  },
+  "orders": {
+    "filters": {
+      "title": "Filtreleme Seçenekleri",
+      "status": "Sipariş Durumu",
+      "platform": "Platform",
+      "store": "Mağaza",
+      "terminal": "Satış Terminali",
+      "orderNumber": "Sipariş No",
+      "orderDate": "Sipariş Tarihi",
+      "invoiceDate": "Fatura Tarihi",
+      "eInvoiceDate": "E-Fatura Tarihi",
+      "customerName": "Müşteri Adı",
+      "customerSurname": "Müşteri Soyadı",
+      "phone": "Telefon",
+      "taxNumber": "Vergi Numarası",
+      "taxOffice": "Vergi Dairesi",
+      "idNumber": "TC Kimlik No",
+      "country": "Ülke",
+      "city": "İl",
+      "giftCode": "Hediye Çeki Kodu",
+      "promotion": "Promosyon",
+      "cargoCompany": "Kargo Firması",
+      "advancedSearch": "Gelişmiş Arama"
+    },
+    "status": {
+      "new": "Yeni Siparişler",
+      "preparing": "Hazırlanan Siparişler",
+      "shipped": "Kargolanan Siparişler",
+      "delivered": "Teslim Edilen Siparişler",
+      "requests": "Sipariş Talepleri",
+      "cancelled": "İptal Edilen Siparişler",
+      "incomplete": "Tamamlanmayan Siparişler"
+    },
+    "table": {
+      "orderInfo": "Sipariş Bilgileri",
+      "customerInfo": "Müşteri Bilgileri",
+      "amount": "Tutar",
+      "status": "Durum",
+      "shipping": "Kargo",
+      "date": "Tarih",
+      "print": "Yazdır",
+      "actions": "İşlemler"
+    },
+    "noData": "Kayıt bulunamadı.",
+    "footer": {
+      "showing": "{total} kayıttan 1 ile {total} arası gösteriliyor"
+    }
+  },
+  "common": {
+    "notSelected": "Seçilmedi",
+    "clear": "Temizle",
+    "filter": "Filtrele"
+  },
+  "orders": {
+    "filters": {
+      "title": "Filtreleme Seçenekleri",
+      "placeholder": "Buraya filtreleme alanları eklenecek"
+    },
+    "table": {
+      "orderInfo": "Sipariş Bilgileri",
+      "customerInfo": "Müşteri Bilgileri",
+      "amount": "Tutar",
+      "status": "Durum",
+      "shipping": "Kargo",
+      "date": "Tarih",
+      "print": "Yazdır",
+      "actions": "İşlemler"
+    },
+    "footer": {
+      "showing": "{total} kayıttan 1 ile {total} arası gösteriliyor"
+    },
+    "noData": "Kayıt bulunamadı."
+  },
+  "quickSale": {
+    "title": "Hızlı Satış",
+    "searchPlaceholder": "Ürün adı, kodu veya barkod ile ara",
+    "summaryTitle": "Sipariş Özeti",
+    "discountRate": "İndirim Oranı (%)",
+    "shippingFee": "Kargo Ücreti",
+    "subTotal": "Ara Toplam",
+    "discount": "İndirim",
+    "total": "Genel Toplam",
+    "customerInfo": "Müşteri Bilgileri",
+    "customerName": "Ad Soyad / Ünvan",
+    "customerPhone": "Telefon",
+    "customerCity": "İl",
+    "customerAddress": "Adres",
+    "select": "Lütfen Seçin",
+    "createOrder": "SİPARİŞİ OLUŞTUR",
+    "orderCreated": "Sipariş oluşturuldu!",
+    "table": {
+      "product": "Ürün",
+      "vat": "KDV",
+      "quantity": "Miktar",
+      "price": "Fiyat",
+      "total": "Tutar"
+    }
+  },
+
+  "carts": {
+    "title": "Aktif Sepetler",
+    "table": {
+      "orderId": "Sipariş No",
+      "customer": "Müşteri Bilgileri",
+      "amount": "Tutar",
+      "productCount": "Ürün Sayısı",
+      "date": "Tarih",
+      "actions": "İşlemler"
+    },
+    "noData": "Kayıt bulunamadı.",
+    "footer": {
+      "showing": "{{total}} kayıttan {{from}} ile {{to}} arası gösteriliyor"
+    }
+  },
+  "transfers": {
+  "title": "Havale Bildirimleri",
+  "table": {
+    "id": "Havale No",
+    "orderId": "Sipariş No",
+    "name": "Ad Soyad",
+    "phone": "Telefon",
+    "amount": "Tutar",
+    "bank": "Banka",
+    "bankAccount": "Banka Hesabı",
+    "status": "Durum",
+    "date": "Tarih",
+    "actions": "İşlemler"
+  },
+  "noData": "Kayıt bulunamadı.",
+  "footer": {
+    "showing": "{{total}} kayıttan {{from}} ile {{to}} arası gösteriliyor"
+  }
+},
+"common": {
+  "searchPlaceholder": "🔍 Ara..."
+},
+"fault": {
+  "title": "Arıza Bildirimleri",
+  "table": {
+    "id": "Bildirim No",
+    "orderId": "Sipariş No",
+    "name": "Adı Soyadı",
+    "subject": "Konu",
+    "date": "Tarih",
+    "status": "Kapalı",
+    "actions": "İşlemler"
+  },
+  "status": {
+    "passive": "Pasif"
+  },
+  "actions": {
+    "label": "İşlemler",
+    "detail": "Detay",
+    "update": "Güncelle",
+    "delete": "Sil"
+  },
+  "noData": "Kayıt bulunamadı.",
+  "footer": {
+    "showing": "{{total}} kayıttan {{from}} ile {{to}} arası gösteriliyor"
+  }
+},
+"common": {
+  "searchPlaceholder": "🔍 Ara..."
+},
+"terminal": {
+  "filters": {
+    "title": "Filtreleme Seçenekleri",
+    "name": "Terminal Adı",
+    "status": "Durum",
+    "date": "Tarih"
+  },
+  "table": {
+    "id": "Terminal No",
+    "name": "Terminal Adı",
+    "status": "Durum",
+    "date": "Tarih",
+    "actions": "İşlemler"
+  },
+  "actions": {
+    "label": "İşlemler",
+    "edit": "Düzenle",
+    "delete": "Sil"
+  },
+  "modal": {
+    "title": "Yeni Satış Terminali",
+    "name": "Terminal Adı",
+    "status": "Durum"
+  },
+  "new": "Yeni Terminal",
+  "noData": "Kayıt bulunamadı."
+},
+"common": {
+  "all": "Tümü",
+  "active": "Aktif",
+  "passive": "Pasif",
+  "clear": "Temizle",
+  "filter": "Filtrele",
+  "save": "Kaydet",
+  "required": "Zorunlu"
+},
+"bulk": {
+  "einvoice": {
+    "title": "E-Fatura Kes",
+    "desc": "Seçilen filtrelemeler ile toplu e-fatura kesebilirsiniz."
+  },
+  "changeStatus": {
+    "title": "Sipariş Durumunu Değiştir",
+    "desc": "Sipariş numaraları ile siparişlerin durumunu değiştirebilirsiniz."
+  },
+  "transferStatus": {
+    "title": "Sipariş Durumunu Aktar",
+    "desc": "\"X\" durumundaki siparişleri toplu olarak \"Y\" durumuna aktarabilirsiniz.",
+    "from": "Mevcut Siparişler (Aktarılacak Siparişler)",
+    "to": "Yeni Sipariş Durumu"
+  },
+  "notice": {
+    "marketplace": "Pazaryeri siparişleri için pazaryeri hesaplarınızda bir işlem yapılmaz. Sadece siparişin paneldeki durumu güncellenir."
+  },
+  "labels": {
+    "orderStatus": "Sipariş Durumu",
+    "startDate": "Sipariş Başlangıç Tarihi",
+    "endDate": "Sipariş Bitiş Tarihi",
+    "platform": "Platform",
+    "paymentMethod": "Ödeme Yöntemi",
+    "minAmount": "Minimum Sipariş Tutarı",
+    "maxAmount": "Maksimum Sipariş Tutarı",
+    "notify": "Müşteriye Bildirim Gönder",
+    "orderNumbers": "Sipariş Numaraları (Her satıra 1 sipariş numarası yazabilirsiniz)",
+    "quickSale": "Hızlı Satış"
+  },
+  "placeholders": {
+    "platform": "Platform seçin",
+    "payment": "Ödeme yöntemi seçin"
+  }
+},
+"order": {
+  "status": {
+    "new": "Yeni Sipariş",
+    "processing": "Hazırlanan Sipariş",
+    "approved": "Onaylanan Sipariş",
+    "shipped": "Kargolanan Sipariş",
+    "delivered": "Teslim Edilen Sipariş"
+  }
+},
+
+  "common": {
+    "active": "Aktif",
+    "passive": "Pasif",
+    "start": "İşleme Başla",
+    "clear": "Temizle",
+    "filter": "Filtrele",
+    "notSelected": "Seçilmedi",
+    "none": "Hiçbiri"
+  },
+  
+  "category": {
+    "filterOptions": "Filtreleme Seçenekleri",
+    "name": "Kategori Adı",
+    "enterName": "Kategori adı giriniz",
+    "parent": "Üst Kategori",
+    "advancedFilter": "Gelişmiş Filtreleme",
+    "active": "Aktif Kategoriler",
+    "passive": "Pasif Kategoriler",
+    "new": "+ Yeni Kategori",
+    "tree": "📂 Kategori Ağacı",
+    "quickMatch": "≡ Hızlı Kategori Eşleştirme",
+    "excel": "📊 Excel İşlemleri",
+    "newTitle": "Yeni Kategori",
+    "description": "Kategori Açıklaması",
+    "save": "Kaydet",
+    "treeTitle": "Kategori Ağacı",
+    "infoText1": "Bir kategoriyi başka bir kategorinin altına taşımak için sürükle bırak yapabilirsiniz.",
+    "infoText2": "Yaptığınız değişiklikler otomatik olarak kaydedilmektedir.",
+    "addMain": "+ Ana Kategori Ekle",
+    "close": "Kapat",
+    "quickMatchTitle": "Hızlı Kategori Eşleştirme",
+    "platform": "Platform",
+    "status": "Durum",
+    "unmatched": "Eşleştirilmemiş",
+    "matched": "Eşleştirilmiş",
+    "startMatching": "Eşleştirmeye Başla",
+    "excelTitle": "Kategoriler - Excel İşlemleri",
+    "tabs": {
+      "Dışa Aktar": "Dışa Aktar",
+      "Dışa Aktar 2": "Dışa Aktar 2",
+      "İçe Aktar": "İçe Aktar"
+    },
+    "exportInfo": "Tüm veriler excel olarak dışarı aktarılacaktır.",
+    "export2Info": "Burada farklı bir dışa aktarma yöntemi olabilir.",
+    "importInfo": "Excel dosyanızı buraya yükleyerek içe aktarabilirsiniz.",
+    "download": "İndir",
+    "all": "Tümü",
+    "change": "Değiştir"
+  },
+  "brand": {
+    "search": "🔍 Ara...",
+    "new": "+ Yeni Marka",
+    "excel": "📊 Excel İşlemleri",
+    "id": "Marka No",
+    "name": "Marka Adı",
+    "description": "Marka Kısa Açıklaması",
+    "status": "Durum",
+    "order": "Sıra",
+    "logo": "Marka Logosu",
+    "active": "Aktif",
+    "passive": "Pasif",
+    "newTitle": "Yeni Marka",
+    "excelTitle": "Markalar - Excel İşlemleri",
+    "exportInfo": "Tüm veriler excel olarak dışarı aktarılacaktır.",
+    "importInfo": "Excel dosyanızı buraya yükleyerek içe aktarabilirsiniz.",
+    "tabs": {
+      "Genel Bilgiler": "Genel Bilgiler"
+    }
+  },
+  "common": {
+    "required": "Zorunlu",
+    "actions": "İşlemler",
+    "save": "Kaydet",
+    "download": "İndir"
+  },
+  "attribute": {
+    "search": "🔍 Ara...",
+    "new": "+ Yeni Nitelik",
+    "newTitle": "Yeni Nitelik",
+    "id": "Nitelik No",
+    "name": "Nitelik Adı",
+    "code": "Nitelik Kodu",
+    "order": "Sıra",
+    "status": "Durum",
+    "active": "Aktif",
+    "passive": "Pasif",
+    "image": "Nitelik Görseli",
+    "noData": "Kayıt bulunamadı.",
+    "tabs": {
+      "general": "Genel Bilgiler",
+      "values": "Nitelik Değerleri"
+    },
+    "valuesInfo": "Burada nitelik değerleri yönetilecek."
+  },
+  "common": {
+    "required": "Zorunlu",
+    "actions": "İşlemler",
+    "save": "Kaydet"
+  },
+  "customField": {
+    "search": "🔍 Ara...",
+    "new": "+ Yeni Özel Alan",
+    "newTitle": "Yeni Özel Alan",
+    "id": "No",
+    "name": "Özel Alan Adı",
+    "type": "Özel Alan Tipi",
+    "status": "Durum",
+    "required": "Zorunlu",
+    "order": "Sıra",
+    "description": "Kısa Açıklama",
+    "noData": "Kayıt bulunamadı.",
+    "statuses": {
+      "Aktif": "Aktif",
+      "Pasif": "Pasif"
+    },
+    "types": {
+      "Metin Kutusu": "Metin Kutusu",
+      "Seçim Kutusu": "Seçim Kutusu",
+      "Dosya Yükleme": "Dosya Yükleme"
+    }
+  },
+  "common": {
+    "required": "Zorunlu",
+    "actions": "İşlemler",
+    "save": "Kaydet"
+  },
+  "group": {
+    "search": "🔍 Ara...",
+    "new": "+ Yeni Uyumluluk Grubu",
+    "newTitle": "Yeni Uyumluluk Grubu",
+    "id": "No",
+    "name": "Grup Adı",
+    "code": "Grup Kodu",
+    "autoList": "Auto List",
+    "vehicleList": "+ Hazır Araç Listesi",
+    "vehicleListTitle": "Araç Listesi",
+    "vehicleListInfo": "Seçilen veriler ile uyumluluk oluşturulacaktır.",
+    "excel": "📊 Excel İşlemleri",
+    "excelTitle": "Uyumluluk Listesi - Excel İşlemleri",
+    "tabs": {
+      "Dışa Aktar": "Dışa Aktar"
+    },
+    "exportInfo": "Tüm veriler excel olarak dışarı aktarılacaktır.",
+    "noData": "Kayıt bulunamadı."
+  },
+  "common": {
+    "required": "Zorunlu",
+    "save": "Kaydet",
+    "actions": "İşlemler",
+    "download": "İndir"
+  },
+  "tag": {
+    "search": "🔍 Ara...",
+    "new": "+ Yeni Etiket",
+    "newTitle": "Yeni Etiket",
+    "name": "Etiket Adı",
+    "image": "Resim",
+    "positionDesc": "Açıklama Girilecek.",
+    "positions": {
+      "homepage": "Anasayfa",
+      "productList": "Ürün Listesi",
+      "productDetail": "Ürün Detay"
+    }
+  },
+  "common": {
+    "required": "Zorunlu",
+    "save": "Kaydet"
+  },
+  "matching": {
+    "search": "🔍 Ara...",
+    "new": "+ Yeni Eşleştirme",
+    "newTitle": "Yeni Arama Eşleştirmesi",
+    "excel": "📊 Excel İşlemleri",
+    "excelTitle": "Arama Eşleştirme - Excel İşlemleri",
+    "info": "Ziyaretçileriniz sitede yaptığı kelime hatalarını doğruları ile eşleştirerek doğru sonuçlara ulaşmasını sağlayabilirsiniz.\nÖrneğin; tişört, tishirt gibi hatalı kelimeleri t-shirt ile eşleştirebilirsiniz.",
+    "searchWord": "Aranan Kelime",
+    "matchWord": "Eşleştirilen Kelime",
+    "tabs": {
+      "export": "Dışa Aktar",
+      "import": "İçe Aktar"
+    },
+    "exportInfo": "Tüm veriler excel olarak dışarı aktarılacaktır."
+  },
+  "common": {
+    "required": "Zorunlu",
+    "save": "Kaydet",
+    "download": "İndir"
+  },
+  "filter": {
+    "title": "Filtreleme Seçenekleri",
+    "keyword": "Aranan Kelime",
+    "keywordPlaceholder": "Kelime giriniz",
+    "date": "Arama Tarihi",
+    "searchCount": "Aranma Sayısı",
+    "resultCount": "Sonuç Sayısı",
+    "and": "ile"
+  },
+  "common": {
+    "clear": "Temizle",
+    "filter": "Filtrele"
+  },
+  "match": {
+    "categoryTitle": "Kategori Eşleştir",
+    "categoryInfo": "Mevcut kategorilerinizi pazaryerindeki kategoriler ile eşleştirebilirsiniz.",
+    "featureTitle": "Özellik Eşleştir",
+    "featureInfo": "Eşleşmesi tamamlanan kategorilerin pazaryeri özelliklerini de eşleştirebilirsiniz.",
+    "variantTitle": "Varyant Eşleştir",
+    "variantInfo": "Eşleşmesi tamamlanan kategorilerinizin varyantlarını da eşleştirebilirsiniz.",
+    "selectCategory": "Eşleştirilecek Kategori",
+    "allCategories": "Tüm Kategoriler",
+    "platform": "Platform",
+    "status": "Durum",
+    "unmatched": "Eşleştirilmemiş",
+    "start": "Eşleştirmeye Başla"
+  },
+  "review": {
+    "search": "Ara...",
+    "id": "Yorum No",
+    "user": "Kullanıcı",
+    "product": "Ürün Adı",
+    "rating": "Puan",
+    "status": "Durum",
+    "date": "Tarih",
+    "statuses": {
+      "approved": "Onaylı",
+      "pending": "Beklemede",
+      "rejected": "Reddedildi"
+    }
+  },
+  "common": {
+    "actions": "İşlemler",
+    "edit": "Düzenle",
+    "delete": "Sil"
+  },
+  "suggestion": {
+    "filterTitle": "Filtreleme Seçenekleri",
+    "suggestionTitle": "Öneri Başlıkları",
+    "readStatus": "Okunma Durumu",
+    "replyStatus": "Yanıt Durumu",
+    "name": "Ad Soyad",
+    "namePlaceholder": "Ad Soyad Girin",
+    "email": "E-Posta Adresi",
+    "emailPlaceholder": "E-Posta Girin",
+    "productCode": "Ürün Kodu",
+    "productCodePlaceholder": "Ürün Kodu Girin",
+    "productName": "Ürün Adı",
+    "productNamePlaceholder": "Ürün Adı Girin",
+    "modalTitle": "Ürün Öneri Başlıkları",
+    "modalInfo": "Ürün önerileri için hazır başlıklar ekleyebilirsiniz.",
+    "id": "Öneri No"
+  },
+  "common": {
+    "clear": "Temizle",
+    "filter": "Filtrele",
+    "save": "Kaydet",
+    "add": "Ekle",
+    "date": "Tarih",
+    "and": "ile",
+    "actions": "İşlemler",
+    "read": "Okundu",
+    "unread": "Okunmadı",
+    "replied": "Yanıtlandı",
+    "notReplied": "Yanıtlanmadı",
+    "noData": "Kayıt bulunamadı."
+  },
+  "definition": {
+    "new": "+ Yeni Tanım",
+    "newTitle": "Yeni Tanım Oluştur",
+    "excel": "📥 Excel İşlemleri",
+    "excelTitle": "Excel İşlemleri",
+    "excelInfo": "Tüm veriler Excel olarak dışarı aktarılacaktır.",
+    "name": "Tanım Adı",
+    "category": "Kategori",
+    "priority": "Öncelik",
+    "status": "Durum",
+    "namePlaceholder": "Tanım Adı",
+    "categoryPlaceholder": "Kategori",
+    "priorityLevels": {
+      "Yüksek": "Yüksek",
+      "Orta": "Orta",
+      "Düşük": "Düşük"
+    },
+    "statuses": {
+      "Aktif": "Aktif",
+      "Pasif": "Pasif"
+    }
+  },
+  "common": {
+    "save": "Kaydet",
+    "close": "Kapat",
+    "download": "İndir",
+    "actions": "İşlemler"
+  },
+  "bulk": {
+    "title": "Toplu Ürün İşlemleri",
+    "selectActionLabel": "Yapılacak İşlem",
+    "selectActionPlaceholder": "Lütfen işlemi seçin",
+    "actions": {
+      "priceUpdate": "Fiyat Güncelleme",
+      "stockUpdate": "Stok Güncelleme",
+      "categoryChange": "Kategori Değiştirme",
+      "deleteProducts": "Ürünleri Sil"
+    }
+  },
+
+  "seo": {
+    "contentTypeTitle": "İçerik Tipi Seçimi",
+    "contentTypeInfo": "Lütfen güncellemek istediğiniz içerik tipini seçin.",
+    "product": "Ürün SEO Bilgileri",
+    "category": "Kategori SEO Bilgileri",
+    "brand": "Marka SEO Bilgileri",
+    "tag": "Etiket SEO Bilgileri",
+    "filterTitle": "Filtreleme",
+    "selectWarning": "Lütfen güncellemek istediğiniz içerik tipini seçin.",
+    "filterInfo": "{type} için filtreleme seçenekleri burada olacak."
+  },
+  "promotion": {
+    "search": "🔍 Ara...",
+    "new": "Yeni Promosyon",
+    "id": "Prom. No",
+    "name": "Tanım",
+    "minCart": "Min Sepet",
+    "startDate": "Başlangıç Tarihi",
+    "endDate": "Bitiş Tarihi",
+    "order": "Sıra",
+    "totalUsage": "Toplam Kullanım",
+    "status": "Durum",
+    "newTitle": "Yeni Promosyon",
+    "newInfo": "Lütfen oluşturmak istediğiniz promosyon tipini seçin. Promosyon ayarları promosyonu oluşturduktan sonra yapılmaktadır."
+  },
+  "common": {
+    "delete": "Sil",
+    "actions": "İşlemler",
+    "noData": "Kayıt bulunamadı.",
+    "create": "Oluştur"
+  },
+  "discount": {
+    "search": "🔍 Ara...",
+    "new": "Yeni İndirim Tanımla",
+    "id": "İndirim No",
+    "category": "Kategori",
+    "brand": "Marka",
+    "product": "Ürün",
+    "group": "Üye Grubu",
+    "user": "Üye",
+    "type": "İndirim Tipi",
+    "amount": "İndirim Miktarı",
+    "modalTitle": "Yeni Üye İndirimi",
+    "productInfo": "İndirim Uygulanacak Ürün Grubu Bilgileri",
+    "userInfo": "İndirim Uygulanacak Üye Grubu Bilgileri",
+    "discountInfo": "İndirim Bilgileri",
+    "productPlaceholder": "Ürün giriniz",
+    "userPlaceholder": "Üye giriniz",
+    "amountPlaceholder": "İndirim miktarı giriniz",
+    "typeAmount": "Tutar (TRY)",
+    "groupDefault": "Üyeler"
+  },
+  "common": {
+    "save": "Kaydet",
+    "delete": "Sil",
+    "noData": "Kayıt bulunamadı.",
+    "actions": "İşlemler",
+    "allCategories": "Tüm Kategoriler",
+    "allBrands": "Tüm Markalar"
+  },
+  "dealerDiscount": {
+    "search": "🔍 Ara...",
+    "new": "Yeni İndirim Tanımla",
+    "excel": "Excel İşlemleri",
+    "id": "İndirim No",
+    "category": "Kategori",
+    "brand": "Marka",
+    "product": "Ürün",
+    "group": "Bayi Grubu",
+    "dealer": "Bayi",
+    "type": "İndirim Tipi",
+    "amount": "İndirim Miktarı",
+    "newTitle": "Yeni Bayi İndirimi",
+    "productInfo": "İndirim Uygulanacak Ürün Grubu Bilgileri",
+    "productHint": "Ürün alanını seçtiğinizde indirim sadece ilgili ürüne uygulanacaktır.",
+    "dealerInfo": "İndirim Uygulanacak Bayi Grubu Bilgileri",
+    "dealerHint": "Bayi alanını seçtiğinizde indirim sadece ilgili bayiye uygulanacaktır.",
+    "discountInfo": "İndirim Bilgileri",
+    "typeAmount": "Tutar (TRY)",
+    "excelTitle": "Bayi İndirimleri - Excel İşlemleri",
+    "export": "Dışa Aktar",
+    "import": "İçe Aktar",
+    "exportInfo": "📂 Tüm veriler Excel olarak dışa aktarılacaktır.",
+    "importInfo": "📥 Excel dosyanızı yükleyerek içe aktarım yapabilirsiniz."
+  },
+  "common": {
+    "delete": "Sil",
+    "save": "Kaydet",
+    "actions": "İşlemler",
+    "noData": "Kayıt bulunamadı.",
+    "allCategories": "Tüm Kategoriler",
+    "allBrands": "Tüm Markalar",
+    "allGroups": "Tüm Gruplar"
+  },
+  "commission": {
+    "search": "🔍 Ara...",
+    "new": "Yeni Komisyon Tanımla",
+    "newTitle": "Yeni Komisyon Tanımla",
+    "product": "Ürün",
+    "dealerGroup": "Bayi Grubu",
+    "dealer": "Bayi",
+    "amount": "Komisyon",
+    "type": "Komisyon Tipi",
+    "fixed": "Sabit Tutar",
+    "percent": "Yüzde (%)",
+    "productInfo": "Ürün Bilgileri",
+    "dealerInfo": "Bayi Grubu Bilgileri",
+    "commissionInfo": "Komisyon Bilgileri"
+  },
+  "common": {
+    "delete": "Sil",
+    "save": "Kaydet",
+    "actions": "İşlem",
+    "noData": "Kayıt bulunamadı.",
+    "all": "Tümü"
+  },
+  "fixedDiscount": {
+    "title": "Sabit İndirim",
+    "label": "Sepet Tutarına İndirim (%)"
+  },
+  "common": {
+    "save": "Kaydet"
+  },
+  "orderLimit": {
+    "search": "🔍 Ara...",
+    "new": "Yeni Sipariş Limiti",
+    "newTitle": "Yeni Sipariş Limiti",
+    "id": "Limit No",
+    "name": "Adı",
+    "min": "Min. Miktar",
+    "max": "Maks. Miktar",
+    "variant": "Varyant Kontrolü",
+    "groups": "Üye Grupları",
+    "dateRange": "Tarih Aralığı",
+    "priority": "Öncelik",
+    "status": "Durum",
+    "form": {
+      "name": "Sipariş Limiti Adı",
+      "status": "Durum",
+      "priority": "Öncelik",
+      "min": "Minimum Sipariş Miktarı",
+      "max": "Maksimum Sipariş Miktarı"
+    }
+  },
+  "common": {
+    "delete": "Sil",
+    "save": "Kaydet",
+    "actions": "İşlemler",
+    "noData": "Kayıt bulunamadı.",
+    "required": "Zorunlu",
+    "active": "Aktif",
+    "passive": "Pasif"
+  },
+  "salesQuota": {
+    "search": "🔍 Ara...",
+    "new": "Yeni Satış Kotası",
+    "newTitle": "Yeni Satış Kotası",
+    "id": "Kota No",
+    "name": "Adı",
+    "amount": "Satış Kotası",
+    "rule": "Kural",
+    "period": "Periyot",
+    "group": "Üye Grupları",
+    "dateRange": "Tarih Aralığı",
+    "priority": "Öncelik",
+    "status": "Durum",
+    "form": {
+      "name": "Kota Adı",
+      "status": "Durum",
+      "priority": "Öncelik",
+      "amount": "Satış Kotası",
+      "rule": "Kota Kuralı",
+      "period": "Periyot",
+      "group": "Üye Grupları"
+    },
+    "rules": {
+      "customerBased": "Müşteri Bazlı Satış Miktarı",
+      "general": "Genel Satış Miktarı"
+    },
+    "periods": {
+      "all": "Tüm Zamanlar",
+      "daily": "Günlük",
+      "weekly": "Haftalık",
+      "monthly": "Aylık"
+    },
+    "groups": {
+      "individual": "Bireysel",
+      "corporate": "Kurumsal"
+    }
+  },
+  "common": {
+    "delete": "Sil",
+    "save": "Kaydet",
+    "actions": "İşlemler",
+    "noData": "Kayıt bulunamadı.",
+    "active": "Aktif",
+    "passive": "Pasif",
+    "all": "Tümü"
+  },
+  "emailList": {
+    "search": "🔍 Ara...",
+    "new": "Yeni Kayıt",
+    "excel": "Excel İşlemleri",
+    "id": "Kayıt No",
+    "email": "E-Posta",
+    "name": "Adı",
+    "group": "Grup",
+    "ip": "IP",
+    "date": "Tarih",
+    "newTitle": "Yeni Bülten Kaydı",
+    "language": "Dil",
+    "excelTitle": "E-Posta E-Bülten Listesi - Excel İşlemleri",
+    "exportInfo": "Tüm veriler Excel olarak dışa aktarılacaktır.",
+    "importInfo": "Excel dosyanızı yükleyerek içe aktarım yapabilirsiniz."
+  },
+  "common": {
+    "actions": "İşlemler",
+    "delete": "Sil",
+    "noData": "Kayıt bulunamadı.",
+    "none": "Hiçbiri",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "close": "Kapat",
+    "export": "Dışa Aktar",
+    "import": "İçe Aktar",
+    "turkish": "Türkçe",
+    "english": "İngilizce"
+  },
+  "emailGroups": {
+    "search": "🔍 Ara...",
+    "new": "Yeni Grup",
+    "newTitle": "Yeni Bülten Grubu",
+    "id": "Grup No",
+    "name": "Grup Adı",
+    "default": "Varsayılan"
+  },
+  "common": {
+    "actions": "İşlemler",
+    "delete": "Sil",
+    "noData": "Kayıt bulunamadı.",
+    "active": "Aktif",
+    "passive": "Pasif",
+    "save": "Kaydet"
+  },
+  "email": {
+    "search": "🔍 Ara...",
+    "new": "Yeni E-Posta",
+    "newTitle": "Yeni E-Posta Gönder",
+    "id": "No",
+    "name": "Tanım",
+    "status": "Durum",
+    "sendDate": "Gönderim Tarihi",
+    "subject": "E-Posta Konusu",
+    "content": "E-Posta İçeriği",
+    "sendToNewsletter": "Bülten Listelerine Gönderim",
+    "sendToMembers": "Üyelere/Bayilere Gönderim",
+    "sendToExtra": "İlave E-Posta Adreslerine Gönderim",
+    "tabs": {
+      "settings": "Ayarlar",
+      "content": "E-Posta İçeriği"
+    }
+  },
+  "common": {
+    "actions": "İşlemler",
+    "delete": "Sil",
+    "noData": "Kayıt bulunamadı.",
+    "save": "Kaydet"
+  },
+  "sms": {
+    "search": "🔍 Ara...",
+    "new": "Yeni SMS",
+    "newTitle": "Yeni SMS Gönder",
+    "newGroup": "Yeni Grup",
+    "newGroupTitle": "Yeni Bülten Grubu",
+    "newRecord": "Yeni Kayıt",
+    "excelActions": "Excel İşlemleri",
+    "recordNo": "Kayıt No",
+    "groupId": "Grup No",
+    "groupName": "Grup Adı",
+    "number": "Numara",
+    "name": "Tanım",
+    "status": "Durum",
+    "group": "Grup",
+    "ip": "IP",
+    "date": "Gönderim Tarihi",
+    "language": "Dil",
+    "excelTitle": "SMS E-Bülten Listesi - Excel İşlemleri",
+    "settings": "Ayarlar",
+    "content": "SMS İçeriği",
+    "toNewsletter": "Bülten Listelerine Gönderim",
+    "toMembers": "Üyelere/Bayilere Gönderim",
+    "toExtraNumbers": "İlave Telefon Numaralarına Gönderim",
+    "message": "Mesaj",
+    "phoneInfo": "Telefon numarası ülke kodu ile birlikte yazılmalıdır. Örnek: +905001234567",
+    "no": "No"
+  },
+  "common": {
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "close": "Kapat",
+    "none": "Hiçbiri",
+    "yes": "Evet",
+    "no": "Hayır",
+    "actions": "İşlemler",
+    "noData": "Kayıt bulunamadı.",
+    "export": "Dışa Aktar",
+    "import": "İçe Aktar",
+    "exportInfo": "Tüm veriler Excel olarak dışa aktarılacaktır.",
+    "importInfo": "Excel dosyanızı yükleyerek içe aktarım yapabilirsiniz."
+  },"campaigns": {
+  "coupons": "Kupon Yönetimi",
+  "promotions": "Promosyonlar",
+  "memberDiscounts": "Üye İndirimleri",
+  "dealerDiscounts": "Bayi İndirimleri",
+  "dealerCommissions": "Bayi Komisyonları",
+  "fixedDiscount": "Sabit İndirim",
+  "orderLimits": "Sipariş Limitleri",
+  "salesQuotas": "Satış Kotaları",
+  "emailTools": "E-Posta Araçları",
+  "smsTools": "SMS Araçları"
+},
+"orders": {
+  "new": "Yeni Siparişler",
+  "preparing": "Hazırlanan Siparişler",
+  "shipped": "Kargolanan Siparişler",
+  "delivered": "Teslim Edilen Siparişler",
+  "requests": "Sipariş Talepleri",
+  "cancelled": "İptal Edilenler",
+  "incomplete": "Tamamlanmayan Siparişler"
+},
+"quickSales": {
+  "tabs": {
+    "quickSales": "Hızlı Satış",
+    "phoneOrders": "Telefonla Sipariş Talepleri",
+    "activeCarts": "Aktif Sepetler",
+    "bankTransfer": "Havale Bildirimleri"
+  }
+},
+"orderMenu": {
+  "quickSales": "Hızlı Satış",
+  "phoneOrders": "Telefonla Sipariş Talepleri",
+  "activeCarts": "Aktif Sepetler",
+  "bankTransfer": "Havale Bildirimleri",
+  "faultReports": "Arıza Bildirimleri",
+  "salesTerminals": "Satış Terminalleri",
+  "bulkActions": "Toplu İşlemler",
+  "quickPayments": "Hızlı Ödemeler"
+},
+"productMenu": {
+  "manage": "Ürün Yönetimi",
+  "categories": "Kategori Yönetimi",
+  "brands": "Marka Yönetimi",
+  "attributes": "Nitelik Yönetimi",
+  "customFields": "Özel Alan Yönetimi",
+  "compatibilityGroups": "Uyumluluk Grupları",
+  "tags": "Ürün Etiketleri",
+  "searchMatching": "Arama Eşleştirme",
+  "searchConsole": "Arama Konsolu"
+},
+"productTabs": {
+  "marketplaceMatching": "Pazaryeri Eşleştirmeleri",
+  "productReviews": "Ürün Yorumları",
+  "productRecommendations": "Ürün Önerileri",
+  "advancedSorting": "Gelişmiş Ürün Sıralama",
+  "bulkOperations": "Toplu Ürün İşlemleri",
+  "bulkSeo": "Toplu SEO Güncelleme"
+},
+"filters": {
+  "title": "Filtreleme Seçenekleri",
+  "fields": {
+    "status": "Talep Durumu",
+    "customerName": "Müşteri Adı",
+    "phone": "Telefon",
+    "email": "E-Posta"
+  },
+  "dateRange": "Talep Tarihi"
+},
+"statuses": {
+  "new": "Yeni",
+  "unreachable": "Ulaşılamadı",
+  "callLater": "Tekrar Aranacak",
+  "later": "Daha Sonra"
+},
+"table": {
+  "id": "Talep No",
+  "customerName": "Müşteri Adı",
+  "phone": "Telefon",
+  "product": "Ürün",
+  "status": "Durum",
+  "date": "Tarih"
+},
+"common": {
+  "clear": "Temizle",
+  "filter": "Filtrele",
+  "to": "ile",
+  "actions": "İşlem",
+  "noData": "Kayıt bulunamadı.",
+  "all": "Tümü"
+},
+"filters": {
+  "title": "Filtreleme Seçenekleri",
+  "fields": {
+    "orderStatus": "Sipariş Durumu",
+    "orderNo": "Sipariş No",
+    "customerName": "Müşteri Adı",
+    "phone": "Telefon"
+  }
+},
+"statuses": {
+  "new": "Yeni Sipariş",
+  "preparing": "Hazırlanıyor",
+  "shipped": "Kargolandı"
+},
+"common": {
+  "clear": "Temizle",
+  "filter": "Filtrele",
+  "all": "Tümü"
+},
+"common": {
+  "close": "Kapat"
+},
+"productTabs": {
+  "marketplaceMatching": "Pazaryeri Eşleştirmeleri",
+  "reviews": "Ürün Yorumları",
+  "recommendations": "Ürün Önerileri",
+  "advancedSorting": "Gelişmiş Ürün Sıralama",
+  "bulkActions": "Toplu Ürün İşlemleri",
+  "bulkSeo": "Toplu SEO Güncelleme"
+},
+"pages": {
+  "newPage": "Yeni Sayfa",
+  "tabs": {
+    "general": "Genel Bilgiler",
+    "seo": "S.E.O Bilgileri",
+    "other": "Diğer"
+  },
+  "title": "Sayfa Başlığı",
+  "content": "Sayfa İçeriği",
+  "seoTitle": "SEO Başlığı",
+  "seoDescription": "SEO Açıklaması",
+  "seoKeywords": "SEO Anahtar Kelimeleri",
+  "codes": "Özel Kodlar",
+  "redirect": "Yönlendirme Linki",
+  "pageNo": "Sayfa No"
+},
+"common": {
+  "search": "🔍 Ara...",
+  "save": "Kaydet",
+  "cancel": "İptal",
+  "delete": "Sil",
+  "edit": "İçerik Sayfası",
+  "preview": "Hızlı Görüntüle",
+  "actions": "İşlemler"
+},
+"help": {
+  "newTitle": "Yeni Başlık",
+  "tabs": {
+    "general": "Genel Bilgiler",
+    "seo": "S.E.O Bilgileri"
+  },
+  "fields": {
+    "id": "Başlık No",
+    "title": "Başlık",
+    "status": "Durum",
+    "order": "Sıra",
+    "image": "Resim"
+  }
+},
+"common": {
+  "actions": "İşlemler",
+  "search": "Ara...",
+  "active": "Aktif",
+  "inactive": "Pasif",
+  "save": "Kaydet",
+  "cancel": "İptal",
+  "delete": "Sil",
+  "noData": "Kayıt bulunamadı."
+},
+"faq": {
+  "new": "Yeni Soru",
+  "title": "Sıkça Sorulan Sorular",
+  "fields": {
+    "id": "Soru No",
+    "question": "Soru",
+    "answer": "Cevap",
+    "order": "Sıra"
+  }
+},
+"common": {
+  "save": "Kaydet",
+  "cancel": "İptal",
+  "actions": "İşlemler",
+  "edit": "✏️ Düzenle",
+  "delete": "🗑 Sil",
+  "search": "Ara..."
+},
+  "blog": {
+    "new": "Yeni Yazı",
+    "categories": "Kategoriler",
+    "fields": {
+      "id": "Yazı No",
+      "title": "Başlık",
+      "blogCategory": "Blog Kategorisi",
+      "productCategory": "Ürün Kategorisi",
+      "date": "Tarih",
+      "status": "Durum",
+      "image": "Resim",
+      "shortDescription": "Kısa Açıklama",
+      "content": "İçerik",
+      "seoTitle": "SEO Başlığı",
+      "seoDescription": "SEO Açıklaması",
+      "seoKeywords": "SEO Anahtar Kelimeleri",
+      "views": "Okunma",
+      "general": "Genel Bilgiler",
+      "seo": "S.E.O Bilgileri"
+    }
+  },
+  "common": {
+    "search": "Ara...",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "actions": "İşlemler",
+    "active": "Aktif",
+    "inactive": "Pasif",
+    "required": "Zorunlu",
+    "noneSelected": "Hiçbiri seçilmedi"
+  },
+  "slider": {
+    "new": "Yeni Manşet",
+    "title": "Slayt Yönetimi",
+    "dragInfo": "Manşetlerin sıralamasını sürükle bırak yaparak değiştirebilirsiniz.",
+    "item": "Manşet",
+    "fields": {
+      "title": "Başlık",
+      "link": "Link",
+      "webImage": "Görsel (Web)",
+      "mobileImage": "Görsel (Mobil Uyg.)",
+      "productId": "Ürün No (Mobil Uyg.)",
+      "newTab": "Yeni Pencere",
+      "description": "Açıklama"
+    }
+  },
+  "common": {
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "noData": "Kayıt bulunamadı."
+  },
+  "banner": {
+    "newGroup": "Yeni Banner Grubu",
+    "title": "Afiş Yönetimi",
+    "uploadText": "Banner yüklemek için buraya tıklayın.",
+    "fields": {
+      "id": "Banner No",
+      "name": "Banner Grubu Adı"
+    }
+  },
+  "common": {
+    "actions": "İşlemler",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "noData": "Kayıt bulunamadı."
+  },
+  "popup": {
+    "new": "Yeni Popup",
+    "title": "Popup",
+    "warning": "Aşağıdaki alanlardan popup görüntülenmesini kısıtlayabilirsiniz.",
+    "fields": {
+      "id": "P. No",
+      "title": "Başlık",
+      "mobile": "Mobil",
+      "desktop": "Masaüstü",
+      "start": "Başlangıç Tarihi",
+      "end": "Bitiş Tarihi",
+      "timing": "Zamanlama",
+      "description": "Açıklama"
+    },
+    "options": {
+      "oncePerDay": "24 saatte 1 kere",
+      "everyVisit": "Her girişte"
+    }
+  },
+  "common": {
+    "actions": "İşlemler",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "noData": "Kayıt bulunamadı."
+  },
+  "imageUpload": {
+    "title": "Resim Yükle",
+    "fields": {
+      "image": "Resim"
+    }
+  },
+  "common": {
+    "upload": "Yükle"
+  },
+  "imageUpload": {
+    "title": "Resim Yükle",
+    "fields": {
+      "image": "Resim"
+    }
+  },
+  "common": {
+    "upload": "Yükle"
+  },
+  "contentTabs": {
+    "pages": "Sayfalar",
+    "help": "Yardım İçerikleri",
+    "faq": "Sıkça Sorulan Sorular",
+    "blog": "Blog Yönetimi",
+    "slides": "Slayt Yönetimi",
+    "banners": "Afiş Yönetimi",
+    "popup": "Popup",
+    "upload": "Görsel Yükle"
+  },
+  "contentTabs": {
+    "pages": "Pages",
+    "help": "Help Contents",
+    "faq": "Frequently Asked Questions",
+    "blog": "Blog Management",
+    "slides": "Slide Management",
+    "banners": "Banner Management",
+    "popup": "Popup",
+    "upload": "Upload Image"
+  },
+  "redirect": {
+    "title": "🔍 Filtreleme Seçenekleri",
+    "search": "Arama terimi yazınız...",
+    "typeSelect": "Yönlendirme Tipi Seç",
+    "type": "Yönlendirme",
+    "new": "+ Yeni Yönlendirme Linki",
+    "newTitle": "Yeni Yönlendirme Linki",
+    "excel": "📥 Excel İşlemleri",
+    "excelTitle": "Link Yönlendirme - Excel İşlemleri",
+    "placeholders": {
+      "old": "Eski URL",
+      "new": "Yeni URL"
+    },
+    "fields": {
+      "id": "Link No",
+      "link": "Link",
+      "redirectTo": "Yönlendirme Linki",
+      "type": "Tip"
+    }
+  },
+  "common": {
+    "filter": "Filtrele",
+    "clear": "Temizle",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "close": "Kapat",
+    "delete": "Sil",
+    "actions": "İşlemler",
+    "export": "Dışa Aktar",
+    "import": "İçe Aktar"
+  },
+  "report": {
+    "filterTitle": "Filtreleme Seçenekleri",
+    "searchTerm": "Arama Terimi",
+    "searchPlaceholder": "Arama terimi yazınız",
+    "status": "Yönlendirme Durumu",
+    "redirected": "Yönlendirilmiş",
+    "notRedirected": "Yönlendirilmemiş",
+    "visits": "Ziyaret Sayısı",
+    "min": "Min",
+    "max": "Max",
+    "createRedirect": "Yönlendirme Oluştur",
+    "modal": {
+      "title": "Yeni Yönlendirme Linki",
+      "type": "Yönlendirme Tipi",
+      "link": "Link",
+      "to": "Yönlendirilecek Link",
+      "note": "Notlar"
+    },
+    "fields": {
+      "id": "Link No",
+      "link": "Link",
+      "visits": "Ziyaret Sayısı",
+      "redirect": "Yönlendirme"
+    }
+  },
+  "common": {
+    "clear": "Temizle",
+    "filter": "Filtrele",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "actions": "İşlemler",
+    "none": "Seçilmedi",
+    "to": "ile"
+  },
+  "url": {
+    "menu": {
+      "redirect": "URL Yönlendirme",
+      "reports": "404 URL Raporları"
+    }
+  },
+  "customers": {
+    "all": "Tümü",
+    "member": "Üye",
+    "endUser": "Son Kullanıcı",
+    "dealer": "Bayi",
+    "id": "Üye No",
+    "email": "E-Posta",
+    "name": "Ad Soyad",
+    "phone": "Telefon Numarası",
+    "balance": "Bakiye",
+    "points": "Puan",
+    "group": "Müşteri Grubu",
+    "status": "Durum",
+    "lastLogin": "Son Giriş",
+    "registerDate": "Kayıt",
+    "excelTitle": "Üyeler - Excel İşlemleri"
+  },
+  "common": {
+    "search": "🔍 Ara...",
+    "excelActions": "Excel İşlemleri",
+    "actions": "İşlemler",
+    "view": "Görüntüle",
+    "delete": "Sil",
+    "close": "Kapat",
+    "export": "Dışa Aktar",
+    "import": "İçe Aktar"
+  },
+  "risky": {
+    "addNew": "Riskli Müşteri Ekle",
+    "criteriaSettings": "Otomatik Risk Kriterleri",
+    "newRiskyCustomer": "Yeni Riskli Müşteri",
+    "infoText": "Aşağıdaki alanlardan biriyle eşleşen sipariş geldiğinde 'Riskli Sipariş' olarak işaretlenecektir.",
+    "criteriaSettingsTitle": "Global Risk Kriter Ayarları",
+    "criteriaInfoText": "Otomatik risk kriterleri ile siparişlerin ön tanımlı kriterlere göre kontrolünün yapılmasını sağlayabilirsiniz.",
+    "id": "Üye No",
+    "email": "E-Posta",
+    "name": "Ad Soyad",
+    "tckn": "TC Kimlik No",
+    "phone": "Telefon",
+    "ip": "IP",
+    "days": "Gün",
+    "limit": "Sipariş Limiti"
+  },
+  "common": {
+    "search": "🔍 Ara...",
+    "actions": "İşlemler",
+    "noData": "Kayıt bulunamadı.",
+    "save": "Kaydet"
+  },
+  "balance": {
+    "transactionNo": "Har. No",
+    "customerNo": "Müşteri No",
+    "name": "Müşteri Adı",
+    "surname": "Müşteri Soyadı",
+    "amount": "Tutar",
+    "status": "Durum",
+    "date": "Tarih"
+  },
+  "common": {
+    "search": "🔍 Ara...",
+    "actions": "İşlemler",
+    "noData": "Kayıt bulunamadı."
+  },
+  "dealer": {
+    "new": "Yeni Bayi",
+    "title": "Bayi Yönetimi",
+    "id": "Bayi No",
+    "email": "E-Posta",
+    "code": "Kod",
+    "name": "Ad Soyad",
+    "surname": "Soyad",
+    "balance": "Bakiye",
+    "group": "Bayi Grubu",
+    "status": "Durum",
+    "password": "Şifre",
+    "debtors": "Borçlu",
+    "creditors": "Alacaklı",
+    "testGroup": "Test Grubu (İsk: %10)",
+    "excelTitle": "Bayi - Excel İşlemleri"
+  },
+  "common": {
+    "search": "🔍 Ara...",
+    "actions": "İşlemler",
+    "active": "Aktif",
+    "inactive": "Pasif",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "excelActions": "Excel İşlemleri",
+    "export": "Dışa Aktar",
+    "import": "İçe Aktar",
+    "all": "Tümü"
+  },
+  "group": {
+    "new": "Yeni Grup",
+    "title": "Bayi Grupları",
+    "id": "Grup No",
+    "name": "Grup Adı",
+    "discount": "İskonto",
+    "priceType": "Bayi Fiyat Tanımı",
+    "default": "Varsayılan",
+    "sample": "Test Grubu"
+  },
+  "common": {
+    "search": "Ara...",
+    "actions": "İşlemler",
+    "quickView": "Hızlı Görüntüle",
+    "delete": "Sil",
+    "save": "Kaydet",
+    "cancel": "Kapat"
+  },
+  "password": {
+    "send": "Gönder",
+    "info": "Toplu şifre gönderme işleminde tüm aktif bayilere yeni şifre oluşturulur ve mail adreslerine gönderilir. Bu işlemin gerçekleşmesi için \"Ayarlar → E-posta ayarları\" sayfasından Mailjet kurulumun tamamlanmış olması gerekmektedir.",
+    "errorMessage": "Demo hesapta bu işlem gerçekleştirilemez!"
+  },
+  "common": {
+    "error": "Hata!",
+    "ok": "Tamam"
+  },
+  "customers": {
+    "menu": {
+      "manage": "Müşteri Yönetimi",
+      "risk": "Riskli Müşteri Yönetimi",
+      "balances": "Müşteri Bakiyeleri",
+      "dealers": "Bayi Yönetimi",
+      "groups": "Bayi Grupları",
+      "transactions": "Bayi İşlemleri"
+    }
+  },
+  "marketplaces": {
+    "title": "Pazaryeri Mağazaları",
+    "description": "Pazaryerindeki mağazalarınızı tanımlayabilir, kar oranlarını ve kısıtlamalarını düzenleyebilirsiniz.",
+    "addShop": "Mağaza Ekle",
+    "newShopTitle": "Yeni Mağaza Ekle",
+    "shopName": "Mağaza Adı",
+    "shopLogo": "Mağaza Logosu (URL)"
+  },
+  "common": {
+    "save": "Kaydet",
+    "cancel": "İptal"
+  },
+  "accounting": {
+    "sectionTitles": {
+      "active": "Aktif Entegrasyonlar",
+      "inactive": "Pasif Entegrasyonlar"
+    },
+    "subtitles": {
+      "active": "Aşağıdaki entegrasyonlar şu anda aktif durumdadır.",
+      "inactive": "Aşağıdaki entegrasyonlar henüz etkinleştirilmemiştir."
+    },
+    "moduleName": "Muhasebe",
+    "activeIntegrations": {
+      "efatura": "E-Fatura entegrasyonu",
+      "netsis": "Muhasebe sistemleri ile entegre"
+    },
+    "inactiveIntegrations": {
+      "b2b": "Henüz etkinleştirilmemiş",
+      "nebim": "Henüz etkinleştirilmemiş"
+    },
+    "fields": {
+      "apiUser": "API Kullanıcı Adı",
+      "apiPassword": "API Şifre",
+      "companyName": "Firma Ünvanı",
+      "companyAddress": "Firma Adresi",
+      "ownerName": "Firma Sahibi Adı",
+      "ownerSurname": "Firma Sahibi Soyadı",
+      "city": "İl",
+      "district": "İlçe",
+      "phone": "Telefon",
+      "website": "Web Sitesi",
+      "taxNumber": "VKN/TCKN",
+      "email": "E-Posta"
+    }
+  },
+  "common": {
+    "settings": "Ayarlar",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "activate": "Etkinleştir"
+  },
+  "excel": {
+    "title": "Excel İşlemleri",
+    "description": "Hızlı Excel işlemleri ile ürünlerinizi dışarı aktarabilir ve içeri yükleyebilirsiniz.",
+    "exportTitle": "Excel Dışarı Aktar",
+    "importTitle": "Excel İçe Aktar",
+    "importInfo": "Sadece desteklenen formatlardaki dosyalar içeri aktarılır.",
+    "category": "Kategori",
+    "brand": "Marka",
+    "brandInfo": "Marka Bilgisi",
+    "productDescription": "Ürün Açıklaması",
+    "identifiers": {
+      "id": "Ürün ID (ID)",
+      "code": "Ürün Kodu",
+      "barcode": "Barkod No"
+    },
+    "separators": {
+      "dot": "Nokta (.)",
+      "comma": "Virgül (,)"
+    },
+    "menu": {
+      "productInfo": "Ürün Bilgileri",
+      "productVariants": "Ürün Varyantları",
+      "productCategories": "Ürün Kategorileri",
+      "productImages": "Ürün Resimleri (URL ile)",
+      "productStock": "Ürün Stokları",
+      "productAttributes": "Ürün Nitelikleri",
+      "productCompatibility": "Ürün Uyumluluk Listesi",
+      "productBrandCodes": "Ürün Marka Özel Kodları"
+    }
+  },
+  "common": {
+    "change": "Değiştir",
+    "download": "İndir",
+    "upload": "Yükle"
+  },
+  "excel": {
+    "title": "Excel Operations",
+    "description": "With quick Excel operations, you can export and import your products.",
+    "exportTitle": "Export to Excel",
+    "importTitle": "Import from Excel",
+    "importInfo": "Only files in supported formats will be imported.",
+    "category": "Category",
+    "brand": "Brand",
+    "brandInfo": "Brand Information",
+    "productDescription": "Product Description",
+    "identifiers": {
+      "id": "Product ID (ID)",
+      "code": "Product Code",
+      "barcode": "Barcode No"
+    },
+    "separators": {
+      "dot": "Dot (.)",
+      "comma": "Comma (,)"
+    },
+    "menu": {
+      "productInfo": "Product Info",
+      "productVariants": "Product Variants",
+      "productCategories": "Product Categories",
+      "productImages": "Product Images (via URL)",
+      "productStock": "Product Stocks",
+      "productAttributes": "Product Attributes",
+      "productCompatibility": "Product Compatibility List",
+      "productBrandCodes": "Product Brand Special Codes"
+    }
+  },
+  "common": {
+    "change": "Change",
+    "download": "Download",
+    "upload": "Upload"
+  },
+  "xml": {
+    "addNew": "Yeni XML Kaynağı",
+    "fields": {
+      "id": "XML No",
+      "name": "Adı",
+      "format": "Format",
+      "fileType": "Dosya Tipi",
+      "schedule": "Zamanlama",
+      "status": "Durum",
+      "lastProcess": "Son İşlem Tarihi"
+    },
+    "tabs": {
+      "info": "Bilgiler",
+      "settings": "Ayarlar",
+      "profit": "Kar Oranları",
+      "filtering": "Ürün Filtreleme",
+      "description": "İçerik bu sekmeye göre gösterilecek."
+    }
+  },
+  "common": {
+    "search": "🔍 Ara...",
+    "actions": "İşlemler"
+  },
+  "xmlExport": {
+    "readyTitle": "Hazır XML Çıktıları",
+    "exportTitle": "XML Dışarı Aktar",
+    "addNew": "Yeni XML Kaynağı",
+    "fields": {
+      "dataNo": "Veri No",
+      "name": "Adı",
+      "format": "Format",
+      "link": "Link"
+    },
+    "form": {
+      "name": "Adı",
+      "format": "Format",
+      "commissionRate": "Komisyon Oranı (%)",
+      "categories": "Kategoriler",
+      "productSource": "Ürün Kaynağı",
+      "brands": "Markalar",
+      "minStock": "Minimum Stok Miktarı"
+    }
+  },
+  "common": {
+    "search": "🔍 Ara...",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "actions": "İşlemler",
+    "noneSelected": "Hiçbiri seçilmedi"
+  },
+  "marketplaceBatch": {
+    "title": "Toplu Pazaryeri İşlemleri",
+    "addNew": "Yeni XML Kaynağı",
+    "warning": "Ürün çekme işlemine başlamadan önce \"Entegrasyonlar → Pazaryeri Entegrasyonları\" mağaza ayarlarına girerek \"Ürün Güncelleme\" ve \"Ürün Silme\" işlemlerini kapatmanız önerilir.",
+    "fields": {
+      "operationNo": "İşlem No",
+      "name": "Adı",
+      "process": "İşlem",
+      "marketplace": "Pazaryeri",
+      "store": "Mağaza",
+      "schedule": "Zamanlama",
+      "status": "Durum",
+      "vatRate": "Varsayılan KDV Oranı",
+      "matchingMethod": "Ürün Eşleştirme Metodu"
+    },
+    "options": {
+      "pullProducts": "Ürün Çekme",
+      "never": "Hiçbir Zaman",
+      "matchByProductCode": "Ürün kodları ile eşleştir"
+    }
+  },
+  "common": {
+    "search": "Ara...",
+    "save": "Kaydet",
+    "cancel": "Kapat",
+    "actions": "İşlemler",
+    "noRecords": "Kayıt bulunamadı."
+  },
+  "hepsiburada": {
+    "tabs": {
+      "excel": "Ürünleri Excele Aktarım",
+      "match": "Ürünleri Eşleştir",
+      "activate": "Ürünleri Aktifleştir",
+      "reports": "Raporlar"
+    },
+    "excel": {
+      "title": "Ürünleri Excele Aktarım",
+      "description": "Hepsiburada entegrasyonu ile ürünlerinizi Excel formatına çevirerek yükleyebilirsiniz.",
+      "add": "Yeni Excel",
+      "excelNo": "Excel No",
+      "modal": {
+        "title": "Yeni Excel",
+        "format": "Excel Formatı",
+        "fastAdd": "Hızlı Ürün Ekleme Formatı",
+        "minPrice": "Minimum HB Ürün Fiyatı",
+        "maxPrice": "Maksimum HB Ürün Fiyatı",
+        "currency": "HB Para Birimi"
+      }
+    },
+    "match": {
+      "title": "Ürünleri Eşleştir",
+      "description": "Mağazadaki ürünlerinizi eşleştirin.",
+      "store": "Mağaza Adı",
+      "status": "Durum",
+      "date": "Son İşlem Tarihi",
+      "error": "Hatalı (Ürün bulunamadı)"
+    },
+    "activate": {
+      "title": "Ürünleri Aktifleştir",
+      "description": "Seçilen mağazadaki eşleşmiş ürünleri aktifleştirin.",
+      "activateAll": "Tüm Ürünleri Aktifleştir"
+    },
+    "reports": {
+      "title": "Raporlar"
+    }
+  },
+  "common": {
+    "name": "Adı",
+    "store": "Mağaza",
+    "categories": "Kategoriler",
+    "brands": "Markalar",
+    "source": "Ürün Kaynağı",
+    "search": "Ara...",
+    "save": "Kaydet",
+    "cancel": "Kapat",
+    "actions": "İşlemler",
+    "start": "Başlat",
+    "all": "Tümü",
+    "noneSelected": "Hiçbiri seçilmedi",
+    "noRecords": "Kayıt bulunamadı."
+  },
+  "monitor": {
+    "title": "Pazaryeri Monitörü",
+    "description": "Ürünlerinizin pazaryerlerindeki güncelleme durumlarını ve hata raporlarını inceleyebilirsiniz.",
+    "updated": "Güncel",
+    "pending": "Güncellenecek",
+    "tabs": {
+      "errors": "Hata Raporları",
+      "updated": "Güncel Ürünler",
+      "pending": "Güncellenecek Ürünler"
+    },
+    "errors": {
+      "title": "Hata Raporları",
+      "description": "Ürünleriniz eklenirken, güncellenirken veya silinirken alınan hataları burada görüntüleyebilirsiniz."
+    },
+    "updated": {
+      "title": "Güncel Ürünler",
+      "description": "Güncellenen ürünlerinizi ve tarihlerini görüntüleyebilirsiniz."
+    },
+    "pending": {
+      "title": "Güncellenecek Ürünler",
+      "description": "Güncellenmek üzere sıraya alınan ürünlerinizi ve tarihlerini görüntüleyebilirsiniz."
+    }
+  },
+  "integration": {
+    "menu": {
+      "marketplace": "Pazaryeri Entegrasyonları",
+      "accounting": "Muhasebe Entegrasyonları",
+      "excel": "Hızlı Excel İşlemleri",
+      "xmlImport": "XML İçeri Aktar",
+      "xmlExport": "XML Dışarı Aktar",
+      "bulkMarketplace": "Toplu Pazaryeri İşlemleri",
+      "hepsiburada": "Hepsiburada İşlemleri",
+      "monitor": "Pazaryeri Monitorü"
+    }
+  },
+  "theme": {
+    "themeSelection": "Tema Seçimi",
+    "logoSettings": "Logo Ayarları",
+    "watermarkSettings": "Watermark Ayarları",
+    "imageSettings": "Resim Ayarları",
+    "cookieWarning": "Çerez Uyarısı",
+    "tabBarWarning": "Tarayıcı Çubuğu Uyarısı",
+    "facebookLogin": "Facebook Giriş",
+    "googleLogin": "Google Giriş",
+    "activeTheme": "✓ Aktif Tema",
+    "description": "demo1 için hazırlanan özel tema.",
+    "lastUpdate": "Son Güncelleme Tarihi",
+    "version": "Versiyon",
+    "customize": "Özelleştir",
+    "updateNotes": "Güncelleme Notları",
+    "themeSettings": "Tema Ayarları",
+    "mobileAppSettings": "Mobil Uygulama Ayarları",
+    "cssCustomize": "CSS Özelleştir",
+    "jsCustomize": "JS Özelleştir",
+    "themeEditor": "Tema Editörü",
+    "watermarkStatus": "Watermark Durumu",
+    "watermarkPosition": "Watermark Konumu",
+    "topLeft": "Üst-Sol",
+    "topRight": "Üst-Sağ",
+    "bottomLeft": "Alt-Sol",
+    "bottomRight": "Alt-Sağ",
+    "center": "Ortala",
+    "watermarkImage": "Watermark Resim (png)",
+    "defaultImage": "Varsayılan Resim",
+    "cookieInfo": "Çerez modülü sitenizin üst(header) veya alt(footer) alanında görünmektedir.",
+    "cookieWarningNote": "Bu alan, ziyaretçi tarafından kabul edildiğinde gizlenir.",
+    "topHeader": "Üst(Header)",
+    "bottomFooter": "Alt(Footer)",
+    "buttonText": "Buton Yazısı",
+    "bgColor": "Arkaplan Rengi",
+    "textColor": "Yazı Rengi",
+    "buttonColor": "Buton Rengi",
+    "buttonTextColor": "Buton Yazı Rengi",
+    "tabAlertDescription": "Tarayıcı çubuğu uyarısı ile sekme değiştiğinde başlığı değiştirebilirsiniz.",
+    "tabTitle": "Sekme Başlığı",
+    "facebookInstruction": "Facebook uygulama ayarlarını aşağıdaki adımlara göre yapın:",
+    "createFacebookApp": "Facebook App oluştur",
+    "googleInstruction": "Google Console'dan proje oluşturun",
+    "cookieDefaultText": "Bu web sitesinde çerez kullanımına izin verilmektedir. Çerez politikamızı incelemek için tıklayınız.",
+    "siteMainTitle": "Site Ana Logosu",
+    "siteMainDescription": "Sitenizin standart logosu.",
+    "mobileLogoTitle": "Mobil Site Logo",
+    "mobileLogoDescription": "Mobil platformlar için kullanılacak logo.",
+    "footerLogoTitle": "Site Alt(Footer) Logo",
+    "footerLogoDescription": "Footer alanında görünecek logo.",
+    "emailLogoTitle": "E-Posta Logo",
+    "emailLogoDescription": "E-posta şablonlarında kullanılacak logo.",
+    "faviconTitle": "Favicon.ico",
+    "faviconDescription": "Tarayıcı sekmesinde görünen küçük simge."
+  },
+  "common": {
+    "save": "Kaydet",
+    "active": "Aktif",
+    "passive": "Pasif"
+  },
+  "alerts": {
+    "logosSaved": "Logolar başarıyla kaydedildi.",
+    "watermarkSaved": "Watermark ayarları kaydedildi.",
+    "defaultImageSaved": "Resim ayarları kaydedildi.",
+    "cookieSaved": "Çerez uyarısı kaydedildi.",
+    "tabAlertSaved": "Sekme uyarısı kaydedildi.",
+    "facebookSaved": "Facebook login bilgileri kaydedildi.",
+    "googleSaved": "Google login bilgileri kaydedildi."
+  },
+  "module": {
+    "newGroup": "Yeni Grup",
+    "dragDropInfo": "Grupları sürükle bırak yaparak yer değiştirebilirsiniz.",
+    "column": "Sütun",
+    "addModule": "Modül Ekle"
+  },
+  "pages": {
+    "home": "Ana Sayfa",
+    "categoryDetail": "Kategori Detay (Ürünler)",
+    "productDetail": "Ürün Detay",
+    "cart": "Sepet",
+    "checkout": "Ödeme",
+    "brands": "Markalar",
+    "staticPages": "Statik Sayfalar",
+    "blog": "Blog",
+    "blogDetail": "Blog Detay",
+    "help": "Yardım",
+    "helpDetail": "Yardım Detay",
+    "giftVoucher": "Hediye Çeki",
+    "account": "Hesabım",
+    "register": "Üye Ol",
+    "login": "Üye Girişi",
+    "dealerApplication": "Bayilik Başvurusu",
+    "forgotPassword": "Şifremi Unuttum",
+    "resetPassword": "Şifre Yenileme",
+    "notFound": "404 Hata",
+    "other": "Diğer"
+  },
+  "templatePage": {
+    "info1": "Aşağıdaki butonlara tıklayarak şablonlarınızı düzenleyebilirsiniz.",
+    "info2": "Faturanızın görselini “Kağıt Örneği” alanına yükleyebilirsiniz.",
+    "templates": {
+      "eInvoice": "E-Fatura / E-Arşiv Şablonu",
+      "invoice": "Fatura Şablonu",
+      "shippingLabel": "Kargo Fişi Şablonu",
+      "receipt": "Fiş Şablonu",
+      "product1": "Ürün Şablonu 1",
+      "product2": "Ürün Şablonu 2",
+      "product3": "Ürün Şablonu 3",
+      "product4": "Ürün Şablonu 4"
+    }
+  },
+  "emailTemplates": {
+    "title": "E-Posta Tasarımları",
+    "activate": "Aktif Et",
+    "edit": "Düzenle",
+    "preview": "Önizle",
+    "previewing": "Önizleme",
+    "editing": "Düzenleme",
+    "selected": "Aktif şablon"
+  },
+  "customModal": {
+    "title": "Özel Ayarlar",
+    "tabs": {
+      "genel": "Genel Bilgiler",
+      "kart": "Ürün Kartı",
+      "detay": "Ürün Detay"
+    },
+    "fields": {
+      "topMenuLimit": "Üst Menü Limiti",
+      "footerLinks": "Footer Pazaryeri Linkleri",
+      "footerMenuLimit": "Footer Menü Limiti",
+      "whatsappButton": "Whatsapp Butonu",
+      "whatsappText": "Whatsapp Metni",
+      "lazyLoad": "Lazy Load eklentisi",
+      "lazyDelay": "Lazy Load Efekt Süresi",
+      "reviewStars": "Değerlendirme Yıldızları",
+      "addToCartButton": "Sepete Ekle Butonu",
+      "productDetails": {
+        "stars": "Değerlendirme Yıldızları",
+        "code": "Ürün Kodu",
+        "barcode": "Barkod",
+        "brand": "Marka",
+        "category": "Kategori",
+        "stock": "Stok Miktarı",
+        "related": "İlişkili Ürünler",
+        "buyNow": "Hemen Al Butonu",
+        "localLogo": "Yerli Üretim Logosu",
+        "fastShipping": "Hızlı Gönderi Etiketi",
+        "secureLabel": "Güvenli Alışveriş Etiketi",
+        "returnLabel": "İade ve Değişim Etiketi",
+        "freeShipping": "Ücretsiz Kargo Etiketi",
+        "socialButtons": "Sosyal Medya Butonları",
+        "whatsappOrder": "Whatsapp ile Sipariş Ver Butonu",
+        "favorites": "Favorilerime Ekle Butonu",
+        "profileAttributes": "Ürün Profilinde Nitelikler",
+        "descriptionAttributes": "Ürün Açıklamasında Nitelikler",
+        "sizeBanner": "Beden, Ölçü Banner Grubu"
+      }
+    }
+  },
+  "common": {
+    "save": "Kaydet"
+  },
+  "designLayout": {
+    "themeSettings": "Tema Ayarları",
+    "moduleLayout": "Modül Yerleşimi",
+    "printTemplates": "Yazdırma Şablonları",
+    "emailTemplates": "E-Posta Tasarımları"
+  },
+  "newGroupModal": {
+    "title": "Yeni Grup",
+    "tabs": {
+      "info": "Grup Bilgileri",
+      "settings": "Grup Ayarları"
+    },
+    "fields": {
+      "code": "Grup Kodu",
+      "title": "Başlık",
+      "description": "Açıklama",
+      "icon": "İkon",
+      "buttonTitle": "Buton Başlık",
+      "buttonLink": "Buton Link",
+      "viewType": "Görünüm Tipi",
+      "groupSize": "Grup Boyutu",
+      "columnCount": "Sütun Sayısı"
+    },
+    "options": {
+      "column": "Sütun",
+      "container": "Normal (container)"
+    },
+    "table": {
+      "column": "Sütun",
+      "xs": "Ekstra Küçük",
+      "sm": "Küçük",
+      "md": "Orta",
+      "lg": "Geniş",
+      "xl": "Ekstra Geniş"
+    }
+  },
+  "common": {
+    "save": "Kaydet"
+  },
+  "eInvoice": {
+    "title": "E-Fatura / E-Arşiv Şablonu",
+    "fields": {
+      "name": "Şablon Adı",
+      "namePlaceholder": "E-Fatura / E-Arşiv Şablonu",
+      "status": "Şablon Durumu",
+      "cargoBarcode": "Kargo Barkodu",
+      "orderBarcode": "Sipariş Barkodu"
+    },
+    "panels": {
+      "companyLogo": "Firma Logosu",
+      "signatureLogo": "İmza Logosu",
+      "productRows": "Ürün Satırları",
+      "staticNotes": "Sabit Notlar",
+      "customNotes": "Özel Notlar",
+      "ibanInfo": "IBAN Bilgisi"
+    }
+  },
+  "common": {
+    "save": "Kaydet",
+    "preview": "Önizle",
+    "active": "Aktif",
+    "passive": "Pasif",
+    "show": "Göster",
+    "hide": "Gizle"
+  },
+  "invoice": {
+    "title": "Fatura Şablonu",
+    "tabs": {
+      "general": "Genel Bilgiler",
+      "builder": "Şablon Tasarlama Aracı"
+    },
+    "fields": {
+      "name": "Şablon Adı",
+      "namePlaceholder": "Fatura Şablonu",
+      "paper": "Varsayılan Kağıt Tipi",
+      "description": "Açıklama",
+      "descriptionPlaceholder": "Bu şablon, standart e-fatura yapısı içindir."
+    },
+    "preview": {
+      "header": "Başlık",
+      "address": "Adres Bilgisi",
+      "logo": "Logo",
+      "table": "Ürün Tablosu",
+      "footer": "Alt Bilgi"
+    }
+  },
+  "common": {
+    "save": "Kaydet",
+    "cancel": "İptal"
+  },
+  "productTemplate": {
+    "tabs": {
+      "general": "Genel Bilgiler",
+      "builder": "Şablon Tasarlama Aracı"
+    },
+    "fields": {
+      "sample": "Kağıt Örneği",
+      "size": "Kağıt Ebatı",
+      "width": "Kağıt Genişliği (cm)",
+      "height": "Kağıt Yüksekliği (cm)",
+      "copy": "Kopya"
+    },
+    "options": {
+      "custom": "Özel"
+    },
+    "labels": {
+      "companyLogo": "Firma Logosu",
+      "productName": "Ürün Adı",
+      "invoiceName": "Fatura Adı",
+      "productCode": "Ürün Kodu",
+      "barcode": "Ürün Barkodu",
+      "dingCode": "Ürün DİNG Kod",
+      "mpn": "MPN",
+      "shortDescription": "Kısa Açıklama",
+      "category": "Kategori",
+      "vat": "KDV Oranı",
+      "price": "Satış Fiyatı",
+      "marketPrice": "Piyasa Fiyatı",
+      "productImage": "Ürün Resmi",
+      "variantInfo": "Varyant Bilgisi"
+    }
+  },
+  "common": {
+    "save": "Kaydet"
+  },
+  "receipt": {
+    "title": "Fiş Şablonu",
+    "tabs": {
+      "general": "Genel Bilgiler",
+      "builder": "Şablon Tasarlama Aracı"
+    },
+    "fields": {
+      "sample": "Kağıt Örneği *",
+      "size": "Kağıt Ebatı *",
+      "width": "Kağıt Genişliği (cm)*",
+      "height": "Kağıt Yüksekliği (cm)*",
+      "copy": "Kopya *"
+    },
+    "options": {
+      "custom": "Özel"
+    },
+    "labels": {
+      "companyLogo": "Firma Logosu",
+      "productList": "Ürün Listesi",
+      "productName": "Ürün Adı",
+      "quantity": "Adet",
+      "price": "Fiyat",
+      "total": "Tutar",
+      "grandTotal": "Genel Toplam",
+      "thankYou": "Teşekkür Mesajı"
+    }
+  },
+  "common": {
+    "save": "Kaydet"
+  },
+  "shippingTemplate": {
+    "title": "Kargo Fişi Şablonu",
+    "tabs": {
+      "general": "Genel Bilgiler",
+      "builder": "Şablon Tasarlama Aracı"
+    },
+    "fields": {
+      "sample": "Kağıt Örneği",
+      "size": "Kağıt Ebatı",
+      "width": "Kağıt Genişliği (cm)",
+      "height": "Kağıt Yüksekliği (cm)",
+      "copy": "Kopya"
+    },
+    "options": {
+      "custom": "Özel"
+    },
+    "labels": {
+      "companyLogo": "Firma Logosu",
+      "deliveryTitle": "Teslimat Ünvanı",
+      "address": "Adres",
+      "phone": "Telefon",
+      "shippingCompany": "Kargo Firması",
+      "barcode": "Barkod",
+      "customerNote": "Müşteri Notu",
+      "campaignCode": "Kampanya Kodu",
+      "orderDate": "Sipariş Tarihi",
+      "taxOffice": "Vergi Dairesi",
+      "taxNumber": "Vergi No",
+      "paymentType": "Ödeme Tipi",
+      "productList": "Ürün Listesi",
+      "productName": "Ürün Adı",
+      "total": "Toplam",
+      "customNote1": "Özel Not 1"
+    }
+  },
+  "common": {
+    "save": "Kaydet"
+  },
+  "orderReports": {
+    "title": "Sipariş Raporları",
+    "fields": {
+      "reportType": "Rapor Tipi",
+      "orderStatus": "Sipariş Durumu",
+      "platform": "Platform",
+      "store": "Mağaza",
+      "terminal": "Satış Terminali",
+      "orderDate": "Sipariş Tarihi",
+      "orderTime": "Sipariş Saati",
+      "shippingDate": "Kargolanma Tarihi",
+      "invoiceDate": "Fatura Tarihi",
+      "eInvoiceDate": "E-Fatura Tarihi",
+      "country": "Ülke",
+      "memberNo": "Üyelik No",
+      "orderAmount": "Sipariş Tutarı",
+      "payment": "Ödeme Yöntemi",
+      "giftCode": "Hediye Çeki Kodu",
+      "giftRef": "Hediye Çeki Referansı",
+      "promotion": "Promosyon",
+      "cargo": "Kargo Firması",
+      "advanced": "Gelişmiş Arama"
+    },
+    "status": {
+      "new": "Yeni Sipariş",
+      "preparing": "Hazırlanan Sipariş",
+      "shipping": "Kargolanan Sipariş",
+      "delivered": "Teslim Edildi"
+    },
+    "reportTypes": {
+      "Daily": "Günlük Sipariş Raporu",
+      "Weekly": "Haftalık Sipariş Raporu",
+      "Monthly": "Aylık Sipariş Raporu",
+      "Yearly": "Yıllık Sipariş Raporu",
+      "BrandSales": "Marka Satış Raporu",
+      "Payment": "Ödeme Yöntemi Raporu",
+      "FastDelivery": "Hızlı Teslimat Listesi",
+      "Platform": "Platform Bazlı Rapor",
+      "Store": "Mağaza Bazlı Rapor",
+      "ProductSales": "Ürün Bazlı Satış Raporu",
+      "VariantSales": "Varyant Bazlı Satış Raporu",
+      "CategorySales": "Kategori Satış Raporu",
+      "Source": "Ürün Kaynağı Raporu",
+      "City": "Şehir Bazlı Rapor",
+      "Country": "Ülke Bazlı Rapor",
+      "Accounting": "Muhasebe Raporu",
+      "List": "Sipariş Listesi"
+    }
+  },
+  "common": {
+    "clear": "Temizle",
+    "generate": "Oluştur"
+  },
+  "reports": {
+    "title": "Sipariş Raporları",
+    "reportType": "Rapor Tipi",
+    "orderStatus": "Sipariş Durumu",
+    "platform": "Platform",
+    "store": "Mağaza",
+    "terminal": "Satış Terminali",
+    "orderDate": "Sipariş Tarihi",
+    "orderTime": "Sipariş Saati",
+    "shippingDate": "Kargolanma Tarihi",
+    "invoiceDate": "Fatura Tarihi",
+    "eInvoiceDate": "E-Fatura Tarihi",
+    "country": "Ülke",
+    "memberNumber": "Üyelik No",
+    "orderAmount": "Sipariş Tutarı",
+    "paymentMethod": "Ödeme Yöntemi",
+    "giftCode": "Hediye Çeki Kodu",
+    "giftReference": "Hediye Çeki Referansı",
+    "promotion": "Promosyon",
+    "shippingCompany": "Kargo Firması",
+    "advancedSearch": "Gelişmiş Arama",
+    "types": {
+      "Daily": "Günlük Sipariş Raporu",
+      "Weekly": "Haftalık Sipariş Raporu",
+      "Monthly": "Aylık Sipariş Raporu",
+      "Yearly": "Yıllık Sipariş Raporu",
+      "BrandSales": "Marka Satış Raporu",
+      "Payment": "Ödeme Yöntemi Raporu",
+      "FastDelivery": "Hızlı Teslimat Listesi",
+      "Platform": "Platform Bazlı Rapor",
+      "Store": "Mağaza Bazlı Rapor",
+      "ProductSales": "Ürün Bazlı Satış Raporu",
+      "VariantSales": "Varyant Bazlı Satış Raporu",
+      "CategorySales": "Kategori Satış Raporu",
+      "Source": "Ürün Kaynağı Raporu",
+      "City": "Şehir Bazlı Rapor",
+      "Country": "Ülke Bazlı Rapor",
+      "Accounting": "Muhasebe Raporu",
+      "List": "Sipariş Listesi"
+    }
+  },
+  "orders": {
+    "new": "Yeni Sipariş",
+    "processing": "Hazırlanan Sipariş",
+    "shipped": "Kargolanan Sipariş",
+    "delivered": "Teslim Edildi"
+  },
+  "common": {
+    "noneSelected": "Hiçbiri seçilmedi",
+    "unselected": "Seçilmedi",
+    "clear": "Temizle",
+    "generate": "Oluştur"
+  },
+  "productReports": {
+    "title": "Ürün Raporları",
+    "reportType": "Rapor Tipi",
+    "source": "Ürün Kaynağı",
+    "category": "Kategori",
+    "brand": "Marka",
+    "tag": "Ürün Etiketleri",
+    "productNumber": "Ürün No",
+    "productCode": "Ürün Kodu",
+    "barcode": "Barkod",
+    "advancedFilter": "Gelişmiş Filtreleme",
+    "clear": "Temizle",
+    "generate": "Oluştur",
+
+    "options": {
+      "Stock": "Stok Raporu",
+      "VariantStock": "Varyant Stok Raporu",
+      "StockMovements": "Stok Hareketleri",
+      "Sales": "Ürün Satış Raporu",
+      "VariantSales": "Ürün Satış Raporu (Varyantlı)",
+      "CategorySales": "Kategori Satış Raporu",
+      "BrandSales": "Marka Satış Raporu",
+      "TagSales": "Etiket Satış Raporu",
+      "SourceSales": "Kaynak Satış Raporu",
+      "TopRated": "En Çok Puanlanan Ürünler",
+      "Favorites": "Favori Ürünler Raporu",
+      "Summary": "Ürün Özet Raporu",
+      "Recommended": "Tavsiye Edilen Ürünler",
+      "PriceAlerts": "Fiyat Alarmı Kurulan Ürünler",
+      "StockAlerts": "Stok Alarmı Kurulan Ürünler"
+    }
+  },
+  "productReports": {
+    "title": "Ürün Raporları",
+    "reportType": "Rapor Tipi",
+    "source": "Ürün Kaynağı",
+    "sourcePlaceholder": "Kaynak Seçilmedi",
+    "category": "Kategori",
+    "categoryPlaceholder": "Kategori Seçilmedi",
+    "brand": "Marka",
+    "brandPlaceholder": "Marka Seçilmedi",
+    "tag": "Ürün Etiketleri",
+    "tagPlaceholder": "Seçilmedi",
+    "productNumber": "Ürün No",
+    "productCode": "Ürün Kodu",
+    "barcode": "Barkod",
+    "advancedFilter": "Gelişmiş Filtreleme",
+    "advancedFilterPlaceholder": "Seçilmedi",
+    "clear": "Temizle",
+    "generate": "Oluştur",
+    "options": {
+      "Stock": "Stok Raporu",
+      "VariantStock": "Varyant Stok Raporu",
+      "StockMovements": "Stok Hareketleri",
+      "Sales": "Ürün Satış Raporu",
+      "VariantSales": "Ürün Satış Raporu (Varyantlı)",
+      "CategorySales": "Kategori Satış Raporu",
+      "BrandSales": "Marka Satış Raporu",
+      "TagSales": "Etiket Satış Raporu",
+      "SourceSales": "Kaynak Satış Raporu",
+      "TopRated": "En Çok Puanlanan Ürünler",
+      "Favorites": "Favori Ürünler Raporu",
+      "Summary": "Ürün Özet Raporu",
+      "Recommended": "Tavsiye Edilen Ürünler",
+      "PriceAlerts": "Fiyat Alarmı Kurulan Ürünler",
+      "StockAlerts": "Stok Alarmı Kurulan Ürünler"
+    }
+  },
+  "productReports": {
+    "title": "Ürün Raporları",
+    "reportType": "Rapor Tipi",
+    "source": "Ürün Kaynağı",
+    "category": "Kategori",
+    "brand": "Marka",
+    "tags": "Ürün Etiketleri",
+    "productNo": "Ürün No",
+    "productCode": "Ürün Kodu",
+    "barcode": "Barkod",
+    "advanced": "Gelişmiş Filtreleme",
+    "clear": "Temizle",
+    "generate": "Oluştur"
+  },
+  "ui": {
+  "notSelected": "Seçilmedi"
+},
+"reportTabs": {
+  "orders": "Sipariş Raporları",
+  "products": "Ürün Raporları",
+  "members": "Üye / Bayi Raporları",
+  "system": "Sistem Raporları"
+},
+"productReports": {
+  "title": "Ürün Raporları",
+  "reportType": "Rapor Tipi",
+  "source": "Ürün Kaynağı",
+  "category": "Kategori",
+  "brand": "Marka",
+  "tags": "Ürün Etiketleri",
+  "productNo": "Ürün No",
+  "productCode": "Ürün Kodu",
+  "barcode": "Barkod",
+  "advancedFilter": "Gelişmiş Filtreleme",
+  "types": {
+    "Stock": "Stok Raporu",
+    "VariantStock": "Varyant Stok Raporu",
+    "StockMovements": "Stok Hareketleri",
+    "Sales": "Ürün Satış Raporu",
+    "VariantSales": "Ürün Satış Raporu (Varyantlı)",
+    "CategorySales": "Kategori Satış Raporu",
+    "BrandSales": "Marka Satış Raporu",
+    "TagSales": "Etiket Satış Raporu",
+    "SourceSales": "Kaynak Satış Raporu",
+    "TopRated": "En Çok Puanlanan Ürünler",
+    "Favorites": "Favori Ürünler Raporu",
+    "Summary": "Ürün Özet Raporu",
+    "Recommended": "Tavsiye Edilen Ürünler",
+    "PriceAlerts": "Fiyat Alarmı Kurulan Ürünler",
+    "StockAlerts": "Stok Alarmı Kurulan Ürünler"
+  }
+},
+"common": {
+  "notSelected": "Seçilmedi",
+  "notSelectedCategory": "Kategori Seçilmedi",
+  "notSelectedBrand": "Marka Seçilmedi",
+  "clear": "Temizle",
+  "generate": "Oluştur"
+},
+"productReports": {
+  "title": "Ürün Raporları",
+  "reportType": "Rapor Tipi",
+  "source": "Ürün Kaynağı",
+  "category": "Kategori",
+  "brand": "Marka",
+  "tags": "Ürün Etiketleri",
+  "productNo": "Ürün No",
+  "productCode": "Ürün Kodu",
+  "barcode": "Barkod",
+  "advancedFilter": "Gelişmiş Filtreleme",
+  "types": {
+    "Stock": "Stok Raporu",
+    "VariantStock": "Varyant Stok Raporu",
+    "StockMovements": "Stok Hareketleri",
+    "Sales": "Ürün Satış Raporu",
+    "VariantSales": "Ürün Satış Raporu (Varyantlı)",
+    "CategorySales": "Kategori Satış Raporu",
+    "BrandSales": "Marka Satış Raporu",
+    "TagSales": "Etiket Satış Raporu",
+    "SourceSales": "Kaynak Satış Raporu",
+    "TopRated": "En Çok Puanlanan Ürünler",
+    "Favorites": "Favori Ürünler Raporu",
+    "Summary": "Ürün Özet Raporu",
+    "Recommended": "Tavsiye Edilen Ürünler",
+    "PriceAlerts": "Fiyat Alarmı Kurulan Ürünler",
+    "StockAlerts": "Stok Alarmı Kurulan Ürünler"
+  }
+},
+"common": {
+  "notSelected": "Seçilmedi",
+  "notSelectedCategory": "Kategori Seçilmedi",
+  "notSelectedBrand": "Marka Seçilmedi",
+  "notSelectedSource": "Kaynak Seçilmedi",
+  "clear": "Temizle",
+  "generate": "Oluştur"
+},
+"productReports": {
+  "title": "Ürün Raporları",
+  "reportType": "Rapor Tipi",
+  "source": "Ürün Kaynağı",
+  "category": "Kategori",
+  "brand": "Marka",
+  "tags": "Ürün Etiketleri",
+  "productNo": "Ürün No",
+  "productCode": "Ürün Kodu",
+  "barcode": "Barkod",
+  "advancedFilter": "Gelişmiş Filtreleme",
+  "types": {
+    "SourceSales": "Kaynak Satış Raporu"
+  }
+},
+"productReports": {
+  "title": "Ürün Raporları",
+  "reportType": "Rapor Tipi",
+  "source": "Ürün Kaynağı",
+  "category": "Kategori",
+  "brand": "Marka",
+  "tags": "Ürün Etiketleri",
+  "productNo": "Ürün No",
+  "productCode": "Ürün Kodu",
+  "barcode": "Barkod",
+  "advancedFilter": "Gelişmiş Filtreleme",
+  "types": {
+    "Stock": "Stok Raporu",
+    "StockMovements": "Stok Hareketleri",
+    "Sales": "Ürün Satış Raporu",
+    "Recommended": "Tavsiye Edilen Ürünler",
+    "TopRated": "En Çok Puanlanan Ürünler",
+    "Summary": "Ürün Özet Raporu",
+    "PriceAlerts": "Fiyat Alarmı Kurulan Ürünler"
+  }
+},
+"productReports": {
+  "title": "Ürün Raporları",
+  "reportType": "Rapor Tipi",
+  "source": "Ürün Kaynağı",
+  "category": "Kategori",
+  "brand": "Marka",
+  "tags": "Ürün Etiketleri",
+  "productNo": "Ürün No",
+  "productCode": "Ürün Kodu",
+  "barcode": "Barkod",
+  "advancedFilter": "Gelişmiş Filtreleme",
+  "types": {
+    "Stock": "Stok Raporu",
+    "VariantStock": "Varyant Stok Raporu",
+    "StockMovements": "Stok Hareketleri",
+    "Sales": "Ürün Satış Raporu",
+    "VariantSales": "Ürün Satış Raporu (Varyantlı)",
+    "CategorySales": "Kategori Satış Raporu",
+    "BrandSales": "Marka Satış Raporu",
+    "TagSales": "Etiket Satış Raporu",
+    "SourceSales": "Kaynak Satış Raporu",
+    "TopRated": "En Çok Puanlanan Ürünler",
+    "Favorites": "Favori Ürünler Raporu",
+    "Summary": "Ürün Özet Raporu",
+    "Recommended": "Tavsiye Edilen Ürünler",
+    "PriceAlerts": "Fiyat Alarmı Kurulan Ürünler",
+    "StockAlerts": "Stok Alarmı Kurulan Ürünler"
+  }
+},
+"productReports": {
+  "title": "Ürün Raporları",
+  "reportType": "Rapor Tipi",
+  "source": "Ürün Kaynağı",
+  "category": "Kategori",
+  "brand": "Marka",
+  "tags": "Ürün Etiketleri",
+  "productNo": "Ürün No",
+  "productCode": "Ürün Kodu",
+  "barcode": "Barkod",
+  "advancedFilter": "Gelişmiş Filtreleme",
+  "types": {
+    "Stock": "Stok Raporu",
+    "VariantStock": "Varyant Stok Raporu",
+    "StockMovements": "Stok Hareketleri",
+    "Sales": "Ürün Satış Raporu",
+    "VariantSales": "Ürün Satış Raporu (Varyantlı)",
+    "CategorySales": "Kategori Satış Raporu",
+    "BrandSales": "Marka Satış Raporu",
+    "TagSales": "Etiket Satış Raporu",
+    "SourceSales": "Kaynak Satış Raporu",
+    "TopRated": "En Çok Puanlanan Ürünler",
+    "Favorites": "Favori Ürünler Raporu",
+    "Summary": "Ürün Özet Raporu",
+    "Recommended": "Tavsiye Edilen Ürünler",
+    "PriceAlerts": "Fiyat Alarmı Kurulan Ürünler",
+    "StockAlerts": "Stok Alarmı Kurulan Ürünler"
+  }
+},
+"productReports": {
+  "title": "Ürün Raporları",
+  "reportType": "Rapor Tipi",
+  "source": "Ürün Kaynağı",
+  "category": "Kategori",
+  "brand": "Marka",
+  "tags": "Ürün Etiketleri",
+  "productNo": "Ürün No",
+  "productCode": "Ürün Kodu",
+  "barcode": "Barkod",
+  "advancedFilter": "Gelişmiş Filtreleme",
+  "clear": "Temizle",
+  "generate": "Oluştur",
+  "reportOptions": {
+    "Stock": "Stok Raporu",
+    "VariantStock": "Varyant Stok Raporu",
+    "StockMovements": "Stok Hareketleri",
+    "Sales": "Ürün Satış Raporu",
+    "VariantSales": "Ürün Satış Raporu (Varyantlı)",
+    "CategorySales": "Kategori Satış Raporu",
+    "BrandSales": "Marka Satış Raporu",
+    "TagSales": "Etiket Satış Raporu",
+    "SourceSales": "Kaynak Satış Raporu",
+    "TopRated": "En Çok Puanlanan Ürünler",
+    "Favorites": "Favori Ürünler Raporu",
+    "Summary": "Ürün Özet Raporu",
+    "Recommended": "Tavsiye Edilen Ürünler",
+    "PriceAlerts": "Fiyat Alarmı Kurulan Ürünler",
+    "StockAlerts": "Stok Alarmı Kurulan Ürünler"
+  }
+},
+  "productReports": {
+    "title": "Ürün Raporları",
+    "reportType": "Rapor Tipi",
+    "source": "Ürün Kaynağı",
+    "category": "Kategori",
+    "brand": "Marka",
+    "tag": "Ürün Etiketleri",
+    "productNumber": "Ürün No",
+    "productCode": "Ürün Kodu",
+    "barcode": "Barkod",
+    "advancedFilter": "Gelişmiş Filtreleme",
+    "clear": "Temizle",
+    "generate": "Oluştur",
+    "options": {
+      "Stock": "Stok Raporu",
+      "VariantStock": "Varyant Stok Raporu",
+      "StockMovements": "Stok Hareketleri",
+      "Sales": "Ürün Satış Raporu",
+      "VariantSales": "Ürün Satış Raporu (Varyantlı)",
+      "CategorySales": "Kategori Satış Raporu",
+      "BrandSales": "Marka Satış Raporu",
+      "TagSales": "Etiket Satış Raporu",
+      "SourceSales": "Kaynak Satış Raporu",
+      "TopRated": "En Çok Puanlanan Ürünler",
+      "Favorites": "Favori Ürünler Raporu",
+      "Summary": "Ürün Özet Raporu",
+      "Recommended": "Tavsiye Edilen Ürünler",
+      "PriceAlerts": "Fiyat Alarmı Kurulan Ürünler",
+      "StockAlerts": "Stok Alarmı Kurulan Ürünler"
+    },
+    "placeholder": {
+      "source": "Kaynak Seçilmedi",
+      "category": "Kategori Seçilmedi",
+      "brand": "Marka Seçilmedi",
+      "tag": "Seçilmedi",
+      "advancedFilter": "Seçilmedi"
+    }
+  },
+  "productReports": {
+    "title": "Ürün Raporları",
+    "reportType": "Rapor Tipi",
+    "source": "Ürün Kaynağı",
+    "category": "Kategori",
+    "brand": "Marka",
+    "tag": "Ürün Etiketleri",
+    "productNumber": "Ürün No",
+    "productCode": "Ürün Kodu",
+    "barcode": "Barkod",
+    "advancedFilter": "Gelişmiş Filtreleme",
+    "clear": "Temizle",
+    "generate": "Oluştur",
+    "placeholder": {
+      "source": "Kaynak Seçilmedi",
+      "category": "Kategori Seçilmedi",
+      "brand": "Marka Seçilmedi",
+      "tag": "Seçilmedi",
+      "advancedFilter": "Seçilmedi"
+    },
+    "options": {
+      "Stock": "Stok Raporu",
+      "VariantStock": "Varyant Stok Raporu",
+      "StockMovements": "Stok Hareketleri",
+      "Sales": "Ürün Satış Raporu",
+      "VariantSales": "Ürün Satış Raporu (Varyantlı)",
+      "CategorySales": "Kategori Satış Raporu",
+      "BrandSales": "Marka Satış Raporu",
+      "TagSales": "Etiket Satış Raporu",
+      "SourceSales": "Kaynak Satış Raporu",
+      "TopRated": "En Çok Puanlanan Ürünler",
+      "Favorites": "Favori Ürünler Raporu",
+      "Summary": "Ürün Özet Raporu",
+      "Recommended": "Tavsiye Edilen Ürünler",
+      "PriceAlerts": "Fiyat Alarmı Kurulan Ürünler",
+      "StockAlerts": "Stok Alarmı Kurulan Ürünler"
+    }
+  },
+  "productReports": {
+  "title": "Ürün Raporları",
+  "reportType": "Rapor Tipi",
+  "productSource": "Ürün Kaynağı",
+  "category": "Kategori",
+  "brand": "Marka",
+  "tags": "Ürün Etiketleri",
+  "productNo": "Ürün No",
+  "productCode": "Ürün Kodu",
+  "barcode": "Barkod",
+  "advancedFilter": "Gelişmiş Filtreleme",
+  "clear": "Temizle",
+  "generate": "Oluştur"
+},
+"systemReports": {
+  "title": "Sistem Raporları",
+  "reportType": "Rapor Tipi",
+  "logs": "Yönetici Logları",
+  "dateRange": "İşlem Tarihi",
+  "to": "ile",
+  "adminId": "Yönetici No",
+  "clear": "Temizle",
+  "generate": "Oluştur"
+},
+"reportsTabs": {
+  "orderReports": "Sipariş Raporları",
+  "productReports": "Ürün Raporları",
+  "memberDealerReports": "Üye / Bayi Raporları",
+  "systemReports": "Sistem Raporları"
+},
+"memberReports": {
+  "title": "Üye Raporları",
+  "reportType": "Rapor Tipi",
+  "memberNo": "Üye No",
+  "dealerNo": "Bayi No",
+  "registrationDate": "Üyelik Tarihi",
+  "groupBy": "Rapor Gruplama",
+  "groupOptions": {
+    "day": "Gün",
+    "week": "Hafta",
+    "month": "Ay"
+  },
+  "options": {
+    "New": "Yeni Üyelik Raporu",
+    "Login": "Üye Giriş Raporu",
+    "Orders": "Üye Sipariş Raporu",
+    "DealerOrders": "Bayi Sipariş Raporu",
+    "DealerBalance": "Bayi Bakiye Raporu",
+    "DealerDeposits": "Bayi Bakiye Yükleme Raporu",
+    "DealerActivities": "Bayi Hareketleri",
+    "PriceAlerts": "Fiyat Alarmları",
+    "StockAlerts": "Stok Alarmları"
+  }
+},
+"actions": {
+  "clear": "Temizle",
+  "generate": "Oluştur"
+},
+"memberReports": {
+  "title": "Üye Raporları",
+  "reportType": "Rapor Tipi",
+  "memberNo": "Üye No",
+  "dealerNo": "Bayi No",
+  "registrationDate": "Üyelik Tarihi",
+  "groupBy": "Rapor Gruplama",
+  "groupOptions": {
+    "day": "Gün",
+    "week": "Hafta",
+    "month": "Ay"
+  },
+  "options": {
+    "New": "Yeni Üyelik Raporu",
+    "Login": "Üye Giriş Raporu",
+    "Orders": "Üye Sipariş Raporu",
+    "DealerOrders": "Bayi Sipariş Raporu",
+    "DealerBalance": "Bayi Bakiye Raporu",
+    "DealerDeposits": "Bayi Bakiye Yükleme Raporu",
+    "DealerActivities": "Bayi Hareketleri",
+    "PriceAlerts": "Fiyat Alarmları",
+    "StockAlerts": "Stok Alarmları"
+  }
+},
+"actions": {
+  "clear": "Temizle",
+  "generate": "Oluştur"
+},
+"memberReports": {
+  "title": "Üye Raporları",
+  "reportType": "Rapor Tipi",
+  "memberNo": "Üye No",
+  "dealerNo": "Bayi No",
+  "registrationDate": "Üyelik Tarihi",
+  "groupBy": "Rapor Gruplama",
+  "groupOptions": {
+    "day": "Gün",
+    "week": "Hafta",
+    "month": "Ay"
+  },
+  "options": {
+    "New": "Yeni Üyelik Raporu",
+    "Login": "Üye Giriş Raporu",
+    "Orders": "Üye Sipariş Raporu",
+    "DealerOrders": "Bayi Sipariş Raporu",
+    "DealerBalance": "Bayi Bakiye Raporu",
+    "DealerDeposits": "Bayi Bakiye Yükleme Raporu",
+    "DealerActivities": "Bayi Hareketleri",
+    "PriceAlerts": "Fiyat Alarmları",
+    "StockAlerts": "Stok Alarmları"
+  }
+},
+"actions": {
+  "clear": "Temizle",
+  "generate": "Oluştur"
+},
+"memberReports": {
+  "title": "Üye Raporları",
+  "reportType": "Rapor Tipi",
+  "memberNo": "Üye No",
+  "dealerNo": "Bayi No",
+  "registrationDate": "Üyelik Tarihi",
+  "groupBy": "Rapor Gruplama",
+  "groupOptions": {
+    "day": "Gün",
+    "week": "Hafta",
+    "month": "Ay"
+  },
+  "options": {
+    "New": "Yeni Üyelik Raporu",
+    "Login": "Üye Giriş Raporu",
+    "Orders": "Üye Sipariş Raporu",
+    "DealerOrders": "Bayi Sipariş Raporu",
+    "DealerBalance": "Bayi Bakiye Raporu",
+    "DealerDeposits": "Bayi Bakiye Yükleme Raporu",
+    "DealerActivities": "Bayi Hareketleri",
+    "PriceAlerts": "Fiyat Alarmları",
+    "StockAlerts": "Stok Alarmları"
+  }
+},
+"actions": {
+  "clear": "Temizle",
+  "generate": "Oluştur"
+},
+"memberReports": {
+  "title": "Üye Raporları",
+  "reportType": "Rapor Tipi",
+  "memberNo": "Üye No",
+  "dealerNo": "Bayi No",
+  "registrationDate": "Üyelik Tarihi",
+  "groupBy": "Rapor Gruplama",
+  "groupOptions": {
+    "day": "Gün",
+    "week": "Hafta",
+    "month": "Ay"
+  },
+  "options": {
+    "New": "Yeni Üyelik Raporu",
+    "Login": "Üye Giriş Raporu",
+    "Orders": "Üye Sipariş Raporu",
+    "DealerOrders": "Bayi Sipariş Raporu",
+    "DealerBalance": "Bayi Bakiye Raporu",
+    "DealerDeposits": "Bayi Bakiye Yükleme Raporu",
+    "DealerActivities": "Bayi Hareketleri",
+    "PriceAlerts": "Fiyat Alarmları",
+    "StockAlerts": "Stok Alarmları"
+  }
+},
+"actions": {
+  "clear": "Temizle",
+  "generate": "Oluştur"
+},
+"reportTabs": {
+  "orders": "Sipariş Raporları",
+  "products": "Ürün Raporları",
+  "members": "Üye / Bayi Raporları",
+  "system": "Sistem Raporları"
+},
+"memberReports": {
+  "title": "Üye Raporları",
+  "reportType": "Rapor Tipi",
+  "memberNo": "Üye No",
+  "dealerNo": "Bayi No",
+  "membershipDate": "Üyelik Tarihi",
+  "grouping": "Rapor Gruplama",
+  "day": "Gün",
+  "week": "Hafta",
+  "month": "Ay",
+  "options": {
+    "New": "Yeni Üyelik Raporu",
+    "Login": "Üye Giriş Raporu",
+    "Orders": "Üye Sipariş Raporu",
+    "DealerOrders": "Bayi Sipariş Raporu",
+    "DealerBalance": "Bayi Bakiye Raporu",
+    "DealerDeposits": "Bayi Bakiye Yükleme Raporu",
+    "DealerActivities": "Bayi Hareketleri",
+    "PriceAlerts": "Fiyat Alarmları",
+    "StockAlerts": "Stok Alarmları"
+  }
+},
+"actions": {
+  "clear": "Temizle",
+  "generate": "Oluştur"
+},"memberReports": {
+  "title": "Üye Raporları",
+  "reportType": "Rapor Tipi",
+  "memberNo": "Üye No",
+  "dealerNo": "Bayi No",
+  "membershipDate": "Üyelik Tarihi",
+  "grouping": "Rapor Gruplama",
+  "day": "Gün",
+  "week": "Hafta",
+  "month": "Ay",
+  "options": {
+    "New": "Yeni Üyelik Raporu",
+    "Login": "Üye Giriş Raporu",
+    "Orders": "Üye Sipariş Raporu",
+    "DealerOrders": "Bayi Sipariş Raporu",
+    "DealerBalance": "Bayi Bakiye Raporu",
+    "DealerDeposits": "Bayi Bakiye Yükleme Raporu",
+    "DealerActivities": "Bayi Hareketleri",
+    "PriceAlerts": "Fiyat Alarmları",
+    "StockAlerts": "Stok Alarmları"
+  }
+},
+"actions": {
+  "clear": "Temizle",
+  "generate": "Oluştur"
+},
+"memberReports": {
+  "title": "Üye Raporları",
+  "reportType": "Rapor Tipi",
+  "memberNo": "Üye No",
+  "dealerNo": "Bayi No",
+  "membershipDate": "Üyelik Tarihi",
+  "grouping": "Rapor Gruplama",
+  "day": "Gün",
+  "week": "Hafta",
+  "month": "Ay",
+  "options": {
+    "New": "Yeni Üyelik Raporu",
+    "Login": "Üye Giriş Raporu",
+    "Orders": "Üye Sipariş Raporu",
+    "DealerOrders": "Bayi Sipariş Raporu",
+    "DealerBalance": "Bayi Bakiye Raporu",
+    "DealerDeposits": "Bayi Bakiye Yükleme Raporu",
+    "DealerActivities": "Bayi Hareketleri",
+    "PriceAlerts": "Fiyat Alarmları",
+    "StockAlerts": "Stok Alarmları"
+  }
+},
+"actions": {
+  "clear": "Temizle",
+  "generate": "Oluştur"
+},
+"memberReports": {
+  "title": "Üye Raporları",
+  "reportType": "Rapor Tipi",
+  "memberNo": "Üye No",
+  "dealerNo": "Bayi No",
+  "membershipDate": "Üyelik Tarihi",
+  "grouping": "Rapor Gruplama",
+  "day": "Gün",
+  "week": "Hafta",
+  "month": "Ay",
+  "options": {
+    "New": "Yeni Üyelik Raporu",
+    "Login": "Üye Giriş Raporu",
+    "Orders": "Üye Sipariş Raporu",
+    "DealerOrders": "Bayi Sipariş Raporu",
+    "DealerBalance": "Bayi Bakiye Raporu",
+    "DealerDeposits": "Bayi Bakiye Yükleme Raporu",
+    "DealerActivities": "Bayi Hareketleri",
+    "PriceAlerts": "Fiyat Alarmları",
+    "StockAlerts": "Stok Alarmları"
+  }
+},
+"actions": {
+  "clear": "Temizle",
+  "generate": "Oluştur"
+},
+"reportTabs": {
+  "orders": "Sipariş Raporları",
+  "products": "Ürün Raporları",
+  "members": "Üye / Bayi Raporları",
+  "system": "Sistem Raporları"
+}
+}

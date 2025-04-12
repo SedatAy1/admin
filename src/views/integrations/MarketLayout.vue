@@ -1,17 +1,33 @@
 <template>
   <div class="layout-container">
     <nav class="top-menu">
-      <router-link to="/integrations/marketplace" active-class="active">Pazaryeri Entegrasyonları</router-link>
-      <router-link to="/integrations/accounting" active-class="active">Muhasebe Entegrasyonları</router-link>
-      <router-link to="/integrations/excel" active-class="active">Hızlı Excel İşlemleri</router-link>
-      <router-link to="/integrations/xml-import" active-class="active">XML İçeri Aktar</router-link>
-      <router-link to="/integrations/xml-export" active-class="active">XML Dışarı Aktar</router-link>
-      <router-link to="/integrations/bulk-marketplace" active-class="active">Toplu Pazaryeri İşlemleri</router-link>
-      <router-link to="/integrations/hepsiburada" active-class="active">Hepsiburada İşlemleri</router-link>
-      <router-link to="/integrations/monitor" active-class="active">Pazaryeri Monitorü</router-link>
+      <router-link to="/integrations/marketplace" active-class="active">
+        {{ $t("integration.menu.marketplace") }}
+      </router-link>
+      <router-link to="/integrations/accounting" active-class="active">
+        {{ $t("integration.menu.accounting") }}
+      </router-link>
+      <router-link to="/integrations/excel" active-class="active">
+        {{ $t("integration.menu.excel") }}
+      </router-link>
+      <router-link to="/integrations/xml-import" active-class="active">
+        {{ $t("integration.menu.xmlImport") }}
+      </router-link>
+      <router-link to="/integrations/xml-export" active-class="active">
+        {{ $t("integration.menu.xmlExport") }}
+      </router-link>
+      <router-link to="/integrations/bulk-marketplace" active-class="active">
+        {{ $t("integration.menu.bulkMarketplace") }}
+      </router-link>
+      <router-link to="/integrations/hepsiburada" active-class="active">
+        {{ $t("integration.menu.hepsiburada") }}
+      </router-link>
+      <router-link to="/integrations/monitor" active-class="active">
+        {{ $t("integration.menu.monitor") }}
+      </router-link>
     </nav>
     <div class="content">
-      <slot /> <!-- Router içeriğini burada göster -->
+      <slot />
     </div>
   </div>
 </template>

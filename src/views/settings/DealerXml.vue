@@ -103,37 +103,66 @@ const form = ref({
   background: #fff;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
+  transition: background 0.3s, color 0.3s;
 }
+html.dark .dealer-xml-settings {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
 .title {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 20px;
+  color: #1f2937;
 }
+html.dark .title {
+  color: #f9fafb;
+}
+
 .form-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
+
 .form-item {
   flex: 1 1 45%;
   display: flex;
   flex-direction: column;
 }
+
 .form-item.full {
   flex: 1 1 100%;
 }
+
 .form-item.three-col {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
   flex: 1 1 100%;
 }
-textarea, select, input {
+
+textarea,
+select,
+input {
   padding: 8px;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 14px;
+  background: #fff;
+  color: #1f2937;
+  transition: background 0.3s, border 0.3s;
 }
+html.dark textarea,
+html.dark select,
+html.dark input {
+  background: #334155;
+  color: #f1f5f9;
+  border-color: #475569;
+}
+
 .save-button {
   margin-top: 20px;
   padding: 10px 18px;
@@ -143,5 +172,16 @@ textarea, select, input {
   border-radius: 6px;
   font-weight: 500;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+.save-button:hover {
+  background-color: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-item {
+    flex: 1 1 100%;
+  }
 }
 </style>

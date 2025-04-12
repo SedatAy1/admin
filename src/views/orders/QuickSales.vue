@@ -1,21 +1,25 @@
 <template>
   <div class="container-fluid p-3">
-    <!-- Hızlı Satış Başlığı -->
+    <!-- Başlık -->
     <div class="header bg-primary text-white p-2 d-flex align-items-center">
-      <h4 class="mb-0">Hızlı Satış</h4>
+      <h4 class="mb-0">{{ $t('quickSale.title') }}</h4>
     </div>
 
     <!-- Ürün Arama ve Tablo -->
     <div class="card mt-2 p-3">
-      <input type="text" class="form-control mb-2" placeholder="Ürün adı, kodu veya barkod ile ara" />
+      <input
+        type="text"
+        class="form-control mb-2"
+        :placeholder="$t('quickSale.searchPlaceholder')"
+      />
       <table class="table table-bordered text-center">
         <thead>
           <tr>
-            <th>Ürün</th>
-            <th>KDV</th>
-            <th>Miktar</th>
-            <th>Fiyat</th>
-            <th>Tutar</th>
+            <th>{{ $t('quickSale.table.product') }}</th>
+            <th>{{ $t('quickSale.table.vat') }}</th>
+            <th>{{ $t('quickSale.table.quantity') }}</th>
+            <th>{{ $t('quickSale.table.price') }}</th>
+            <th>{{ $t('quickSale.table.total') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -34,23 +38,23 @@
       <!-- Sipariş Özeti -->
       <div class="col-md-6">
         <div class="card p-3">
-          <h5 class="text-primary">Sipariş Özeti</h5>
+          <h5 class="text-primary">{{ $t('quickSale.summaryTitle') }}</h5>
           <div class="row mb-2">
             <div class="col-6">
-              <label>İndirim Oranı (%)</label>
+              <label>{{ $t('quickSale.discountRate') }}</label>
               <input type="number" class="form-control" v-model="discountRate" @input="updateTotal" />
             </div>
             <div class="col-6">
-              <label>Kargo Ücreti</label>
+              <label>{{ $t('quickSale.shippingFee') }}</label>
               <input type="number" class="form-control" v-model="shippingFee" @input="updateTotal" />
             </div>
           </div>
           <table class="table">
             <tbody>
-              <tr><td>Ara Toplam</td><td>{{ subTotal.toFixed(2) }} TL</td></tr>
-              <tr><td>İndirim</td><td>-{{ discountAmount.toFixed(2) }} TL</td></tr>
-              <tr><td>Kargo Ücreti</td><td>{{ shippingFee.toFixed(2) }} TL</td></tr>
-              <tr><td><b>Genel Toplam</b></td><td><b>{{ totalPrice.toFixed(2) }} TL</b></td></tr>
+              <tr><td>{{ $t('quickSale.subTotal') }}</td><td>{{ subTotal.toFixed(2) }} TL</td></tr>
+              <tr><td>{{ $t('quickSale.discount') }}</td><td>-{{ discountAmount.toFixed(2) }} TL</td></tr>
+              <tr><td>{{ $t('quickSale.shippingFee') }}</td><td>{{ shippingFee.toFixed(2) }} TL</td></tr>
+              <tr><td><b>{{ $t('quickSale.total') }}</b></td><td><b>{{ totalPrice.toFixed(2) }} TL</b></td></tr>
             </tbody>
           </table>
         </div>
@@ -59,31 +63,32 @@
       <!-- Müşteri Bilgileri -->
       <div class="col-md-6">
         <div class="card p-3">
-          <h5 class="text-primary">Müşteri Bilgileri</h5>
-          <label>Ad Soyad / Ünvan</label>
+          <h5 class="text-primary">{{ $t('quickSale.customerInfo') }}</h5>
+          <label>{{ $t('quickSale.customerName') }}</label>
           <input type="text" class="form-control mb-2" v-model="customer.name" />
-          <label>Telefon</label>
+          <label>{{ $t('quickSale.customerPhone') }}</label>
           <input type="text" class="form-control mb-2" v-model="customer.phone" />
-          <label>İl</label>
+          <label>{{ $t('quickSale.customerCity') }}</label>
           <select class="form-control mb-2" v-model="customer.city">
-            <option value="">Lütfen Seçin</option>
+            <option value="">{{ $t('quickSale.select') }}</option>
             <option v-for="city in cities" :key="city">{{ city }}</option>
           </select>
-          <label>Adres</label>
+          <label>{{ $t('quickSale.customerAddress') }}</label>
           <textarea class="form-control mb-2" v-model="customer.address"></textarea>
         </div>
       </div>
     </div>
 
-    <!-- Sipariş Oluştur Butonu -->
+    <!-- Buton -->
     <button class="btn btn-primary btn-lg w-100 mt-3" @click="createOrder">
-      ✅ SİPARİŞİ OLUŞTUR
+      ✅ {{ $t('quickSale.createOrder') }}
     </button>
   </div>
 </template>
 
 <script>
 export default {
+  name: "QuickSale",
   data() {
     return {
       products: [
@@ -112,34 +117,118 @@ export default {
       this.$forceUpdate();
     },
     createOrder() {
-      alert("Sipariş oluşturuldu!");
+      alert(this.$t('quickSale.orderCreated'));
     },
   },
 };
 </script>
-
-<style>
+<style scoped>
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fb;
+  transition: background-color 0.3s ease;
 }
+
+.dark-mode body {
+  background-color: #111827;
+}
+
+/* 🔵 Mavi Başlık */
 .header {
-  background-color: #2c3e50;
+  background-color: #1e3a8a; /* Tailwind indigo-900 tonu */
   color: white;
-  padding: 10px;
+  padding: 12px 16px;
   font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
 }
+
+/* 🧩 Kartlar */
 .card {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.table th, .table td {
-  vertical-align: middle;
-  text-align: center;
-}
-.btn-primary {
-  background: #007bff;
+  background: #ffffff;
+  border-radius: 10px;
   border: none;
-  font-size: 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: background 0.3s ease;
+}
+
+.dark-mode .card {
+  background: #1e293b; /* Slate-800 */
+  color: #e0e6f1;
+}
+
+/* 📊 Tablolar */
+.table {
+  font-size: 14px;
+}
+
+.table th {
+  background-color: #e5e7eb;
+  color: #111;
+}
+
+.dark-mode .table {
+  background-color: #1e293b;
+  color: #cbd5e1;
+}
+
+.dark-mode .table th {
+  background-color: #334155; /* slate-700 */
+  color: #e2e8f0;
+}
+
+/* ✏️ Input Alanları */
+.form-control {
+  border-radius: 6px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.4);
+}
+
+.dark-mode .form-control {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #f1f5f9;
+}
+
+.dark-mode .form-control::placeholder {
+  color: #94a3b8;
+}
+
+/* ✅ Butonlar */
+.btn-primary {
+  background: #2563eb; /* blue-600 */
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8; /* blue-700 */
+}
+
+.dark-mode .btn-primary {
+  background: #3b82f6; /* blue-500 */
+  color: white;
+}
+
+/* 🔁 Responsive Düzen */
+@media (max-width: 768px) {
+  .header {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .table {
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 15px;
+  }
 }
 </style>

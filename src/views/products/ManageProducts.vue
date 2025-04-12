@@ -428,354 +428,360 @@ export default {
 </script>
 
 <style scoped>
-/* Genel Stil */
 .manage-products {
   padding: 20px;
+  background: #ffffff;
+  min-height: 100vh;
+  transition: background 0.3s ease;
 }
 
-/* Filtreleme Bölümü */
 .filter-container {
-  background: #0d47a1;
-  color: white;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
-  margin-bottom: 15px;
-  padding: 15px;
+  margin-bottom: 20px;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .filter-header {
+  padding: 16px;
+  font-weight: 600;
+  font-size: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
-  font-weight: bold;
   cursor: pointer;
+  background: #0052a4;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .filter-content {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
 }
 
 .filter-row {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  gap: 20px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 
 .filter-group {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
+  flex: 1;
+  min-width: 200px;
 }
 
 .filter-group label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
   font-size: 14px;
-  margin-bottom: 5px;
-  color: black;
 }
 
 .filter-input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  width: 100%;
   font-size: 14px;
 }
 
 .range-inputs {
   display: flex;
+  gap: 8px;
   align-items: center;
-  gap: 5px;
 }
 
 .filter-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 12px;
+}
+
+.filter-btn,
+.clear-btn {
+  padding: 10px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .filter-btn {
-  padding: 8px 15px;
-  border: none;
-  background: #003c8f;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
+  background: #2563eb;
+  color: #fff;
 }
 
 .clear-btn {
-  padding: 8px 15px;
-  border: none;
-  background: #f8f9fa;
-  color: black;
-  border-radius: 5px;
-  cursor: pointer;
+  background: #f1f5f9;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
 }
 
-/* Bilgi Kutuları */
+/* Bilgi Kartları */
 .info-container {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  gap: 20px;
+  margin: 20px 0;
+  flex-wrap: wrap;
 }
 
 .info-box {
-  background: #f8f9fa;
-  padding: 15px;
+  flex: 1;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
+  padding: 16px;
   text-align: center;
-  width: 30%;
+  min-width: 200px;
 }
 
 .info-title {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: #111827;
 }
 
 .info-value {
   font-size: 24px;
   font-weight: bold;
-  color: #003c8f;
-  margin-bottom: 5px;
+  color: #1d4ed8;
 }
 
 .info-text {
-  font-size: 14px;
-  color: #666;
+  font-size: 13px;
+  color: #6b7280;
 }
 
 /* Yeni Ürün Butonu */
-.add-product-btn {
-  display: block;
-  margin: 20px 0;
-  padding: 10px 15px;
-  border: none;
-  background: #003c8f;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-/* Modal Stilleri */
-.modal-body {
-  padding: 20px;
-}
-
-.tabs {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.tabs button {
-  padding: 8px 12px;
-  border: none;
-  background: #f0f0f0;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.tabs button.active {
-  background: #007bff;
-  color: white;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-}
-
-.form-group label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.submit-btn{
-    width: 100%;
-    padding: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-     font-size: 16px;
-     border-radius: 5px;
-}
 .button-container {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .add-product-btn {
+  background: #2563eb;
+  color: #fff;
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
   border: none;
-  border-radius: 5px;
+  font-size: 15px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s ease;
 }
 
 .add-product-btn:hover {
-  background-color: #0056b3;
+  background: #1d4ed8;
 }
 
+/* Modal & Form */
 .modal-body {
   padding: 20px;
 }
 
 .tabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 15px;
 }
 
 .tabs button {
   padding: 8px 12px;
+  background: #f3f4f6;
   border: none;
-  background: #f0f0f0;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 5px;
+  font-size: 14px;
 }
 
 .tabs button.active {
-  background: #007bff;
+  background: #2563eb;
   color: white;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
 }
 
 .form-group label {
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 5px;
+  font-size: 14px;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.editor {
+  min-height: 100px;
+  resize: vertical;
 }
 
 .submit-btn {
-  width: 100%;
-  padding: 10px;
-  background: #007bff;
+  background: #2563eb;
   color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-}
-/* Ürün Listesi Genel Stil */
-.product-list {
+  padding: 10px;
   width: 100%;
-  border-collapse: collapse;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
   margin-top: 20px;
-  background: white;
+}
+
+/* Ürün Listesi */
+.product-list {
+  margin-top: 30px;
+  background: #ffffff;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
 }
 
-/* Tablo Başlık */
-.product-list thead {
-  background: #f4f6f8;
-  font-weight: bold;
+.product-list table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.product-list th {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 2px solid #ddd;
-  font-size: 14px;
-  color: #333;
-}
-
-/* Tablo İçeriği */
-.product-list tbody tr {
-  transition: background 0.2s;
-}
-
-.product-list tbody tr:hover {
-  background: #f9f9f9;
-}
-
+.product-list th,
 .product-list td {
   padding: 12px;
-  border-bottom: 1px solid #ddd;
+  text-align: left;
   font-size: 14px;
-  color: #444;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-/* Ürün Görseli */
-.product-list .product-image {
+.product-list thead {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.product-image {
   width: 50px;
   height: 50px;
-  border-radius: 5px;
   object-fit: cover;
+  border-radius: 4px;
 }
 
-/* Yayında / Pasif Durumları */
-.product-status {
-  font-size: 13px;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: inline-block;
-}
-
-.status-active {
-  color: #2e7d32;
-  background: #e8f5e9;
-}
-
-.status-passive {
-  color: #d32f2f;
-  background: #ffebee;
-}
-
-/* Marketplaces Logoları */
-.marketplaces img {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-}
-
-/* Fiyat ve Stok */
-.price, .stock {
-  font-weight: bold;
-}
-
-/* İşlem Butonu */
-.action-btn {
-  background: #007bff;
+.edit-btn {
+  background: #3b82f6;
   color: white;
-  padding: 6px 10px;
-  border-radius: 5px;
-  font-size: 12px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s;
+  font-size: 13px;
 }
 
-.action-btn:hover {
-  background: #0056b3;
+/* 🌙 Dark Mode */
+.dark-mode .manage-products {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.dark-mode .filter-container,
+.dark-mode .filter-content,
+.dark-mode .product-list,
+.dark-mode .info-box {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.dark-mode .filter-header {
+  background: #334155;
+  color: #fff;
+}
+
+.dark-mode .filter-input,
+.dark-mode .form-group input,
+.dark-mode .form-group select,
+.dark-mode .form-group textarea {
+  background: #1e293b;
+  color: #f8fafc;
+  border-color: #475569;
+}
+
+.dark-mode .filter-btn {
+  background: #3b82f6;
+}
+
+.dark-mode .clear-btn {
+  background: #334155;
+  color: #f1f5f9;
+  border-color: #475569;
+}
+
+.dark-mode .info-title {
+  color: #cbd5e1;
+}
+
+.dark-mode .info-value {
+  color: #60a5fa;
+}
+
+.dark-mode .tabs button {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+.dark-mode .tabs button.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.dark-mode .submit-btn {
+  background: #3b82f6;
+}
+
+.dark-mode .product-list th {
+  background: #334155;
+  color: #f1f5f9;
+}
+
+.dark-mode .product-list td {
+  color: #e2e8f0;
+}
+
+.dark-mode .edit-btn {
+  background: #3b82f6;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .filter-row {
+    flex-direction: column;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .info-container {
+    flex-direction: column;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

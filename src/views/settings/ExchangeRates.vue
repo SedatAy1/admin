@@ -117,6 +117,12 @@ onBeforeUnmount(() => {
   padding: 30px;
   border-radius: 12px;
   font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+html.dark .exchange-rates {
+  background: #1e1e1e;
+  border-color: #3a3a3a;
+  color: #f1f1f1;
 }
 
 .title {
@@ -124,6 +130,9 @@ onBeforeUnmount(() => {
   font-weight: 600;
   margin-bottom: 20px;
   color: #1e293b;
+}
+html.dark .title {
+  color: #ffffff;
 }
 
 .search-box {
@@ -134,12 +143,22 @@ onBeforeUnmount(() => {
   border: 2px solid #93c5fd;
   font-size: 14px;
   margin-bottom: 24px;
+  background-color: white;
+  color: #1f2937;
+}
+html.dark .search-box {
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+  border-color: #60a5fa;
 }
 
 .rates-table {
   width: 100%;
   border-collapse: collapse;
   background-color: #f9fafb;
+}
+html.dark .rates-table {
+  background-color: #2c2c2c;
 }
 
 .rates-table th,
@@ -148,12 +167,22 @@ onBeforeUnmount(() => {
   text-align: left;
   font-size: 14px;
   border-bottom: 1px solid #e5e7eb;
+  color: #1f2937;
+}
+html.dark .rates-table th,
+html.dark .rates-table td {
+  border-color: #444;
+  color: #f1f1f1;
 }
 
 .rates-table th {
   background-color: #f1f5f9;
   font-weight: 600;
   color: #1f2937;
+}
+html.dark .rates-table th {
+  background-color: #3a3a3a;
+  color: #e5e5e5;
 }
 
 .status {
@@ -163,15 +192,21 @@ onBeforeUnmount(() => {
   font-weight: 500;
   display: inline-block;
 }
-
 .status.active {
   background-color: #d1fae5;
   color: #047857;
 }
-
+html.dark .status.active {
+  background-color: #064e3b;
+  color: #6ee7b7;
+}
 .status.passive {
   background-color: #fee2e2;
   color: #b91c1c;
+}
+html.dark .status.passive {
+  background-color: #7f1d1d;
+  color: #fecaca;
 }
 
 .dropdown {
@@ -187,6 +222,11 @@ onBeforeUnmount(() => {
   border-radius: 6px;
   cursor: pointer;
 }
+html.dark .dropdown button {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f1f1f1;
+}
 
 .dropdown-menu {
   position: absolute;
@@ -200,6 +240,10 @@ onBeforeUnmount(() => {
   z-index: 10;
   padding: 6px 0;
 }
+html.dark .dropdown-menu {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
 
 .dropdown-menu li {
   padding: 8px 12px;
@@ -207,8 +251,38 @@ onBeforeUnmount(() => {
   cursor: pointer;
   color: #1f2937;
 }
-
+html.dark .dropdown-menu li {
+  color: #f1f1f1;
+}
 .dropdown-menu li:hover {
   background-color: #f3f4f6;
+}
+html.dark .dropdown-menu li:hover {
+  background-color: #374151;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .exchange-rates {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .search-box {
+    max-width: 100%;
+  }
+
+  .rates-table th,
+  .rates-table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+  }
 }
 </style>

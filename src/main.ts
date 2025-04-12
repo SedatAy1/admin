@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import i18n from "@/locales";
+import i18n from "@/i18n"; // ✅ BURAYA DİKKAT
 
 // Global stil dosyaları
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,7 +12,7 @@ import "@vuepic/vue-datepicker/dist/main.css";
 import "./assets/main.css";
 import "./assets/css/global.css";
 
-// Lucide ikon bileşenleri (sade, düz ikonlar)
+// Lucide ikon bileşenleri
 import {
   Package,
   ShoppingBag,
@@ -29,7 +29,7 @@ import {
 // Uygulama oluşturuluyor
 const app = createApp(App);
 
-// Lucide ikonlarını global component olarak tanımla
+// Lucide ikonlarını global olarak tanımla
 app.component("PackageIcon", Package);
 app.component("ShoppingBagIcon", ShoppingBag);
 app.component("SettingsIcon", Settings);
@@ -44,7 +44,7 @@ app.component("LinkIcon", Link);
 // Vue eklentilerini bağla
 app.use(router);
 app.use(store);
-app.use(i18n);
+app.use(i18n); // ✅ i18n buraya başarıyla eklendi
 
 // Uygulamayı DOM'a bağla
 app.mount("#app");

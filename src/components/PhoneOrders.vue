@@ -1,7 +1,6 @@
 <template>
   <div class="phone-orders">
-
-    <!-- ✅ Üst Menü (Sidebar gibi yönlendirme yapar) -->
+    <!-- Üst Menü -->
     <div class="order-tabs">
       <router-link
         v-for="(tab, index) in tabs"
@@ -9,82 +8,79 @@
         :to="tab.path"
         :class="{ active: $route.path === tab.path }"
       >
-        {{ tab.label }}
+        {{ $t(tab.label) }}
       </router-link>
     </div>
 
-    <!-- ✅ Filtreleme Seçenekleri -->
+    <!-- Filtreleme -->
     <div class="filter-container">
       <div class="filter-header" @click="toggleFilter">
         <i class="fas fa-filter"></i>
-        <span>Filtreleme Seçenekleri</span>
+        <span>{{ $t("filters.title") }}</span>
         <i class="fas" :class="showFilter ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
       </div>
 
       <div v-show="showFilter" class="filter-content">
         <div class="filter-row">
-          <div class="filter-group">
-            <label>Talep Durumu</label>
-            <select v-model="filters.status" class="filter-input">
-              <option value="">Tümü</option>
-              <option value="Yeni">Yeni</option>
-              <option value="Ulaşılamadı">Ulaşılamadı</option>
-              <option value="Tekrar Aranacak">Tekrar Aranacak</option>
-              <option value="Daha Sonra">Daha Sonra</option>
+          <div
+            class="filter-group"
+            v-for="(field, key) in filters"
+            :key="key"
+            v-if="key !== 'startDate' && key !== 'endDate'"
+          >
+            <label>{{ $t(`filters.fields.${key}`) }}</label>
+            <input
+              v-if="key !== 'status'"
+              type="text"
+              v-model="filters[key]"
+              class="filter-input"
+              :placeholder="$t(`filters.fields.${key}`)"
+            />
+            <select v-else v-model="filters.status" class="filter-input">
+              <option value="">{{ $t("common.all") }}</option>
+              <option>{{ $t("statuses.new") }}</option>
+              <option>{{ $t("statuses.unreachable") }}</option>
+              <option>{{ $t("statuses.callLater") }}</option>
+              <option>{{ $t("statuses.later") }}</option>
             </select>
-          </div>
-
-          <div class="filter-group">
-            <label>Müşteri Adı</label>
-            <input type="text" v-model="filters.customerName" class="filter-input" placeholder="Müşteri Adı" />
-          </div>
-
-          <div class="filter-group">
-            <label>Telefon</label>
-            <input type="text" v-model="filters.phone" class="filter-input" placeholder="Telefon Numarası" />
-          </div>
-
-          <div class="filter-group">
-            <label>E-Posta Adresi</label>
-            <input type="text" v-model="filters.email" class="filter-input" placeholder="E-Posta Adresi" />
           </div>
         </div>
 
         <div class="filter-row">
-          <div class="filter-group">
-            <label>Talep Tarihi</label>
+          <div class="filter-group date-group">
+            <label>{{ $t("filters.dateRange") }}</label>
             <div class="date-range">
               <input type="date" v-model="filters.startDate" class="filter-input" />
-              <span>ile</span>
+              <span>{{ $t("common.to") }}</span>
               <input type="date" v-model="filters.endDate" class="filter-input" />
             </div>
           </div>
         </div>
 
         <div class="filter-actions">
-          <button @click="clearFilters" class="clear-btn">Temizle</button>
-          <button @click="applyFilters" class="filter-btn">Filtrele</button>
+          <button @click="clearFilters" class="clear-btn">{{ $t("common.clear") }}</button>
+          <button @click="applyFilters" class="filter-btn">{{ $t("common.filter") }}</button>
         </div>
       </div>
     </div>
 
-    <!-- ✅ Sipariş Tablosu -->
+    <!-- Tablo -->
     <div class="orders-table">
       <table>
         <thead>
           <tr>
-            <th>Talep No</th>
-            <th>Müşteri Adı</th>
-            <th>Telefon Numarası</th>
-            <th>Ürün Adı</th>
-            <th>Durum</th>
-            <th>Tarih</th>
-            <th>İşlemler</th>
+            <th>{{ $t("table.id") }}</th>
+            <th>{{ $t("table.customerName") }}</th>
+            <th>{{ $t("table.phone") }}</th>
+            <th>{{ $t("table.product") }}</th>
+            <th>{{ $t("table.status") }}</th>
+            <th>{{ $t("table.date") }}</th>
+            <th>{{ $t("common.actions") }}</th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="filteredOrders.length === 0">
-            <td colspan="7" class="no-data">Kayıt bulunamadı.</td>
+            <td colspan="7" class="no-data">{{ $t("common.noData") }}</td>
           </tr>
           <tr v-for="(order, index) in filteredOrders" :key="index">
             <td>{{ order.id }}</td>
@@ -100,10 +96,8 @@
         </tbody>
       </table>
     </div>
-
   </div>
 </template>
-
 <script>
 export default {
   name: "PhoneOrders",
@@ -128,16 +122,21 @@ export default {
         startDate: "",
         endDate: "",
       },
+      fieldLabels: {
+        status: "Talep Durumu",
+        customerName: "Müşteri Adı",
+        phone: "Telefon",
+        email: "E-Posta"
+      },
       orders: [],
     };
   },
   computed: {
     filteredOrders() {
-      return this.orders.filter((order) => {
+      return this.orders.filter(order => {
         return (
           (this.filters.status === "" || order.status === this.filters.status) &&
-          (this.filters.customerName === "" ||
-            order.customerName.toLowerCase().includes(this.filters.customerName.toLowerCase())) &&
+          (this.filters.customerName === "" || order.customerName.toLowerCase().includes(this.filters.customerName.toLowerCase())) &&
           (this.filters.phone === "" || order.phone.includes(this.filters.phone)) &&
           (this.filters.email === "" || order.email?.includes(this.filters.email)) &&
           (this.filters.startDate === "" || order.date >= this.filters.startDate) &&
@@ -168,116 +167,122 @@ export default {
 </script>
 
 <style scoped>
-/* ✅ Üst Menü (Sidebar gibi çalışır) */
+.phone-orders {
+  padding: 1.5rem;
+}
+
+/* Tabs */
 .order-tabs {
   display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .order-tabs a {
-  padding: 10px 15px;
+  padding: 8px 14px;
+  border-radius: 6px;
   text-decoration: none;
-  background: #f8f9fa;
-  color: #6c757d;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 5px;
+  font-weight: 500;
+  background: #f0f2f5;
+  color: #666;
   transition: 0.3s;
 }
 
 .order-tabs a.active {
-  background: #0d6efd;
+  background: #6c63ff;
   color: white;
+  box-shadow: 0 2px 10px rgba(108, 99, 255, 0.2);
 }
 
-/* ✅ Filtreleme Bölümü */
-/* Filtreleme Bölümü */
+/* Filtreleme */
 .filter-container {
   background: white;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
 .filter-header {
-  padding: 15px;
-  background: #f8f9fa;
-  cursor: pointer;
+  padding: 1rem;
+  background: #f9f9f9;
+  font-weight: 600;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
-  font-weight: bold;
+  cursor: pointer;
 }
 
 .filter-content {
-  padding: 15px;
-  border-top: 1px solid #ddd;
+  padding: 1rem;
+  border-top: 1px solid #eee;
 }
 
 .filter-row {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .filter-group {
-  display: flex;
-  flex-direction: column;
-  width: 24%;
+  flex: 1;
+  min-width: 200px;
 }
 
 .filter-group label {
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 5px;
+  display: block;
+  color: #444;
 }
 
 .filter-input {
-  padding: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
 }
 
 .date-range {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
-.date-range span {
-  margin: 0 10px;
-}
-
+/* Butonlar */
 .filter-actions {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
 }
 
-.filter-btn {
-  padding: 8px 15px;
+.filter-btn,
+.clear-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
   border: none;
-  background: #6c757d;
-  color: white;
-  border-radius: 5px;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-btn {
+  background: #6c63ff;
+  color: white;
 }
 
 .clear-btn {
-  padding: 8px 15px;
-  border: none;
-  background: #f8f9fa;
-  color: black;
-  border-radius: 5px;
-  cursor: pointer;
+  background: #f1f1f1;
+  color: #333;
 }
 
-/* ✅ Tablo */
+/* Tablo */
 .orders-table {
   background: white;
-  border-radius: 8px;
-  overflow: hidden;
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .orders-table table {
@@ -287,13 +292,31 @@ export default {
 
 .orders-table th,
 .orders-table td {
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
+  padding: 14px;
+  border-bottom: 1px solid #eee;
   text-align: center;
+  font-size: 14px;
 }
 
 .orders-table th {
   background: #f5f5f5;
   font-weight: bold;
+}
+
+.no-data {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filter-row {
+    flex-direction: column;
+  }
+
+  .order-tabs {
+    flex-direction: column;
+  }
 }
 </style>

@@ -1,0 +1,3018 @@
+{
+  "sidebar": {
+    "orders": "Orders",
+    "title": "Admin Panel",
+    "orders_sub": {
+      "orders": "Orders",
+      "new": "New Orders",
+      "preparing": "Preparing Orders",
+      "shipped": "Shipped Orders",
+      "delivered": "Delivered Orders",
+      "requests": "Order Requests",
+      "cancelled": "Cancelled Orders",
+      "incomplete": "Incomplete Orders",
+      "other": "Others",
+      "quick_sales": "Quick Sales",
+      "phone_orders": "Phone Orders",
+      "active_carts": "Active Carts",
+      "bank_transfer": "Bank Transfer Notices",
+      "fault_reports": "Fault Reports",
+      "sales_terminals": "Sales Terminals",
+      "bulk_actions": "Bulk Actions",
+      "quick_payments": "Quick Payments"
+    },
+
+    "products": "Products",
+    "products_sub": {
+      "products": "Products",
+      "manage": "Product Management",
+      "categories": "Category Management",
+      "brands": "Brand Management",
+      "attributes": "Attribute Management",
+      "custom_fields": "Custom Field Management",
+      "compatibility_groups": "Compatibility Groups",
+      "tags": "Product Tags",
+      "search_matching": "Search Matching",
+      "search_console": "Search Console",
+      "other": "Other",
+      "marketplace_matching": "Marketplace Matchings",
+      "reviews": "Product Reviews",
+      "recommendations": "Product Recommendations",
+      "advanced_sorting": "Advanced Product Sorting",
+      "bulk_actions": "Bulk Product Actions",
+      "bulk_seo": "Bulk SEO Updates"
+    },
+
+    "campaigns": "Campaigns",
+    "campaigns_sub": {
+      "campaigns": "Campaigns",
+      "coupons": "Coupon Management",
+      "promotions": "Promotions",
+      "member_discounts": "Member Discounts",
+      "dealer_discounts": "Dealer Discounts",
+      "dealer_commissions": "Dealer Commissions",
+      "fixed_discounts": "Fixed Discounts",
+      "order_limits": "Order Limits",
+      "sales_quotas": "Sales Quotas",
+      "email_tools": "Email Tools",
+      "email_list": "Newsletter List",
+      "email_groups": "Newsletter Groups",
+      "email_send": "Send Email",
+      "sms_tools": "SMS Tools",
+      "sms_list": "SMS List",
+      "sms_groups": "SMS Groups",
+      "sms_send": "Send SMS"
+    },
+
+    "contents": "Contents",
+    "contents_sub": {
+      "content_management": "Content Management",
+      "pages": "Pages",
+      "help": "Help Articles",
+      "faq": "FAQ",
+      "blog": "Blog Management",
+      "slides": "Slide Management",
+      "banners": "Banner Management",
+      "popup": "Popup",
+      "upload": "Upload Images",
+      "url_management": "URL Management",
+      "url_redirect": "URL Redirect",
+      "reports_404": "404 Reports"
+    },
+
+    "customers": "Customers",
+    "customers_sub": {
+      "manage": "Customer Management",
+      "risk": "Risky Customers",
+      "balances": "Customer Balances",
+      "dealers": "Dealer Management",
+      "groups": "Dealer Groups",
+      "transactions": "Dealer Transactions"
+    },
+
+    "integrations": "Integrations",
+    "integrations_sub": {
+      "marketplace": "Marketplace Integrations",
+      "accounting": "Accounting Integrations",
+      "excel": "Quick Excel Operations",
+      "xml_import": "Import XML",
+      "xml_export": "Export XML",
+      "bulk_marketplace": "Bulk Marketplace Actions",
+      "hepsiburada": "Hepsiburada Operations",
+      "monitor": "Marketplace Monitor"
+    },
+
+    "design": "Design",
+    "design_sub": {
+      "theme_settings": "Theme Settings",
+      "module_layout": "Module Layout",
+      "print_templates": "Print Templates",
+      "email_templates": "Email Templates"
+    },
+
+    "reports": "Reports",
+    "reports_sub": {
+      "orders": "Order Reports",
+      "daily": "Daily Order Report",
+      "weekly": "Weekly Order Report",
+      "monthly": "Monthly Order Report",
+      "yearly": "Yearly Order Report",
+      "platform": "Platform-Based Report",
+      "store": "Store-Based Report",
+      "product_sales": "Product-Based Sales Report",
+      "variant_sales": "Variant-Based Sales Report",
+      "category_sales": "Category Sales Report",
+      "brand_sales": "Brand Sales Report",
+      "payment": "Payment Method Report",
+      "source": "Product Source Report",
+      "city": "City-Based Report",
+      "country": "Country-Based Report",
+      "accounting": "Accounting Report",
+      "list": "Order List",
+      "fast_delivery": "Fast Delivery List",
+
+      "products": "Product Reports",
+      "stock": "Stock Report",
+      "variant_stock": "Variant Stock Report",
+      "stock_movements": "Stock Movements",
+      "product_sales_report": "Product Sales Report",
+      "variant_sales_report": "Variant Product Sales Report",
+      "product_category_sales": "Category Sales Report",
+      "product_brand_sales": "Brand Sales Report",
+      "tag_sales": "Tag Sales Report",
+      "source_sales": "Source Sales Report",
+      "top_rated": "Top Rated Products",
+      "favorites": "Favorite Products Report",
+      "summary": "Product Summary Report",
+      "recommended": "Recommended Products",
+      "price_alerts": "Price Alert Products",
+      "stock_alerts": "Stock Alert Products",
+
+      "members": "Member / Dealer Reports",
+      "member_new": "New Membership Report",
+      "member_login": "Member Login Report",
+      "member_orders": "Member Order Report",
+      "dealer_orders": "Dealer Order Report",
+      "dealer_balance": "Dealer Balance Report",
+      "dealer_deposits": "Dealer Deposit Report",
+      "dealer_activities": "Dealer Activities",
+      "price_alerts_member": "Price Alerts",
+      "stock_alerts_member": "Stock Alerts",
+
+      "system": "System Reports",
+      "logs": "Admin Logs"
+    },
+
+    "settings": "Settings",
+    "settings_sub": {
+      "general": "General Settings",
+      "seo": "SEO Settings",
+      "marketing": "Marketing Tools",
+      "contracts": "Contracts",
+      "orders": "Order Settings",
+      "products": "Product Settings",
+      "payment_methods": "Payment Methods",
+      "exchange_rates": "Exchange Rates",
+      "shipping_companies": "Shipping Companies",
+      "shipping": "Shipping Settings",
+      "assembly_points": "Assembly Points",
+      "countries": "Countries",
+      "languages": "Languages",
+      "sms": "SMS Settings",
+      "sms_templates": "SMS Templates",
+      "email": "Email Settings",
+      "email_templates": "Email Templates",
+      "maintenance": "Maintenance Mode",
+      "balance": "Balance Settings",
+      "dealer": "Dealer Settings",
+      "dealer_xml": "Dealer XML Settings",
+      "quick_payment": "Quick Payment Settings",
+      "web_service": "Web Service Settings",
+      "admin_accounts": "Admin Accounts",
+      "security": "Security Settings",
+      "site": "Site Settings"
+    }
+  },
+
+  "header": {
+    "search": "Search...",
+    "account": "My Account",
+    "inbox": "Inbox",
+    "tasks": "My Tasks",
+    "settings": "Settings",
+    "support": "Support",
+    "logout": "Logout"
+  },
+  "analytics": {
+    "title": "Analytics Overview",
+    "chart_title": "Visitors & Sales",
+    "traffic_title": "Traffic Sources",
+    "stats": {
+      "total_visitors": "Total Visitors",
+      "bounce_rate": "Bounce Rate",
+      "avg_session": "Average Session"
+    },
+    "traffic": {
+      "source": "Source",
+      "visitors": "Visitors",
+      "conversion": "Conversion Rate"
+    },
+    "traffic_sources": {
+      "organic": "Organic Search",
+      "social": "Social Media",
+      "direct": "Direct"
+    }
+  },
+  "dashboard": {
+    "dateRangePlaceholder": "Select date range",
+    "filter": "Filter",
+    "thisWeek": "This week",
+    "cards": {
+      "revenue": "Total Revenue",
+      "customers": "Total Customers",
+      "transactions": "Total Transactions",
+      "products": "Total Products"
+    },
+    "salesChart": "Sales Statistics",
+    "deviceChart": "Visitors By Device",
+    "recentOrders": "Recent Orders",
+    "recentTransactions": "Recent Transactions",
+    "table": {
+      "product": "Product",
+      "category": "Category",
+      "status": "Status",
+      "customer": "Customer",
+      "qty": "Qty",
+      "date": "Date Ordered"
+    }
+  },
+  "coupon": {
+    "searchPlaceholder": "🔍 Search...",
+    "new": "New Gift Coupon",
+    "excel": "Excel Actions",
+    "delete": "Delete",
+    "noData": "No records found.",
+    "export": "Export",
+    "import": "Import",
+    "exportInfo": "All data will be exported as Excel.",
+    "importInfo": "Upload your Excel file to import.",
+    "modal": {
+      "newTitle": "New Coupon",
+      "code": "Coupon Code:",
+      "excelTitle": "Gift Coupons - Excel Operations"
+    },
+    "table": {
+      "id": "Coupon No",
+      "name": "Name",
+      "code": "Code",
+      "freeShipping": "Free Shipping",
+      "minCart": "Min Cart",
+      "maxUsage": "Max Usage",
+      "totalUsage": "Total Usage",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "status": "Status",
+      "action": "Action"
+    }
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "required": "is required."
+  },
+  "orders": {
+    "filters": {
+      "title": "Filtering Options",
+      "status": "Order Status",
+      "platform": "Platform",
+      "store": "Store",
+      "terminal": "Sales Terminal",
+      "orderNumber": "Order Number",
+      "orderDate": "Order Date",
+      "invoiceDate": "Invoice Date",
+      "eInvoiceDate": "E-Invoice Date",
+      "customerName": "Customer First Name",
+      "customerSurname": "Customer Last Name",
+      "phone": "Phone",
+      "taxNumber": "Tax Number",
+      "taxOffice": "Tax Office",
+      "idNumber": "National ID",
+      "country": "Country",
+      "city": "City",
+      "giftCode": "Gift Code",
+      "promotion": "Promotion",
+      "cargoCompany": "Cargo Company",
+      "advancedSearch": "Advanced Search"
+    },
+    "status": {
+      "new": "New Orders",
+      "preparing": "Preparing Orders",
+      "shipped": "Shipped Orders",
+      "delivered": "Delivered Orders",
+      "requests": "Order Requests",
+      "cancelled": "Cancelled Orders",
+      "incomplete": "Incomplete Orders"
+    },
+    "table": {
+      "orderInfo": "Order Info",
+      "customerInfo": "Customer Info",
+      "amount": "Amount",
+      "status": "Status",
+      "shipping": "Shipping",
+      "date": "Date",
+      "print": "Print",
+      "actions": "Actions"
+    },
+    "noData": "No records found.",
+    "footer": {
+      "showing": "Showing 1 to {total} of {total} entries"
+    }
+  },
+  "common": {
+    "notSelected": "Not selected",
+    "clear": "Clear",
+    "filter": "Filter"
+  },
+  "orders": {
+    "filters": {
+      "title": "Filter Options",
+      "placeholder": "Filter fields will be added here"
+    },
+    "table": {
+      "orderInfo": "Order Info",
+      "customerInfo": "Customer Info",
+      "amount": "Amount",
+      "status": "Status",
+      "shipping": "Shipping",
+      "date": "Date",
+      "print": "Print",
+      "actions": "Actions"
+    },
+    "footer": {
+      "showing": "Showing 1 to {total} of {total} entries"
+    },
+    "noData": "No records found."
+  },
+  "quickSale": {
+    "title": "Quick Sale",
+    "searchPlaceholder": "Search by product name, code or barcode",
+    "summaryTitle": "Order Summary",
+    "discountRate": "Discount Rate (%)",
+    "shippingFee": "Shipping Fee",
+    "subTotal": "Subtotal",
+    "discount": "Discount",
+    "total": "Total",
+    "customerInfo": "Customer Information",
+    "customerName": "Full Name / Title",
+    "customerPhone": "Phone",
+    "customerCity": "City",
+    "customerAddress": "Address",
+    "select": "Please Select",
+    "createOrder": "CREATE ORDER",
+    "orderCreated": "Order has been created!",
+    "table": {
+      "product": "Product",
+      "vat": "VAT",
+      "quantity": "Qty",
+      "price": "Price",
+      "total": "Total"
+    }
+  },
+  "carts": {
+  "title": "Active Carts",
+  "table": {
+    "orderId": "Order No",
+    "customer": "Customer Info",
+    "amount": "Amount",
+    "productCount": "Product Count",
+    "date": "Date",
+    "actions": "Actions"
+  },
+  "noData": "No records found.",
+  "footer": {
+    "showing": "Showing {{from}} to {{to}} of  records"
+  }
+},
+"transfers": {
+  "title": "Bank Transfer Notifications",
+  "table": {
+    "id": "Transfer No",
+    "orderId": "Order No",
+    "name": "Full Name",
+    "phone": "Phone",
+    "amount": "Amount",
+    "bank": "Bank",
+    "bankAccount": "Bank Account",
+    "status": "Status",
+    "date": "Date",
+    "actions": "Actions"
+  },
+  "noData": "No records found.",
+  "footer": {
+    "showing": "Showing {{from}} to {{to}} of {{total}} records"
+  }
+},
+"common": {
+  "searchPlaceholder": "🔍 Search..."
+},
+"fault": {
+  "title": "Fault Reports",
+  "table": {
+    "id": "Report No",
+    "orderId": "Order No",
+    "name": "Full Name",
+    "subject": "Subject",
+    "date": "Date",
+    "status": "Closed",
+    "actions": "Actions"
+  },
+  "status": {
+    "passive": "Passive"
+  },
+  "actions": {
+    "label": "Actions",
+    "detail": "Detail",
+    "update": "Update",
+    "delete": "Delete"
+  },
+  "noData": "No records found.",
+  "footer": {
+    "showing": "Showing {{from}} to {{to}} of {{total}} records"
+  }
+},
+"common": {
+  "searchPlaceholder": "🔍 Search..."
+},
+"terminal": {
+  "filters": {
+    "title": "Filter Options",
+    "name": "Terminal Name",
+    "status": "Status",
+    "date": "Date"
+  },
+  "table": {
+    "id": "Terminal No",
+    "name": "Terminal Name",
+    "status": "Status",
+    "date": "Date",
+    "actions": "Actions"
+  },
+  "actions": {
+    "label": "Actions",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "modal": {
+    "title": "New Sales Terminal",
+    "name": "Terminal Name",
+    "status": "Status"
+  },
+  "new": "New Terminal",
+  "noData": "No records found."
+},
+"common": {
+  "all": "All",
+  "active": "Active",
+  "passive": "Inactive",
+  "clear": "Clear",
+  "filter": "Filter",
+  "save": "Save",
+  "required": "Required"
+},
+"bulk": {
+  "einvoice": {
+    "title": "Create E-Invoice",
+    "desc": "You can generate bulk e-invoices based on selected filters."
+  },
+  "changeStatus": {
+    "title": "Change Order Status",
+    "desc": "You can update order statuses by entering order numbers."
+  },
+  "transferStatus": {
+    "title": "Transfer Order Status",
+    "desc": "Transfer all orders from status \"X\" to \"Y\" in bulk.",
+    "from": "Current Orders (To Be Transferred)",
+    "to": "New Order Status"
+  },
+  "notice": {
+    "marketplace": "For marketplace orders, no action will be taken on your marketplace accounts. Only the panel status will be updated."
+  },
+  "labels": {
+    "orderStatus": "Order Status",
+    "startDate": "Order Start Date",
+    "endDate": "Order End Date",
+    "platform": "Platform",
+    "paymentMethod": "Payment Method",
+    "minAmount": "Minimum Order Amount",
+    "maxAmount": "Maximum Order Amount",
+    "notify": "Notify Customer",
+    "orderNumbers": "Order Numbers (One per line)",
+    "quickSale": "Quick Sale"
+  },
+  "placeholders": {
+    "platform": "Select a platform",
+    "payment": "Select a payment method"
+  }
+},
+"order": {
+  "status": {
+    "new": "New Order",
+    "processing": "Processing Order",
+    "approved": "Approved Order",
+    "shipped": "Shipped Order",
+    "delivered": "Delivered Order"
+  }
+},
+"common": {
+  "active": "Active",
+  "passive": "Passive",
+  "start": "Start Process"
+},
+  "category": {
+    "filterOptions": "Filtering Options",
+    "name": "Category Name",
+    "enterName": "Enter category name",
+    "parent": "Parent Category",
+    "advancedFilter": "Advanced Filter",
+    "active": "Active Categories",
+    "passive": "Passive Categories",
+    "new": "+ New Category",
+    "tree": "📂 Category Tree",
+    "quickMatch": "≡ Quick Category Match",
+    "excel": "📊 Excel Operations",
+    "newTitle": "New Category",
+    "description": "Category Description",
+    "save": "Save",
+    "treeTitle": "Category Tree",
+    "infoText1": "You can drag and drop a category under another category.",
+    "infoText2": "Your changes are saved automatically.",
+    "addMain": "+ Add Main Category",
+    "close": "Close"
+  },
+  "common": {
+    "clear": "Clear",
+    "filter": "Filter",
+    "notSelected": "Not Selected",
+    "none": "None"
+  },
+  "category": {
+    "quickMatchTitle": "Quick Category Match",
+    "platform": "Platform",
+    "status": "Status",
+    "unmatched": "Unmatched",
+    "matched": "Matched",
+    "startMatching": "Start Matching",
+    "excelTitle": "Categories - Excel Operations",
+    "tabs": {
+      "Dışa Aktar": "Export",
+      "Dışa Aktar 2": "Export 2",
+      "İçe Aktar": "Import"
+    },
+    "exportInfo": "All data will be exported as an Excel file.",
+    "export2Info": "There may be a different export method here.",
+    "importInfo": "You can import by uploading your Excel file here.",
+    "download": "Download",
+    "all": "All",
+    "change": "Change"
+  },
+  "category": {
+    "filterOptions": "Filtering Options",
+    "name": "Category Name",
+    "enterName": "Enter category name",
+    "parent": "Parent Category",
+    "advancedFilter": "Advanced Filter",
+    "active": "Active Categories",
+    "passive": "Passive Categories",
+    "new": "+ New Category",
+    "tree": "📂 Category Tree",
+    "quickMatch": "≡ Quick Category Match",
+    "excel": "📊 Excel Operations",
+    "newTitle": "New Category",
+    "description": "Category Description",
+    "save": "Save",
+    "treeTitle": "Category Tree",
+    "infoText1": "You can drag and drop a category under another category.",
+    "infoText2": "Your changes are saved automatically.",
+    "addMain": "+ Add Main Category",
+    "close": "Close",
+    "quickMatchTitle": "Quick Category Match",
+    "platform": "Platform",
+    "status": "Status",
+    "unmatched": "Unmatched",
+    "matched": "Matched",
+    "startMatching": "Start Matching",
+    "excelTitle": "Categories - Excel Operations",
+    "tabs": {
+      "Dışa Aktar": "Export",
+      "Dışa Aktar 2": "Export 2",
+      "İçe Aktar": "Import"
+    },
+    "exportInfo": "All data will be exported as an Excel file.",
+    "export2Info": "There may be a different export method here.",
+    "importInfo": "You can import by uploading your Excel file here.",
+    "download": "Download",
+    "all": "All",
+    "change": "Change"
+  },
+  "common": {
+    "clear": "Clear",
+    "filter": "Filter",
+    "notSelected": "Not Selected",
+    "none": "None"
+  },
+  "brand": {
+    "search": "🔍 Search...",
+    "new": "+ New Brand",
+    "excel": "📊 Excel Operations",
+    "id": "Brand No",
+    "name": "Brand Name",
+    "description": "Brand Short Description",
+    "status": "Status",
+    "order": "Order",
+    "logo": "Brand Logo",
+    "active": "Active",
+    "passive": "Passive",
+    "newTitle": "New Brand",
+    "excelTitle": "Brands - Excel Operations",
+    "exportInfo": "All data will be exported as an Excel file.",
+    "importInfo": "You can import by uploading your Excel file here.",
+    "tabs": {
+      "Genel Bilgiler": "General Info"
+    }
+  },
+  "common": {
+    "required": "Required",
+    "actions": "Actions",
+    "save": "Save",
+    "download": "Download"
+  },
+  "attribute": {
+    "search": "🔍 Search...",
+    "new": "+ New Attribute",
+    "newTitle": "New Attribute",
+    "id": "Attribute No",
+    "name": "Attribute Name",
+    "code": "Attribute Code",
+    "order": "Order",
+    "status": "Status",
+    "active": "Active",
+    "passive": "Inactive",
+    "image": "Attribute Image",
+    "noData": "No records found.",
+    "tabs": {
+      "general": "General Info",
+      "values": "Attribute Values"
+    },
+    "valuesInfo": "Attribute values will be managed here."
+  },
+  "common": {
+    "required": "Required",
+    "actions": "Actions",
+    "save": "Save"
+  },
+  "customField": {
+    "search": "🔍 Search...",
+    "new": "+ New Custom Field",
+    "newTitle": "New Custom Field",
+    "id": "No",
+    "name": "Field Name",
+    "type": "Field Type",
+    "status": "Status",
+    "required": "Required",
+    "order": "Order",
+    "description": "Short Description",
+    "noData": "No records found.",
+    "statuses": {
+      "Aktif": "Active",
+      "Pasif": "Inactive"
+    },
+    "types": {
+      "Metin Kutusu": "Text Box",
+      "Seçim Kutusu": "Select Box",
+      "Dosya Yükleme": "File Upload"
+    }
+  },
+  "common": {
+    "required": "Required",
+    "actions": "Actions",
+    "save": "Save"
+  },
+  "group": {
+    "search": "🔍 Search...",
+    "new": "+ New Compatibility Group",
+    "newTitle": "New Compatibility Group",
+    "id": "No",
+    "name": "Group Name",
+    "code": "Group Code",
+    "autoList": "Auto List",
+    "vehicleList": "+ Predefined Vehicle List",
+    "vehicleListTitle": "Vehicle List",
+    "vehicleListInfo": "Compatibility will be created with selected data.",
+    "excel": "📊 Excel Operations",
+    "excelTitle": "Compatibility List - Excel Operations",
+    "tabs": {
+      "Dışa Aktar": "Export"
+    },
+    "exportInfo": "All data will be exported as an Excel file.",
+    "noData": "No records found."
+  },
+  "common": {
+    "required": "Required",
+    "save": "Save",
+    "actions": "Actions",
+    "download": "Download"
+  },
+  "tag": {
+    "search": "🔍 Search...",
+    "new": "+ New Tag",
+    "newTitle": "New Tag",
+    "name": "Tag Name",
+    "image": "Image",
+    "positionDesc": "Description will be added.",
+    "positions": {
+      "homepage": "Homepage",
+      "productList": "Product List",
+      "productDetail": "Product Detail"
+    }
+  },
+  "common": {
+    "required": "Required",
+    "save": "Save"
+  },
+  "matching": {
+    "search": "🔍 Search...",
+    "new": "+ New Match",
+    "newTitle": "New Search Matching",
+    "excel": "📊 Excel Operations",
+    "excelTitle": "Search Matching - Excel Operations",
+    "info": "You can match misspelled search terms with correct ones to help your visitors find what they’re looking for.\nExample: match 'tishirt' or 'tişört' to 't-shirt'.",
+    "searchWord": "Search Term",
+    "matchWord": "Matched Term",
+    "tabs": {
+      "export": "Export",
+      "import": "Import"
+    },
+    "exportInfo": "All data will be exported as an Excel file."
+  },
+  "common": {
+    "required": "Required",
+    "save": "Save",
+    "download": "Download"
+  },
+  "filter": {
+    "title": "Filtering Options",
+    "keyword": "Search Term",
+    "keywordPlaceholder": "Enter keyword",
+    "date": "Search Date",
+    "searchCount": "Search Count",
+    "resultCount": "Result Count",
+    "and": "to"
+  },
+  "common": {
+    "clear": "Clear",
+    "filter": "Filter"
+  },
+  "match": {
+    "categoryTitle": "Match Category",
+    "categoryInfo": "You can match your existing categories with marketplace categories.",
+    "featureTitle": "Match Feature",
+    "featureInfo": "You can also match the marketplace features of matched categories.",
+    "variantTitle": "Match Variant",
+    "variantInfo": "You can also match the variants of your matched categories.",
+    "selectCategory": "Category to Match",
+    "allCategories": "All Categories",
+    "platform": "Platform",
+    "status": "Status",
+    "unmatched": "Unmatched",
+    "start": "Start Matching"
+  },
+  "review": {
+    "search": "Search...",
+    "id": "Review ID",
+    "user": "User",
+    "product": "Product Name",
+    "rating": "Rating",
+    "status": "Status",
+    "date": "Date",
+    "statuses": {
+      "approved": "Approved",
+      "pending": "Pending",
+      "rejected": "Rejected"
+    }
+  },
+  "common": {
+    "actions": "Actions",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "suggestion": {
+    "filterTitle": "Filtering Options",
+    "suggestionTitle": "Suggestion Titles",
+    "readStatus": "Read Status",
+    "replyStatus": "Reply Status",
+    "name": "Full Name",
+    "namePlaceholder": "Enter Full Name",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter Email",
+    "productCode": "Product Code",
+    "productCodePlaceholder": "Enter Product Code",
+    "productName": "Product Name",
+    "productNamePlaceholder": "Enter Product Name",
+    "modalTitle": "Product Suggestion Titles",
+    "modalInfo": "You can add ready-made titles for product suggestions.",
+    "id": "Suggestion No"
+  },
+  "common": {
+    "clear": "Clear",
+    "filter": "Filter",
+    "save": "Save",
+    "add": "Add",
+    "date": "Date",
+    "and": "to",
+    "actions": "Actions",
+    "read": "Read",
+    "unread": "Unread",
+    "replied": "Replied",
+    "notReplied": "Not Replied",
+    "noData": "No records found."
+  },
+  "definition": {
+    "new": "+ New Definition",
+    "newTitle": "Create New Definition",
+    "excel": "📥 Excel Operations",
+    "excelTitle": "Excel Operations",
+    "excelInfo": "All data will be exported as an Excel file.",
+    "name": "Definition Name",
+    "category": "Category",
+    "priority": "Priority",
+    "status": "Status",
+    "namePlaceholder": "Definition Name",
+    "categoryPlaceholder": "Category",
+    "priorityLevels": {
+      "Yüksek": "High",
+      "Orta": "Medium",
+      "Düşük": "Low"
+    },
+    "statuses": {
+      "Aktif": "Active",
+      "Pasif": "Inactive"
+    }
+  },
+  "common": {
+    "save": "Save",
+    "close": "Close",
+    "download": "Download",
+    "actions": "Actions"
+  },
+  "bulk": {
+    "title": "Bulk Product Operations",
+    "selectActionLabel": "Action to Perform",
+    "selectActionPlaceholder": "Please select an action",
+    "actions": {
+      "priceUpdate": "Update Price",
+      "stockUpdate": "Update Stock",
+      "categoryChange": "Change Category",
+      "deleteProducts": "Delete Products"
+    }
+  },
+  "seo": {
+    "contentTypeTitle": "Content Type Selection",
+    "contentTypeInfo": "Please select the content type you want to update.",
+    "product": "Product SEO Information",
+    "category": "Category SEO Information",
+    "brand": "Brand SEO Information",
+    "tag": "Tag SEO Information",
+    "filterTitle": "Filtering",
+    "selectWarning": "Please select the content type you want to update.",
+    "filterInfo": "Filtering options for {type} will appear here."
+  },
+  "promotion": {
+    "search": "🔍 Search...",
+    "new": "New Promotion",
+    "id": "Promo No",
+    "name": "Description",
+    "minCart": "Min Cart",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "order": "Order",
+    "totalUsage": "Total Usage",
+    "status": "Status",
+    "newTitle": "New Promotion",
+    "newInfo": "Please select the type of promotion you want to create. Promotion settings are configured after creation."
+  },
+  "common": {
+    "delete": "Delete",
+    "actions": "Actions",
+    "noData": "No records found.",
+    "create": "Create"
+  },
+  "discount": {
+    "search": "🔍 Search...",
+    "new": "Define New Discount",
+    "id": "Discount No",
+    "category": "Category",
+    "brand": "Brand",
+    "product": "Product",
+    "group": "User Group",
+    "user": "User",
+    "type": "Discount Type",
+    "amount": "Discount Amount",
+    "modalTitle": "New Member Discount",
+    "productInfo": "Product Group Information",
+    "userInfo": "User Group Information",
+    "discountInfo": "Discount Information",
+    "productPlaceholder": "Enter product",
+    "userPlaceholder": "Enter user",
+    "amountPlaceholder": "Enter discount amount",
+    "typeAmount": "Amount (TRY)",
+    "groupDefault": "Members"
+  },
+  "common": {
+    "save": "Save",
+    "delete": "Delete",
+    "noData": "No records found.",
+    "actions": "Actions",
+    "allCategories": "All Categories",
+    "allBrands": "All Brands"
+  },
+  "dealerDiscount": {
+    "search": "🔍 Search...",
+    "new": "Define New Discount",
+    "excel": "Excel Operations",
+    "id": "Discount No",
+    "category": "Category",
+    "brand": "Brand",
+    "product": "Product",
+    "group": "Dealer Group",
+    "dealer": "Dealer",
+    "type": "Discount Type",
+    "amount": "Discount Amount",
+    "newTitle": "New Dealer Discount",
+    "productInfo": "Product Group Information",
+    "productHint": "If you select a product, the discount will only apply to that product.",
+    "dealerInfo": "Dealer Group Information",
+    "dealerHint": "If you select a dealer, the discount will only apply to that dealer.",
+    "discountInfo": "Discount Information",
+    "typeAmount": "Amount (TRY)",
+    "excelTitle": "Dealer Discounts - Excel Operations",
+    "export": "Export",
+    "import": "Import",
+    "exportInfo": "📂 All data will be exported as Excel.",
+    "importInfo": "📥 Upload an Excel file to import."
+  },
+  "common": {
+    "delete": "Delete",
+    "save": "Save",
+    "actions": "Actions",
+    "noData": "No records found.",
+    "allCategories": "All Categories",
+    "allBrands": "All Brands",
+    "allGroups": "All Groups"
+  },
+  "commission": {
+    "search": "🔍 Search...",
+    "new": "Define New Commission",
+    "newTitle": "Define New Commission",
+    "product": "Product",
+    "dealerGroup": "Dealer Group",
+    "dealer": "Dealer",
+    "amount": "Commission",
+    "type": "Commission Type",
+    "fixed": "Fixed Amount",
+    "percent": "Percent (%)",
+    "productInfo": "Product Information",
+    "dealerInfo": "Dealer Group Information",
+    "commissionInfo": "Commission Information"
+  },
+  "common": {
+    "delete": "Delete",
+    "save": "Save",
+    "actions": "Action",
+    "noData": "No records found.",
+    "all": "All"
+  },
+  "fixedDiscount": {
+    "title": "Fixed Discount",
+    "label": "Cart Discount (%)"
+  },
+  "common": {
+    "save": "Save"
+  },
+  "orderLimit": {
+    "search": "🔍 Search...",
+    "new": "New Order Limit",
+    "newTitle": "New Order Limit",
+    "id": "Limit No",
+    "name": "Name",
+    "min": "Min. Amount",
+    "max": "Max. Amount",
+    "variant": "Variant Control",
+    "groups": "Member Groups",
+    "dateRange": "Date Range",
+    "priority": "Priority",
+    "status": "Status",
+    "form": {
+      "name": "Order Limit Name",
+      "status": "Status",
+      "priority": "Priority",
+      "min": "Minimum Order Amount",
+      "max": "Maximum Order Amount"
+    }
+  },
+  "common": {
+    "delete": "Delete",
+    "save": "Save",
+    "actions": "Actions",
+    "noData": "No records found.",
+    "required": "Required",
+    "active": "Active",
+    "passive": "Passive"
+  },
+  "salesQuota": {
+    "search": "🔍 Search...",
+    "new": "New Sales Quota",
+    "newTitle": "New Sales Quota",
+    "id": "Quota No",
+    "name": "Name",
+    "amount": "Sales Quota",
+    "rule": "Rule",
+    "period": "Period",
+    "group": "Member Groups",
+    "dateRange": "Date Range",
+    "priority": "Priority",
+    "status": "Status",
+    "form": {
+      "name": "Quota Name",
+      "status": "Status",
+      "priority": "Priority",
+      "amount": "Sales Quota",
+      "rule": "Quota Rule",
+      "period": "Period",
+      "group": "Member Groups"
+    },
+    "rules": {
+      "customerBased": "Customer-Based Sales Quantity",
+      "general": "General Sales Quantity"
+    },
+    "periods": {
+      "all": "All Time",
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly"
+    },
+    "groups": {
+      "individual": "Individual",
+      "corporate": "Corporate"
+    }
+  },
+  "common": {
+    "delete": "Delete",
+    "save": "Save",
+    "actions": "Actions",
+    "noData": "No records found.",
+    "active": "Active",
+    "passive": "Inactive",
+    "all": "All"
+  },
+  "emailList": {
+    "search": "🔍 Search...",
+    "new": "New Entry",
+    "excel": "Excel Operations",
+    "id": "Record No",
+    "email": "Email",
+    "name": "Name",
+    "group": "Group",
+    "ip": "IP",
+    "date": "Date",
+    "newTitle": "New Newsletter Entry",
+    "language": "Language",
+    "excelTitle": "Email Newsletter List - Excel Operations",
+    "exportInfo": "All data will be exported as Excel.",
+    "importInfo": "You can import by uploading your Excel file."
+  },
+  "common": {
+    "actions": "Actions",
+    "delete": "Delete",
+    "noData": "No records found.",
+    "none": "None",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "export": "Export",
+    "import": "Import",
+    "turkish": "Turkish",
+    "english": "English"
+  },
+  "emailGroups": {
+    "search": "🔍 Search...",
+    "new": "New Group",
+    "newTitle": "New Newsletter Group",
+    "id": "Group No",
+    "name": "Group Name",
+    "default": "Default"
+  },
+  "common": {
+    "actions": "Actions",
+    "delete": "Delete",
+    "noData": "No records found.",
+    "active": "Active",
+    "passive": "Inactive",
+    "save": "Save"
+  },
+
+  "email": {
+    "search": "🔍 Search...",
+    "new": "New Email",
+    "newTitle": "Send New Email",
+    "id": "No",
+    "name": "Description",
+    "status": "Status",
+    "sendDate": "Send Date",
+    "subject": "Email Subject",
+    "content": "Email Content",
+    "sendToNewsletter": "Send to Newsletter Lists",
+    "sendToMembers": "Send to Members/Dealers",
+    "sendToExtra": "Send to Extra Emails",
+    "tabs": {
+      "settings": "Settings",
+      "content": "Email Content"
+    }
+  },
+  "common": {
+    "actions": "Actions",
+    "delete": "Delete",
+    "noData": "No records found.",
+    "save": "Save"
+  },
+  "sms": {
+    "search": "🔍 Search...",
+    "new": "New SMS",
+    "newTitle": "Send New SMS",
+    "newGroup": "New Group",
+    "newGroupTitle": "New Bulletin Group",
+    "newRecord": "New Record",
+    "excelActions": "Excel Actions",
+    "recordNo": "Record No",
+    "groupId": "Group No",
+    "groupName": "Group Name",
+    "number": "Phone Number",
+    "name": "Name",
+    "group": "Group",
+    "ip": "IP",
+    "date": "Date",
+    "no": "No",
+    "status": "Status",
+    "settings": "Settings",
+    "content": "SMS Content",
+    "toNewsletter": "Send to Newsletter Lists",
+    "toMembers": "Send to Members/Dealers",
+    "toExtraNumbers": "Send to Extra Phone Numbers",
+    "message": "Message",
+    "phoneInfo": "Phone number must include country code. Example: +905001234567",
+    "language": "Language",
+    "excelTitle": "SMS Bulletin List - Excel Actions"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "close": "Close",
+    "none": "None",
+    "yes": "Yes",
+    "no": "No",
+    "actions": "Actions",
+    "noData": "No records found.",
+    "export": "Export",
+    "import": "Import",
+    "exportInfo": "All data will be exported as Excel.",
+    "importInfo": "You can upload your Excel file to import."
+  },
+  "campaigns": {
+  "coupons": "Coupon Management",
+  "promotions": "Promotions",
+  "memberDiscounts": "Member Discounts",
+  "dealerDiscounts": "Dealer Discounts",
+  "dealerCommissions": "Dealer Commissions",
+  "fixedDiscount": "Fixed Discount",
+  "orderLimits": "Order Limits",
+  "salesQuotas": "Sales Quotas",
+  "emailTools": "Email Tools",
+  "smsTools": "SMS Tools"
+},
+"orders": {
+  "new": "New Orders",
+  "preparing": "Preparing Orders",
+  "shipped": "Shipped Orders",
+  "delivered": "Delivered Orders",
+  "requests": "Order Requests",
+  "cancelled": "Cancelled Orders",
+  "incomplete": "Incomplete Orders"
+},
+"quickSales": {
+  "tabs": {
+    "quickSales": "Quick Sales",
+    "phoneOrders": "Phone Order Requests",
+    "activeCarts": "Active Carts",
+    "bankTransfer": "Bank Transfer Notifications"
+  }
+},
+"orderMenu": {
+  "quickSales": "Quick Sales",
+  "phoneOrders": "Phone Order Requests",
+  "activeCarts": "Active Carts",
+  "bankTransfer": "Bank Transfer Notifications",
+  "faultReports": "Fault Reports",
+  "salesTerminals": "Sales Terminals",
+  "bulkActions": "Bulk Actions",
+  "quickPayments": "Quick Payments"
+},
+"productMenu": {
+  "manage": "Product Management",
+  "categories": "Category Management",
+  "brands": "Brand Management",
+  "attributes": "Attribute Management",
+  "customFields": "Custom Field Management",
+  "compatibilityGroups": "Compatibility Groups",
+  "tags": "Product Tags",
+  "searchMatching": "Search Matching",
+  "searchConsole": "Search Console"
+},
+"productTabs": {
+  "marketplaceMatching": "Marketplace Matching",
+  "productReviews": "Product Reviews",
+  "productRecommendations": "Product Recommendations",
+  "advancedSorting": "Advanced Product Sorting",
+  "bulkOperations": "Bulk Product Operations",
+  "bulkSeo": "Bulk SEO Update"
+},
+"filters": {
+  "title": "Filter Options",
+  "fields": {
+    "status": "Request Status",
+    "customerName": "Customer Name",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "dateRange": "Request Date"
+},
+"statuses": {
+  "new": "New",
+  "unreachable": "Unreachable",
+  "callLater": "Call Again",
+  "later": "Later"
+},
+"table": {
+  "id": "Request No",
+  "customerName": "Customer Name",
+  "phone": "Phone",
+  "product": "Product",
+  "status": "Status",
+  "date": "Date"
+},
+"common": {
+  "clear": "Clear",
+  "filter": "Filter",
+  "to": "to",
+  "actions": "Action",
+  "noData": "No records found.",
+  "all": "All"
+},
+"filters": {
+  "title": "Filter Options",
+  "fields": {
+    "orderStatus": "Order Status",
+    "orderNo": "Order No",
+    "customerName": "Customer Name",
+    "phone": "Phone"
+  }
+},
+"statuses": {
+  "new": "New Order",
+  "preparing": "Preparing",
+  "shipped": "Shipped"
+},
+"common": {
+  "clear": "Clear",
+  "filter": "Filter",
+  "all": "All"
+},
+"common": {
+  "close": "Close"
+},
+"productTabs": {
+  "marketplaceMatching": "Marketplace Matching",
+  "reviews": "Product Reviews",
+  "recommendations": "Product Recommendations",
+  "advancedSorting": "Advanced Product Sorting",
+  "bulkActions": "Bulk Product Actions",
+  "bulkSeo": "Bulk SEO Update"
+},
+"pages": {
+  "newPage": "New Page",
+  "tabs": {
+    "general": "General Information",
+    "seo": "S.E.O Information",
+    "other": "Other"
+  },
+  "title": "Page Title",
+  "content": "Page Content",
+  "seoTitle": "SEO Title",
+  "seoDescription": "SEO Description",
+  "seoKeywords": "SEO Keywords",
+  "codes": "Custom Codes",
+  "redirect": "Redirect Link",
+  "pageNo": "Page No"
+},
+"common": {
+  "search": "🔍 Search...",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit Page",
+  "preview": "Quick View",
+  "actions": "Actions"
+},
+"help": {
+  "newTitle": "New Title",
+  "tabs": {
+    "general": "General Info",
+    "seo": "SEO Info"
+  },
+  "fields": {
+    "id": "Title No",
+    "title": "Title",
+    "status": "Status",
+    "order": "Order",
+    "image": "Image"
+  }
+},
+"common": {
+  "actions": "Actions",
+  "search": "Search...",
+  "active": "Active",
+  "inactive": "Inactive",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "noData": "No records found."
+},
+"faq": {
+  "new": "New Question",
+  "title": "Frequently Asked Questions",
+  "fields": {
+    "id": "Question No",
+    "question": "Question",
+    "answer": "Answer",
+    "order": "Order"
+  }
+},
+"common": {
+  "save": "Save",
+  "cancel": "Cancel",
+  "actions": "Actions",
+  "edit": "✏️ Edit",
+  "delete": "🗑 Delete",
+  "search": "Search..."
+},
+"blog": {
+  "new": "New Post",
+  "categories": "Categories",
+  "fields": {
+    "id": "Post No",
+    "title": "Title",
+    "blogCategory": "Blog Category",
+    "productCategory": "Product Category",
+    "date": "Date",
+    "status": "Status",
+    "image": "Image",
+    "shortDescription": "Short Description",
+    "content": "Content",
+    "seoTitle": "SEO Title",
+    "seoDescription": "SEO Description",
+    "seoKeywords": "SEO Keywords",
+    "views": "Views",
+    "general": "General Info",
+    "seo": "SEO Info"
+  }
+},
+"common": {
+  "search": "Search...",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit",
+  "actions": "Actions",
+  "active": "Active",
+  "inactive": "Inactive",
+  "required": "Required",
+  "noneSelected": "None selected"
+},
+"slider": {
+  "new": "New Slide",
+  "title": "Slide Management",
+  "dragInfo": "You can reorder slides by drag and drop.",
+  "item": "Slide",
+  "fields": {
+    "title": "Title",
+    "link": "Link",
+    "webImage": "Image (Web)",
+    "mobileImage": "Image (Mobile App)",
+    "productId": "Product ID (Mobile App)",
+    "newTab": "New Tab",
+    "description": "Description"
+  }
+},
+"common": {
+  "save": "Save",
+  "cancel": "Cancel",
+  "edit": "Edit",
+  "delete": "Delete",
+  "noData": "No records found."
+},
+"banner": {
+  "newGroup": "New Banner Group",
+  "title": "Banner Management",
+  "uploadText": "Click here to upload banner.",
+  "fields": {
+    "id": "Banner ID",
+    "name": "Banner Group Name"
+  }
+},
+"common": {
+  "actions": "Actions",
+  "edit": "Edit",
+  "delete": "Delete",
+  "save": "Save",
+  "cancel": "Cancel",
+  "noData": "No records found."
+},
+"popup": {
+  "new": "New Popup",
+  "title": "Popup",
+  "warning": "You can restrict popup visibility using the fields below.",
+  "fields": {
+    "id": "P. No",
+    "title": "Title",
+    "mobile": "Mobile",
+    "desktop": "Desktop",
+    "start": "Start Date",
+    "end": "End Date",
+    "timing": "Timing",
+    "description": "Description"
+  },
+  "options": {
+    "oncePerDay": "Once every 24 hours",
+    "everyVisit": "Every visit"
+  }
+},
+"common": {
+  "actions": "Actions",
+  "edit": "Edit",
+  "delete": "Delete",
+  "save": "Save",
+  "cancel": "Cancel",
+  "noData": "No records found."
+},
+"imageUpload": {
+  "title": "Upload Image",
+  "fields": {
+    "image": "Image"
+  }
+},
+"common": {
+  "upload": "Upload"
+},
+"redirect": {
+  "title": "🔍 Filter Options",
+  "search": "Enter search term...",
+  "typeSelect": "Select Redirect Type",
+  "type": "Redirect",
+  "new": "+ New Redirect Link",
+  "newTitle": "New Redirect Link",
+  "excel": "📥 Excel Actions",
+  "excelTitle": "Redirect Links - Excel Actions",
+  "placeholders": {
+    "old": "Old URL",
+    "new": "New URL"
+  },
+  "fields": {
+    "id": "Link No",
+    "link": "Link",
+    "redirectTo": "Redirect Link",
+    "type": "Type"
+  }
+},
+"common": {
+  "filter": "Filter",
+  "clear": "Clear",
+  "save": "Save",
+  "cancel": "Cancel",
+  "close": "Close",
+  "delete": "Delete",
+  "actions": "Actions",
+  "export": "Export",
+  "import": "Import"
+},
+"report": {
+  "filterTitle": "Filter Options",
+  "searchTerm": "Search Term",
+  "searchPlaceholder": "Enter search term",
+  "status": "Redirect Status",
+  "redirected": "Redirected",
+  "notRedirected": "Not Redirected",
+  "visits": "Visit Count",
+  "min": "Min",
+  "max": "Max",
+  "createRedirect": "Create Redirect",
+  "modal": {
+    "title": "New Redirect Link",
+    "type": "Redirect Type",
+    "link": "Link",
+    "to": "Redirect To",
+    "note": "Notes"
+  },
+  "fields": {
+    "id": "Link No",
+    "link": "Link",
+    "visits": "Visit Count",
+    "redirect": "Redirect"
+  }
+},
+"common": {
+  "clear": "Clear",
+  "filter": "Filter",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "actions": "Actions",
+  "none": "None",
+  "to": "to"
+},
+"url": {
+  "menu": {
+    "redirect": "URL Redirects",
+    "reports": "404 URL Reports"
+  }
+},
+"customers": {
+  "all": "All",
+  "member": "Member",
+  "endUser": "End User",
+  "dealer": "Dealer",
+  "id": "Member No",
+  "email": "Email",
+  "name": "Full Name",
+  "phone": "Phone Number",
+  "balance": "Balance",
+  "points": "Points",
+  "group": "Customer Group",
+  "status": "Status",
+  "lastLogin": "Last Login",
+  "registerDate": "Registration",
+  "excelTitle": "Customers - Excel Actions"
+},
+"common": {
+  "search": "🔍 Search...",
+  "excelActions": "Excel Actions",
+  "actions": "Actions",
+  "view": "View",
+  "delete": "Delete",
+  "close": "Close",
+  "export": "Export",
+  "import": "Import"
+},
+"risky": {
+  "addNew": "Add Risky Customer",
+  "criteriaSettings": "Automatic Risk Criteria",
+  "newRiskyCustomer": "New Risky Customer",
+  "infoText": "If an order matches any of the fields below, it will be marked as 'Risky Order'.",
+  "criteriaSettingsTitle": "Global Risk Criteria Settings",
+  "criteriaInfoText": "You can control orders based on predefined automatic risk criteria.",
+  "id": "Member No",
+  "email": "Email",
+  "name": "Full Name",
+  "tckn": "National ID",
+  "phone": "Phone",
+  "ip": "IP",
+  "days": "Days",
+  "limit": "Order Limit"
+},
+"common": {
+  "search": "🔍 Search...",
+  "actions": "Actions",
+  "noData": "No records found.",
+  "save": "Save"
+},
+"balance": {
+  "transactionNo": "Trans. No",
+  "customerNo": "Customer No",
+  "name": "First Name",
+  "surname": "Last Name",
+  "amount": "Amount",
+  "status": "Status",
+  "date": "Date"
+},
+"common": {
+  "search": "🔍 Search...",
+  "actions": "Actions",
+  "noData": "No records found."
+},
+"dealer": {
+  "new": "New Dealer",
+  "title": "Dealer Management",
+  "id": "Dealer No",
+  "email": "Email",
+  "code": "Code",
+  "name": "Full Name",
+  "surname": "Surname",
+  "balance": "Balance",
+  "group": "Dealer Group",
+  "status": "Status",
+  "password": "Password",
+  "debtors": "Debtors",
+  "creditors": "Creditors",
+  "testGroup": "Test Group (Disc: 10%)",
+  "excelTitle": "Dealer - Excel Actions"
+},
+"common": {
+  "search": "🔍 Search...",
+  "actions": "Actions",
+  "active": "Active",
+  "inactive": "Inactive",
+  "save": "Save",
+  "cancel": "Cancel",
+  "excelActions": "Excel Actions",
+  "export": "Export",
+  "import": "Import",
+  "all": "All"
+},
+"group": {
+  "new": "New Group",
+  "title": "Dealer Groups",
+  "id": "Group No",
+  "name": "Group Name",
+  "discount": "Discount",
+  "priceType": "Dealer Price Type",
+  "default": "Default",
+  "sample": "Test Group"
+},
+"common": {
+  "search": "Search...",
+  "actions": "Actions",
+  "quickView": "Quick View",
+  "delete": "Delete",
+  "save": "Save",
+  "cancel": "Close"
+},
+"password": {
+  "send": "Send",
+  "info": "In bulk password sending, a new password is generated for all active dealers and sent to their email addresses. To complete this process, Mailjet setup must be completed from 'Settings → Email Settings'.",
+  "errorMessage": "This action cannot be performed in the demo account!"
+},
+"common": {
+  "error": "Error!",
+  "ok": "OK"
+},
+"customers": {
+  "menu": {
+    "manage": "Customer Management",
+    "risk": "Risky Customer Management",
+    "balances": "Customer Balances",
+    "dealers": "Dealer Management",
+    "groups": "Dealer Groups",
+    "transactions": "Dealer Transactions"
+  }
+},
+"marketplaces": {
+  "title": "Marketplace Stores",
+  "description": "You can define your stores on marketplaces, set profit margins and restrictions.",
+  "addShop": "Add Store",
+  "newShopTitle": "Add New Store",
+  "shopName": "Store Name",
+  "shopLogo": "Store Logo (URL)"
+},
+"common": {
+  "save": "Save",
+  "cancel": "Cancel"
+},
+"accounting": {
+  "sectionTitles": {
+    "active": "Active Integrations",
+    "inactive": "Inactive Integrations"
+  },
+  "subtitles": {
+    "active": "The following integrations are currently active.",
+    "inactive": "The following integrations have not been activated yet."
+  },
+  "moduleName": "Accounting",
+  "activeIntegrations": {
+    "efatura": "E-Invoice integration",
+    "netsis": "Integrated with accounting systems"
+  },
+  "inactiveIntegrations": {
+    "b2b": "Not activated yet",
+    "nebim": "Not activated yet"
+  },
+  "fields": {
+    "apiUser": "API Username",
+    "apiPassword": "API Password",
+    "companyName": "Company Name",
+    "companyAddress": "Company Address",
+    "ownerName": "Owner First Name",
+    "ownerSurname": "Owner Last Name",
+    "city": "City",
+    "district": "District",
+    "phone": "Phone",
+    "website": "Website",
+    "taxNumber": "Tax ID / SSN",
+    "email": "Email"
+  }
+},
+"common": {
+  "settings": "Settings",
+  "save": "Save",
+  "cancel": "Cancel",
+  "activate": "Activate"
+},
+"xml": {
+  "addNew": "New XML Source",
+  "fields": {
+    "id": "XML No",
+    "name": "Name",
+    "format": "Format",
+    "fileType": "File Type",
+    "schedule": "Schedule",
+    "status": "Status",
+    "lastProcess": "Last Process Date"
+  },
+  "tabs": {
+    "info": "Information",
+    "settings": "Settings",
+    "profit": "Profit Rates",
+    "filtering": "Product Filtering",
+    "description": "Content will be shown based on selected tab."
+  }
+},
+"common": {
+  "search": "🔍 Search...",
+  "actions": "Actions"
+},
+"xmlExport": {
+  "readyTitle": "Ready XML Outputs",
+  "exportTitle": "Export XML",
+  "addNew": "New XML Source",
+  "fields": {
+    "dataNo": "Data No",
+    "name": "Name",
+    "format": "Format",
+    "link": "Link"
+  },
+  "form": {
+    "name": "Name",
+    "format": "Format",
+    "commissionRate": "Commission Rate (%)",
+    "categories": "Categories",
+    "productSource": "Product Source",
+    "brands": "Brands",
+    "minStock": "Minimum Stock"
+  }
+},
+"common": {
+  "search": "🔍 Search...",
+  "save": "Save",
+  "cancel": "Cancel",
+  "actions": "Actions",
+  "noneSelected": "None selected"
+},
+"marketplaceBatch": {
+  "title": "Bulk Marketplace Operations",
+  "addNew": "New XML Source",
+  "warning": "Before starting the product pull operation, it is recommended to disable 'Product Update' and 'Product Delete' from 'Integrations → Marketplace Integrations'.",
+  "fields": {
+    "operationNo": "Operation No",
+    "name": "Name",
+    "process": "Process",
+    "marketplace": "Marketplace",
+    "store": "Store",
+    "schedule": "Schedule",
+    "status": "Status",
+    "vatRate": "Default VAT Rate",
+    "matchingMethod": "Product Matching Method"
+  },
+  "options": {
+    "pullProducts": "Pull Products",
+    "never": "Never",
+    "matchByProductCode": "Match by Product Code"
+  }
+},
+"common": {
+  "search": "Search...",
+  "save": "Save",
+  "cancel": "Cancel",
+  "actions": "Actions",
+  "noRecords": "No records found."
+},
+"hepsiburada": {
+  "tabs": {
+    "excel": "Export Products to Excel",
+    "match": "Match Products",
+    "activate": "Activate Products",
+    "reports": "Reports"
+  },
+  "excel": {
+    "title": "Export Products to Excel",
+    "description": "You can convert your products to Excel format via Hepsiburada integration.",
+    "add": "New Excel",
+    "excelNo": "Excel No",
+    "modal": {
+      "title": "New Excel",
+      "format": "Excel Format",
+      "fastAdd": "Quick Product Add Format",
+      "minPrice": "Min HB Product Price",
+      "maxPrice": "Max HB Product Price",
+      "currency": "HB Currency"
+    }
+  },
+  "match": {
+    "title": "Match Products",
+    "description": "Match your store products.",
+    "store": "Store Name",
+    "status": "Status",
+    "date": "Last Process Date",
+    "error": "Error (No product found)"
+  },
+  "activate": {
+    "title": "Activate Products",
+    "description": "Activate matched products in the selected store.",
+    "activateAll": "Activate All Products"
+  },
+  "reports": {
+    "title": "Reports"
+  }
+},
+"common": {
+  "name": "Name",
+  "store": "Store",
+  "categories": "Categories",
+  "brands": "Brands",
+  "source": "Product Source",
+  "search": "Search...",
+  "save": "Save",
+  "cancel": "Cancel",
+  "actions": "Actions",
+  "start": "Start",
+  "all": "All",
+  "noneSelected": "None selected",
+  "noRecords": "No records found."
+},
+"monitor": {
+  "title": "Marketplace Monitor",
+  "description": "You can review the update status and error reports of your products on marketplaces.",
+  "updated": "Updated",
+  "pending": "Pending",
+  "tabs": {
+    "errors": "Error Reports",
+    "updated": "Updated Products",
+    "pending": "Pending Products"
+  },
+  "errors": {
+    "title": "Error Reports",
+    "description": "You can view the errors encountered when adding, updating, or deleting products."
+  },
+  "updated": {
+    "title": "Updated Products",
+    "description": "You can view your updated products and their dates."
+  },
+  "pending": {
+    "title": "Pending Products",
+    "description": "You can view products that are queued for update and their scheduled times."
+  }
+},
+"integration": {
+  "menu": {
+    "marketplace": "Marketplace Integrations",
+    "accounting": "Accounting Integrations",
+    "excel": "Quick Excel Operations",
+    "xmlImport": "Import XML",
+    "xmlExport": "Export XML",
+    "bulkMarketplace": "Bulk Marketplace Operations",
+    "hepsiburada": "Hepsiburada Operations",
+    "monitor": "Marketplace Monitor"
+  }
+},
+"theme": {
+  "themeSelection": "Theme Selection",
+  "logoSettings": "Logo Settings",
+  "watermarkSettings": "Watermark Settings",
+  "imageSettings": "Image Settings",
+  "cookieWarning": "Cookie Warning",
+  "tabBarWarning": "Tab Bar Warning",
+  "facebookLogin": "Facebook Login",
+  "googleLogin": "Google Login",
+  "activeTheme": "✓ Active Theme",
+  "description": "Custom theme prepared for demo1.",
+  "lastUpdate": "Last Update Date",
+  "version": "Version",
+  "customize": "Customize",
+  "updateNotes": "Update Notes",
+  "themeSettings": "Theme Settings",
+  "mobileAppSettings": "Mobile App Settings",
+  "cssCustomize": "Customize CSS",
+  "jsCustomize": "Customize JS",
+  "themeEditor": "Theme Editor",
+  "watermarkStatus": "Watermark Status",
+  "watermarkPosition": "Watermark Position",
+  "topLeft": "Top-Left",
+  "topRight": "Top-Right",
+  "bottomLeft": "Bottom-Left",
+  "bottomRight": "Bottom-Right",
+  "center": "Center",
+  "watermarkImage": "Watermark Image (png)",
+  "defaultImage": "Default Image",
+  "cookieInfo": "The cookie module appears at the top (header) or bottom (footer) of your site.",
+  "cookieWarningNote": "This area will be hidden once accepted by the visitor.",
+  "topHeader": "Top (Header)",
+  "bottomFooter": "Bottom (Footer)",
+  "buttonText": "Button Text",
+  "bgColor": "Background Color",
+  "textColor": "Text Color",
+  "buttonColor": "Button Color",
+  "buttonTextColor": "Button Text Color",
+  "tabAlertDescription": "With the tab alert, you can change the title when the tab changes.",
+  "tabTitle": "Tab Title",
+  "facebookInstruction": "Set up Facebook application settings as follows:",
+  "createFacebookApp": "Create Facebook App",
+  "googleInstruction": "Create a project from Google Console",
+  "cookieDefaultText": "Cookies are used on this website. Click to review our cookie policy.",
+  "siteMainTitle": "Main Site Logo",
+  "siteMainDescription": "The standard logo of your site.",
+  "mobileLogoTitle": "Mobile Site Logo",
+  "mobileLogoDescription": "Logo to be used for mobile platforms.",
+  "footerLogoTitle": "Site Footer Logo",
+  "footerLogoDescription": "Logo that will appear in the footer.",
+  "emailLogoTitle": "Email Logo",
+  "emailLogoDescription": "Logo to be used in email templates.",
+  "faviconTitle": "Favicon.ico",
+  "faviconDescription": "The small icon visible in the browser tab."
+},
+"common": {
+  "save": "Save",
+  "active": "Active",
+  "passive": "Passive"
+},
+"alerts": {
+  "logosSaved": "Logos saved successfully.",
+  "watermarkSaved": "Watermark settings saved.",
+  "defaultImageSaved": "Image settings saved.",
+  "cookieSaved": "Cookie alert saved.",
+  "tabAlertSaved": "Tab alert saved.",
+  "facebookSaved": "Facebook login details saved.",
+  "googleSaved": "Google login details saved."
+},
+"module": {
+  "newGroup": "New Group",
+  "dragDropInfo": "You can reorder groups by drag and drop.",
+  "column": "Column",
+  "addModule": "Add Module"
+},
+"pages": {
+  "home": "Home",
+  "categoryDetail": "Category Detail (Products)",
+  "productDetail": "Product Detail",
+  "cart": "Cart",
+  "checkout": "Checkout",
+  "brands": "Brands",
+  "staticPages": "Static Pages",
+  "blog": "Blog",
+  "blogDetail": "Blog Detail",
+  "help": "Help",
+  "helpDetail": "Help Detail",
+  "giftVoucher": "Gift Voucher",
+  "account": "My Account",
+  "register": "Register",
+  "login": "Login",
+  "dealerApplication": "Dealer Application",
+  "forgotPassword": "Forgot Password",
+  "resetPassword": "Reset Password",
+  "notFound": "404 Not Found",
+  "other": "Other"
+},
+"templatePage": {
+  "info1": "You can edit your templates by clicking the buttons below.",
+  "info2": "You can upload the invoice image to the 'Paper Sample' section.",
+  "templates": {
+    "eInvoice": "E-Invoice / E-Archive Template",
+    "invoice": "Invoice Template",
+    "shippingLabel": "Shipping Label Template",
+    "receipt": "Receipt Template",
+    "product1": "Product Template 1",
+    "product2": "Product Template 2",
+    "product3": "Product Template 3",
+    "product4": "Product Template 4"
+  }
+},
+"emailTemplates": {
+  "title": "Email Templates",
+  "activate": "Activate",
+  "edit": "Edit",
+  "preview": "Preview",
+  "previewing": "Previewing",
+  "editing": "Editing",
+  "selected": "Active template"
+},
+"customModal": {
+  "title": "Custom Settings",
+  "tabs": {
+    "genel": "General",
+    "kart": "Product Card",
+    "detay": "Product Detail"
+  },
+  "fields": {
+    "topMenuLimit": "Top Menu Limit",
+    "footerLinks": "Footer Marketplace Links",
+    "footerMenuLimit": "Footer Menu Limit",
+    "whatsappButton": "Whatsapp Button",
+    "whatsappText": "Whatsapp Text",
+    "lazyLoad": "Lazy Load Plugin",
+    "lazyDelay": "Lazy Load Effect Duration",
+    "reviewStars": "Review Stars",
+    "addToCartButton": "Add to Cart Button",
+    "productDetails": {
+      "stars": "Review Stars",
+      "code": "Product Code",
+      "barcode": "Barcode",
+      "brand": "Brand",
+      "category": "Category",
+      "stock": "Stock Quantity",
+      "related": "Related Products",
+      "buyNow": "Buy Now Button",
+      "localLogo": "Local Production Logo",
+      "fastShipping": "Fast Shipping Label",
+      "secureLabel": "Secure Shopping Label",
+      "returnLabel": "Return and Exchange Label",
+      "freeShipping": "Free Shipping Label",
+      "socialButtons": "Social Media Buttons",
+      "whatsappOrder": "Order via Whatsapp Button",
+      "favorites": "Add to Favorites Button",
+      "profileAttributes": "Attributes in Product Profile",
+      "descriptionAttributes": "Attributes in Description",
+      "sizeBanner": "Size / Measurement Banner Group"
+    }
+  }
+},
+"common": {
+  "save": "Save"
+},
+"designLayout": {
+  "themeSettings": "Theme Settings",
+  "moduleLayout": "Module Layout",
+  "printTemplates": "Print Templates",
+  "emailTemplates": "Email Templates"
+},
+"newGroupModal": {
+  "title": "New Group",
+  "tabs": {
+    "info": "Group Info",
+    "settings": "Group Settings"
+  },
+  "fields": {
+    "code": "Group Code",
+    "title": "Title",
+    "description": "Description",
+    "icon": "Icon",
+    "buttonTitle": "Button Title",
+    "buttonLink": "Button Link",
+    "viewType": "View Type",
+    "groupSize": "Group Size",
+    "columnCount": "Column Count"
+  },
+  "options": {
+    "column": "Column",
+    "container": "Normal (container)"
+  },
+  "table": {
+    "column": "Column",
+    "xs": "Extra Small",
+    "sm": "Small",
+    "md": "Medium",
+    "lg": "Large",
+    "xl": "Extra Large"
+  }
+},
+"common": {
+  "save": "Save"
+},
+"eInvoice": {
+  "title": "E-Invoice / E-Archive Template",
+  "fields": {
+    "name": "Template Name",
+    "namePlaceholder": "E-Invoice / E-Archive Template",
+    "status": "Template Status",
+    "cargoBarcode": "Cargo Barcode",
+    "orderBarcode": "Order Barcode"
+  },
+  "panels": {
+    "companyLogo": "Company Logo",
+    "signatureLogo": "Signature Logo",
+    "productRows": "Product Rows",
+    "staticNotes": "Static Notes",
+    "customNotes": "Custom Notes",
+    "ibanInfo": "IBAN Information"
+  }
+},
+"common": {
+  "save": "Save",
+  "preview": "Preview",
+  "active": "Active",
+  "passive": "Passive",
+  "show": "Show",
+  "hide": "Hide"
+},
+"invoice": {
+  "title": "Invoice Template",
+  "tabs": {
+    "general": "General Info",
+    "builder": "Template Builder"
+  },
+  "fields": {
+    "name": "Template Name",
+    "namePlaceholder": "Invoice Template",
+    "paper": "Default Paper Type",
+    "description": "Description",
+    "descriptionPlaceholder": "This template is for standard e-invoice layout."
+  },
+  "preview": {
+    "header": "Header",
+    "address": "Address Info",
+    "logo": "Logo",
+    "table": "Product Table",
+    "footer": "Footer"
+  }
+},
+"common": {
+  "save": "Save",
+  "cancel": "Cancel"
+},
+"productTemplate": {
+  "tabs": {
+    "general": "General Info",
+    "builder": "Template Builder"
+  },
+  "fields": {
+    "sample": "Paper Sample",
+    "size": "Paper Size",
+    "width": "Paper Width (cm)",
+    "height": "Paper Height (cm)",
+    "copy": "Copy"
+  },
+  "options": {
+    "custom": "Custom"
+  },
+  "labels": {
+    "companyLogo": "Company Logo",
+    "productName": "Product Name",
+    "invoiceName": "Invoice Name",
+    "productCode": "Product Code",
+    "barcode": "Product Barcode",
+    "dingCode": "DING Code",
+    "mpn": "MPN",
+    "shortDescription": "Short Description",
+    "category": "Category",
+    "vat": "VAT Rate",
+    "price": "Sale Price",
+    "marketPrice": "Market Price",
+    "productImage": "Product Image",
+    "variantInfo": "Variant Info"
+  }
+},
+"common": {
+  "save": "Save"
+},
+"receipt": {
+  "title": "Receipt Template",
+  "tabs": {
+    "general": "General Info",
+    "builder": "Template Builder"
+  },
+  "fields": {
+    "sample": "Paper Sample *",
+    "size": "Paper Size *",
+    "width": "Paper Width (cm)*",
+    "height": "Paper Height (cm)*",
+    "copy": "Copy *"
+  },
+  "options": {
+    "custom": "Custom"
+  },
+  "labels": {
+    "companyLogo": "Company Logo",
+    "productList": "Product List",
+    "productName": "Product Name",
+    "quantity": "Quantity",
+    "price": "Price",
+    "total": "Total",
+    "grandTotal": "Grand Total",
+    "thankYou": "Thank You Message"
+  }
+},
+"common": {
+  "save": "Save"
+},
+"shippingTemplate": {
+  "title": "Shipping Label Template",
+  "tabs": {
+    "general": "General Info",
+    "builder": "Template Builder"
+  },
+  "fields": {
+    "sample": "Paper Sample",
+    "size": "Paper Size",
+    "width": "Paper Width (cm)",
+    "height": "Paper Height (cm)",
+    "copy": "Copy"
+  },
+  "options": {
+    "custom": "Custom"
+  },
+  "labels": {
+    "companyLogo": "Company Logo",
+    "deliveryTitle": "Delivery Title",
+    "address": "Address",
+    "phone": "Phone",
+    "shippingCompany": "Shipping Company",
+    "barcode": "Barcode",
+    "customerNote": "Customer Note",
+    "campaignCode": "Campaign Code",
+    "orderDate": "Order Date",
+    "taxOffice": "Tax Office",
+    "taxNumber": "Tax Number",
+    "paymentType": "Payment Type",
+    "productList": "Product List",
+    "productName": "Product Name",
+    "total": "Total",
+    "customNote1": "Custom Note 1"
+  }
+},
+"common": {
+  "save": "Save"
+},
+"orderReports": {
+  "title": "Order Reports",
+  "fields": {
+    "reportType": "Report Type",
+    "orderStatus": "Order Status",
+    "platform": "Platform",
+    "store": "Store",
+    "terminal": "Sales Terminal",
+    "orderDate": "Order Date",
+    "orderTime": "Order Time",
+    "shippingDate": "Shipping Date",
+    "invoiceDate": "Invoice Date",
+    "eInvoiceDate": "E-Invoice Date",
+    "country": "Country",
+    "memberNo": "Membership No",
+    "orderAmount": "Order Amount",
+    "payment": "Payment Method",
+    "giftCode": "Gift Voucher Code",
+    "giftRef": "Gift Voucher Reference",
+    "promotion": "Promotion",
+    "cargo": "Cargo Company",
+    "advanced": "Advanced Search"
+  },
+  "status": {
+    "new": "New Order",
+    "preparing": "Preparing Order",
+    "shipping": "Shipped Order",
+    "delivered": "Delivered"
+  },
+  "reportTypes": {
+    "Daily": "Daily Order Report",
+    "Weekly": "Weekly Order Report",
+    "Monthly": "Monthly Order Report",
+    "Yearly": "Yearly Order Report",
+    "BrandSales": "Brand Sales Report",
+    "Payment": "Payment Method Report",
+    "FastDelivery": "Fast Delivery List",
+    "Platform": "Platform Based Report",
+    "Store": "Store Based Report",
+    "ProductSales": "Product Sales Report",
+    "VariantSales": "Variant Sales Report",
+    "CategorySales": "Category Sales Report",
+    "Source": "Product Source Report",
+    "City": "City Based Report",
+    "Country": "Country Based Report",
+    "Accounting": "Accounting Report",
+    "List": "Order List"
+  }
+},
+"common": {
+  "clear": "Clear",
+  "generate": "Generate"
+},
+  "reports": {
+    "title": "Order Reports",
+    "reportType": "Report Type",
+    "orderStatus": "Order Status",
+    "platform": "Platform",
+    "store": "Store",
+    "terminal": "Sales Terminal",
+    "orderDate": "Order Date",
+    "orderTime": "Order Time",
+    "shippingDate": "Shipping Date",
+    "invoiceDate": "Invoice Date",
+    "eInvoiceDate": "E-Invoice Date",
+    "country": "Country",
+    "memberNumber": "Membership No",
+    "orderAmount": "Order Amount",
+    "paymentMethod": "Payment Method",
+    "giftCode": "Gift Voucher Code",
+    "giftReference": "Gift Voucher Reference",
+    "promotion": "Promotion",
+    "shippingCompany": "Shipping Company",
+    "advancedSearch": "Advanced Search",
+    "types": {
+      "Daily": "Daily Order Report",
+      "Weekly": "Weekly Order Report",
+      "Monthly": "Monthly Order Report",
+      "Yearly": "Yearly Order Report",
+      "BrandSales": "Brand Sales Report",
+      "Payment": "Payment Method Report",
+      "FastDelivery": "Fast Delivery List",
+      "Platform": "Platform-Based Report",
+      "Store": "Store-Based Report",
+      "ProductSales": "Product-Based Sales Report",
+      "VariantSales": "Variant-Based Sales Report",
+      "CategorySales": "Category Sales Report",
+      "Source": "Product Source Report",
+      "City": "City-Based Report",
+      "Country": "Country-Based Report",
+      "Accounting": "Accounting Report",
+      "List": "Order List"
+    }
+  },
+  "orders": {
+    "new": "New Order",
+    "processing": "Processing Order",
+    "shipped": "Shipped Order",
+    "delivered": "Delivered Order"
+  },
+  "common": {
+    "noneSelected": "None selected",
+    "unselected": "Unselected",
+    "clear": "Clear",
+    "generate": "Generate"
+  },
+  "productReports": {
+    "title": "Product Reports",
+    "reportType": "Report Type",
+    "source": "Product Source",
+    "category": "Category",
+    "brand": "Brand",
+    "tag": "Product Tags",
+    "productNumber": "Product Number",
+    "productCode": "Product Code",
+    "barcode": "Barcode",
+    "advancedFilter": "Advanced Filtering",
+    "clear": "Clear",
+    "generate": "Generate",
+
+    "options": {
+      "Stock": "Stock Report",
+      "VariantStock": "Variant Stock Report",
+      "StockMovements": "Stock Movements",
+      "Sales": "Product Sales Report",
+      "VariantSales": "Product Sales Report (Variants)",
+      "CategorySales": "Category Sales Report",
+      "BrandSales": "Brand Sales Report",
+      "TagSales": "Tag Sales Report",
+      "SourceSales": "Source Sales Report",
+      "TopRated": "Top Rated Products",
+      "Favorites": "Favorite Products Report",
+      "Summary": "Product Summary Report",
+      "Recommended": "Recommended Products",
+      "PriceAlerts": "Products with Price Alerts",
+      "StockAlerts": "Products with Stock Alerts"
+    }
+  },
+  "productReports": {
+    "title": "Product Reports",
+    "reportType": "Report Type",
+    "source": "Product Source",
+    "sourcePlaceholder": "No Source Selected",
+    "category": "Category",
+    "categoryPlaceholder": "No Category Selected",
+    "brand": "Brand",
+    "brandPlaceholder": "No Brand Selected",
+    "tag": "Product Tags",
+    "tagPlaceholder": "None Selected",
+    "productNumber": "Product No",
+    "productCode": "Product Code",
+    "barcode": "Barcode",
+    "advancedFilter": "Advanced Filter",
+    "advancedFilterPlaceholder": "None Selected",
+    "clear": "Clear",
+    "generate": "Generate",
+    "options": {
+      "Stock": "Stock Report",
+      "VariantStock": "Variant Stock Report",
+      "StockMovements": "Stock Movements",
+      "Sales": "Product Sales Report",
+      "VariantSales": "Product Sales Report (With Variants)",
+      "CategorySales": "Category Sales Report",
+      "BrandSales": "Brand Sales Report",
+      "TagSales": "Tag Sales Report",
+      "SourceSales": "Source Sales Report",
+      "TopRated": "Top Rated Products",
+      "Favorites": "Favorite Products Report",
+      "Summary": "Product Summary Report",
+      "Recommended": "Recommended Products",
+      "PriceAlerts": "Products With Price Alerts",
+      "StockAlerts": "Products With Stock Alerts"
+    }
+  },
+  "productReports": {
+    "title": "Product Reports",
+    "reportType": "Report Type",
+    "source": "Product Source",
+    "category": "Category",
+    "brand": "Brand",
+    "tags": "Product Tags",
+    "productNo": "Product No",
+    "productCode": "Product Code",
+    "barcode": "Barcode",
+    "advanced": "Advanced Filter",
+    "clear": "Clear",
+    "generate": "Generate"
+  },
+  "ui": {
+  "notSelected": "Not Selected"
+},
+"reportTabs": {
+  "orders": "Order Reports",
+  "products": "Product Reports",
+  "members": "Member / Dealer Reports",
+  "system": "System Reports"
+},
+"productReports": {
+  "title": "Product Reports",
+  "reportType": "Report Type",
+  "source": "Product Source",
+  "category": "Category",
+  "brand": "Brand",
+  "tags": "Product Tags",
+  "productNo": "Product No",
+  "productCode": "Product Code",
+  "barcode": "Barcode",
+  "advancedFilter": "Advanced Filter",
+  "types": {
+    "Stock": "Stock Report",
+    "VariantStock": "Variant Stock Report",
+    "StockMovements": "Stock Movements",
+    "Sales": "Product Sales Report",
+    "VariantSales": "Product Sales Report (With Variant)",
+    "CategorySales": "Category Sales Report",
+    "BrandSales": "Brand Sales Report",
+    "TagSales": "Tag Sales Report",
+    "SourceSales": "Source Sales Report",
+    "TopRated": "Top Rated Products",
+    "Favorites": "Favorite Products Report",
+    "Summary": "Product Summary Report",
+    "Recommended": "Recommended Products",
+    "PriceAlerts": "Products With Price Alerts",
+    "StockAlerts": "Products With Stock Alerts"
+  }
+},
+"common": {
+  "notSelected": "Not Selected",
+  "notSelectedCategory": "Category Not Selected",
+  "notSelectedBrand": "Brand Not Selected",
+  "clear": "Clear",
+  "generate": "Generate"
+},
+"productReports": {
+  "title": "Product Reports",
+  "reportType": "Report Type",
+  "source": "Product Source",
+  "category": "Category",
+  "brand": "Brand",
+  "tags": "Product Tags",
+  "productNo": "Product No",
+  "productCode": "Product Code",
+  "barcode": "Barcode",
+  "advancedFilter": "Advanced Filter",
+  "types": {
+    "Stock": "Stock Report",
+    "VariantStock": "Variant Stock Report",
+    "StockMovements": "Stock Movements",
+    "Sales": "Product Sales Report",
+    "VariantSales": "Product Sales Report (With Variant)",
+    "CategorySales": "Category Sales Report",
+    "BrandSales": "Brand Sales Report",
+    "TagSales": "Tag Sales Report",
+    "SourceSales": "Source Sales Report",
+    "TopRated": "Top Rated Products",
+    "Favorites": "Favorite Products Report",
+    "Summary": "Product Summary Report",
+    "Recommended": "Recommended Products",
+    "PriceAlerts": "Products With Price Alerts",
+    "StockAlerts": "Products With Stock Alerts"
+  }
+},
+"common": {
+  "notSelected": "Not Selected",
+  "notSelectedCategory": "Category Not Selected",
+  "notSelectedBrand": "Brand Not Selected",
+  "notSelectedSource": "Source Not Selected",
+  "clear": "Clear",
+  "generate": "Generate"
+},
+"productReports": {
+  "title": "Product Reports",
+  "reportType": "Report Type",
+  "source": "Product Source",
+  "category": "Category",
+  "brand": "Brand",
+  "tags": "Product Tags",
+  "productNo": "Product No",
+  "productCode": "Product Code",
+  "barcode": "Barcode",
+  "advancedFilter": "Advanced Filter",
+  "types": {
+    "SourceSales": "Source Sales Report"
+  }
+},
+"productReports": {
+  "title": "Product Reports",
+  "reportType": "Report Type",
+  "source": "Product Source",
+  "category": "Category",
+  "brand": "Brand",
+  "tags": "Product Tags",
+  "productNo": "Product No",
+  "productCode": "Product Code",
+  "barcode": "Barcode",
+  "advancedFilter": "Advanced Filter",
+  "types": {
+    "Stock": "Stock Report",
+    "StockMovements": "Stock Movements",
+    "Sales": "Product Sales Report",
+    "Recommended": "Recommended Products",
+    "TopRated": "Top Rated Products",
+    "Summary": "Product Summary Report",
+    "PriceAlerts": "Price Alerted Products"
+  }
+},
+"productReports": {
+  "title": "Product Reports",
+  "reportType": "Report Type",
+  "source": "Product Source",
+  "category": "Category",
+  "brand": "Brand",
+  "tags": "Product Tags",
+  "productNo": "Product No",
+  "productCode": "Product Code",
+  "barcode": "Barcode",
+  "advancedFilter": "Advanced Filter",
+  "types": {
+    "Stock": "Stock Report",
+    "VariantStock": "Variant Stock Report",
+    "StockMovements": "Stock Movements",
+    "Sales": "Product Sales Report",
+    "VariantSales": "Product Sales Report (With Variants)",
+    "CategorySales": "Category Sales Report",
+    "BrandSales": "Brand Sales Report",
+    "TagSales": "Tag Sales Report",
+    "SourceSales": "Source Sales Report",
+    "TopRated": "Top Rated Products",
+    "Favorites": "Favorite Products Report",
+    "Summary": "Product Summary Report",
+    "Recommended": "Recommended Products",
+    "PriceAlerts": "Price Alerted Products",
+    "StockAlerts": "Stock Alerted Products"
+  }
+},
+"productReports": {
+  "title": "Product Reports",
+  "reportType": "Report Type",
+  "source": "Product Source",
+  "category": "Category",
+  "brand": "Brand",
+  "tags": "Product Tags",
+  "productNo": "Product No",
+  "productCode": "Product Code",
+  "barcode": "Barcode",
+  "advancedFilter": "Advanced Filter",
+  "types": {
+    "Stock": "Stock Report",
+    "VariantStock": "Variant Stock Report",
+    "StockMovements": "Stock Movements",
+    "Sales": "Product Sales Report",
+    "VariantSales": "Product Sales Report (With Variants)",
+    "CategorySales": "Category Sales Report",
+    "BrandSales": "Brand Sales Report",
+    "TagSales": "Tag Sales Report",
+    "SourceSales": "Source Sales Report",
+    "TopRated": "Top Rated Products",
+    "Favorites": "Favorite Products Report",
+    "Summary": "Product Summary Report",
+    "Recommended": "Recommended Products",
+    "PriceAlerts": "Price Alerted Products",
+    "StockAlerts": "Stock Alerted Products"
+  }
+},
+"productReports": {
+  "title": "Product Reports",
+  "reportType": "Report Type",
+  "source": "Product Source",
+  "category": "Category",
+  "brand": "Brand",
+  "tags": "Product Tags",
+  "productNo": "Product No",
+  "productCode": "Product Code",
+  "barcode": "Barcode",
+  "advancedFilter": "Advanced Filtering",
+  "clear": "Clear",
+  "generate": "Generate",
+  "reportOptions": {
+    "Stock": "Stock Report",
+    "VariantStock": "Variant Stock Report",
+    "StockMovements": "Stock Movements",
+    "Sales": "Product Sales Report",
+    "VariantSales": "Product Sales Report (Variant)",
+    "CategorySales": "Category Sales Report",
+    "BrandSales": "Brand Sales Report",
+    "TagSales": "Tag Sales Report",
+    "SourceSales": "Source Sales Report",
+    "TopRated": "Top Rated Products",
+    "Favorites": "Favorite Products Report",
+    "Summary": "Product Summary Report",
+    "Recommended": "Recommended Products",
+    "PriceAlerts": "Price Alerted Products",
+    "StockAlerts": "Stock Alerted Products"
+  }
+},
+  "productReports": {
+    "title": "Product Reports",
+    "reportType": "Report Type",
+    "source": "Product Source",
+    "category": "Category",
+    "brand": "Brand",
+    "tag": "Product Tags",
+    "productNumber": "Product No",
+    "productCode": "Product Code",
+    "barcode": "Barcode",
+    "advancedFilter": "Advanced Filtering",
+    "clear": "Clear",
+    "generate": "Generate",
+    "options": {
+      "Stock": "Stock Report",
+      "VariantStock": "Variant Stock Report",
+      "StockMovements": "Stock Movements",
+      "Sales": "Product Sales Report",
+      "VariantSales": "Product Sales Report (With Variant)",
+      "CategorySales": "Category Sales Report",
+      "BrandSales": "Brand Sales Report",
+      "TagSales": "Tag Sales Report",
+      "SourceSales": "Source Sales Report",
+      "TopRated": "Top Rated Products",
+      "Favorites": "Favorite Products Report",
+      "Summary": "Product Summary Report",
+      "Recommended": "Recommended Products",
+      "PriceAlerts": "Products with Price Alert",
+      "StockAlerts": "Products with Stock Alert"
+    },
+    "placeholder": {
+      "source": "No source selected",
+      "category": "No category selected",
+      "brand": "No brand selected",
+      "tag": "No tag selected",
+      "advancedFilter": "Not selected"
+    }
+  },
+  "productReports": {
+    "title": "Product Reports",
+    "reportType": "Report Type",
+    "source": "Product Source",
+    "category": "Category",
+    "brand": "Brand",
+    "tag": "Product Tags",
+    "productNumber": "Product No",
+    "productCode": "Product Code",
+    "barcode": "Barcode",
+    "advancedFilter": "Advanced Filter",
+    "clear": "Clear",
+    "generate": "Generate",
+    "placeholder": {
+      "source": "Source Not Selected",
+      "category": "Category Not Selected",
+      "brand": "Brand Not Selected",
+      "tag": "Not Selected",
+      "advancedFilter": "Not Selected"
+    },
+    "options": {
+      "Stock": "Stock Report",
+      "VariantStock": "Variant Stock Report",
+      "StockMovements": "Stock Movements",
+      "Sales": "Product Sales Report",
+      "VariantSales": "Product Sales Report (With Variants)",
+      "CategorySales": "Category Sales Report",
+      "BrandSales": "Brand Sales Report",
+      "TagSales": "Tag Sales Report",
+      "SourceSales": "Source Sales Report",
+      "TopRated": "Top Rated Products",
+      "Favorites": "Favorite Products Report",
+      "Summary": "Product Summary Report",
+      "Recommended": "Recommended Products",
+      "PriceAlerts": "Products with Price Alerts",
+      "StockAlerts": "Products with Stock Alerts"
+    }
+  },
+  "productReports": {
+  "title": "Product Reports",
+  "reportType": "Report Type",
+  "productSource": "Product Source",
+  "category": "Category",
+  "brand": "Brand",
+  "tags": "Product Tags",
+  "productNo": "Product No",
+  "productCode": "Product Code",
+  "barcode": "Barcode",
+  "advancedFilter": "Advanced Filter",
+  "clear": "Clear",
+  "generate": "Generate"
+},
+"systemReports": {
+  "title": "System Reports",
+  "reportType": "Report Type",
+  "logs": "Admin Logs",
+  "dateRange": "Operation Date",
+  "to": "to",
+  "adminId": "Admin ID",
+  "clear": "Clear",
+  "generate": "Generate"
+},
+"reportsTabs": {
+  "orderReports": "Order Reports",
+  "productReports": "Product Reports",
+  "memberDealerReports": "Member / Dealer Reports",
+  "systemReports": "System Reports"
+},
+"memberReports": {
+  "title": "Member Reports",
+  "reportType": "Report Type",
+  "memberNo": "Member No",
+  "dealerNo": "Dealer No",
+  "registrationDate": "Registration Date",
+  "groupBy": "Group By",
+  "groupOptions": {
+    "day": "Day",
+    "week": "Week",
+    "month": "Month"
+  },
+  "options": {
+    "New": "New Member Report",
+    "Login": "Member Login Report",
+    "Orders": "Member Order Report",
+    "DealerOrders": "Dealer Order Report",
+    "DealerBalance": "Dealer Balance Report",
+    "DealerDeposits": "Dealer Deposit Report",
+    "DealerActivities": "Dealer Activities",
+    "PriceAlerts": "Price Alerts",
+    "StockAlerts": "Stock Alerts"
+  }
+},
+"actions": {
+  "clear": "Clear",
+  "generate": "Generate"
+},
+"memberReports": {
+  "title": "Member Reports",
+  "reportType": "Report Type",
+  "memberNo": "Member No",
+  "dealerNo": "Dealer No",
+  "registrationDate": "Registration Date",
+  "groupBy": "Group By",
+  "groupOptions": {
+    "day": "Day",
+    "week": "Week",
+    "month": "Month"
+  },
+  "options": {
+    "New": "New Member Report",
+    "Login": "Member Login Report",
+    "Orders": "Member Order Report",
+    "DealerOrders": "Dealer Order Report",
+    "DealerBalance": "Dealer Balance Report",
+    "DealerDeposits": "Dealer Deposit Report",
+    "DealerActivities": "Dealer Activities",
+    "PriceAlerts": "Price Alerts",
+    "StockAlerts": "Stock Alerts"
+  }
+},
+"actions": {
+  "clear": "Clear",
+  "generate": "Generate"
+},
+"memberReports": {
+  "title": "Member Reports",
+  "reportType": "Report Type",
+  "memberNo": "Member No",
+  "dealerNo": "Dealer No",
+  "registrationDate": "Registration Date",
+  "groupBy": "Group By",
+  "groupOptions": {
+    "day": "Day",
+    "week": "Week",
+    "month": "Month"
+  },
+  "options": {
+    "New": "New Membership Report",
+    "Login": "Member Login Report",
+    "Orders": "Member Order Report",
+    "DealerOrders": "Dealer Order Report",
+    "DealerBalance": "Dealer Balance Report",
+    "DealerDeposits": "Dealer Deposit Report",
+    "DealerActivities": "Dealer Activities",
+    "PriceAlerts": "Price Alerts",
+    "StockAlerts": "Stock Alerts"
+  }
+},
+"actions": {
+  "clear": "Clear",
+  "generate": "Generate"
+},
+"memberReports": {
+  "title": "Member Reports",
+  "reportType": "Report Type",
+  "memberNo": "Member No",
+  "dealerNo": "Dealer No",
+  "registrationDate": "Registration Date",
+  "groupBy": "Group By",
+  "groupOptions": {
+    "day": "Day",
+    "week": "Week",
+    "month": "Month"
+  },
+  "options": {
+    "New": "New Membership Report",
+    "Login": "Member Login Report",
+    "Orders": "Member Order Report",
+    "DealerOrders": "Dealer Order Report",
+    "DealerBalance": "Dealer Balance Report",
+    "DealerDeposits": "Dealer Deposit Report",
+    "DealerActivities": "Dealer Activities",
+    "PriceAlerts": "Price Alerts",
+    "StockAlerts": "Stock Alerts"
+  }
+},
+"actions": {
+  "clear": "Clear",
+  "generate": "Generate"
+},
+"memberReports": {
+  "title": "Member Reports",
+  "reportType": "Report Type",
+  "memberNo": "Member No",
+  "dealerNo": "Dealer No",
+  "registrationDate": "Registration Date",
+  "groupBy": "Group By",
+  "groupOptions": {
+    "day": "Day",
+    "week": "Week",
+    "month": "Month"
+  },
+  "options": {
+    "New": "New Membership Report",
+    "Login": "Member Login Report",
+    "Orders": "Member Order Report",
+    "DealerOrders": "Dealer Order Report",
+    "DealerBalance": "Dealer Balance Report",
+    "DealerDeposits": "Dealer Deposit Report",
+    "DealerActivities": "Dealer Activities",
+    "PriceAlerts": "Price Alerts",
+    "StockAlerts": "Stock Alerts"
+  }
+},
+"actions": {
+  "clear": "Clear",
+  "generate": "Generate"
+},
+"reportTabs": {
+  "orders": "Order Reports",
+  "products": "Product Reports",
+  "members": "Member / Dealer Reports",
+  "system": "System Reports"
+},
+"memberReports": {
+  "title": "Member Reports",
+  "reportType": "Report Type",
+  "memberNo": "Member No",
+  "dealerNo": "Dealer No",
+  "membershipDate": "Membership Date",
+  "grouping": "Report Grouping",
+  "day": "Day",
+  "week": "Week",
+  "month": "Month",
+  "options": {
+    "New": "New Membership Report",
+    "Login": "Member Login Report",
+    "Orders": "Member Order Report",
+    "DealerOrders": "Dealer Order Report",
+    "DealerBalance": "Dealer Balance Report",
+    "DealerDeposits": "Dealer Deposit Report",
+    "DealerActivities": "Dealer Activities",
+    "PriceAlerts": "Price Alerts",
+    "StockAlerts": "Stock Alerts"
+  }
+},
+"actions": {
+  "clear": "Clear",
+  "generate": "Generate"
+},
+"memberReports": {
+  "title": "Member Reports",
+  "reportType": "Report Type",
+  "memberNo": "Member No",
+  "dealerNo": "Dealer No",
+  "membershipDate": "Membership Date",
+  "grouping": "Report Grouping",
+  "day": "Day",
+  "week": "Week",
+  "month": "Month",
+  "options": {
+    "New": "New Membership Report",
+    "Login": "Member Login Report",
+    "Orders": "Member Order Report",
+    "DealerOrders": "Dealer Order Report",
+    "DealerBalance": "Dealer Balance Report",
+    "DealerDeposits": "Dealer Deposit Report",
+    "DealerActivities": "Dealer Activities",
+    "PriceAlerts": "Price Alerts",
+    "StockAlerts": "Stock Alerts"
+  }
+},
+"actions": {
+  "clear": "Clear",
+  "generate": "Generate"
+},
+"memberReports": {
+  "title": "Member Reports",
+  "reportType": "Report Type",
+  "memberNo": "Member No",
+  "dealerNo": "Dealer No",
+  "membershipDate": "Membership Date",
+  "grouping": "Report Grouping",
+  "day": "Day",
+  "week": "Week",
+  "month": "Month",
+  "options": {
+    "New": "New Membership Report",
+    "Login": "Member Login Report",
+    "Orders": "Member Order Report",
+    "DealerOrders": "Dealer Order Report",
+    "DealerBalance": "Dealer Balance Report",
+    "DealerDeposits": "Dealer Deposit Report",
+    "DealerActivities": "Dealer Activities",
+    "PriceAlerts": "Price Alerts",
+    "StockAlerts": "Stock Alerts"
+  }
+},
+"actions": {
+  "clear": "Clear",
+  "generate": "Generate"
+},
+"memberReports": {
+  "title": "Member Reports",
+  "reportType": "Report Type",
+  "memberNo": "Member No",
+  "dealerNo": "Dealer No",
+  "membershipDate": "Membership Date",
+  "grouping": "Report Grouping",
+  "day": "Day",
+  "week": "Week",
+  "month": "Month",
+  "options": {
+    "New": "New Membership Report",
+    "Login": "Member Login Report",
+    "Orders": "Member Order Report",
+    "DealerOrders": "Dealer Order Report",
+    "DealerBalance": "Dealer Balance Report",
+    "DealerDeposits": "Dealer Deposit Report",
+    "DealerActivities": "Dealer Activities",
+    "PriceAlerts": "Price Alerts",
+    "StockAlerts": "Stock Alerts"
+  }
+},
+"actions": {
+  "clear": "Clear",
+  "generate": "Generate"
+},
+"reportTabs": {
+  "orders": "Order Reports",
+  "products": "Product Reports",
+  "members": "Member / Dealer Reports",
+  "system": "System Reports"
+}
+}
+

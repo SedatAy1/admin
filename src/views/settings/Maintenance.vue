@@ -64,12 +64,21 @@ const saveSettings = () => {
   background: #fff;
   padding: 24px;
   border-radius: 10px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+html.dark .maintenance-settings {
+  background: #1f1f1f;
+  color: #f1f5f9;
 }
 
 .title {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 20px;
+  color: #1e293b;
+}
+html.dark .title {
+  color: #f9fafb;
 }
 
 .setting-item {
@@ -78,6 +87,9 @@ const saveSettings = () => {
   align-items: flex-start;
   border-bottom: 1px dashed #e5e7eb;
   padding: 16px 0;
+}
+html.dark .setting-item {
+  border-color: #374151;
 }
 
 .setting-item.column {
@@ -93,11 +105,18 @@ const saveSettings = () => {
 .setting-label h3 {
   font-weight: 600;
   margin-bottom: 4px;
+  color: #1f2937;
+}
+html.dark .setting-label h3 {
+  color: #f3f4f6;
 }
 
 .setting-label p {
   font-size: 14px;
   color: #6b7280;
+}
+html.dark .setting-label p {
+  color: #94a3b8;
 }
 
 .icon {
@@ -109,6 +128,11 @@ const saveSettings = () => {
   align-items: center;
   justify-content: center;
   font-size: 20px;
+  color: #1e293b;
+}
+html.dark .icon {
+  background: #374151;
+  color: #e2e8f0;
 }
 
 .switch {
@@ -132,6 +156,9 @@ const saveSettings = () => {
   border-radius: 24px;
   transition: .4s;
 }
+html.dark .slider {
+  background-color: #4b5563;
+}
 
 .slider:before {
   position: absolute;
@@ -143,6 +170,9 @@ const saveSettings = () => {
   background-color: white;
   transition: .4s;
   border-radius: 50%;
+}
+html.dark .slider:before {
+  background-color: #f1f5f9;
 }
 
 input:checked + .slider {
@@ -161,6 +191,14 @@ input:checked + .slider:before {
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 14px;
+  background-color: white;
+  color: #1e293b;
+  transition: background 0.3s ease;
+}
+html.dark .textarea {
+  background-color: #2a2a2a;
+  color: #f9fafb;
+  border-color: #4b5563;
 }
 
 .save-btn {
@@ -172,5 +210,28 @@ input:checked + .slider:before {
   font-weight: 500;
   cursor: pointer;
   margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+.save-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .setting-label {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .save-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 </style>

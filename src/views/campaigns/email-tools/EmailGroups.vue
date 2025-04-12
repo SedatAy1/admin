@@ -2,22 +2,22 @@
   <div class="email-groups-container">
     <!-- Üst Kısım: Arama ve Buton -->
     <div class="header-section">
-      <input type="text" class="search-input" placeholder="🔍 Ara...">
+      <input type="text" class="search-input" :placeholder="$t('emailGroups.search')" />
       <button class="btn btn-primary" @click="openNewGroupModal">
-        ➕ Yeni Grup
+        ➕ {{ $t('emailGroups.new') }}
       </button>
     </div>
 
-    <!-- Tablo (Boşsa "Kayıt Bulunamadı" göster) -->
+    <!-- Tablo -->
     <div class="table-container">
       <table v-if="emailGroups.length > 0">
         <thead>
           <tr>
             <th>#</th>
-            <th>Grup No</th>
-            <th>Grup Adı</th>
-            <th>Varsayılan</th>
-            <th>İşlemler</th>
+            <th>{{ $t('emailGroups.id') }}</th>
+            <th>{{ $t('emailGroups.name') }}</th>
+            <th>{{ $t('emailGroups.default') }}</th>
+            <th>{{ $t('common.actions') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -27,16 +27,16 @@
             <td>{{ group.name }}</td>
             <td>{{ group.default ? '✅' : '❌' }}</td>
             <td>
-              <button class="btn btn-sm btn-danger" @click="deleteGroup(index)">❌ Sil</button>
+              <button class="btn btn-sm btn-danger" @click="deleteGroup(index)">❌ {{ $t('common.delete') }}</button>
             </td>
           </tr>
         </tbody>
       </table>
 
-      <!-- Eğer hiç grup yoksa -->
+      <!-- Boş durum -->
       <div v-else class="empty-state">
         <img src="@/assets/empty.svg" alt="No Data" />
-        <p>Kayıt bulunamadı.</p>
+        <p>{{ $t('common.noData') }}</p>
       </div>
     </div>
   </div>
@@ -45,30 +45,29 @@
   <div v-if="showNewGroupModal" class="modal-overlay">
     <div class="modal">
       <div class="modal-header">
-        <h2>Yeni Bülten Grubu</h2>
+        <h2>{{ $t('emailGroups.newTitle') }}</h2>
         <button class="close-btn" @click="closeNewGroupModal">✖</button>
       </div>
 
       <div class="form-group">
-        <label>Grup Adı:</label>
+        <label>{{ $t('emailGroups.name') }}:</label>
         <input type="text" v-model="newGroup.name" />
       </div>
 
       <div class="form-group">
-        <label>Varsayılan:</label>
+        <label>{{ $t('emailGroups.default') }}:</label>
         <select v-model="newGroup.default">
-          <option :value="true">Aktif</option>
-          <option :value="false">Pasif</option>
+          <option :value="true">{{ $t('common.active') }}</option>
+          <option :value="false">{{ $t('common.passive') }}</option>
         </select>
       </div>
 
       <div class="modal-buttons">
-        <button class="btn btn-primary" @click="saveGroup">Kaydet</button>
+        <button class="btn btn-primary" @click="saveGroup">{{ $t('common.save') }}</button>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -113,18 +112,23 @@ export default {
 /* Üst Kısım */
 .header-section {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background: white;
+  background: var(--bg-color, white);
   border-bottom: 1px solid #ddd;
+  gap: 10px;
 }
 
 .search-input {
-  width: 250px;
+  flex: 1;
+  min-width: 200px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: var(--input-bg, white);
+  color: var(--text-color, #111);
 }
 
 .btn {
@@ -132,8 +136,8 @@ export default {
   font-size: 14px;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .btn-primary {
@@ -156,94 +160,128 @@ export default {
 
 /* Tablo */
 .table-container {
-  background: white;
+  background: var(--bg-color, white);
   padding: 20px;
-  border-radius: 10px;
-  margin-top: 10px;
+  border-radius: 12px;
+  margin-top: 15px;
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 14px;
 }
 
 th, td {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
   text-align: left;
 }
 
 th {
-  background: #f3f4f6;
-  font-weight: bold;
+  background: #f9fafb;
+  font-weight: 600;
+  color: #374151;
 }
 
 .empty-state {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
+  color: #9ca3af;
 }
 
 .empty-state img {
-  width: 100px;
+  width: 80px;
   opacity: 0.5;
+  margin-bottom: 10px;
 }
 
-/* Modal Overlay (Arka Plan) */
+/* Modal Overlay */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Daha koyu yap, şeffaflık artırıldı */
-  z-index: 99998 !important; /* Üst katmanda olsun */
-  display: flex !important; /* Emin olmak için */
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
   justify-content: center;
   align-items: center;
-  visibility: visible !important; /* Eğer gizliyse göster */
 }
 
-/* Modal İçeriği */
+/* Modal */
 .modal {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 500px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 99999 !important; /* Modal her şeyin üstünde olsun */
-  display: block !important; /* Eğer hala görünmüyorsa, ekle */
-  position: relative;
-  transform: translateY(0); /* Modal kaybolmasın */
-  opacity: 1 !important;
+  background: var(--bg-color, white);
+  color: var(--text-color, #111);
+  padding: 24px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .close-btn {
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
+  color: inherit;
 }
 
 .modal-buttons {
   display: flex;
   justify-content: center;
+  gap: 10px;
   margin-top: 20px;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
-input, select {
+input,
+select {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background: var(--input-bg, white);
+  color: var(--text-color, #111);
+}
+
+/* 🌙 Dark Mode */
+:root.dark {
+  --bg-color: #1f2937;
+  --text-color: #f3f4f6;
+  --input-bg: #374151;
+}
+
+:root.dark th {
+  background: #374151;
+  color: #f9fafb;
+}
+
+:root.dark .empty-state {
+  color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .header-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .modal {
+    padding: 16px;
+  }
+  th, td {
+    font-size: 13px;
+  }
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div class="sales-quotas-container">
-    <!-- Üst Kısım: Arama ve Buton -->
+    <!-- Üst Kısım -->
     <div class="header-section">
-      <input type="text" class="search-input" placeholder="🔍 Ara...">
+      <input type="text" class="search-input" :placeholder="$t('salesQuota.search')" />
       <button class="btn btn-primary" @click="openNewQuotaModal">
-        ➕ Yeni Satış Kotası
+        ➕ {{ $t('salesQuota.new') }}
       </button>
     </div>
 
@@ -14,16 +14,16 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Kota No</th>
-            <th>Adı</th>
-            <th>Satış Kotası</th>
-            <th>Kural</th>
-            <th>Periyot</th>
-            <th>Üye Grupları</th>
-            <th>Tarih Aralığı</th>
-            <th>Öncelik</th>
-            <th>Durum</th>
-            <th>İşlemler</th>
+            <th>{{ $t('salesQuota.id') }}</th>
+            <th>{{ $t('salesQuota.name') }}</th>
+            <th>{{ $t('salesQuota.amount') }}</th>
+            <th>{{ $t('salesQuota.rule') }}</th>
+            <th>{{ $t('salesQuota.period') }}</th>
+            <th>{{ $t('salesQuota.group') }}</th>
+            <th>{{ $t('salesQuota.dateRange') }}</th>
+            <th>{{ $t('salesQuota.priority') }}</th>
+            <th>{{ $t('salesQuota.status') }}</th>
+            <th>{{ $t('common.actions') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -39,7 +39,9 @@
             <td>{{ quota.priority }}</td>
             <td>{{ quota.status }}</td>
             <td>
-              <button class="btn btn-sm btn-danger" @click="deleteQuota(index)">❌ Sil</button>
+              <button class="btn btn-sm btn-danger" @click="deleteQuota(index)">
+                ❌ {{ $t('common.delete') }}
+              </button>
             </td>
           </tr>
         </tbody>
@@ -47,74 +49,75 @@
 
       <div v-else class="empty-state">
         <img src="@/assets/empty.svg" alt="No Data" />
-        <p>Kayıt bulunamadı.</p>
+        <p>{{ $t('common.noData') }}</p>
       </div>
     </div>
 
-    <!-- Yeni Satış Kotası Modalı -->
+    <!-- Modal -->
     <div v-if="showNewQuotaModal" class="modal-overlay">
       <div class="modal">
         <div class="modal-header">
-          <h2>Yeni Satış Kotası</h2>
+          <h2>{{ $t('salesQuota.newTitle') }}</h2>
           <button class="close-btn" @click="closeNewQuotaModal">✖</button>
         </div>
 
         <div class="form-group">
-          <label>Kota Adı <span class="required">*</span></label>
-          <input type="text" v-model="newQuota.name" required>
+          <label>{{ $t('salesQuota.form.name') }} <span class="required">*</span></label>
+          <input type="text" v-model="newQuota.name" required />
         </div>
 
         <div class="form-group">
-          <label>Durum <span class="required">*</span></label>
+          <label>{{ $t('salesQuota.form.status') }} <span class="required">*</span></label>
           <select v-model="newQuota.status">
-            <option>Aktif</option>
-            <option>Pasif</option>
+            <option>{{ $t('common.active') }}</option>
+            <option>{{ $t('common.passive') }}</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label>Öncelik</label>
-          <input type="number" v-model="newQuota.priority" min="0">
+          <label>{{ $t('salesQuota.form.priority') }}</label>
+          <input type="number" v-model="newQuota.priority" min="0" />
         </div>
 
         <div class="form-group">
-          <label>Satış Kotası</label>
-          <input type="number" v-model="newQuota.amount" min="1">
+          <label>{{ $t('salesQuota.form.amount') }}</label>
+          <input type="number" v-model="newQuota.amount" min="1" />
         </div>
 
         <div class="form-group">
-          <label>Kota Kuralı</label>
+          <label>{{ $t('salesQuota.form.rule') }}</label>
           <select v-model="newQuota.rule">
-            <option>Müşteri Bazlı Satış Miktarı</option>
-            <option>Genel Satış Miktarı</option>
+            <option>{{ $t('salesQuota.rules.customerBased') }}</option>
+            <option>{{ $t('salesQuota.rules.general') }}</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label>Periyot</label>
+          <label>{{ $t('salesQuota.form.period') }}</label>
           <select v-model="newQuota.period">
-            <option>Tüm Zamanlar</option>
-            <option>Günlük</option>
-            <option>Haftalık</option>
-            <option>Aylık</option>
+            <option>{{ $t('salesQuota.periods.all') }}</option>
+            <option>{{ $t('salesQuota.periods.daily') }}</option>
+            <option>{{ $t('salesQuota.periods.weekly') }}</option>
+            <option>{{ $t('salesQuota.periods.monthly') }}</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label>Üye Grupları</label>
+          <label>{{ $t('salesQuota.form.group') }}</label>
           <select v-model="newQuota.group">
-            <option>Tümü</option>
-            <option>Bireysel</option>
-            <option>Kurumsal</option>
+            <option>{{ $t('common.all') }}</option>
+            <option>{{ $t('salesQuota.groups.individual') }}</option>
+            <option>{{ $t('salesQuota.groups.corporate') }}</option>
           </select>
         </div>
 
-        <button class="btn btn-primary" @click="saveQuota">Kaydet</button>
+        <button class="btn btn-primary" @click="saveQuota">
+          ✔ {{ $t('common.save') }}
+        </button>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -169,50 +172,113 @@ export default {
 </script>
 
 <style scoped>
+.sales-quotas-container {
+  padding: 20px;
+}
+
 /* Üst Kısım */
 .header-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   padding: 15px;
-  background: white;
-  border-bottom: 1px solid #ddd;
+  background: var(--header-bg, white);
+  border-bottom: 1px solid var(--border-color, #ddd);
 }
 
 .search-input {
   width: 250px;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color, #ccc);
   border-radius: 5px;
+  background: var(--input-bg, #fff);
+  color: var(--text-color, #1f2937);
 }
 
-/* Modal Overlay (Arka Plan) */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Daha koyu yap, şeffaflık artırıldı */
-  z-index: 99998 !important; /* Üst katmanda olsun */
-  display: flex !important; /* Emin olmak için */
-  justify-content: center;
-  align-items: center;
-  visibility: visible !important; /* Eğer gizliyse göster */
+/* Buton */
+.btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.btn-primary {
+  background: #3b82f6;
+  color: white;
+}
+.btn-primary:hover {
+  background: #2563eb;
+}
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+.btn-danger:hover {
+  background: #dc2626;
 }
 
-/* Modal İçeriği */
-.modal {
-  background: white;
+/* Tablo */
+.table-container {
+  background: var(--card-bg, white);
   padding: 20px;
   border-radius: 10px;
-  width: 500px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 99999 !important; /* Modal her şeyin üstünde olsun */
-  display: block !important; /* Eğer hala görünmüyorsa, ekle */
-  position: relative;
-  transform: translateY(0); /* Modal kaybolmasın */
-  opacity: 1 !important;
+  margin-top: 10px;
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color, #ddd);
+  text-align: left;
+  color: var(--text-color, #1f2937);
+}
+th {
+  background: var(--thead-bg, #f3f4f6);
+  font-weight: bold;
+  color: var(--thead-text, #1f2937);
+}
+.empty-state {
+  text-align: center;
+  padding: 30px;
+  color: var(--text-color, #6b7280);
+}
+.empty-state img {
+  width: 100px;
+  opacity: 0.5;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal */
+.modal {
+  background: var(--card-bg, white);
+  color: var(--text-color, #1f2937);
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .close-btn {
   background: none;
@@ -221,21 +287,52 @@ export default {
   cursor: pointer;
 }
 
-.modal-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+/* Form */
+.form-group {
+  margin-bottom: 15px;
 }
-
 input, select {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 5px;
+  border: 1px solid var(--border-color, #ccc);
   border-radius: 5px;
+  background: var(--input-bg, #fff);
+  color: var(--text-color, #1f2937);
 }
 
+/* Zorunlu Alan */
 .required {
-  color: red;
-  font-weight: bold;
+  color: #ef4444;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* 🌙 Koyu Mod */
+:root.dark {
+  --header-bg: #1f2937;
+  --card-bg: #1e293b;
+  --text-color: #f3f4f6;
+  --input-bg: #111827;
+  --border-color: #374151;
+  --thead-bg: #374151;
+  --thead-text: #f9fafb;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .search-input {
+    width: 100%;
+  }
+
+  .header-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
 }
 </style>

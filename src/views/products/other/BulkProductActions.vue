@@ -1,18 +1,17 @@
 <template>
   <div>
-
     <!-- Ana İçerik -->
     <div class="container">
       <div class="card">
-        <h2>Toplu Ürün İşlemleri</h2>
+        <h2>{{ $t('bulk.title') }}</h2>
         <div class="form-group">
-          <label for="bulk-action">» Yapılacak İşlem</label>
+          <label for="bulk-action">» {{ $t('bulk.selectActionLabel') }}</label>
           <select id="bulk-action" v-model="selectedAction">
-            <option value="" disabled>Lütfen işlemi seçin</option>
-            <option value="price-update">Fiyat Güncelleme</option>
-            <option value="stock-update">Stok Güncelleme</option>
-            <option value="category-change">Kategori Değiştirme</option>
-            <option value="delete-products">Ürünleri Sil</option>
+            <option value="" disabled>{{ $t('bulk.selectActionPlaceholder') }}</option>
+            <option value="price-update">{{ $t('bulk.actions.priceUpdate') }}</option>
+            <option value="stock-update">{{ $t('bulk.actions.stockUpdate') }}</option>
+            <option value="category-change">{{ $t('bulk.actions.categoryChange') }}</option>
+            <option value="delete-products">{{ $t('bulk.actions.deleteProducts') }}</option>
           </select>
         </div>
       </div>
@@ -36,32 +35,88 @@ export default {
 <style scoped>
 .container {
   padding: 20px;
+  display: flex;
+  justify-content: center;
 }
+
 .card {
   background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 480px;
+  transition: background 0.3s ease;
 }
+
 h2 {
-  color: #333;
-  font-size: 18px;
-  margin-bottom: 15px;
+  color: #1f2937;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
+
 .form-group {
-  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
+
 label {
   font-size: 14px;
-  font-weight: bold;
-  color: #666;
+  font-weight: 600;
+  color: #374151;
 }
+
 select {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-top: 5px;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
   font-size: 14px;
+  background-color: white;
+  transition: border 0.2s ease;
+}
+select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* ✅ Dark Mode */
+:root.dark .card {
+  background: #1e293b;
+  color: white;
+}
+
+:root.dark h2 {
+  color: #f3f4f6;
+}
+
+:root.dark label {
+  color: #d1d5db;
+}
+
+:root.dark select {
+  background: #0f172a;
+  color: white;
+  border-color: #334155;
+}
+
+/* ✅ Responsive */
+@media (max-width: 640px) {
+  .container {
+    padding: 15px;
+  }
+
+  .card {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  select {
+    font-size: 13px;
+  }
 }
 </style>

@@ -2,33 +2,37 @@
   <div class="modal-overlay">
     <div class="modal-container">
       <div class="modal-header">
-        <h2>Fiş Şablonu</h2>
+        <h2>{{ $t('receipt.title') }}</h2>
         <button class="close-btn" @click="$emit('close')">✖</button>
       </div>
 
       <div class="tab-buttons">
-        <button :class="{ active: activeTab === 'general' }" @click="activeTab = 'general'">Genel Bilgiler</button>
-        <button :class="{ active: activeTab === 'designer' }" @click="activeTab = 'designer'">Şablon Tasarlama Aracı</button>
+        <button :class="{ active: activeTab === 'general' }" @click="activeTab = 'general'">
+          {{ $t('receipt.tabs.general') }}
+        </button>
+        <button :class="{ active: activeTab === 'designer' }" @click="activeTab = 'designer'">
+          {{ $t('receipt.tabs.builder') }}
+        </button>
       </div>
 
       <div class="tab-content">
         <div v-if="activeTab === 'general'">
           <form class="form-grid">
-            <label>Kağıt Örneği *</label>
+            <label>{{ $t('receipt.fields.sample') }}</label>
             <input type="file" />
 
-            <label>Kağıt Ebatı *</label>
+            <label>{{ $t('receipt.fields.size') }}</label>
             <select>
-              <option>Özel</option>
+              <option>{{ $t('receipt.options.custom') }}</option>
             </select>
 
-            <label>Kağıt Genişliği (cm)*</label>
+            <label>{{ $t('receipt.fields.width') }}</label>
             <input type="number" placeholder="5.00" />
 
-            <label>Kağıt Yüksekliği (cm)*</label>
+            <label>{{ $t('receipt.fields.height') }}</label>
             <input type="number" placeholder="10.00" />
 
-            <label>Kopya *</label>
+            <label>{{ $t('receipt.fields.copy') }}</label>
             <select>
               <option>1</option>
               <option>2</option>
@@ -40,19 +44,20 @@
         </div>
 
         <div v-else class="designer-tab">
-          <div class="design-area">
-
-          </div>
+          <div class="design-area"></div>
           <div class="field-list">
-            <div v-for="field in fields" :key="field" class="checkbox">
-              <label><input type="checkbox" checked /> {{ field }}</label>
+            <div v-for="key in fields" :key="key" class="checkbox">
+              <label>
+                <input type="checkbox" checked />
+                {{ $t(`receipt.labels.${key}`) }}
+              </label>
             </div>
           </div>
         </div>
       </div>
 
       <div class="modal-footer">
-        <button class="save-btn">✔ Kaydet</button>
+        <button class="save-btn">✔ {{ $t('common.save') }}</button>
       </div>
     </div>
   </div>
@@ -64,14 +69,14 @@ import { ref } from 'vue'
 const activeTab = ref('general')
 
 const fields = [
-  'Firma Logosu',
-  'Ürün Listesi',
-  'Ürün Adı',
-  'Adet',
-  'Fiyat',
-  'Tutar',
-  'Genel Toplam',
-  'Teşekkür Mesajı'
+  'companyLogo',
+  'productList',
+  'productName',
+  'quantity',
+  'price',
+  'total',
+  'grandTotal',
+  'thankYou'
 ]
 </script>
 

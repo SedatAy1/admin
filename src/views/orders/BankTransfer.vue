@@ -3,10 +3,10 @@
     <OrderTopMenu />
 
     <div class="bank-transfers">
-      <h2>Havale Bildirimleri</h2>
+      <h2>{{ $t("transfers.title") }}</h2>
 
       <div class="search-box">
-        <input v-model="searchQuery" type="text" placeholder="🔍 Ara..." />
+        <input v-model="searchQuery" type="text" :placeholder="$t('common.searchPlaceholder')" />
       </div>
 
       <!-- Havale Bildirimleri Tablosu -->
@@ -14,24 +14,24 @@
         <table>
           <thead>
             <tr>
-              <th>Havale No</th>
-              <th>Sipariş No</th>
-              <th>Ad Soyad</th>
-              <th>Telefon</th>
-              <th>Tutar</th>
-              <th>Banka</th>
-              <th>Banka Hesabı</th>
-              <th>Durum</th>
-              <th>Tarih</th>
-              <th>İşlemler</th>
+              <th>{{ $t("transfers.table.id") }}</th>
+              <th>{{ $t("transfers.table.orderId") }}</th>
+              <th>{{ $t("transfers.table.name") }}</th>
+              <th>{{ $t("transfers.table.phone") }}</th>
+              <th>{{ $t("transfers.table.amount") }}</th>
+              <th>{{ $t("transfers.table.bank") }}</th>
+              <th>{{ $t("transfers.table.bankAccount") }}</th>
+              <th>{{ $t("transfers.table.status") }}</th>
+              <th>{{ $t("transfers.table.date") }}</th>
+              <th>{{ $t("transfers.table.actions") }}</th>
             </tr>
           </thead>
           <tbody>
             <tr v-if="filteredTransfers.length === 0" class="empty-row">
               <td colspan="10">
                 <div class="no-data">
-                  <img src="@/assets/no-data.png" alt="Kayıt Bulunamadı" class="no-data-img" />
-                  <p class="no-data-text">Kayıt bulunamadı.</p>
+                  <img src="@/assets/no-data.png" alt="No Data" class="no-data-img" />
+                  <p class="no-data-text">{{ $t("transfers.noData") }}</p>
                 </div>
               </td>
             </tr>
@@ -64,7 +64,15 @@
           <option value="20">20</option>
           <option value="50">50</option>
         </select>
-        <span>{{ filteredTransfers.length }} kayıttan 1 ile {{ filteredTransfers.length }} arası gösteriliyor</span>
+        <span>
+          {{
+            $t("transfers.footer.showing", {
+              from: 1,
+              to: filteredTransfers.length,
+              total: filteredTransfers.length
+            })
+          }}
+        </span>
       </div>
     </div>
   </div>
@@ -104,28 +112,6 @@ export default {
           status: "Reddedildi",
           date: "2021-10-01",
         },
-        {
-          id: "494360061",
-          orderId: "494360061",
-          customerName: "Test Test",
-          phone: "+90111111111",
-          amount: "81.82",
-          bank: "Test Bankası",
-          bankAccount: "Test Teknoloji LTD. ŞTİ.",
-          status: "Reddedildi",
-          date: "2021-08-20",
-        },
-        {
-          id: "165496181",
-          orderId: "165496181",
-          customerName: "asdasdasd",
-          phone: "+905555555000",
-          amount: "157.81",
-          bank: "Test Bankası",
-          bankAccount: "Test Teknoloji LTD. ŞTİ.",
-          status: "Reddedildi",
-          date: "2021-07-10",
-        },
       ],
     };
   },
@@ -146,16 +132,26 @@ export default {
 <style scoped>
 .bank-transfers {
   padding: 20px;
+  background-color: #f9fafb;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .bank-transfers {
+  background-color: #0f172a; /* slate-900 */
 }
 
 /* Başlık */
 h2 {
-  color: #333;
-  margin-bottom: 20px;
+  color: #1e3a8a;
   font-size: 22px;
+  margin-bottom: 20px;
 }
 
-/* 📌 Arama Kutusu */
+.dark-mode h2 {
+  color: #60a5fa;
+}
+
+/* Arama Kutusu */
 .search-box {
   margin-bottom: 15px;
 }
@@ -163,11 +159,18 @@ h2 {
 .search-box input {
   width: 100%;
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
 }
 
-/* 📌 Boş Veri Mesajı */
+.dark-mode .search-box input {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+/* Boş Veri */
 .no-data {
   display: flex;
   flex-direction: column;
@@ -187,11 +190,21 @@ h2 {
   color: #666;
 }
 
-/* 📌 Tablo */
+.dark-mode .no-data-text {
+  color: #94a3b8;
+}
+
+/* Tablo */
 .transfers-table {
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.dark-mode .transfers-table {
+  background: #1e293b;
+  color: #e2e8f0;
 }
 
 .transfers-table table {
@@ -202,57 +215,121 @@ h2 {
 .transfers-table th,
 .transfers-table td {
   padding: 12px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #e5e7eb;
   text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.transfers-table tr:hover {
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.dark-mode .transfers-table tr:hover {
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .transfers-table th {
-  background: #f5f5f5;
+  background: #f1f5f9;
   font-weight: bold;
+  color: #1f2937;
 }
 
-/* 📌 Durum Sütunu */
+.dark-mode .transfers-table th {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+/* Durum */
 .status-approved {
-  color: green;
-  font-size: 20px;
+  color: #10b981;
+  font-size: 18px;
 }
 
 .status-rejected {
-  color: red;
-  font-size: 20px;
+  color: #ef4444;
+  font-size: 18px;
 }
 
-/* 📌 İşlemler */
-.view-btn {
-  background: #007bff;
-  color: white;
-  padding: 5px 10px;
+/* Butonlar */
+.view-btn,
+.delete-btn {
+  padding: 6px 10px;
   border: none;
   border-radius: 5px;
+  font-size: 15px;
+  margin: 0 2px;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-btn {
+  background: #3b82f6;
+  color: white;
+}
+
+.view-btn:hover {
+  background: #2563eb;
 }
 
 .delete-btn {
-  background: #dc3545;
+  background: #ef4444;
   color: white;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
-/* 📌 Alt Bilgilendirme */
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+.dark-mode .view-btn {
+  background: #60a5fa;
+}
+
+.dark-mode .delete-btn {
+  background: #f87171;
+}
+
+/* Footer */
 .table-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 12px;
   font-size: 14px;
+  margin-top: 10px;
 }
 
 .table-footer select {
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+.dark-mode .table-footer select {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  .transfers-table th,
+  .transfers-table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .table-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .table-footer select {
+    width: 100%;
+    max-width: 150px;
+  }
 }
 </style>

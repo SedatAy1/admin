@@ -3,10 +3,10 @@
     <OrderTopMenu />
 
     <div class="fault-reports">
-      <h2>Arıza Bildirimleri</h2>
+      <h2>{{ $t("fault.title") }}</h2>
 
       <div class="search-box">
-        <input v-model="searchQuery" type="text" placeholder="🔍 Ara..." />
+        <input v-model="searchQuery" type="text" :placeholder="$t('common.searchPlaceholder')" />
       </div>
 
       <!-- Arıza Bildirimleri Tablosu -->
@@ -14,21 +14,21 @@
         <table>
           <thead>
             <tr>
-              <th>Bildirim No</th>
-              <th>Sipariş No</th>
-              <th>Adı Soyadı</th>
-              <th>Konu</th>
-              <th>Tarih</th>
-              <th>Kapalı</th>
-              <th>İşlemler</th>
+              <th>{{ $t("fault.table.id") }}</th>
+              <th>{{ $t("fault.table.orderId") }}</th>
+              <th>{{ $t("fault.table.name") }}</th>
+              <th>{{ $t("fault.table.subject") }}</th>
+              <th>{{ $t("fault.table.date") }}</th>
+              <th>{{ $t("fault.table.status") }}</th>
+              <th>{{ $t("fault.table.actions") }}</th>
             </tr>
           </thead>
           <tbody>
             <tr v-if="filteredReports.length === 0" class="empty-row">
               <td colspan="7">
                 <div class="no-data">
-                  <img src="@/assets/no-data.png" alt="Kayıt Bulunamadı" class="no-data-img" />
-                  <p class="no-data-text">Kayıt bulunamadı.</p>
+                  <img src="@/assets/no-data.png" alt="No Data" class="no-data-img" />
+                  <p class="no-data-text">{{ $t("fault.noData") }}</p>
                 </div>
               </td>
             </tr>
@@ -40,16 +40,16 @@
               <td>{{ report.date }}</td>
               <td>
                 <span class="status-badge" :class="{'status-passive': report.status === 'Pasif'}">
-                  ❌ {{ report.status }}
+                  ❌ {{ $t("fault.status.passive") }}
                 </span>
               </td>
               <td>
                 <div class="dropdown">
-                  <button class="dropdown-btn">İşlemler ⌄</button>
+                  <button class="dropdown-btn">{{ $t("fault.actions.label") }} ⌄</button>
                   <div class="dropdown-content">
-                    <a href="#">Detay</a>
-                    <a href="#">Güncelle</a>
-                    <a href="#">Sil</a>
+                    <a href="#">{{ $t("fault.actions.detail") }}</a>
+                    <a href="#">{{ $t("fault.actions.update") }}</a>
+                    <a href="#">{{ $t("fault.actions.delete") }}</a>
                   </div>
                 </div>
               </td>
@@ -65,7 +65,15 @@
           <option value="20">20</option>
           <option value="50">50</option>
         </select>
-        <span>{{ filteredReports.length }} kayıttan 1 ile {{ filteredReports.length }} arası gösteriliyor</span>
+        <span>
+          {{
+            $t("fault.footer.showing", {
+              from: 1,
+              to: filteredReports.length,
+              total: filteredReports.length
+            })
+          }}
+        </span>
       </div>
     </div>
   </div>
@@ -107,20 +115,29 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .fault-reports {
   padding: 20px;
+  background: #f9fafb;
+  transition: background 0.3s ease;
+}
+
+.dark-mode .fault-reports {
+  background: #0f172a; /* slate-900 */
 }
 
 /* Başlık */
 h2 {
-  color: #333;
+  color: #1e3a8a;
   margin-bottom: 20px;
   font-size: 22px;
 }
 
-/* 📌 Arama Kutusu */
+.dark-mode h2 {
+  color: #60a5fa;
+}
+
+/* Arama Kutusu */
 .search-box {
   margin-bottom: 15px;
 }
@@ -128,11 +145,18 @@ h2 {
 .search-box input {
   width: 100%;
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
 }
 
-/* 📌 Boş Veri Mesajı */
+.dark-mode .search-box input {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+/* Boş Veri */
 .no-data {
   display: flex;
   flex-direction: column;
@@ -152,11 +176,21 @@ h2 {
   color: #666;
 }
 
-/* 📌 Tablo */
+.dark-mode .no-data-text {
+  color: #94a3b8;
+}
+
+/* Tablo */
 .reports-table {
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .reports-table {
+  background: #1e293b;
+  color: #e2e8f0;
 }
 
 .reports-table table {
@@ -167,48 +201,93 @@ h2 {
 .reports-table th,
 .reports-table td {
   padding: 12px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #e5e7eb;
   text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.reports-table tr:hover {
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.dark-mode .reports-table tr:hover {
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .reports-table th {
-  background: #f5f5f5;
+  background: #f1f5f9;
   font-weight: bold;
+  color: #1f2937;
 }
 
-/* 📌 Pasif Durum */
+.dark-mode .reports-table th {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+/* Pasif Durum */
 .status-badge {
   padding: 5px 10px;
   border-radius: 5px;
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .status-passive {
   background: #fde8e8;
-  color: #dc3545;
+  color: #dc2626;
 }
 
-/* 📌 İşlemler - Dropdown */
+.dark-mode .status-passive {
+  background: #4b1c1c;
+  color: #f87171;
+}
+
+/* Dropdown İşlemler */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
 .dropdown-btn {
-  background: #f8f9fa;
+  background: #f1f5f9;
   border: 1px solid #ccc;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown-btn:hover {
+  background: #e2e8f0;
+}
+
+.dark-mode .dropdown-btn {
+  background: #334155;
+  color: #fff;
+  border-color: #475569;
+}
+
+.dark-mode .dropdown-btn:hover {
+  background: #475569;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   background: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  min-width: 100px;
-  z-index: 1;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  min-width: 120px;
+  z-index: 10;
+  overflow: hidden;
+  right: 0;
+}
+
+.dark-mode .dropdown-content {
+  background: #1e293b;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown:hover .dropdown-content {
@@ -216,28 +295,68 @@ h2 {
 }
 
 .dropdown-content a {
-  padding: 8px 12px;
+  padding: 10px 14px;
   display: block;
   text-decoration: none;
-  color: black;
+  font-size: 14px;
+  color: #111827;
+  transition: background 0.2s ease;
 }
 
 .dropdown-content a:hover {
-  background: #f5f5f5;
+  background: #f3f4f6;
 }
 
-/* 📌 Alt Bilgilendirme */
+.dark-mode .dropdown-content a {
+  color: #e2e8f0;
+}
+
+.dark-mode .dropdown-content a:hover {
+  background: #334155;
+}
+
+/* Footer */
 .table-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 12px;
   font-size: 14px;
+  margin-top: 10px;
 }
 
 .table-footer select {
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+.dark-mode .table-footer select {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  .reports-table th,
+  .reports-table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .table-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .table-footer select {
+    width: 100%;
+    max-width: 150px;
+  }
 }
 </style>

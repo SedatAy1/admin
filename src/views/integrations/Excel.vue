@@ -2,55 +2,55 @@
   <MarketLayout>
     <div class="excel-container">
       <div class="sidebar">
-        <h3>Excel İşlemleri</h3>
+        <h3>{{ $t("excel.title") }}</h3>
         <ul>
-          <li v-for="item in menuItems" :key="item">{{ item }}</li>
+          <li v-for="item in menuItems" :key="item">{{ $t(`excel.menu.${item}`) }}</li>
         </ul>
       </div>
 
       <div class="content">
         <div class="excel-header">
-          <p>Hızlı Excel işlemleri ile ürünlerinizi dışarı aktarabilir ve içeri yükleyebilirsiniz.</p>
+          <p>{{ $t("excel.description") }}</p>
         </div>
 
         <div class="excel-sections">
           <!-- Excel Dışarı Aktar Bölümü -->
           <div class="excel-card">
-            <h4><i class="fas fa-file-export"></i> Excel Dışarı Aktar</h4>
+            <h4><i class="fas fa-file-export"></i> {{ $t("excel.exportTitle") }}</h4>
             <div class="form-group">
-              <label>Kategori</label>
-              <button class="button-link">Değiştir</button>
+              <label>{{ $t("excel.category") }}</label>
+              <button class="button-link">{{ $t("common.change") }}</button>
             </div>
             <div class="form-group">
-              <label>Marka</label>
-              <button class="button-link">Değiştir</button>
+              <label>{{ $t("excel.brand") }}</label>
+              <button class="button-link">{{ $t("common.change") }}</button>
             </div>
             <div class="switch-group">
-              <label>Marka Bilgisi</label>
+              <label>{{ $t("excel.brandInfo") }}</label>
               <input type="checkbox" v-model="exportOptions.brandInfo" />
             </div>
             <div class="switch-group">
-              <label>Ürün Açıklaması</label>
+              <label>{{ $t("excel.productDescription") }}</label>
               <input type="checkbox" v-model="exportOptions.productDescription" />
             </div>
-            <button class="button-primary">İndir</button>
+            <button class="button-primary">{{ $t("common.download") }}</button>
           </div>
 
           <!-- Excel İçe Aktar Bölümü -->
           <div class="excel-card">
-            <h4><i class="fas fa-file-import"></i> Excel İçe Aktar</h4>
-            <p class="info-text">Sadece desteklenen formatlardaki dosyalar içeri aktarılır.</p>
+            <h4><i class="fas fa-file-import"></i> {{ $t("excel.importTitle") }}</h4>
+            <p class="info-text">{{ $t("excel.importInfo") }}</p>
             <input type="file" class="file-input" />
             <select class="dropdown">
-              <option>Ürün ID (ID)</option>
-              <option>Ürün Kodu</option>
-              <option>Barkod No</option>
+              <option>{{ $t("excel.identifiers.id") }}</option>
+              <option>{{ $t("excel.identifiers.code") }}</option>
+              <option>{{ $t("excel.identifiers.barcode") }}</option>
             </select>
             <select class="dropdown">
-              <option>Nokta (.)</option>
-              <option>Virgül (,)</option>
+              <option>{{ $t("excel.separators.dot") }}</option>
+              <option>{{ $t("excel.separators.comma") }}</option>
             </select>
-            <button class="button-primary">Yükle</button>
+            <button class="button-primary">{{ $t("common.upload") }}</button>
           </div>
         </div>
       </div>
@@ -68,8 +68,8 @@ export default {
   data() {
     return {
       menuItems: [
-        "Ürün Bilgileri", "Ürün Varyantları", "Ürün Kategorileri", "Ürün Resimleri (URL ile)",
-        "Ürün Stokları", "Ürün Nitelikleri", "Ürün Uyumluluk Listesi", "Ürün Marka Özel Kodları"
+        "productInfo", "productVariants", "productCategories", "productImages",
+        "productStock", "productAttributes", "productCompatibility", "productBrandCodes"
       ],
       exportOptions: {
         brandInfo: false,
@@ -79,7 +79,6 @@ export default {
   }
 };
 </script>
-
 <style scoped>
 /* Layout */
 .excel-container {
@@ -89,6 +88,19 @@ export default {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to right, #f5f7fa, #c3cfe2);
   min-height: 100vh;
+  transition: all 0.3s ease-in-out;
+}
+
+html.dark .excel-container {
+  background: linear-gradient(to right, #1e1e1e, #2e2e2e);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .excel-container {
+    flex-direction: column;
+    padding: 20px;
+  }
 }
 
 /* Sidebar */
@@ -99,6 +111,7 @@ export default {
   border-radius: 12px;
   color: #f9fafb;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out;
 }
 
 .sidebar h3 {
@@ -123,10 +136,17 @@ export default {
   color: #ffffff;
 }
 
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
 /* Content */
 .content {
   flex: 1;
   animation: fadeIn 0.5s ease-in-out;
+  transition: all 0.3s ease;
 }
 
 .excel-header {
@@ -143,10 +163,23 @@ export default {
   font-size: 15px;
 }
 
+html.dark .excel-header {
+  background: #2a2d34;
+}
+html.dark .excel-header p {
+  color: #e5e7eb;
+}
+
 .excel-sections {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .excel-sections {
+    flex-direction: column;
+  }
 }
 
 .excel-card {
@@ -156,6 +189,12 @@ export default {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   flex: 1 1 45%;
   animation: slideUp 0.4s ease-out;
+  transition: background 0.3s ease;
+}
+
+html.dark .excel-card {
+  background: #2e2e38;
+  color: #f1f1f1;
 }
 
 .excel-card h4 {
@@ -167,14 +206,21 @@ export default {
   gap: 8px;
 }
 
+html.dark .excel-card h4 {
+  color: #ffffff;
+}
+
+/* Form Elements */
 .form-group,
 .switch-group {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 
+/* Buttons */
 .button-primary {
   background: #3b82f6;
   color: white;
@@ -217,10 +263,25 @@ export default {
   box-shadow: 0 0 5px #3b82f6;
 }
 
+html.dark .file-input,
+html.dark .dropdown {
+  background-color: #444;
+  color: #f1f1f1;
+  border-color: #666;
+}
+html.dark .file-input::placeholder,
+html.dark .dropdown::placeholder {
+  color: #ccc;
+}
+
+/* Info text */
 .info-text {
   color: #6b7280;
   margin-bottom: 10px;
   font-size: 14px;
+}
+html.dark .info-text {
+  color: #9ca3af;
 }
 
 /* Animations */

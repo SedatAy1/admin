@@ -6,32 +6,32 @@
     <!-- FORM -->
     <div class="report-form">
       <h3 class="title">
-        <i class="fas fa-chart-bar"></i> Ürün Raporları
+        <i class="fas fa-chart-bar"></i> {{ $t('productReports.title') }}
       </h3>
 
       <div class="form-grid">
         <div class="form-group">
-          <label>Rapor Tipi</label>
+          <label>{{ $t('productReports.reportType') }}</label>
           <select v-model="selectedReport" @change="handleReportChange">
             <option v-for="report in reportOptions" :key="report.value" :value="report.value">
-              {{ report.label }}
+              {{ $t(`productReports.types.${report.value}`) }}
             </option>
           </select>
         </div>
 
-        <div class="form-group"><label>Ürün Kaynağı</label><select><option>Kaynak Seçilmedi</option></select></div>
-        <div class="form-group"><label>Kategori</label><select><option>Kategori Seçilmedi</option></select></div>
-        <div class="form-group"><label>Marka</label><select><option>Marka Seçilmedi</option></select></div>
-        <div class="form-group"><label>Ürün Etiketleri</label><select><option>Seçilmedi</option></select></div>
-        <div class="form-group"><label>Ürün No</label><input type="text" /></div>
-        <div class="form-group"><label>Ürün Kodu</label><input type="text" /></div>
-        <div class="form-group"><label>Barkod</label><input type="text" /></div>
-        <div class="form-group"><label>Gelişmiş Filtreleme</label><select><option>Seçilmedi</option></select></div>
+        <div class="form-group"><label>{{ $t('productReports.source') }}</label><select><option>{{ $t('common.notSelectedSource') }}</option></select></div>
+        <div class="form-group"><label>{{ $t('productReports.category') }}</label><select><option>{{ $t('common.notSelectedCategory') }}</option></select></div>
+        <div class="form-group"><label>{{ $t('productReports.brand') }}</label><select><option>{{ $t('common.notSelectedBrand') }}</option></select></div>
+        <div class="form-group"><label>{{ $t('productReports.tags') }}</label><select><option>{{ $t('common.notSelected') }}</option></select></div>
+        <div class="form-group"><label>{{ $t('productReports.productNo') }}</label><input type="text" /></div>
+        <div class="form-group"><label>{{ $t('productReports.productCode') }}</label><input type="text" /></div>
+        <div class="form-group"><label>{{ $t('productReports.barcode') }}</label><input type="text" /></div>
+        <div class="form-group"><label>{{ $t('productReports.advancedFilter') }}</label><select><option>{{ $t('common.notSelected') }}</option></select></div>
       </div>
 
       <div class="form-actions">
-        <button class="clear">Temizle</button>
-        <button class="generate">Oluştur</button>
+        <button class="clear">{{ $t('common.clear') }}</button>
+        <button class="generate">{{ $t('common.generate') }}</button>
       </div>
     </div>
   </div>
@@ -46,21 +46,21 @@ const router = useRouter()
 const selectedReport = ref('StockAlerts')
 
 const reportOptions = [
-  { value: 'Stock', label: 'Stok Raporu' },
-  { value: 'VariantStock', label: 'Varyant Stok Raporu' },
-  { value: 'StockMovements', label: 'Stok Hareketleri' },
-  { value: 'Sales', label: 'Ürün Satış Raporu' },
-  { value: 'VariantSales', label: 'Ürün Satış Raporu (Varyantlı)' },
-  { value: 'CategorySales', label: 'Kategori Satış Raporu' },
-  { value: 'BrandSales', label: 'Marka Satış Raporu' },
-  { value: 'TagSales', label: 'Etiket Satış Raporu' },
-  { value: 'SourceSales', label: 'Kaynak Satış Raporu' },
-  { value: 'TopRated', label: 'En Çok Puanlanan Ürünler' },
-  { value: 'Favorites', label: 'Favori Ürünler Raporu' },
-  { value: 'Summary', label: 'Ürün Özet Raporu' },
-  { value: 'Recommended', label: 'Tavsiye Edilen Ürünler' },
-  { value: 'PriceAlerts', label: 'Fiyat Alarmı Kurulan Ürünler' },
-  { value: 'StockAlerts', label: 'Stok Alarmı Kurulan Ürünler' }
+  { value: 'Stock' },
+  { value: 'VariantStock' },
+  { value: 'StockMovements' },
+  { value: 'Sales' },
+  { value: 'VariantSales' },
+  { value: 'CategorySales' },
+  { value: 'BrandSales' },
+  { value: 'TagSales' },
+  { value: 'SourceSales' },
+  { value: 'TopRated' },
+  { value: 'Favorites' },
+  { value: 'Summary' },
+  { value: 'Recommended' },
+  { value: 'PriceAlerts' },
+  { value: 'StockAlerts' }
 ]
 
 const handleReportChange = () => {
@@ -78,6 +78,10 @@ const handleReportChange = () => {
   display: flex;
   align-items: center;
   gap: 8px;
+  color: #1f2937;
+}
+html.dark .title {
+  color: #f1f1f1;
 }
 
 .report-form {
@@ -89,8 +93,14 @@ const handleReportChange = () => {
   font-size: 14px;
   color: #1f2937;
   margin-bottom: 24px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+html.dark .report-form {
+  background: #232323;
+  color: #f1f1f1;
 }
 
+/* Grid alan */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -98,6 +108,7 @@ const handleReportChange = () => {
   margin-top: 16px;
 }
 
+/* Etiket ve alanlar */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -109,6 +120,9 @@ const handleReportChange = () => {
   font-size: 13px;
   color: #374151;
 }
+html.dark .form-group label {
+  color: #cbd5e1;
+}
 
 .form-group input,
 .form-group select {
@@ -117,13 +131,26 @@ const handleReportChange = () => {
   border: 1px solid #d1d5db;
   font-size: 13px;
   background-color: white;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+html.dark .form-group input,
+html.dark .form-group select {
+  background-color: #2c2c2c;
+  border-color: #444;
+  color: #f1f1f1;
+}
+html.dark .form-group input::placeholder,
+html.dark .form-group select::placeholder {
+  color: #aaa;
 }
 
+/* Butonlar */
 .form-actions {
   display: flex;
   justify-content: flex-end;
   gap: 12px;
   margin-top: 28px;
+  flex-wrap: wrap;
 }
 
 .clear {
@@ -132,6 +159,18 @@ const handleReportChange = () => {
   border: 1px solid #d1d5db;
   padding: 10px 20px;
   border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+.clear:hover {
+  background-color: #e5e7eb;
+}
+html.dark .clear {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border-color: #555;
+}
+html.dark .clear:hover {
+  background-color: #3a3a3a;
 }
 
 .generate {
@@ -140,5 +179,26 @@ const handleReportChange = () => {
   border: 1px solid #3b82f6;
   padding: 10px 20px;
   border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+.generate:hover {
+  background-color: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .report-form {
+    padding: 16px 18px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .clear,
+  .generate {
+    width: 100%;
+  }
 }
 </style>

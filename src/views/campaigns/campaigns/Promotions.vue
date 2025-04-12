@@ -1,80 +1,83 @@
 <template>
-    <div class="promotions-container">
-      <!-- Üst Kısım: Arama ve Buton -->
-      <div class="header-section">
-        <input type="text" class="search-input" placeholder="🔍 Ara...">
-        <button class="btn btn-primary" @click="openNewPromotionModal">
-          ➕ Yeni Promosyon
-        </button>
-      </div>
-
-      <!-- Tablo (Boşsa "Kayıt Bulunamadı" göster) -->
-      <div class="table-container">
-        <table v-if="promotions.length > 0">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Prom. No</th>
-              <th>Tanım</th>
-              <th>Min Sepet</th>
-              <th>Başlangıç Tarihi</th>
-              <th>Bitiş Tarihi</th>
-              <th>Sıra</th>
-              <th>Toplam Kullanım</th>
-              <th>Durum</th>
-              <th>İşlemler</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(promotion, index) in promotions" :key="index">
-              <td>{{ index + 1 }}</td>
-              <td>{{ promotion.id }}</td>
-              <td>{{ promotion.name }}</td>
-              <td>{{ promotion.minCart }}</td>
-              <td>{{ promotion.startDate }}</td>
-              <td>{{ promotion.endDate }}</td>
-              <td>{{ promotion.order }}</td>
-              <td>{{ promotion.totalUsage }}</td>
-              <td>{{ promotion.status }}</td>
-              <td>
-                <button class="btn btn-sm btn-danger" @click="deletePromotion(index)">❌ Sil</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <!-- Eğer hiç promosyon yoksa -->
-        <div v-else class="empty-state">
-          <img src="@/assets/empty.svg" alt="No Data" />
-          <p>Kayıt bulunamadı.</p>
-        </div>
-      </div>
+  <div class="promotions-container">
+    <!-- Üst Kısım: Arama ve Buton -->
+    <div class="header-section">
+      <input type="text" class="search-input" :placeholder="$t('promotion.search')" />
+      <button class="btn btn-primary" @click="openNewPromotionModal">
+        ➕ {{ $t('promotion.new') }}
+      </button>
     </div>
 
-    <!-- Yeni Promosyon Modalı -->
-    <div v-if="showNewPromotionModal" class="modal-overlay" @click.self="closeNewPromotionModal">
-      <div class="modal">
-        <div class="modal-header">
-          <h2>Yeni Promosyon</h2>
-          <button class="close-btn" @click="closeNewPromotionModal">✖</button>
-        </div>
-        <p class="modal-info">
-          Lütfen oluşturmak istediğiniz promosyon tipini seçin. Promosyon ayarları promosyonu oluşturduktan sonra yapılmaktadır.
-        </p>
+    <!-- Tablo -->
+    <div class="table-container">
+      <table v-if="promotions.length > 0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>{{ $t('promotion.id') }}</th>
+            <th>{{ $t('promotion.name') }}</th>
+            <th>{{ $t('promotion.minCart') }}</th>
+            <th>{{ $t('promotion.startDate') }}</th>
+            <th>{{ $t('promotion.endDate') }}</th>
+            <th>{{ $t('promotion.order') }}</th>
+            <th>{{ $t('promotion.totalUsage') }}</th>
+            <th>{{ $t('promotion.status') }}</th>
+            <th>{{ $t('common.actions') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(promotion, index) in promotions" :key="index">
+            <td>{{ index + 1 }}</td>
+            <td>{{ promotion.id }}</td>
+            <td>{{ promotion.name }}</td>
+            <td>{{ promotion.minCart }}</td>
+            <td>{{ promotion.startDate }}</td>
+            <td>{{ promotion.endDate }}</td>
+            <td>{{ promotion.order }}</td>
+            <td>{{ promotion.totalUsage }}</td>
+            <td>{{ promotion.status }}</td>
+            <td>
+              <button class="btn btn-sm btn-danger" @click="deletePromotion(index)">❌ {{ $t('common.delete') }}</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-        <div class="promotion-types">
-          <label v-for="(type, index) in promotionTypes" :key="index" class="radio-label">
-            <input type="radio" v-model="selectedPromotionType" :value="type" />
-            {{ type }}
-          </label>
-        </div>
-
-        <div class="modal-buttons">
-          <button class="btn btn-primary" @click="savePromotion">Oluştur</button>
-        </div>
+      <!-- Kayıt yoksa -->
+      <div v-else class="empty-state">
+        <img src="@/assets/empty.svg" alt="No Data" />
+        <p>{{ $t('common.noData') }}</p>
       </div>
     </div>
+  </div>
 
+  <!-- Yeni Promosyon Modalı -->
+  <div v-if="showNewPromotionModal" class="modal-overlay" @click.self="closeNewPromotionModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>{{ $t('promotion.newTitle') }}</h2>
+        <button class="close-btn" @click="closeNewPromotionModal">✖</button>
+      </div>
+      <p class="modal-info">
+        {{ $t('promotion.newInfo') }}
+      </p>
+
+      <div class="promotion-types">
+        <label
+          v-for="(type, index) in promotionTypes"
+          :key="index"
+          class="radio-label"
+        >
+          <input type="radio" v-model="selectedPromotionType" :value="type" />
+          {{ type }}
+        </label>
+      </div>
+
+      <div class="modal-buttons">
+        <button class="btn btn-primary" @click="savePromotion">{{ $t('common.create') }}</button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -132,23 +135,33 @@ export default {
 </script>
 
 <style scoped>
+.promotions-container {
+  padding: 20px;
+}
+
 /* Üst Kısım */
 .header-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   padding: 15px;
-  background: white;
-  border-bottom: 1px solid #ddd;
+  background: var(--header-bg, #ffffff);
+  border-bottom: 1px solid var(--border-color, #ddd);
+  border-radius: 8px;
 }
 
 .search-input {
   width: 250px;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color, #ccc);
   border-radius: 5px;
+  background: var(--input-bg, #fff);
+  color: var(--text-color, #000);
 }
 
+/* Butonlar */
 .btn {
   padding: 8px 14px;
   font-size: 14px;
@@ -156,13 +169,13 @@ export default {
   cursor: pointer;
   border-radius: 5px;
   transition: 0.3s;
+  font-weight: 500;
 }
 
 .btn-primary {
   background: #3b82f6;
   color: white;
 }
-
 .btn-primary:hover {
   background: #2563eb;
 }
@@ -171,73 +184,70 @@ export default {
   background: #ef4444;
   color: white;
 }
-
 .btn-danger:hover {
   background: #dc2626;
 }
 
 /* Tablo */
 .table-container {
-  background: white;
+  background: var(--card-bg, #fff);
   padding: 20px;
   border-radius: 10px;
   margin-top: 10px;
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 800px;
 }
 
 th, td {
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color, #ddd);
   text-align: left;
+  font-size: 14px;
+  color: var(--text-color, #000);
 }
 
 th {
-  background: #f3f4f6;
+  background: var(--thead-bg, #f3f4f6);
   font-weight: bold;
+  color: var(--text-color, #000);
 }
 
+/* Boş Veri */
 .empty-state {
   text-align: center;
   padding: 30px;
+  color: var(--text-muted, #9ca3af);
 }
-
 .empty-state img {
   width: 100px;
   opacity: 0.5;
 }
 
-/* Modal */
-/* Modal Overlay (Arka Plan) */
+/* Modal Overlay */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Daha koyu yap, şeffaflık artırıldı */
-  z-index: 99998 !important; /* Üst katmanda olsun */
-  display: flex !important; /* Emin olmak için */
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99998;
+  display: flex;
   justify-content: center;
   align-items: center;
-  visibility: visible !important; /* Eğer gizliyse göster */
 }
 
-/* Modal İçeriği */
+/* Modal */
 .modal {
-  background: white;
+  background: var(--card-bg, #fff);
   padding: 20px;
   border-radius: 10px;
-  width: 500px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 99999 !important; /* Modal her şeyin üstünde olsun */
-  display: block !important; /* Eğer hala görünmüyorsa, ekle */
-  position: relative;
-  transform: translateY(0); /* Modal kaybolmasın */
-  opacity: 1 !important;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: var(--text-color, #000);
 }
 
 .modal-header {
@@ -251,13 +261,16 @@ th {
   border: none;
   font-size: 18px;
   cursor: pointer;
+  color: var(--text-color, #000);
 }
 
 .modal-info {
-  background: #eef2ff;
+  background: var(--info-bg, #eef2ff);
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 15px;
+  font-size: 14px;
+  color: var(--text-color, #000);
 }
 
 .promotion-types {
@@ -277,5 +290,37 @@ th {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+/* 🌙 Dark Mode Teması */
+:root.dark {
+  --header-bg: #1f2937;
+  --card-bg: #1e293b;
+  --input-bg: #111827;
+  --thead-bg: #374151;
+  --border-color: #374151;
+  --text-color: #f3f4f6;
+  --text-muted: #9ca3af;
+  --info-bg: #2e3448;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .header-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .modal {
+    width: 95%;
+  }
 }
 </style>

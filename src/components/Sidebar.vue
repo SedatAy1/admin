@@ -4,66 +4,68 @@
     <!-- Sidebar Üst Kısım: Logo -->
     <div class="sidebar-header">
       <router-link to="/" class="logo">
-        <span v-if="!isCollapsed">Admin Panel</span>
+        <span v-if="!isCollapsed">{{ $t('sidebar.title') }}</span>
       </router-link>
     </div>
 
     <ul class="sidebar-menu">
       <!-- Siparişler -->
+<!-- Siparişler -->
+<li>
+  <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#ordersMenu">
+    <Package class="icon" />
+    <span v-if="!isCollapsed">{{ $t('sidebar.orders') }}</span>
+  </button>
+  <div class="collapse" id="ordersMenu">
+    <ul class="submenu">
+      <!-- Siparişler Alt Başlığı -->
       <li>
-        <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#ordersMenu">
-          <Package class="icon" />
-          <span v-if="!isCollapsed">Siparişler</span>
+        <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#subOrdersMenu">
+          <ClipboardList class="icon" />
+          <span v-if="!isCollapsed">{{ $t('sidebar.orders_sub.orders') }}</span>
         </button>
-        <div class="collapse" id="ordersMenu">
+        <div class="collapse" id="subOrdersMenu">
           <ul class="submenu">
-            <!-- Siparişler Alt Başlığı -->
-            <li>
-              <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#subOrdersMenu">
-                <ClipboardList class="icon" />
-                <span v-if="!isCollapsed">Siparişler</span>
-              </button>
-              <div class="collapse" id="subOrdersMenu">
-                <ul class="submenu">
-                  <li><router-link to="/orders/new" class="sidebar-link">Yeni Siparişler</router-link></li>
-                  <li><router-link to="/orders/preparing" class="sidebar-link">Hazırlanan Siparişler</router-link></li>
-                  <li><router-link to="/orders/shipped" class="sidebar-link">Kargolanan Siparişler</router-link></li>
-                  <li><router-link to="/orders/delivered" class="sidebar-link">Teslim Edilen Siparişler</router-link></li>
-                  <li><router-link to="/orders/requests" class="sidebar-link">Sipariş Talepleri</router-link></li>
-                  <li><router-link to="/orders/cancelled" class="sidebar-link">İptal Edilenler</router-link></li>
-                  <li><router-link to="/orders/incomplete" class="sidebar-link">Tamamlanmayan Siparişler</router-link></li>
-                </ul>
-              </div>
-            </li>
-
-            <!-- Diğer Alt Başlığı -->
-            <li>
-              <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#otherOrdersMenu">
-                <Pin class="icon" />
-                <span v-if="!isCollapsed">Diğer</span>
-              </button>
-              <div class="collapse" id="otherOrdersMenu">
-                <ul class="submenu">
-                  <li><router-link to="/orders/quick-sales">Hızlı Satış</router-link></li>
-                  <li><router-link to="/orders/phone-orders">Telefonla Sipariş Talepleri</router-link></li>
-                  <li><router-link to="/orders/active-carts">Aktif Sepetler</router-link></li>
-                  <li><router-link to="/orders/bank-transfer">Havale Bildirimleri</router-link></li>
-                  <li><router-link to="/orders/fault-reports">Arıza Bildirimleri</router-link></li>
-                  <li><router-link to="/orders/sales-terminals">Satış Terminalleri</router-link></li>
-                  <li><router-link to="/orders/bulk-actions">Toplu İşlemler</router-link></li>
-                  <li><router-link to="/orders/quick-payments">Hızlı Ödemeler</router-link></li>
-                </ul>
-              </div>
-            </li>
+            <li><router-link to="/orders/new">{{ $t('sidebar.orders_sub.new') }}</router-link></li>
+            <li><router-link to="/orders/preparing">{{ $t('sidebar.orders_sub.preparing') }}</router-link></li>
+            <li><router-link to="/orders/shipped">{{ $t('sidebar.orders_sub.shipped') }}</router-link></li>
+            <li><router-link to="/orders/delivered">{{ $t('sidebar.orders_sub.delivered') }}</router-link></li>
+            <li><router-link to="/orders/requests">{{ $t('sidebar.orders_sub.requests') }}</router-link></li>
+            <li><router-link to="/orders/cancelled">{{ $t('sidebar.orders_sub.cancelled') }}</router-link></li>
+            <li><router-link to="/orders/incomplete">{{ $t('sidebar.orders_sub.incomplete') }}</router-link></li>
           </ul>
         </div>
       </li>
 
+      <!-- Diğer Alt Başlığı -->
+      <li>
+        <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#otherOrdersMenu">
+          <Pin class="icon" />
+          <span v-if="!isCollapsed">{{ $t('sidebar.orders_sub.other') }}</span>
+        </button>
+        <div class="collapse" id="otherOrdersMenu">
+          <ul class="submenu">
+            <li><router-link to="/orders/quick-sales">{{ $t('sidebar.orders_sub.quick_sales') }}</router-link></li>
+            <li><router-link to="/orders/phone-orders">{{ $t('sidebar.orders_sub.phone_orders') }}</router-link></li>
+            <li><router-link to="/orders/active-carts">{{ $t('sidebar.orders_sub.active_carts') }}</router-link></li>
+            <li><router-link to="/orders/bank-transfer">{{ $t('sidebar.orders_sub.bank_transfer') }}</router-link></li>
+            <li><router-link to="/orders/fault-reports">{{ $t('sidebar.orders_sub.fault_reports') }}</router-link></li>
+            <li><router-link to="/orders/sales-terminals">{{ $t('sidebar.orders_sub.sales_terminals') }}</router-link></li>
+            <li><router-link to="/orders/bulk-actions">{{ $t('sidebar.orders_sub.bulk_actions') }}</router-link></li>
+            <li><router-link to="/orders/quick-payments">{{ $t('sidebar.orders_sub.quick_payments') }}</router-link></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</li>
+
+<!-- Ürünler -->
 <!-- Ürünler -->
 <li>
   <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#productsMenu">
     <ShoppingBag class="icon" />
-    <span v-if="!isCollapsed">Ürünler</span>
+    <span v-if="!isCollapsed">{{ $t('sidebar.products') }}</span>
   </button>
   <div class="collapse" id="productsMenu">
     <ul class="submenu">
@@ -71,19 +73,19 @@
       <li>
         <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#subProductsMenu">
           <Package class="icon" />
-          <span v-if="!isCollapsed">Ürünler</span>
+          <span v-if="!isCollapsed">{{ $t('sidebar.products_sub.products') }}</span>
         </button>
         <div class="collapse" id="subProductsMenu">
           <ul class="submenu">
-            <li><router-link to="/products/manage">Ürün Yönetimi</router-link></li>
-            <li><router-link to="/products/categories">Kategori Yönetimi</router-link></li>
-            <li><router-link to="/products/brands">Marka Yönetimi</router-link></li>
-            <li><router-link to="/products/attributes">Nitelik Yönetimi</router-link></li>
-            <li><router-link to="/products/custom-fields">Özel Alan Yönetimi</router-link></li>
-            <li><router-link to="/products/compatibility-groups">Uyumluluk Grupları</router-link></li>
-            <li><router-link to="/products/tags">Ürün Etiketleri</router-link></li>
-            <li><router-link to="/products/search-matching">Arama Eşleştirme</router-link></li>
-            <li><router-link to="/products/search-console">Arama Konsolu</router-link></li>
+            <li><router-link to="/products/manage">{{ $t('sidebar.products_sub.manage') }}</router-link></li>
+            <li><router-link to="/products/categories">{{ $t('sidebar.products_sub.categories') }}</router-link></li>
+            <li><router-link to="/products/brands">{{ $t('sidebar.products_sub.brands') }}</router-link></li>
+            <li><router-link to="/products/attributes">{{ $t('sidebar.products_sub.attributes') }}</router-link></li>
+            <li><router-link to="/products/custom-fields">{{ $t('sidebar.products_sub.custom_fields') }}</router-link></li>
+            <li><router-link to="/products/compatibility-groups">{{ $t('sidebar.products_sub.compatibility_groups') }}</router-link></li>
+            <li><router-link to="/products/tags">{{ $t('sidebar.products_sub.tags') }}</router-link></li>
+            <li><router-link to="/products/search-matching">{{ $t('sidebar.products_sub.search_matching') }}</router-link></li>
+            <li><router-link to="/products/search-console">{{ $t('sidebar.products_sub.search_console') }}</router-link></li>
           </ul>
         </div>
       </li>
@@ -92,28 +94,28 @@
       <li>
         <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#otherProductsMenu">
           <Settings class="icon" />
-          <span v-if="!isCollapsed">Diğer</span>
+          <span v-if="!isCollapsed">{{ $t('sidebar.products_sub.other') }}</span>
         </button>
         <div class="collapse" id="otherProductsMenu">
           <ul class="submenu">
-            <li><router-link to="/products/marketplace-matching">Pazaryeri Eşleştirmeleri</router-link></li>
-            <li><router-link to="/products/reviews">Ürün Yorumları</router-link></li>
-            <li><router-link to="/products/recommendations">Ürün Önerileri</router-link></li>
-            <li><router-link to="/products/advanced-sorting">Gelişmiş Ürün Sıralama</router-link></li>
-            <li><router-link to="/products/bulk-actions">Toplu Ürün İşlemleri</router-link></li>
-            <li><router-link to="/products/bulk-seo">Toplu SEO Güncelleme</router-link></li>
+            <li><router-link to="/products/marketplace-matching">{{ $t('sidebar.products_sub.marketplace_matching') }}</router-link></li>
+            <li><router-link to="/products/reviews">{{ $t('sidebar.products_sub.reviews') }}</router-link></li>
+            <li><router-link to="/products/recommendations">{{ $t('sidebar.products_sub.recommendations') }}</router-link></li>
+            <li><router-link to="/products/advanced-sorting">{{ $t('sidebar.products_sub.advanced_sorting') }}</router-link></li>
+            <li><router-link to="/products/bulk-actions">{{ $t('sidebar.products_sub.bulk_actions') }}</router-link></li>
+            <li><router-link to="/products/bulk-seo">{{ $t('sidebar.products_sub.bulk_seo') }}</router-link></li>
           </ul>
         </div>
       </li>
     </ul>
   </div>
 </li>
-
+<!-- Kampanyalar -->
 <!-- Kampanyalar -->
 <li>
   <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#campaignsMenu">
     <Target class="icon" />
-    <span v-if="!isCollapsed">Kampanyalar</span>
+    <span v-if="!isCollapsed">{{ $t('sidebar.campaigns') }}</span>
   </button>
   <div class="collapse" id="campaignsMenu">
     <ul class="submenu">
@@ -122,18 +124,18 @@
       <li>
         <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#subCampaignsMenu">
           <BadgePercent class="icon" />
-          <span v-if="!isCollapsed">Kampanyalar</span>
+          <span v-if="!isCollapsed">{{ $t('sidebar.campaigns_sub.campaigns') }}</span>
         </button>
         <div class="collapse" id="subCampaignsMenu">
           <ul class="submenu">
-            <li><router-link to="/campaigns/coupons">Kupon Yönetimi</router-link></li>
-            <li><router-link to="/campaigns/promotions">Promosyonlar</router-link></li>
-            <li><router-link to="/campaigns/member-discounts">Üye İndirimleri</router-link></li>
-            <li><router-link to="/campaigns/dealer-discounts">Bayi İndirimleri</router-link></li>
-            <li><router-link to="/campaigns/dealer-commissions">Bayi Komisyonları</router-link></li>
-            <li><router-link to="/campaigns/fixed-discounts">Sabit İndirim</router-link></li>
-            <li><router-link to="/campaigns/order-limits">Sipariş Limitleri</router-link></li>
-            <li><router-link to="/campaigns/sales-quotas">Satış Kotaları</router-link></li>
+            <li><router-link to="/campaigns/coupons">{{ $t('sidebar.campaigns_sub.coupons') }}</router-link></li>
+            <li><router-link to="/campaigns/promotions">{{ $t('sidebar.campaigns_sub.promotions') }}</router-link></li>
+            <li><router-link to="/campaigns/member-discounts">{{ $t('sidebar.campaigns_sub.member_discounts') }}</router-link></li>
+            <li><router-link to="/campaigns/dealer-discounts">{{ $t('sidebar.campaigns_sub.dealer_discounts') }}</router-link></li>
+            <li><router-link to="/campaigns/dealer-commissions">{{ $t('sidebar.campaigns_sub.dealer_commissions') }}</router-link></li>
+            <li><router-link to="/campaigns/fixed-discounts">{{ $t('sidebar.campaigns_sub.fixed_discounts') }}</router-link></li>
+            <li><router-link to="/campaigns/order-limits">{{ $t('sidebar.campaigns_sub.order_limits') }}</router-link></li>
+            <li><router-link to="/campaigns/sales-quotas">{{ $t('sidebar.campaigns_sub.sales_quotas') }}</router-link></li>
           </ul>
         </div>
       </li>
@@ -142,13 +144,13 @@
       <li>
         <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#emailToolsMenu">
           <Mail class="icon" />
-          <span v-if="!isCollapsed">E-Posta Araçları</span>
+          <span v-if="!isCollapsed">{{ $t('sidebar.campaigns_sub.email_tools') }}</span>
         </button>
         <div class="collapse" id="emailToolsMenu">
           <ul class="submenu">
-            <li><router-link to="/campaigns/email-list">Bülten Listesi</router-link></li>
-            <li><router-link to="/campaigns/email-groups">Bülten Grupları</router-link></li>
-            <li><router-link to="/campaigns/email-send">E-Posta Gönderimi</router-link></li>
+            <li><router-link to="/campaigns/email-list">{{ $t('sidebar.campaigns_sub.email_list') }}</router-link></li>
+            <li><router-link to="/campaigns/email-groups">{{ $t('sidebar.campaigns_sub.email_groups') }}</router-link></li>
+            <li><router-link to="/campaigns/email-send">{{ $t('sidebar.campaigns_sub.email_send') }}</router-link></li>
           </ul>
         </div>
       </li>
@@ -157,13 +159,13 @@
       <li>
         <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#smsToolsMenu">
           <MessageSquare class="icon" />
-          <span v-if="!isCollapsed">SMS Araçları</span>
+          <span v-if="!isCollapsed">{{ $t('sidebar.campaigns_sub.sms_tools') }}</span>
         </button>
         <div class="collapse" id="smsToolsMenu">
           <ul class="submenu">
-            <li><router-link to="/campaigns/sms-list">Bülten Listesi</router-link></li>
-            <li><router-link to="/campaigns/sms-groups">Bülten Grupları</router-link></li>
-            <li><router-link to="/campaigns/sms-send">SMS Gönderimi</router-link></li>
+            <li><router-link to="/campaigns/sms-list">{{ $t('sidebar.campaigns_sub.sms_list') }}</router-link></li>
+            <li><router-link to="/campaigns/sms-groups">{{ $t('sidebar.campaigns_sub.sms_groups') }}</router-link></li>
+            <li><router-link to="/campaigns/sms-send">{{ $t('sidebar.campaigns_sub.sms_send') }}</router-link></li>
           </ul>
         </div>
       </li>
@@ -171,11 +173,11 @@
   </div>
 </li>
 <!-- İçerikler -->
+<!-- İçerikler -->
 <li>
-  <!-- Ana İçerikler Butonu -->
   <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#contentMenu">
     <FileText class="icon" />
-    <span v-if="!isCollapsed">İçerikler</span>
+    <span v-if="!isCollapsed">{{ $t('sidebar.contents') }}</span>
   </button>
   <div class="collapse" id="contentMenu">
     <ul class="submenu">
@@ -184,18 +186,18 @@
       <li>
         <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#subContentMenu">
           <LayoutTemplate class="icon" />
-          <span v-if="!isCollapsed">İçerik Yönetimi</span>
+          <span v-if="!isCollapsed">{{ $t('sidebar.contents_sub.content_management') }}</span>
         </button>
         <div class="collapse" id="subContentMenu">
           <ul class="submenu">
-            <li><router-link to="/contents/content-management/pages">Sayfalar</router-link></li>
-            <li><router-link to="/contents/content-management/help">Yardım İçerikleri</router-link></li>
-            <li><router-link to="/contents/content-management/faq">Sıkça Sorulan Sorular</router-link></li>
-            <li><router-link to="/contents/content-management/blog">Blog Yönetimi</router-link></li>
-            <li><router-link to="/contents/content-management/slides">Slayt Yönetimi</router-link></li>
-            <li><router-link to="/contents/content-management/banners">Afiş Yönetimi</router-link></li>
-            <li><router-link to="/contents/content-management/popup">Popup</router-link></li>
-            <li><router-link to="/contents/content-management/upload">Görsel Yükle</router-link></li>
+            <li><router-link to="/contents/content-management/pages">{{ $t('sidebar.contents_sub.pages') }}</router-link></li>
+            <li><router-link to="/contents/content-management/help">{{ $t('sidebar.contents_sub.help') }}</router-link></li>
+            <li><router-link to="/contents/content-management/faq">{{ $t('sidebar.contents_sub.faq') }}</router-link></li>
+            <li><router-link to="/contents/content-management/blog">{{ $t('sidebar.contents_sub.blog') }}</router-link></li>
+            <li><router-link to="/contents/content-management/slides">{{ $t('sidebar.contents_sub.slides') }}</router-link></li>
+            <li><router-link to="/contents/content-management/banners">{{ $t('sidebar.contents_sub.banners') }}</router-link></li>
+            <li><router-link to="/contents/content-management/popup">{{ $t('sidebar.contents_sub.popup') }}</router-link></li>
+            <li><router-link to="/contents/content-management/upload">{{ $t('sidebar.contents_sub.upload') }}</router-link></li>
           </ul>
         </div>
       </li>
@@ -204,12 +206,12 @@
       <li>
         <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#urlMenu">
           <Link class="icon" />
-          <span v-if="!isCollapsed">URL Yönetimi</span>
+          <span v-if="!isCollapsed">{{ $t('sidebar.contents_sub.url_management') }}</span>
         </button>
         <div class="collapse" id="urlMenu">
           <ul class="submenu">
-            <li><router-link to="/contents/url-management/url-redirect">URL Yönlendirme</router-link></li>
-            <li><router-link to="/contents/url-management/404-reports">404 URL Raporları</router-link></li>
+            <li><router-link to="/contents/url-management/url-redirect">{{ $t('sidebar.contents_sub.url_redirect') }}</router-link></li>
+            <li><router-link to="/contents/url-management/404-reports">{{ $t('sidebar.contents_sub.reports_404') }}</router-link></li>
           </ul>
         </div>
       </li>
@@ -218,39 +220,41 @@
   </div>
 </li>
 <!-- Müşteriler -->
+<!-- Müşteriler -->
 <li>
   <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#customersMenu">
     <Users class="icon" />
-    <span v-if="!isCollapsed">Müşteriler</span>
+    <span v-if="!isCollapsed">{{ $t('sidebar.customers') }}</span>
   </button>
   <div class="collapse" id="customersMenu">
     <ul class="submenu">
-      <li><router-link to="/customers/manage">Müşteri Yönetimi</router-link></li>
-      <li><router-link to="/customers/risk">Riskli Müşteri Yönetimi</router-link></li>
-      <li><router-link to="/customers/balances">Müşteri Bakiyeleri</router-link></li>
-      <li><router-link to="/customers/dealers">Bayi Yönetimi</router-link></li>
-      <li><router-link to="/customers/groups">Bayi Grupları</router-link></li>
-      <li><router-link to="/customers/transactions">Bayi İşlemleri</router-link></li>
+      <li><router-link to="/customers/manage">{{ $t('sidebar.customers_sub.manage') }}</router-link></li>
+      <li><router-link to="/customers/risk">{{ $t('sidebar.customers_sub.risk') }}</router-link></li>
+      <li><router-link to="/customers/balances">{{ $t('sidebar.customers_sub.balances') }}</router-link></li>
+      <li><router-link to="/customers/dealers">{{ $t('sidebar.customers_sub.dealers') }}</router-link></li>
+      <li><router-link to="/customers/groups">{{ $t('sidebar.customers_sub.groups') }}</router-link></li>
+      <li><router-link to="/customers/transactions">{{ $t('sidebar.customers_sub.transactions') }}</router-link></li>
     </ul>
   </div>
 </li>
 
 <!-- Entegrasyonlar -->
+<!-- Entegrasyonlar -->
 <li>
   <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#integrationsMenu">
     <Network class="icon" />
-    <span v-if="!isCollapsed">Entegrasyonlar</span>
+    <span v-if="!isCollapsed">{{ $t('sidebar.integrations') }}</span>
   </button>
   <div class="collapse" id="integrationsMenu">
     <ul class="submenu">
-      <li><router-link to="/integrations/marketplace">Pazaryeri Entegrasyonları</router-link></li>
-      <li><router-link to="/integrations/accounting">Muhasebe Entegrasyonları</router-link></li>
-      <li><router-link to="/integrations/excel">Hızlı Excel İşlemleri</router-link></li>
-      <li><router-link to="/integrations/xml-import">XML İçeri Aktar</router-link></li>
-      <li><router-link to="/integrations/xml-export">XML Dışarı Aktar</router-link></li>
-      <li><router-link to="/integrations/bulk-marketplace">Toplu Pazaryeri İşlemleri</router-link></li>
-      <li><router-link to="/integrations/hepsiburada">Hepsiburada İşlemleri</router-link></li>
-      <li><router-link to="/integrations/monitor">Pazaryeri Monitorü</router-link></li>
+      <li><router-link to="/integrations/marketplace">{{ $t('sidebar.integrations_sub.marketplace') }}</router-link></li>
+      <li><router-link to="/integrations/accounting">{{ $t('sidebar.integrations_sub.accounting') }}</router-link></li>
+      <li><router-link to="/integrations/excel">{{ $t('sidebar.integrations_sub.excel') }}</router-link></li>
+      <li><router-link to="/integrations/xml-import">{{ $t('sidebar.integrations_sub.xml_import') }}</router-link></li>
+      <li><router-link to="/integrations/xml-export">{{ $t('sidebar.integrations_sub.xml_export') }}</router-link></li>
+      <li><router-link to="/integrations/bulk-marketplace">{{ $t('sidebar.integrations_sub.bulk_marketplace') }}</router-link></li>
+      <li><router-link to="/integrations/hepsiburada">{{ $t('sidebar.integrations_sub.hepsiburada') }}</router-link></li>
+      <li><router-link to="/integrations/monitor">{{ $t('sidebar.integrations_sub.monitor') }}</router-link></li>
     </ul>
   </div>
 </li>
@@ -259,22 +263,23 @@
 <li>
   <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#designMenu">
     <Palette class="icon" />
-    <span v-if="!isCollapsed">Tasarım</span>
+    <span v-if="!isCollapsed">{{ $t('sidebar.design') }}</span>
   </button>
   <div class="collapse" id="designMenu">
     <ul class="submenu">
-      <li><router-link to="/design/theme-settings">Tema Ayarları</router-link></li>
-      <li><router-link to="/design/module-layout">Modül Yerleşimi</router-link></li>
-      <li><router-link to="/design/print-templates">Yazdırma Şablonları</router-link></li>
-      <li><router-link to="/design/email-templates">E-Posta Tasarımları</router-link></li>
+      <li><router-link to="/design/theme-settings">{{ $t('sidebar.design_sub.theme_settings') }}</router-link></li>
+      <li><router-link to="/design/module-layout">{{ $t('sidebar.design_sub.module_layout') }}</router-link></li>
+      <li><router-link to="/design/print-templates">{{ $t('sidebar.design_sub.print_templates') }}</router-link></li>
+      <li><router-link to="/design/email-templates">{{ $t('sidebar.design_sub.email_templates') }}</router-link></li>
     </ul>
   </div>
 </li>
 <!-- Raporlar -->
+<!-- Raporlar -->
 <li>
   <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#reportsMenu">
     <BarChart2 class="icon" />
-    <span v-if="!isCollapsed">Raporlar</span>
+    <span v-if="!isCollapsed">{{ $t('sidebar.reports') }}</span>
   </button>
   <div class="collapse" id="reportsMenu">
     <ul class="submenu">
@@ -283,27 +288,27 @@
       <li>
         <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#orderReportsMenu">
           <Package class="icon" />
-          <span v-if="!isCollapsed">Sipariş Raporları</span>
+          <span v-if="!isCollapsed">{{ $t('sidebar.reports_sub.orders') }}</span>
         </button>
         <div class="collapse" id="orderReportsMenu">
           <ul class="submenu">
-            <li><router-link to="/reports/orders/daily">Günlük Sipariş Raporu</router-link></li>
-            <li><router-link to="/reports/orders/weekly">Haftalık Sipariş Raporu</router-link></li>
-            <li><router-link to="/reports/orders/monthly">Aylık Sipariş Raporu</router-link></li>
-            <li><router-link to="/reports/orders/yearly">Yıllık Sipariş Raporu</router-link></li>
-            <li><router-link to="/reports/orders/platform">Platform Bazlı Rapor</router-link></li>
-            <li><router-link to="/reports/orders/store">Mağaza Bazlı Rapor</router-link></li>
-            <li><router-link to="/reports/orders/product-sales">Ürün Bazlı Satış Raporu</router-link></li>
-            <li><router-link to="/reports/orders/variant-sales">Varyant Bazlı Satış Raporu</router-link></li>
-            <li><router-link to="/reports/orders/category-sales">Kategori Satış Raporu</router-link></li>
-            <li><router-link to="/reports/orders/brand-sales">Marka Satış Raporu</router-link></li>
-            <li><router-link to="/reports/orders/payment">Ödeme Yöntemi Raporu</router-link></li>
-            <li><router-link to="/reports/orders/source">Ürün Kaynağı Raporu</router-link></li>
-            <li><router-link to="/reports/orders/city">Şehir Bazlı Rapor</router-link></li>
-            <li><router-link to="/reports/orders/country">Ülke Bazlı Rapor</router-link></li>
-            <li><router-link to="/reports/orders/accounting">Muhasebe Raporu</router-link></li>
-            <li><router-link to="/reports/orders/list">Sipariş Listesi</router-link></li>
-            <li><router-link to="/reports/orders/fast-delivery">Hızlı Teslimat Listesi</router-link></li>
+            <li><router-link to="/reports/orders/daily">{{ $t('sidebar.reports_sub.daily') }}</router-link></li>
+            <li><router-link to="/reports/orders/weekly">{{ $t('sidebar.reports_sub.weekly') }}</router-link></li>
+            <li><router-link to="/reports/orders/monthly">{{ $t('sidebar.reports_sub.monthly') }}</router-link></li>
+            <li><router-link to="/reports/orders/yearly">{{ $t('sidebar.reports_sub.yearly') }}</router-link></li>
+            <li><router-link to="/reports/orders/platform">{{ $t('sidebar.reports_sub.platform') }}</router-link></li>
+            <li><router-link to="/reports/orders/store">{{ $t('sidebar.reports_sub.store') }}</router-link></li>
+            <li><router-link to="/reports/orders/product-sales">{{ $t('sidebar.reports_sub.product_sales') }}</router-link></li>
+            <li><router-link to="/reports/orders/variant-sales">{{ $t('sidebar.reports_sub.variant_sales') }}</router-link></li>
+            <li><router-link to="/reports/orders/category-sales">{{ $t('sidebar.reports_sub.category_sales') }}</router-link></li>
+            <li><router-link to="/reports/orders/brand-sales">{{ $t('sidebar.reports_sub.brand_sales') }}</router-link></li>
+            <li><router-link to="/reports/orders/payment">{{ $t('sidebar.reports_sub.payment') }}</router-link></li>
+            <li><router-link to="/reports/orders/source">{{ $t('sidebar.reports_sub.source') }}</router-link></li>
+            <li><router-link to="/reports/orders/city">{{ $t('sidebar.reports_sub.city') }}</router-link></li>
+            <li><router-link to="/reports/orders/country">{{ $t('sidebar.reports_sub.country') }}</router-link></li>
+            <li><router-link to="/reports/orders/accounting">{{ $t('sidebar.reports_sub.accounting') }}</router-link></li>
+            <li><router-link to="/reports/orders/list">{{ $t('sidebar.reports_sub.list') }}</router-link></li>
+            <li><router-link to="/reports/orders/fast-delivery">{{ $t('sidebar.reports_sub.fast_delivery') }}</router-link></li>
           </ul>
         </div>
       </li>
@@ -312,25 +317,25 @@
       <li>
         <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#productReportsMenu">
           <ShoppingCart class="icon" />
-          <span v-if="!isCollapsed">Ürün Raporları</span>
+          <span v-if="!isCollapsed">{{ $t('sidebar.reports_sub.products') }}</span>
         </button>
         <div class="collapse" id="productReportsMenu">
           <ul class="submenu">
-            <li><router-link to="/reports/products/stock">Stok Raporu</router-link></li>
-            <li><router-link to="/reports/products/variant-stock">Varyant Stok Raporu</router-link></li>
-            <li><router-link to="/reports/products/stock-movements">Stok Hareketleri</router-link></li>
-            <li><router-link to="/reports/products/sales">Ürün Satış Raporu</router-link></li>
-            <li><router-link to="/reports/products/variant-sales">Ürün Satış Raporu (Varyantlı)</router-link></li>
-            <li><router-link to="/reports/products/category-sales">Kategori Satış Raporu</router-link></li>
-            <li><router-link to="/reports/products/brand-sales">Marka Satış Raporu</router-link></li>
-            <li><router-link to="/reports/products/tag-sales">Etiket Satış Raporu</router-link></li>
-            <li><router-link to="/reports/products/source-sales">Kaynak Satış Raporu</router-link></li>
-            <li><router-link to="/reports/products/top-rated">En Çok Puanlanan Ürünler</router-link></li>
-            <li><router-link to="/reports/products/favorites">Favori Ürünler Raporu</router-link></li>
-            <li><router-link to="/reports/products/summary">Ürün Özet Raporu</router-link></li>
-            <li><router-link to="/reports/products/recommended">Tavsiye Edilen Ürünler</router-link></li>
-            <li><router-link to="/reports/products/price-alerts">Fiyat Alarmı Kurulan Ürünler</router-link></li>
-            <li><router-link to="/reports/products/stock-alerts">Stok Alarmı Kurulan Ürünler</router-link></li>
+            <li><router-link to="/reports/products/stock">{{ $t('sidebar.reports_sub.stock') }}</router-link></li>
+            <li><router-link to="/reports/products/variant-stock">{{ $t('sidebar.reports_sub.variant_stock') }}</router-link></li>
+            <li><router-link to="/reports/products/stock-movements">{{ $t('sidebar.reports_sub.stock_movements') }}</router-link></li>
+            <li><router-link to="/reports/products/sales">{{ $t('sidebar.reports_sub.product_sales_report') }}</router-link></li>
+            <li><router-link to="/reports/products/variant-sales">{{ $t('sidebar.reports_sub.variant_sales_report') }}</router-link></li>
+            <li><router-link to="/reports/products/category-sales">{{ $t('sidebar.reports_sub.product_category_sales') }}</router-link></li>
+            <li><router-link to="/reports/products/brand-sales">{{ $t('sidebar.reports_sub.product_brand_sales') }}</router-link></li>
+            <li><router-link to="/reports/products/tag-sales">{{ $t('sidebar.reports_sub.tag_sales') }}</router-link></li>
+            <li><router-link to="/reports/products/source-sales">{{ $t('sidebar.reports_sub.source_sales') }}</router-link></li>
+            <li><router-link to="/reports/products/top-rated">{{ $t('sidebar.reports_sub.top_rated') }}</router-link></li>
+            <li><router-link to="/reports/products/favorites">{{ $t('sidebar.reports_sub.favorites') }}</router-link></li>
+            <li><router-link to="/reports/products/summary">{{ $t('sidebar.reports_sub.summary') }}</router-link></li>
+            <li><router-link to="/reports/products/recommended">{{ $t('sidebar.reports_sub.recommended') }}</router-link></li>
+            <li><router-link to="/reports/products/price-alerts">{{ $t('sidebar.reports_sub.price_alerts') }}</router-link></li>
+            <li><router-link to="/reports/products/stock-alerts">{{ $t('sidebar.reports_sub.stock_alerts') }}</router-link></li>
           </ul>
         </div>
       </li>
@@ -339,19 +344,19 @@
       <li>
         <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#memberReportsMenu">
           <UserRound class="icon" />
-          <span v-if="!isCollapsed">Üye / Bayi Raporları</span>
+          <span v-if="!isCollapsed">{{ $t('sidebar.reports_sub.members') }}</span>
         </button>
         <div class="collapse" id="memberReportsMenu">
           <ul class="submenu">
-            <li><router-link to="/reports/members/new">Yeni Üyelik Raporu</router-link></li>
-            <li><router-link to="/reports/members/login">Üye Giriş Raporu</router-link></li>
-            <li><router-link to="/reports/members/orders">Üye Sipariş Raporu</router-link></li>
-            <li><router-link to="/reports/members/dealer-orders">Bayi Sipariş Raporu</router-link></li>
-            <li><router-link to="/reports/members/dealer-balance">Bayi Bakiye Raporu</router-link></li>
-            <li><router-link to="/reports/members/dealer-deposits">Bayi Bakiye Yükleme Raporu</router-link></li>
-            <li><router-link to="/reports/members/dealer-activities">Bayi Hareketleri</router-link></li>
-            <li><router-link to="/reports/members/price-alerts">Fiyat Alarmları</router-link></li>
-            <li><router-link to="/reports/members/stock-alerts">Stok Alarmları</router-link></li>
+            <li><router-link to="/reports/members/new">{{ $t('sidebar.reports_sub.member_new') }}</router-link></li>
+            <li><router-link to="/reports/members/login">{{ $t('sidebar.reports_sub.member_login') }}</router-link></li>
+            <li><router-link to="/reports/members/orders">{{ $t('sidebar.reports_sub.member_orders') }}</router-link></li>
+            <li><router-link to="/reports/members/dealer-orders">{{ $t('sidebar.reports_sub.dealer_orders') }}</router-link></li>
+            <li><router-link to="/reports/members/dealer-balance">{{ $t('sidebar.reports_sub.dealer_balance') }}</router-link></li>
+            <li><router-link to="/reports/members/dealer-deposits">{{ $t('sidebar.reports_sub.dealer_deposits') }}</router-link></li>
+            <li><router-link to="/reports/members/dealer-activities">{{ $t('sidebar.reports_sub.dealer_activities') }}</router-link></li>
+            <li><router-link to="/reports/members/price-alerts">{{ $t('sidebar.reports_sub.price_alerts_member') }}</router-link></li>
+            <li><router-link to="/reports/members/stock-alerts">{{ $t('sidebar.reports_sub.stock_alerts_member') }}</router-link></li>
           </ul>
         </div>
       </li>
@@ -360,52 +365,52 @@
       <li>
         <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#systemReportsMenu">
           <Monitor class="icon" />
-          <span v-if="!isCollapsed">Sistem Raporları</span>
+          <span v-if="!isCollapsed">{{ $t('sidebar.reports_sub.system') }}</span>
         </button>
         <div class="collapse" id="systemReportsMenu">
           <ul class="submenu">
-            <li><router-link to="/reports/system/logs">Yönetici Logları</router-link></li>
+            <li><router-link to="/reports/system/logs">{{ $t('sidebar.reports_sub.logs') }}</router-link></li>
           </ul>
         </div>
       </li>
+
     </ul>
   </div>
 </li>
-
 <!-- Ayarlar -->
 <li>
   <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#settingsMenu">
     <Settings class="icon" />
-    <span v-if="!isCollapsed">Ayarlar</span>
+    <span v-if="!isCollapsed">{{ $t('sidebar.settings') }}</span>
   </button>
   <div class="collapse" id="settingsMenu">
     <ul class="submenu">
-      <li><router-link to="/settings/general">Genel Ayarlar</router-link></li>
-      <li><router-link to="/settings/seo">SEO Ayarları</router-link></li>
-      <li><router-link to="/settings/marketing">Pazarlama Araçları</router-link></li>
-      <li><router-link to="/settings/contracts">Sözleşmeler</router-link></li>
-      <li><router-link to="/settings/orders">Sipariş Ayarları</router-link></li>
-      <li><router-link to="/settings/products">Ürün Ayarları</router-link></li>
-      <li><router-link to="/settings/payment-methods">Ödeme Yöntemleri</router-link></li>
-      <li><router-link to="/settings/exchange-rates">Döviz Kurları</router-link></li>
-      <li><router-link to="/settings/shipping-companies">Kargo Firmaları</router-link></li>
-      <li><router-link to="/settings/shipping">Kargo Ayarları</router-link></li>
-      <li><router-link to="/settings/assembly-points">Montaj Noktaları</router-link></li>
-      <li><router-link to="/settings/countries">Ülkeler</router-link></li>
-      <li><router-link to="/settings/languages">Diller</router-link></li>
-      <li><router-link to="/settings/sms">SMS Ayarları</router-link></li>
-      <li><router-link to="/settings/sms-templates">SMS Şablonları</router-link></li>
-      <li><router-link to="/settings/email">E-Posta Ayarları</router-link></li>
-      <li><router-link to="/settings/email-templates">E-Posta Şablonları</router-link></li>
-      <li><router-link to="/settings/maintenance">Bakım Modu</router-link></li>
-      <li><router-link to="/settings/balance">Bakiye Ayarları</router-link></li>
-      <li><router-link to="/settings/dealer">Bayi Ayarları</router-link></li>
-      <li><router-link to="/settings/dealer-xml">Bayi XML Ayarları</router-link></li>
-      <li><router-link to="/settings/quick-payment">Hızlı Ödeme Ayarları</router-link></li>
-      <li><router-link to="/settings/web-service">Web Servis Ayarları</router-link></li>
-      <li><router-link to="/settings/admin-accounts">Yönetici Hesapları</router-link></li>
-      <li><router-link to="/settings/security">Güvenlik Ayarları</router-link></li>
-      <li><router-link to="/settings/site">Site Ayarları</router-link></li>
+      <li><router-link to="/settings/general">{{ $t('sidebar.settings_sub.general') }}</router-link></li>
+      <li><router-link to="/settings/seo">{{ $t('sidebar.settings_sub.seo') }}</router-link></li>
+      <li><router-link to="/settings/marketing">{{ $t('sidebar.settings_sub.marketing') }}</router-link></li>
+      <li><router-link to="/settings/contracts">{{ $t('sidebar.settings_sub.contracts') }}</router-link></li>
+      <li><router-link to="/settings/orders">{{ $t('sidebar.settings_sub.orders') }}</router-link></li>
+      <li><router-link to="/settings/products">{{ $t('sidebar.settings_sub.products') }}</router-link></li>
+      <li><router-link to="/settings/payment-methods">{{ $t('sidebar.settings_sub.payment_methods') }}</router-link></li>
+      <li><router-link to="/settings/exchange-rates">{{ $t('sidebar.settings_sub.exchange_rates') }}</router-link></li>
+      <li><router-link to="/settings/shipping-companies">{{ $t('sidebar.settings_sub.shipping_companies') }}</router-link></li>
+      <li><router-link to="/settings/shipping">{{ $t('sidebar.settings_sub.shipping') }}</router-link></li>
+      <li><router-link to="/settings/assembly-points">{{ $t('sidebar.settings_sub.assembly_points') }}</router-link></li>
+      <li><router-link to="/settings/countries">{{ $t('sidebar.settings_sub.countries') }}</router-link></li>
+      <li><router-link to="/settings/languages">{{ $t('sidebar.settings_sub.languages') }}</router-link></li>
+      <li><router-link to="/settings/sms">{{ $t('sidebar.settings_sub.sms') }}</router-link></li>
+      <li><router-link to="/settings/sms-templates">{{ $t('sidebar.settings_sub.sms_templates') }}</router-link></li>
+      <li><router-link to="/settings/email">{{ $t('sidebar.settings_sub.email') }}</router-link></li>
+      <li><router-link to="/settings/email-templates">{{ $t('sidebar.settings_sub.email_templates') }}</router-link></li>
+      <li><router-link to="/settings/maintenance">{{ $t('sidebar.settings_sub.maintenance') }}</router-link></li>
+      <li><router-link to="/settings/balance">{{ $t('sidebar.settings_sub.balance') }}</router-link></li>
+      <li><router-link to="/settings/dealer">{{ $t('sidebar.settings_sub.dealer') }}</router-link></li>
+      <li><router-link to="/settings/dealer-xml">{{ $t('sidebar.settings_sub.dealer_xml') }}</router-link></li>
+      <li><router-link to="/settings/quick-payment">{{ $t('sidebar.settings_sub.quick_payment') }}</router-link></li>
+      <li><router-link to="/settings/web-service">{{ $t('sidebar.settings_sub.web_service') }}</router-link></li>
+      <li><router-link to="/settings/admin-accounts">{{ $t('sidebar.settings_sub.admin_accounts') }}</router-link></li>
+      <li><router-link to="/settings/security">{{ $t('sidebar.settings_sub.security') }}</router-link></li>
+      <li><router-link to="/settings/site">{{ $t('sidebar.settings_sub.site') }}</router-link></li>
     </ul>
   </div>
 </li>
@@ -415,17 +420,32 @@
   </template>
 
 <script>
-import { Package, ClipboardList, Pin } from 'lucide-vue-next'
-import { ShoppingBag, Settings } from 'lucide-vue-next'
-import { Target, BadgePercent, Mail, MessageSquare } from 'lucide-vue-next'
-import { FileText, LayoutTemplate, Link } from 'lucide-vue-next'
-import { Users, Network, Palette } from 'lucide-vue-next'
-import { BarChart2, ShoppingCart, UserRound, Monitor } from 'lucide-vue-next'
+import {
+  Package,
+  ClipboardList,
+  Pin,
+  ShoppingBag,
+  Settings,
+  Target,
+  BadgePercent,
+  Mail,
+  MessageSquare,
+  FileText,
+  LayoutTemplate,
+  Link,
+  Users,
+  Network,
+  Palette,
+  BarChart2,
+  ShoppingCart,
+  UserRound,
+  Monitor
+} from 'lucide-vue-next'
 
 export default {
   name: "SidebarComponent",
   props: {
-    isCollapsed: Boolean,
+    isCollapsed: Boolean
   },
   components: {
     Package,
@@ -450,7 +470,7 @@ export default {
   },
   data() {
     return {
-      isMobile: window.innerWidth < 768,
+      isMobile: window.innerWidth < 768
     };
   },
   methods: {
@@ -464,13 +484,13 @@ export default {
   mounted() {
     window.addEventListener("resize", this.handleResize);
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener("resize", this.handleResize);
   }
 };
 </script>
 <style scoped>
-
+/* === GENEL === */
 .icon {
   width: 18px;
   height: 18px;
@@ -480,7 +500,6 @@ export default {
   transition: transform 0.2s ease, stroke 0.2s ease;
 }
 
-/* Buton içi boşluk */
 .btn-toggle {
   gap: 10px;
   display: flex;
@@ -495,7 +514,6 @@ export default {
   transition: background-color 0.3s ease;
 }
 
-/* Hover efekti */
 .btn-toggle:hover {
   background-color: #f5f5f5;
   color: #007bff;
@@ -506,7 +524,6 @@ export default {
   transform: scale(1.15);
 }
 
-/* Sidebar container */
 .sidebar {
   width: 250px;
   height: 100vh;
@@ -521,7 +538,6 @@ export default {
   z-index: 1000;
 }
 
-/* Collapse durumu */
 .sidebar.collapsed {
   width: 80px;
   padding: 10px;
@@ -535,7 +551,6 @@ export default {
   display: none;
 }
 
-/* Header ve logo */
 .sidebar-header {
   display: flex;
   align-items: center;
@@ -552,13 +567,6 @@ export default {
   color: #333;
 }
 
-.logo-img {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-}
-
-/* Menü yapısı */
 .sidebar-menu {
   list-style: none;
   padding: 0;
@@ -570,7 +578,6 @@ export default {
   position: relative;
 }
 
-/* Router link yapısı */
 .sidebar-menu a {
   text-decoration: none;
   display: flex;
@@ -586,7 +593,6 @@ export default {
   background: #f8f9fa;
 }
 
-/* Aktif menü */
 .sidebar-menu .router-link-active {
   background: #e9f1ff;
   color: #007bff;
@@ -597,15 +603,10 @@ export default {
   stroke: #007bff;
 }
 
-/* Alt menü */
 .submenu {
   list-style: none;
   padding-left: 20px;
   margin-top: 5px;
-}
-
-.submenu.open {
-  max-height: 500px;
 }
 
 .submenu li a {
@@ -620,5 +621,69 @@ export default {
 .submenu li a:hover {
   background: #f1f1f1;
   color: #000;
+}
+
+/* === DARK MODE === */
+:deep(html.dark) .sidebar {
+  background-color: #0f172a !important;
+  border-right: 1px solid #1e293b !important;
+  color: #f1f5f9 !important;
+}
+
+:deep(html.dark) .sidebar-menu a {
+  color: #cbd5e1 !important;
+}
+
+:deep(html.dark) .sidebar-menu a:hover {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+
+:deep(html.dark) .sidebar-menu .router-link-active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+:deep(html.dark) .sidebar-menu .router-link-active .icon {
+  stroke: #ffffff !important;
+}
+
+:deep(html.dark) .icon {
+  stroke: #f1f5f9 !important;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 260px;
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    height: 100vh;
+    overflow-y: auto;
+    background: #ffffff;
+    transition: transform 0.3s ease;
+    border-right: 1px solid #e5e7eb;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  :deep(html.dark) .sidebar {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+
+  .sidebar.collapsed {
+    width: 260px;
+  }
+
+  .sidebar.collapsed .btn-toggle .icon + span {
+    display: inline;
+  }
 }
 </style>

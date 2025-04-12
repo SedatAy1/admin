@@ -23,5 +23,21 @@ export default {
 <style scoped>
 .product-layout {
   padding: 20px;
+  background-color: white;
+  color: #1f2937;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* 🌙 Dark Mode */
+:root.dark .product-layout {
+  background-color: #111827;
+  color: #f3f4f6;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .product-layout {
+    padding: 15px;
+  }
 }
 </style>

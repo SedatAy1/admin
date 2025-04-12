@@ -8,7 +8,7 @@
         class="nav-button"
         :class="{ active: $route.path === tab.route }"
       >
-        {{ tab.label }}
+        {{ $t(tab.label) }}
       </router-link>
     </div>
 
@@ -20,17 +20,18 @@
 
 <script>
 export default {
+  name: "ContentManagementTabs",
   data() {
     return {
       tabs: [
-        { label: "Sayfalar", route: "/contents/content-management/pages" },
-        { label: "Yardım İçerikleri", route: "/contents/content-management/help" },
-        { label: "Sıkça Sorulan Sorular", route: "/contents/content-management/faq" },
-        { label: "Blog Yönetimi", route: "/contents/content-management/blog" },
-        { label: "Slayt Yönetimi", route: "/contents/content-management/slides" },
-        { label: "Afiş Yönetimi", route: "/contents/content-management/banners" },
-        { label: "Popup", route: "/contents/content-management/popup" },
-        { label: "Görsel Yükle", route: "/contents/content-management/upload" }
+        { label: "contentTabs.pages", route: "/contents/content-management/pages" },
+        { label: "contentTabs.help", route: "/contents/content-management/help" },
+        { label: "contentTabs.faq", route: "/contents/content-management/faq" },
+        { label: "contentTabs.blog", route: "/contents/content-management/blog" },
+        { label: "contentTabs.slides", route: "/contents/content-management/slides" },
+        { label: "contentTabs.banners", route: "/contents/content-management/banners" },
+        { label: "contentTabs.popup", route: "/contents/content-management/popup" },
+        { label: "contentTabs.upload", route: "/contents/content-management/upload" }
       ]
     };
   }

@@ -152,23 +152,41 @@ const passiveMethods = [
   border-radius: 12px;
   border: 1px solid #e2e8f0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+html.dark .payment-methods-page {
+  background: #1e1e1e;
+  border-color: #3a3a3a;
+  color: #f1f1f1;
+}
+
 .section-title {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 20px;
+  color: #1f2937;
 }
+html.dark .section-title {
+  color: #ffffff;
+}
+
 .section-header {
   font-size: 16px;
   font-weight: 600;
   padding: 10px 16px;
   border-radius: 6px;
   margin-bottom: 16px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 .active .section-header {
   background-color: #e0fce8;
   color: #15803d;
   border: 1px solid #bbf7d0;
+}
+html.dark .active .section-header {
+  background-color: #064e3b;
+  color: #86efac;
+  border-color: #15803d;
 }
 .passive .section-header {
   background-color: #fee2e2;
@@ -176,6 +194,12 @@ const passiveMethods = [
   border: 1px solid #fecaca;
   margin-top: 40px;
 }
+html.dark .passive .section-header {
+  background-color: #7f1d1d;
+  color: #fecaca;
+  border-color: #dc2626;
+}
+
 .payment-box {
   display: flex;
   align-items: center;
@@ -186,13 +210,20 @@ const passiveMethods = [
   margin-bottom: 16px;
   background-color: #f9fafb;
 }
+html.dark .payment-box {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
 .icon {
   width: 40px;
   height: 40px;
 }
+
 .info {
   flex: 1;
 }
+
 .actions button {
   background-color: #f1f5f9;
   border: none;
@@ -201,10 +232,19 @@ const passiveMethods = [
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 .actions button:hover {
   background-color: #e2e8f0;
 }
+html.dark .actions button {
+  background-color: #374151;
+  color: #f1f1f1;
+}
+html.dark .actions button:hover {
+  background-color: #4b5563;
+}
+
 .sub-method {
   margin-left: 60px;
   margin-bottom: 24px;
@@ -215,6 +255,10 @@ const passiveMethods = [
   margin-bottom: 8px;
   display: inline-block;
 }
+html.dark .sub-method .sub-title {
+  color: #86efac;
+}
+
 .sub-method ul {
   list-style: none;
   padding: 0;
@@ -232,5 +276,36 @@ const passiveMethods = [
   border: none;
   color: #2563eb;
   cursor: pointer;
+  transition: color 0.2s;
+}
+.sub-method button:hover {
+  text-decoration: underline;
+}
+html.dark .sub-method button {
+  color: #60a5fa;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .payment-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sub-method {
+    margin-left: 0;
+  }
+
+  .section-header {
+    font-size: 15px;
+  }
+
+  .actions {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
 }
 </style>

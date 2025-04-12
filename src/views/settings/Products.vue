@@ -178,27 +178,48 @@ const saveSettings = () => {
   border-radius: 12px;
   border: 1px solid #e5e7eb;
   font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+html.dark .product-settings {
+  background: #1e1e1e;
+  border-color: #3a3a3a;
+  color: #f1f1f1;
+}
+
 .page-title {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 28px;
+  color: #1e293b;
 }
+html.dark .page-title {
+  color: #ffffff;
+}
+
 .setting-group {
   display: flex;
   align-items: flex-start;
   gap: 16px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
+
 .setting-icon {
   font-size: 22px;
   width: 40px;
   text-align: center;
   margin-top: 6px;
+  color: #3b82f6;
 }
+html.dark .setting-icon {
+  color: #60a5fa;
+}
+
 .setting-content {
   flex: 1;
+  min-width: 240px;
 }
+
 .setting-title {
   font-size: 16px;
   font-weight: 600;
@@ -208,6 +229,10 @@ const saveSettings = () => {
   align-items: center;
   gap: 8px;
 }
+html.dark .setting-title {
+  color: #ffffff;
+}
+
 .badge {
   background: #ef4444;
   color: white;
@@ -215,34 +240,63 @@ const saveSettings = () => {
   border-radius: 6px;
   font-size: 12px;
 }
+html.dark .badge {
+  background: #f87171;
+  color: #fff;
+}
+
 .setting-description {
   font-size: 14px;
   color: #64748b;
   margin-bottom: 8px;
 }
+html.dark .setting-description {
+  color: #a1a1aa;
+}
+
 .setting-control {
   width: 100%;
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #d1d5db;
   font-size: 14px;
+  background-color: #ffffff;
+  color: #1f2937;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+html.dark .setting-control {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border-color: #555;
+}
+
 .textarea {
   min-height: 100px;
 }
+
 .section-divider {
   font-weight: 600;
   font-size: 16px;
   color: #334155;
   margin: 32px 0 16px;
 }
+html.dark .section-divider {
+  color: #cbd5e1;
+}
+
 .wysiwyg-box {
   background: white;
   border: 1px solid #d1d5db;
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 32px;
+  transition: background-color 0.3s, border-color 0.3s;
 }
+html.dark .wysiwyg-box {
+  background: #2c2c2c;
+  border-color: #444;
+}
+
 .wysiwyg-editor {
   width: 100%;
   min-height: 120px;
@@ -251,7 +305,15 @@ const saveSettings = () => {
   padding: 10px;
   font-size: 14px;
   font-family: inherit;
+  background-color: #ffffff;
+  color: #1f2937;
 }
+html.dark .wysiwyg-editor {
+  background-color: #3a3a3a;
+  border-color: #555;
+  color: #f1f1f1;
+}
+
 .save-btn {
   background: #3b82f6;
   color: white;
@@ -260,8 +322,28 @@ const saveSettings = () => {
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 .save-btn:hover {
   background-color: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .product-settings {
+    padding: 20px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  .setting-group {
+    flex-direction: column;
+  }
+
+  .save-btn {
+    width: 100%;
+  }
 }
 </style>

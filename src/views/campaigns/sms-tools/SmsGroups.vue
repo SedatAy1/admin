@@ -1,10 +1,10 @@
 <template>
   <div class="sms-container">
     <div class="header-section">
-      <input type="text" class="search-input" placeholder="🔍 Ara...">
+      <input type="text" class="search-input" :placeholder="$t('sms.search')" />
       <div class="buttons">
         <button class="btn btn-primary" @click="openNewGroupModal">
-          ➕ Yeni Grup
+          ➕ {{ $t('sms.newGroup') }}
         </button>
       </div>
     </div>
@@ -14,10 +14,10 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Grup No</th>
-            <th>Grup Adı</th>
-            <th>Varsayılan</th>
-            <th>İşlemler</th>
+            <th>{{ $t('sms.groupId') }}</th>
+            <th>{{ $t('sms.groupName') }}</th>
+            <th>{{ $t('sms.default') }}</th>
+            <th>{{ $t('common.actions') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -25,9 +25,9 @@
             <td>{{ index + 1 }}</td>
             <td>{{ group.id }}</td>
             <td>{{ group.name }}</td>
-            <td>{{ group.default ? 'Evet' : 'Hayır' }}</td>
+            <td>{{ group.default ? $t('common.yes') : $t('common.no') }}</td>
             <td>
-              <button class="btn btn-sm btn-danger" @click="deleteGroup(index)">❌ Sil</button>
+              <button class="btn btn-sm btn-danger" @click="deleteGroup(index)">❌ {{ $t('common.delete') }}</button>
             </td>
           </tr>
         </tbody>
@@ -35,7 +35,7 @@
 
       <div v-else class="empty-state">
         <img src="@/assets/empty.svg" alt="No Data" />
-        <p>Kayıt bulunamadı.</p>
+        <p>{{ $t('common.noData') }}</p>
       </div>
     </div>
 
@@ -43,20 +43,20 @@
     <div v-if="showNewGroupModal" class="modal-overlay">
       <div class="modal">
         <div class="modal-header">
-          <h2>Yeni Bülten Grubu</h2>
+          <h2>{{ $t('sms.newGroupTitle') }}</h2>
           <button class="close-btn" @click="closeNewGroupModal">×</button>
         </div>
 
-        <label>Grup Adı</label>
-        <input type="text" v-model="newGroup.name">
+        <label>{{ $t('sms.groupName') }}</label>
+        <input type="text" v-model="newGroup.name" />
 
-        <label>Varsayılan</label>
+        <label>{{ $t('sms.default') }}</label>
         <select v-model="newGroup.default">
-          <option value="true">Evet</option>
-          <option value="false">Hayır</option>
+          <option :value="true">{{ $t('common.yes') }}</option>
+          <option :value="false">{{ $t('common.no') }}</option>
         </select>
 
-        <button class="btn btn-primary" @click="saveGroup">Kaydet</button>
+        <button class="btn btn-primary" @click="saveGroup">✔ {{ $t('common.save') }}</button>
       </div>
     </div>
   </div>
@@ -97,29 +97,56 @@ export default {
 </script>
 
 <style scoped>
-/* Sayfa Genel Yapısı */
 .sms-container {
   padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--bg);
+  color: var(--text);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Üst Kısım */
+/* Theme Variables */
+:root {
+  --bg: #ffffff;
+  --text: #1f2937;
+  --card: #f9fafb;
+  --border: #e5e7eb;
+}
+
+.dark {
+  --bg: #1e1e2f;
+  --text: #f3f4f6;
+  --card: #2a2a3d;
+  --border: #3b3b4f;
+}
+
+/* Header */
 .header-section {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   padding: 15px;
-  background: white;
-  border-bottom: 1px solid #ddd;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+@media (min-width: 640px) {
+  .header-section {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .search-input {
-  width: 250px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
 }
 
 .buttons {
@@ -128,12 +155,12 @@ export default {
 }
 
 .btn {
-  padding: 8px 14px;
+  padding: 10px 16px;
   font-size: 14px;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
+  transition: background 0.3s ease;
 }
 
 .btn-primary {
@@ -145,65 +172,86 @@ export default {
   background: #2563eb;
 }
 
-/* Tablo */
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+/* Table */
 .table-container {
-  background: white;
+  background: var(--card);
   padding: 20px;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 16px;
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  color: var(--text);
 }
 
 th, td {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--border);
   text-align: left;
+  white-space: nowrap;
 }
 
 th {
-  background: #f3f4f6;
+  background-color: rgba(59, 130, 246, 0.1);
   font-weight: bold;
 }
 
-/* Modal Overlay (Arka Plan) */
+.empty-state {
+  text-align: center;
+  padding: 30px;
+  color: var(--text);
+}
+
+.empty-state img {
+  width: 100px;
+  opacity: 0.5;
+}
+
+/* Modal Overlay */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 99998 !important;
-  display: flex !important;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99998;
+  display: flex;
   justify-content: center;
   align-items: center;
-  visibility: visible !important;
 }
 
 /* Modal İçeriği */
 .modal {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 500px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 99999 !important;
-  display: block !important;
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   position: relative;
-  transform: translateY(0);
-  opacity: 1 !important;
+  animation: fadeIn 0.3s ease-out;
+  color: var(--text);
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
 }
 
 .close-btn {
@@ -211,14 +259,29 @@ th {
   border: none;
   font-size: 20px;
   cursor: pointer;
+  color: var(--text);
 }
 
-/* Giriş Alanları */
 input, select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
   margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+/* Animasyon */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 </style>

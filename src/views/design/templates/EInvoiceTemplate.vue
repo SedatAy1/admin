@@ -2,52 +2,55 @@
   <Teleport to="body">
     <div class="modal-overlay" @click.self="close">
       <div class="modal">
+        <!-- Header -->
         <div class="modal-header">
-          <h3>E-Fatura / E-Arşiv Şablonu</h3>
+          <h3>{{ $t('eInvoice.title') }}</h3>
           <button class="close-btn" @click="close">&times;</button>
         </div>
 
+        <!-- Body -->
         <div class="modal-body">
           <div class="form-row">
             <div class="form-group">
-              <label>Şablon Adı</label>
-              <input type="text" placeholder="E-Fatura / E-Arşiv Şablonu" />
+              <label>{{ $t('eInvoice.fields.name') }}</label>
+              <input type="text" :placeholder="$t('eInvoice.fields.namePlaceholder')" />
             </div>
             <div class="form-group">
-              <label>Şablon Durumu</label>
+              <label>{{ $t('eInvoice.fields.status') }}</label>
               <select>
-                <option>Pasif</option>
-                <option>Aktif</option>
+                <option>{{ $t('common.passive') }}</option>
+                <option>{{ $t('common.active') }}</option>
               </select>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label>Kargo Barkodu</label>
+              <label>{{ $t('eInvoice.fields.cargoBarcode') }}</label>
               <select>
-                <option>Göster</option>
-                <option>Gizle</option>
+                <option>{{ $t('common.show') }}</option>
+                <option>{{ $t('common.hide') }}</option>
               </select>
             </div>
             <div class="form-group">
-              <label>Sipariş Barkodu</label>
+              <label>{{ $t('eInvoice.fields.orderBarcode') }}</label>
               <select>
-                <option>Göster</option>
-                <option>Gizle</option>
+                <option>{{ $t('common.show') }}</option>
+                <option>{{ $t('common.hide') }}</option>
               </select>
             </div>
           </div>
 
-          <div class="panel" v-for="item in panels" :key="item">
-            {{ item }}
+          <div class="panel" v-for="panel in panels" :key="panel">
+            {{ $t(`eInvoice.panels.${panel}`) }}
             <span class="add-btn">+</span>
           </div>
         </div>
 
+        <!-- Footer -->
         <div class="modal-footer">
-          <button class="secondary">👁 Önizle</button>
-          <button class="primary">✔ Kaydet</button>
+          <button class="secondary">👁 {{ $t('common.preview') }}</button>
+          <button class="primary">✔ {{ $t('common.save') }}</button>
         </div>
       </div>
     </div>
@@ -55,16 +58,19 @@
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
 const emit = defineEmits(['close'])
 const close = () => emit('close')
 
 const panels = [
-  'Firma Logosu',
-  'İmza Logosu',
-  'Ürün Satırları',
-  'Sabit Notlar',
-  'Özel Notlar',
-  'IBAN Bilgisi'
+  'companyLogo',
+  'signatureLogo',
+  'productRows',
+  'staticNotes',
+  'customNotes',
+  'ibanInfo'
 ]
 </script>
 

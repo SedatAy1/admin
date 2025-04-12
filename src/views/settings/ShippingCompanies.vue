@@ -126,11 +126,15 @@ function openEditModal(company) {
 </script>
 
 <style scoped>
-/* Genel Sayfa Stili */
 .shipping-page {
   font-family: 'Inter', sans-serif;
   padding: 32px;
   background-color: #f9fafb;
+  transition: background-color 0.3s ease;
+}
+html.dark .shipping-page {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
 }
 
 /* Başlık */
@@ -139,6 +143,9 @@ function openEditModal(company) {
   font-weight: 700;
   color: #111827;
   margin-bottom: 20px;
+}
+html.dark .page-title {
+  color: #ffffff;
 }
 
 /* Ekleme Kutusu */
@@ -156,6 +163,14 @@ function openEditModal(company) {
 .add-box:hover {
   background-color: #e5e7eb;
 }
+html.dark .add-box {
+  background-color: #2a2a2a;
+  border-color: #4b5563;
+  color: #f1f1f1;
+}
+html.dark .add-box:hover {
+  background-color: #374151;
+}
 
 /* Firma Kartı */
 .company-card {
@@ -168,10 +183,14 @@ function openEditModal(company) {
   padding: 18px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
   margin-bottom: 14px;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 .company-card:hover {
   transform: translateY(-2px);
+}
+html.dark .company-card {
+  background: #2c2c2c;
+  border-color: #444;
 }
 
 /* Sol Alan */
@@ -215,6 +234,11 @@ function openEditModal(company) {
   font-weight: 500;
   color: #374151;
 }
+html.dark .btn-outline {
+  background: #1f1f1f;
+  border-color: #555;
+  color: #f1f1f1;
+}
 .btn-settings {
   background: #2563eb;
   color: #ffffff;
@@ -242,6 +266,10 @@ function openEditModal(company) {
   max-width: 95%;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
+html.dark .modal-box {
+  background: #2c2c2c;
+  color: #f1f1f1;
+}
 
 /* Modal Başlığı */
 .modal-header {
@@ -253,12 +281,18 @@ function openEditModal(company) {
   color: #111827;
   margin-bottom: 20px;
 }
+html.dark .modal-header {
+  color: #ffffff;
+}
 .close {
   background: none;
   border: none;
   font-size: 22px;
   color: #6b7280;
   cursor: pointer;
+}
+html.dark .close {
+  color: #d1d5db;
 }
 
 /* Radyo Listesi */
@@ -287,6 +321,7 @@ function openEditModal(company) {
   display: flex;
   margin-bottom: 16px;
   gap: 14px;
+  flex-wrap: wrap;
 }
 .tabs button {
   padding: 8px 14px;
@@ -301,6 +336,14 @@ function openEditModal(company) {
   background: #3b82f6;
   color: white;
 }
+html.dark .tabs button {
+  background: #374151;
+  color: #f1f1f1;
+}
+html.dark .tabs .active {
+  background: #3b82f6;
+  color: white;
+}
 
 /* Form */
 .form {
@@ -312,6 +355,7 @@ function openEditModal(company) {
   display: flex;
   gap: 10px;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 input,
 select {
@@ -320,6 +364,14 @@ select {
   border: 1px solid #d1d5db;
   border-radius: 8px;
   font-size: 14px;
+  background-color: white;
+  color: #1f2937;
+}
+html.dark input,
+html.dark select {
+  background-color: #3a3a3a;
+  border-color: #555;
+  color: #f1f1f1;
 }
 
 /* Kaydet Butonu */
@@ -334,4 +386,23 @@ select {
   font-weight: 600;
 }
 
+/* Responsive */
+@media (max-width: 640px) {
+  .shipping-page {
+    padding: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .tabs {
+    gap: 8px;
+  }
+
+  .modal-box {
+    padding: 20px;
+    width: 100%;
+  }
+}
 </style>

@@ -38,8 +38,14 @@ const editContract = (contract) => {
 <style scoped>
 .contracts-wrapper {
   padding: 24px;
+  transition: background-color 0.3s ease;
+  background-color: #ffffff;
+}
+html.dark .contracts-wrapper {
+  background-color: #1e1e1e;
 }
 
+/* Bilgilendirme Kutusu */
 .info-box {
   background-color: #f1f5f9;
   padding: 16px;
@@ -52,18 +58,33 @@ const editContract = (contract) => {
   margin-bottom: 24px;
   color: #334155;
 }
+html.dark .info-box {
+  background-color: #2a2a2a;
+  color: #e2e8f0;
+  border-left-color: #38bdf8;
+}
+html.dark .info-box i {
+  color: #38bdf8;
+}
 
 .info-box i {
   font-size: 24px;
   color: #0ea5e9;
 }
 
+/* Grid */
 .contract-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 24px;
 }
+@media (max-width: 640px) {
+  .contract-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
+/* Kartlar */
 .contract-card {
   background-color: white;
   border-radius: 16px;
@@ -74,22 +95,34 @@ const editContract = (contract) => {
   transition: 0.2s ease;
   border: 1px solid #e2e8f0;
 }
-
 .contract-card:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
 }
+html.dark .contract-card {
+  background-color: #2c2c2c;
+  border-color: #444;
+  color: #f1f1f1;
+}
 
+/* Kart ikonları */
 .contract-card i {
   font-size: 36px;
   color: #1d4ed8;
   margin-bottom: 12px;
 }
+html.dark .contract-card i {
+  color: #60a5fa;
+}
 
+/* Kart başlık */
 .contract-card h5 {
   font-size: 16px;
   font-weight: 600;
   color: #1e293b;
   margin: 0;
+}
+html.dark .contract-card h5 {
+  color: #f1f1f1;
 }
 </style>

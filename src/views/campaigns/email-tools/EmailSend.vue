@@ -1,10 +1,10 @@
 <template>
   <div class="email-container">
     <div class="header-section">
-      <input type="text" class="search-input" placeholder="🔍 Ara...">
+      <input type="text" class="search-input" :placeholder="$t('email.search')" />
       <div class="buttons">
         <button class="btn btn-primary" @click="openNewEmailModal">
-          ➕ Yeni E-Posta
+          ➕ {{ $t('email.new') }}
         </button>
       </div>
     </div>
@@ -14,11 +14,11 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>No</th>
-            <th>Tanım</th>
-            <th>Durum</th>
-            <th>Gönderim Tarihi</th>
-            <th>İşlemler</th>
+            <th>{{ $t('email.id') }}</th>
+            <th>{{ $t('email.name') }}</th>
+            <th>{{ $t('email.status') }}</th>
+            <th>{{ $t('email.sendDate') }}</th>
+            <th>{{ $t('common.actions') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -29,7 +29,7 @@
             <td>{{ email.status }}</td>
             <td>{{ email.sendDate }}</td>
             <td>
-              <button class="btn btn-sm btn-danger" @click="deleteEmail(index)">❌ Sil</button>
+              <button class="btn btn-sm btn-danger" @click="deleteEmail(index)">❌ {{ $t('common.delete') }}</button>
             </td>
           </tr>
         </tbody>
@@ -37,7 +37,7 @@
 
       <div v-else class="empty-state">
         <img src="@/assets/empty.svg" alt="No Data" />
-        <p>Kayıt bulunamadı.</p>
+        <p>{{ $t('common.noData') }}</p>
       </div>
     </div>
 
@@ -45,45 +45,45 @@
     <div v-if="showNewEmailModal" class="modal-overlay">
       <div class="modal">
         <div class="modal-header">
-          <h2>Yeni E-Posta Gönder</h2>
+          <h2>{{ $t('email.newTitle') }}</h2>
           <button class="close-btn" @click="closeNewEmailModal">×</button>
         </div>
 
         <div class="tab-buttons">
-          <button :class="{ active: activeTab === 'settings' }" @click="activeTab = 'settings'">⚙️ Ayarlar</button>
-          <button :class="{ active: activeTab === 'content' }" @click="activeTab = 'content'">📧 E-Posta İçeriği</button>
+          <button :class="{ active: activeTab === 'settings' }" @click="activeTab = 'settings'">⚙️ {{ $t('email.tabs.settings') }}</button>
+          <button :class="{ active: activeTab === 'content' }" @click="activeTab = 'content'">📧 {{ $t('email.tabs.content') }}</button>
         </div>
 
         <div class="tab-content">
           <!-- Ayarlar Sekmesi -->
           <div v-if="activeTab === 'settings'">
-            <label>Tanım</label>
+            <label>{{ $t('email.name') }}</label>
             <input type="text" v-model="newEmail.name">
 
             <div class="toggle-container">
-              <label>Bülten Listelerine Gönderim</label>
+              <label>{{ $t('email.sendToNewsletter') }}</label>
               <input type="checkbox" v-model="newEmail.sendToNewsletter">
             </div>
             <div class="toggle-container">
-              <label>Üyelere/Bayilere Gönderim</label>
+              <label>{{ $t('email.sendToMembers') }}</label>
               <input type="checkbox" v-model="newEmail.sendToMembers">
             </div>
             <div class="toggle-container">
-              <label>İlave E-Posta Adreslerine Gönderim</label>
+              <label>{{ $t('email.sendToExtra') }}</label>
               <input type="checkbox" v-model="newEmail.sendToExtraEmails">
             </div>
           </div>
 
-          <!-- E-Posta İçeriği Sekmesi -->
+          <!-- İçerik Sekmesi -->
           <div v-if="activeTab === 'content'">
-            <label>E-Posta Konusu</label>
+            <label>{{ $t('email.subject') }}</label>
             <input type="text" v-model="newEmail.subject">
-            <label>E-Posta İçeriği</label>
+            <label>{{ $t('email.content') }}</label>
             <textarea v-model="newEmail.content"></textarea>
           </div>
         </div>
 
-        <button class="btn btn-primary" @click="saveEmail">Kaydet</button>
+        <button class="btn btn-primary" @click="saveEmail">{{ $t('common.save') }}</button>
       </div>
     </div>
   </div>
@@ -130,29 +130,41 @@ export default {
 };
 </script>
 <style scoped>
-/* Genel Sayfa Yapısı */
+/* 🌙 Modern Responsive ve Dark Mod Stili */
 .email-container {
   padding: 20px;
-  background: white;
+  background: var(--bg-color, #ffffff);
   border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease;
 }
 
-/* Üst Kısım */
+:root.dark .email-container {
+  --bg-color: #1e293b;
+  --text-color: #f3f4f6;
+  --input-bg: #334155;
+  --border-color: #475569;
+}
+
 .header-section {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   padding: 15px;
-  background: white;
-  border-bottom: 1px solid #ddd;
+  background: var(--bg-color, #ffffff);
+  border-bottom: 1px solid var(--border-color, #ddd);
 }
 
 .search-input {
   width: 250px;
   padding: 8px;
-  border: 1px solid #ccc;
+  background: var(--input-bg, #ffffff);
+  border: 1px solid var(--border-color, #ccc);
   border-radius: 5px;
+  color: var(--text-color, #000);
+  transition: all 0.3s ease;
 }
 
 .buttons {
@@ -164,8 +176,8 @@ export default {
   padding: 8px 14px;
   font-size: 14px;
   border: none;
-  cursor: pointer;
   border-radius: 5px;
+  cursor: pointer;
   transition: 0.3s;
 }
 
@@ -187,22 +199,23 @@ export default {
   background: #16a34a;
 }
 
-/* Tablo */
 .table-container {
-  background: white;
+  background: var(--bg-color, #ffffff);
   padding: 20px;
   border-radius: 10px;
   margin-top: 10px;
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  color: var(--text-color, #000);
 }
 
 th, td {
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color, #ddd);
   text-align: left;
 }
 
@@ -211,40 +224,51 @@ th {
   font-weight: bold;
 }
 
-/* Modal Overlay (Arka Plan) */
+:root.dark th {
+  background: #334155;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 30px;
+  color: var(--text-color, #888);
+}
+
+.empty-state img {
+  width: 100px;
+  opacity: 0.5;
+}
+
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Daha koyu yap, şeffaflık artırıldı */
-  z-index: 99998 !important; /* Üst katmanda olsun */
-  display: flex !important; /* Emin olmak için */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99998;
+  display: flex;
   justify-content: center;
   align-items: center;
-  visibility: visible !important; /* Eğer gizliyse göster */
 }
 
-/* Modal İçeriği */
 .modal {
-  background: white;
+  background: var(--bg-color, #ffffff);
+  color: var(--text-color, #000);
   padding: 20px;
   border-radius: 10px;
-  width: 500px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 99999 !important; /* Modal her şeyin üstünde olsun */
-  display: block !important; /* Eğer hala görünmüyorsa, ekle */
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   position: relative;
-  transform: translateY(0); /* Modal kaybolmasın */
-  opacity: 1 !important;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color, #ddd);
   padding-bottom: 10px;
 }
 
@@ -253,12 +277,14 @@ th {
   border: none;
   font-size: 20px;
   cursor: pointer;
+  color: var(--text-color, #000);
 }
 
 .tab-buttons {
   display: flex;
   justify-content: space-between;
   margin: 15px 0;
+  gap: 10px;
 }
 
 .tab-buttons button {
@@ -283,13 +309,14 @@ th {
   padding: 10px 0;
 }
 
-/* Giriş Alanları */
 input, textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color, #ddd);
   border-radius: 5px;
   margin-top: 5px;
+  background: var(--input-bg, #fff);
+  color: var(--text-color, #000);
 }
 
 textarea {
@@ -297,7 +324,6 @@ textarea {
   resize: vertical;
 }
 
-/* Kaydet Butonu */
 .btn-save {
   width: 100%;
   padding: 12px;
@@ -314,7 +340,6 @@ textarea {
   background: #2563eb;
 }
 
-/* Geçiş Efekti */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -323,6 +348,22 @@ textarea {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .search-input {
+    width: 100%;
   }
 }
 </style>

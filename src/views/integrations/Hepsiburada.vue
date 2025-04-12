@@ -2,112 +2,123 @@
   <MarketLayout>
     <div class="hepsiburada-layout">
       <div class="sidebar">
-        <button @click="activeTab = 'excel'" :class="{ active: activeTab === 'excel' }">Ürünleri Excele Aktarım</button>
-        <button @click="activeTab = 'match'" :class="{ active: activeTab === 'match' }">Ürünleri Eşleştir</button>
-        <button @click="activeTab = 'activate'" :class="{ active: activeTab === 'activate' }">Ürünleri Aktifleştir</button>
-        <button @click="activeTab = 'reports'" :class="{ active: activeTab === 'reports' }">Raporlar</button>
+        <button @click="activeTab = 'excel'" :class="{ active: activeTab === 'excel' }">{{ $t('hepsiburada.tabs.excel') }}</button>
+        <button @click="activeTab = 'match'" :class="{ active: activeTab === 'match' }">{{ $t('hepsiburada.tabs.match') }}</button>
+        <button @click="activeTab = 'activate'" :class="{ active: activeTab === 'activate' }">{{ $t('hepsiburada.tabs.activate') }}</button>
+        <button @click="activeTab = 'reports'" :class="{ active: activeTab === 'reports' }">{{ $t('hepsiburada.tabs.reports') }}</button>
       </div>
 
       <div class="content">
         <div v-if="activeTab === 'excel'">
-          <h2>Ürünleri Excele Aktarım</h2>
-          <p>Hepsiburada entegrasyonu ile ürünlerinizi Excel formatına çevirerek yükleyebilirsiniz.</p>
+          <h2>{{ $t('hepsiburada.excel.title') }}</h2>
+          <p>{{ $t('hepsiburada.excel.description') }}</p>
           <div class="header">
-            <input v-model="searchQuery" type="text" placeholder="Ara..." class="search-box" />
-            <button @click="openModal" class="new-button">+ Yeni Excel</button>
+            <input v-model="searchQuery" type="text" :placeholder="$t('common.search')" class="search-box" />
+            <button @click="openModal" class="new-button">+ {{ $t("hepsiburada.excel.add") }}</button>
           </div>
           <table class="data-table">
             <thead>
               <tr>
                 <th>#</th>
-                <th>Excel No</th>
-                <th>Adı</th>
-                <th>İşlemler</th>
+                <th>{{ $t('hepsiburada.excel.excelNo') }}</th>
+                <th>{{ $t('common.name') }}</th>
+                <th>{{ $t('common.actions') }}</th>
               </tr>
             </thead>
             <tbody>
               <tr v-if="!records.length" class="no-data">
-                <td colspan="4">Kayıt bulunamadı.</td>
+                <td colspan="4">{{ $t("common.noRecords") }}</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <div v-if="activeTab === 'match'">
-          <h2>Ürünleri Eşleştir</h2>
-          <p>Mağazadaki ürünlerinizi eşleştirin.</p>
+          <h2>{{ $t("hepsiburada.match.title") }}</h2>
+          <p>{{ $t("hepsiburada.match.description") }}</p>
           <table class="data-table">
             <thead>
               <tr>
-                <th>Mağaza Adı</th>
-                <th>Durum</th>
-                <th>Son İşlem Tarihi</th>
-                <th>İşlemler</th>
+                <th>{{ $t("hepsiburada.match.store") }}</th>
+                <th>{{ $t("hepsiburada.match.status") }}</th>
+                <th>{{ $t("hepsiburada.match.date") }}</th>
+                <th>{{ $t("common.actions") }}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>#1 - Demo</td>
-                <td class="error">Hatalı (Ürün bulunamadı)</td>
+                <td class="error">{{ $t("hepsiburada.match.error") }}</td>
                 <td>08.11.2024 15:33</td>
-                <td><button>Başlat</button></td>
+                <td><button>{{ $t("common.start") }}</button></td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <div v-if="activeTab === 'activate'">
-          <h2>Ürünleri Aktifleştir</h2>
-          <p>Seçilen mağazadaki eşleşmiş ürünleri aktifleştirin.</p>
-          <button class="activate-button">Tüm Ürünleri Aktifleştir</button>
+          <h2>{{ $t("hepsiburada.activate.title") }}</h2>
+          <p>{{ $t("hepsiburada.activate.description") }}</p>
+          <button class="activate-button">{{ $t("hepsiburada.activate.activateAll") }}</button>
         </div>
 
         <div v-if="activeTab === 'reports'">
-          <h2>Raporlar</h2>
-          <p>Listelecek veri bulunamadı.</p>
+          <h2>{{ $t("hepsiburada.reports.title") }}</h2>
+          <p>{{ $t("common.noRecords") }}</p>
         </div>
       </div>
 
+      <!-- Modal -->
       <div v-if="isModalOpen" class="modal">
         <div class="modal-content">
-          <h2>Yeni Excel</h2>
-          <label>Adı</label>
+          <h2>{{ $t("hepsiburada.excel.modal.title") }}</h2>
+          <label>{{ $t("common.name") }}</label>
           <input v-model="form.name" type="text" />
-          <label>Mağaza</label>
+
+          <label>{{ $t("common.store") }}</label>
           <select v-model="form.store">
             <option>#1 - Demo</option>
           </select>
-          <label>Excel Formatı</label>
+
+          <label>{{ $t("hepsiburada.excel.modal.format") }}</label>
           <select v-model="form.format">
-            <option>Hızlı Ürün Ekleme Formatı</option>
+            <option>{{ $t("hepsiburada.excel.modal.fastAdd") }}</option>
           </select>
-          <label>Kategoriler</label>
+
+          <label>{{ $t("common.categories") }}</label>
           <select v-model="form.category">
-            <option>Hiçbiri seçilmedi</option>
+            <option>{{ $t("common.noneSelected") }}</option>
           </select>
-          <label>Ürün Kaynağı</label>
+
+          <label>{{ $t("common.source") }}</label>
           <select v-model="form.source">
-            <option>Hiçbiri seçilmedi</option>
+            <option>{{ $t("common.noneSelected") }}</option>
           </select>
-          <label>Markalar</label>
+
+          <label>{{ $t("common.brands") }}</label>
           <select v-model="form.brand">
-            <option>Hiçbiri seçilmedi</option>
+            <option>{{ $t("common.noneSelected") }}</option>
           </select>
-          <label>Minimum HB Ürün Fiyatı</label>
+
+          <label>{{ $t("hepsiburada.excel.modal.minPrice") }}</label>
           <input v-model="form.minPrice" type="number" />
-          <label>Maksimum HB Ürün Fiyatı</label>
+
+          <label>{{ $t("hepsiburada.excel.modal.maxPrice") }}</label>
           <input v-model="form.maxPrice" type="number" />
-          <label>HB Para Birimi</label>
+
+          <label>{{ $t("hepsiburada.excel.modal.currency") }}</label>
           <select v-model="form.currency">
-            <option>Tümü</option>
+            <option>{{ $t("common.all") }}</option>
           </select>
-          <button @click="save" class="save-button">Kaydet</button>
-          <button @click="closeModal" class="close-button">Kapat</button>
+
+          <button @click="save" class="save-button">{{ $t("common.save") }}</button>
+          <button @click="closeModal" class="close-button">{{ $t("common.cancel") }}</button>
         </div>
       </div>
     </div>
   </MarketLayout>
 </template>
+
 <script>
 import MarketLayout from "@/views/integrations/MarketLayout.vue";
 
@@ -148,12 +159,17 @@ export default {
 </script>
 
 <style scoped>
-/* Layout */
+/* Genel layout */
 .hepsiburada-layout {
   display: flex;
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  transition: background 0.3s ease;
+}
+html.dark .hepsiburada-layout {
+  background: linear-gradient(to right, #1e1e1e, #2a2a2a);
+  color: #f1f1f1;
 }
 
 /* Sidebar */
@@ -166,6 +182,10 @@ export default {
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
   border-right: 1px solid #374151;
   transition: all 0.3s;
+}
+html.dark .sidebar {
+  background: #111827;
+  border-color: #2c2c2c;
 }
 
 .sidebar button {
@@ -180,13 +200,11 @@ export default {
   transition: all 0.3s ease;
   cursor: pointer;
 }
-
 .sidebar button:hover {
   background-color: #374151;
   color: #fff;
   transform: translateX(5px);
 }
-
 .sidebar .active {
   background: #3b82f6;
   color: #fff;
@@ -194,22 +212,26 @@ export default {
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
 
-/* Content */
+/* İçerik */
 .content {
   flex: 1;
   padding: 40px;
   animation: fadeIn 0.5s ease-in-out;
 }
-
-h2 {
+.content h2 {
   font-size: 1.75rem;
   color: #111827;
   margin-bottom: 10px;
 }
-
-p {
+.content p {
   color: #4b5563;
   margin-bottom: 20px;
+}
+html.dark .content h2 {
+  color: #f1f1f1;
+}
+html.dark .content p {
+  color: #9ca3af;
 }
 
 /* Header */
@@ -218,8 +240,11 @@ p {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
+/* Arama kutusu */
 .search-box {
   padding: 10px;
   border-radius: 8px;
@@ -227,12 +252,20 @@ p {
   width: 60%;
   transition: box-shadow 0.3s;
 }
-
 .search-box:focus {
   outline: none;
   box-shadow: 0 0 5px #3b82f6;
 }
+html.dark .search-box {
+  background: #2e2e2e;
+  color: #f1f1f1;
+  border-color: #444;
+}
+html.dark .search-box::placeholder {
+  color: #aaa;
+}
 
+/* Yeni buton */
 .new-button {
   background-color: #10b981;
   color: white;
@@ -242,12 +275,11 @@ p {
   cursor: pointer;
   transition: background 0.3s;
 }
-
 .new-button:hover {
   background-color: #059669;
 }
 
-/* Table */
+/* Tablo */
 .data-table, table {
   width: 100%;
   border-collapse: collapse;
@@ -256,18 +288,27 @@ p {
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
-
+html.dark table {
+  background: #2a2a2a;
+  color: #f1f1f1;
+}
 table th, table td {
   padding: 14px;
   border-bottom: 1px solid #e5e7eb;
   text-align: left;
   color: #374151;
 }
-
+html.dark th, html.dark td {
+  border-color: #444;
+  color: #e4e4e4;
+}
 .no-data td {
   text-align: center;
   padding: 30px;
   color: #9ca3af;
+}
+html.dark .no-data td {
+  color: #aaa;
 }
 
 /* Modal */
@@ -283,27 +324,35 @@ table th, table td {
   justify-content: center;
   animation: fadeIn 0.3s ease;
   z-index: 1000;
+  padding: 1rem;
 }
 
 .modal-content {
   background: white;
   padding: 30px;
   border-radius: 16px;
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   animation: slideUp 0.4s ease-out;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
+html.dark .modal-content {
+  background: #2c2c2c;
+  color: #f1f1f1;
+}
 
 .modal-content h2 {
   margin-bottom: 12px;
 }
-
 .modal-content label {
   font-weight: 500;
   color: #374151;
+}
+html.dark .modal-content label {
+  color: #ddd;
 }
 
 .modal-content input,
@@ -313,7 +362,14 @@ table th, table td {
   border-radius: 8px;
   width: 100%;
 }
+html.dark .modal-content input,
+html.dark .modal-content select {
+  background: #3a3a3a;
+  border-color: #555;
+  color: #f1f1f1;
+}
 
+/* Butonlar */
 .save-button, .close-button {
   padding: 12px;
   border: none;
@@ -327,7 +383,6 @@ table th, table td {
 .save-button {
   background-color: #2563eb;
 }
-
 .save-button:hover {
   background-color: #1d4ed8;
 }
@@ -335,7 +390,6 @@ table th, table td {
 .close-button {
   background-color: #ef4444;
 }
-
 .close-button:hover {
   background-color: #dc2626;
 }
@@ -350,24 +404,46 @@ table th, table td {
   font-weight: bold;
   transition: background-color 0.3s;
 }
-
 .activate-button:hover {
   background-color: #2563eb;
 }
 
+/* Hatalar */
 .error {
   color: #ef4444;
   font-weight: bold;
 }
 
-/* Animations */
+/* Animasyonlar */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
 @keyframes slideUp {
   from { transform: translateY(20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
 </style>
+

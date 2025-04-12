@@ -2,19 +2,19 @@
   <div class="tags">
     <!-- Arama Çubuğu ve Yeni Etiket Butonu -->
     <div class="search-container">
-      <input type="text" v-model="searchTerm" placeholder="🔍 Ara..." class="search-input" />
-      <button class="btn primary" @click="showNewTagModal = true">+ Yeni Etiket</button>
+      <input type="text" v-model="searchTerm" :placeholder="$t('tag.search')" class="search-input" />
+      <button class="btn primary" @click="showNewTagModal = true">{{ $t('tag.new') }}</button>
     </div>
 
     <!-- Yeni Etiket Modal -->
-    <Modal :isOpen="showNewTagModal" title="Yeni Etiket" @close="showNewTagModal = false">
+    <Modal :isOpen="showNewTagModal" :title="$t('tag.newTitle')" @close="showNewTagModal = false">
       <div class="modal-body">
         <div class="form-group">
-          <label>Etiket Adı <span class="required">Zorunlu</span></label>
+          <label>{{ $t('tag.name') }} <span class="required">{{ $t('common.required') }}</span></label>
           <input type="text" v-model="newTag.name" />
         </div>
         <div class="form-group">
-          <label>Resim</label>
+          <label>{{ $t('tag.image') }}</label>
           <input type="file" @change="handleFileUpload" />
         </div>
 
@@ -22,14 +22,14 @@
         <div class="tag-positions">
           <div v-for="(position, index) in tagPositions" :key="index" class="position-option">
             <i class="fas fa-tag"></i>
-            <span>{{ position.label }}</span>
-            <p>Açıklama Girilecek.</p>
+            <span>{{ $t(`tag.positions.${position.key}`) }}</span>
+            <p>{{ $t('tag.positionDesc') }}</p>
             <input type="checkbox" v-model="position.enabled" />
           </div>
         </div>
       </div>
       <template v-slot:footer>
-        <button class="submit-btn" @click="saveTag">✔ Kaydet</button>
+        <button class="submit-btn" @click="saveTag">✔ {{ $t('common.save') }}</button>
       </template>
     </Modal>
   </div>
@@ -72,71 +72,158 @@ export default {
 <style scoped>
 .tags {
   padding: 20px;
+  background: #ffffff;
+  min-height: 100vh;
+  transition: background 0.3s ease;
 }
 
+/* Arama Alanı ve Buton */
 .search-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .search-input {
-  padding: 10px;
+  padding: 10px 14px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
   flex-grow: 1;
+  min-width: 240px;
+  font-size: 14px;
 }
 
 .btn.primary {
   background: #003c8f;
   color: white;
-  padding: 10px 15px;
+  padding: 10px 16px;
+  font-size: 14px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
+.btn.primary:hover {
+  background: #002f6c;
+}
+
+/* Form */
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 .form-group label {
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 5px;
 }
 
 .required {
   color: red;
   margin-left: 5px;
+  font-size: 12px;
 }
 
+/* Konum Seçenekleri */
 .tag-positions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .position-option {
-  background: #f8f9fa;
-  padding: 10px;
-  border-radius: 5px;
+  background: #f1f5f9;
+  padding: 12px;
+  border-radius: 8px;
+  flex: 1 1 calc(50% - 15px);
   display: flex;
   align-items: center;
-  gap: 10px;
-  width: 48%;
+  gap: 12px;
+  font-size: 14px;
+  transition: background 0.3s ease;
 }
 
+.position-option i {
+  color: #003c8f;
+  font-size: 16px;
+}
+
+/* Kaydet Butonu */
 .submit-btn {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background: #007bff;
   color: white;
-  border: none;
-  cursor: pointer;
   font-size: 16px;
-  border-radius: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+/* Dark Mode */
+.dark-mode .tags {
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+.dark-mode .search-input {
+  background: #1e293b;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
+.dark-mode .position-option {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group select,
+.dark-mode .form-group textarea {
+  background: #1e293b;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
+.dark-mode .submit-btn {
+  background: #3b82f6;
+}
+
+.dark-mode .submit-btn:hover {
+  background: #2563eb;
+}
+
+.dark-mode .btn.primary {
+  background: #0ea5e9;
+  color: #fff;
+}
+.dark-mode .btn.primary:hover {
+  background: #0284c7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .position-option {
+    flex: 1 1 100%;
+  }
+
+  .search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
 }
 </style>

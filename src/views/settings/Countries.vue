@@ -150,24 +150,45 @@ const closeModal = () => showModal.value = false
 
 <style scoped>
 .countries-page {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
 }
+html.dark .countries-page {
+  background-color: #1f1f1f;
+  color: #f1f1f1;
+}
+
 .title {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 16px;
+  color: #1f2937;
 }
+html.dark .title {
+  color: #ffffff;
+}
+
 .top-bar {
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
+
 .search-input {
   padding: 8px;
   border-radius: 6px;
   border: 1px solid #ccc;
   width: 200px;
+  transition: background 0.2s, color 0.2s, border 0.2s;
 }
+html.dark .search-input {
+  background: #2a2a2a;
+  color: #f1f1f1;
+  border-color: #444;
+}
+
 .add-btn {
   background: #3b82f6;
   color: #fff;
@@ -175,32 +196,50 @@ const closeModal = () => showModal.value = false
   padding: 8px 14px;
   border-radius: 6px;
   cursor: pointer;
+  transition: background 0.2s;
 }
+.add-btn:hover {
+  background: #2563eb;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  background: white;
+}
+html.dark .table {
+  background: #2a2a2a;
+  color: #f1f1f1;
 }
 .table th, .table td {
   padding: 10px;
   border-bottom: 1px solid #eee;
   text-align: left;
 }
+html.dark .table th, html.dark .table td {
+  border-color: #444;
+}
+
 .status.active {
   background: #d1fae5;
   color: #047857;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 12px;
 }
 .status.passive {
   background: #fee2e2;
   color: #b91c1c;
+}
+.status {
   padding: 4px 8px;
   border-radius: 6px;
   font-size: 12px;
+  display: inline-block;
+  font-weight: 500;
 }
-.dropdown { position: relative; }
+
+.dropdown {
+  position: relative;
+}
 .dropdown-menu {
   position: absolute;
   background: white;
@@ -210,14 +249,26 @@ const closeModal = () => showModal.value = false
   padding: 4px 0;
   border-radius: 6px;
 }
+html.dark .dropdown-menu {
+  background: #2a2a2a;
+  border-color: #555;
+  color: #f1f1f1;
+}
 .dropdown-menu li {
   padding: 6px 10px;
   cursor: pointer;
 }
+.dropdown-menu li:hover {
+  background: #f3f4f6;
+}
+html.dark .dropdown-menu li:hover {
+  background: #3b3b3b;
+}
+
 .modal {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -229,15 +280,22 @@ const closeModal = () => showModal.value = false
   width: 600px;
   max-width: 90%;
 }
+html.dark .modal-content {
+  background: #2b2b2b;
+  color: #f1f1f1;
+}
+
 .modal-header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 12px;
 }
+
 .tabs {
   display: flex;
   gap: 8px;
   margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 .tabs button {
   padding: 8px 12px;
@@ -250,13 +308,30 @@ const closeModal = () => showModal.value = false
   background: #3b82f6;
   color: white;
 }
-.form input, .form select {
+html.dark .tabs button {
+  background: #444;
+  color: #f1f1f1;
+}
+html.dark .tabs button.active {
+  background: #2563eb;
+  color: white;
+}
+
+.form input,
+.form select {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+html.dark .form input,
+html.dark .form select {
+  background: #3a3a3a;
+  color: #f1f1f1;
+  border-color: #555;
+}
+
 .save-btn {
   background: #3b82f6;
   color: white;
@@ -264,5 +339,30 @@ const closeModal = () => showModal.value = false
   padding: 10px 16px;
   border-radius: 8px;
   cursor: pointer;
+  font-weight: 500;
+}
+.save-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .modal-content {
+    width: 80%;
+    padding: 16px;
+  }
+
+  .form input, .form select {
+    font-size: 14px;
+  }
 }
 </style>

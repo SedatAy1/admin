@@ -7,7 +7,7 @@
         :key="item.path"
         :to="item.path"
         active-class="active">
-        {{ item.label }}
+        {{ $t(item.label) }}
       </router-link>
     </div>
 
@@ -23,12 +23,12 @@ export default {
   data() {
     return {
       menuItems: [
-        { label: "Müşteri Yönetimi", path: "/customers/manage" },
-        { label: "Riskli Müşteri Yönetimi", path: "/customers/risk" },
-        { label: "Müşteri Bakiyeleri", path: "/customers/balances" },
-        { label: "Bayi Yönetimi", path: "/customers/dealers" },
-        { label: "Bayi Grupları", path: "/customers/groups" },
-        { label: "Bayi İşlemleri", path: "/customers/transactions" }
+        { label: "customers.menu.manage", path: "/customers/manage" },
+        { label: "customers.menu.risk", path: "/customers/risk" },
+        { label: "customers.menu.balances", path: "/customers/balances" },
+        { label: "customers.menu.dealers", path: "/customers/dealers" },
+        { label: "customers.menu.groups", path: "/customers/groups" },
+        { label: "customers.menu.transactions", path: "/customers/transactions" }
       ]
     };
   }

@@ -5,13 +5,13 @@
         :to="{ path: '/contents/url-management/url-redirect' }"
         :class="{ active: $route.path === '/contents/url-management/url-redirect' }"
       >
-        URL Yönlendirme
+        {{ $t("url.menu.redirect") }}
       </router-link>
       <router-link
         :to="{ path: '/contents/url-management/404-reports' }"
         :class="{ active: $route.path === '/contents/url-management/404-reports' }"
       >
-        404 URL Raporları
+        {{ $t("url.menu.reports") }}
       </router-link>
     </nav>
 

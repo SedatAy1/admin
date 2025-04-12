@@ -55,22 +55,39 @@ const openNewAdminModal = () => {
   font-family: 'Inter';
   padding: 16px;
 }
+
 .title {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 16px;
+  color: #1f2937;
 }
+html.dark .title {
+  color: #f1f5f9;
+}
+
 .top-bar {
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
+
 .search-input {
   padding: 8px;
-  width: 200px;
+  width: 100%;
+  max-width: 240px;
   border-radius: 6px;
   border: 1px solid #ccc;
+  font-size: 14px;
 }
+html.dark .search-input {
+  background-color: #1f2937;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
 .add-btn {
   background: #3b82f6;
   color: white;
@@ -78,24 +95,52 @@ const openNewAdminModal = () => {
   padding: 8px 14px;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: 500;
 }
+.add-btn:hover {
+  background-color: #2563eb;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
+  background-color: #ffffff;
 }
-.table th, .table td {
+html.dark .table {
+  background-color: #1e293b;
+}
+
+.table th,
+.table td {
   padding: 10px;
   border-bottom: 1px solid #eee;
   text-align: left;
+  color: #1f2937;
 }
+html.dark .table th,
+html.dark .table td {
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
 .no-data {
   text-align: center;
   color: #888;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
 }
+html.dark .no-data {
+  color: #9ca3af;
+}
+
 .pagination {
   margin-top: 20px;
   display: flex;
-  gap: 4px;
+  gap: 6px;
+  flex-wrap: wrap;
   align-items: center;
 }
 .pagination button {
@@ -104,14 +149,82 @@ const openNewAdminModal = () => {
   background: #f3f4f6;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 14px;
+  color: #1f2937;
+}
+html.dark .pagination button {
+  background: #334155;
+  color: #f1f5f9;
 }
 .pagination button.active {
   background: #2563eb;
   color: white;
 }
+
 .total {
   margin-top: 10px;
   font-size: 14px;
   color: #666;
+}
+html.dark .total {
+  color: #9ca3af;
+}
+
+/* 🔄 Responsive Tablo Görünümü */
+@media (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+
+  .table tbody tr {
+    display: block;
+    background: #ffffff;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  html.dark .table tbody tr {
+    background: #1e293b;
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #6b7280;
+  }
+
+  .table td:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Diğer responsive detaylar */
+@media (max-width: 640px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+
+  .pagination {
+    justify-content: center;
+  }
+
+  .total {
+    text-align: center;
+  }
 }
 </style>

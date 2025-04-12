@@ -21,7 +21,13 @@
 <style scoped>
 .site-settings {
   font-family: "Inter";
+  padding: 20px;
+  background-color: #ffffff;
 }
+html.dark .site-settings {
+  background-color: #1e293b;
+}
+
 .box {
   background: #fff;
   border-radius: 6px;
@@ -29,19 +35,51 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   border: 1px solid #e5e7eb;
 }
+html.dark .box {
+  background: #334155;
+  border-color: #475569;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
 .title {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 12px;
   color: #374151;
 }
+html.dark .title {
+  color: #f1f5f9;
+}
+
 p {
   margin: 6px 0;
   font-size: 14px;
   color: #4b5563;
 }
+html.dark p {
+  color: #cbd5e1;
+}
+
 strong {
   color: #111827;
   margin-right: 6px;
+}
+html.dark strong {
+  color: #ffffff;
+}
+
+/* ✅ Responsive destek */
+@media (max-width: 640px) {
+  .box {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  p {
+    font-size: 13px;
+  }
 }
 </style>

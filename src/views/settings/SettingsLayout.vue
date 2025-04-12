@@ -72,6 +72,10 @@ const isActive = (path) => {
   background-color: #f9fafb;
   min-height: 100vh;
   gap: 24px;
+  flex-wrap: wrap;
+}
+html.dark .settings-layout {
+  background-color: #1e293b;
 }
 
 /* Sidebar */
@@ -82,6 +86,12 @@ const isActive = (path) => {
   border-radius: 12px;
   border: 1px solid #e2e8f0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.3s, color 0.3s;
+}
+html.dark .settings-sidebar {
+  background-color: #334155;
+  border-color: #475569;
+  color: #f1f5f9;
 }
 
 .settings-sidebar ul {
@@ -99,16 +109,26 @@ const isActive = (path) => {
   font-weight: 500;
   transition: background-color 0.2s, color 0.2s;
 }
+html.dark .settings-sidebar li {
+  color: #cbd5e1;
+}
 
 .settings-sidebar li:hover {
   background-color: #e0f2fe;
   color: #0369a1;
+}
+html.dark .settings-sidebar li:hover {
+  background-color: #1e40af;
+  color: white;
 }
 
 .settings-sidebar li.active {
   background-color: #3b82f6;
   color: white;
   font-weight: 600;
+}
+html.dark .settings-sidebar li.active {
+  background-color: #2563eb;
 }
 
 /* İçerik */
@@ -119,5 +139,28 @@ const isActive = (path) => {
   border-radius: 12px;
   border: 1px solid #e2e8f0;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+}
+html.dark .settings-content {
+  background-color: #1f2937;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .settings-layout {
+    flex-direction: column;
+  }
+
+  .settings-sidebar {
+    width: 100%;
+    order: 2;
+  }
+
+  .settings-content {
+    order: 1;
+    width: 100%;
+    padding: 24px;
+  }
 }
 </style>

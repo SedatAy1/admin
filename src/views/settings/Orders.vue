@@ -233,7 +233,6 @@ const saveSettings = () => {
 </script>
 
 <style scoped>
-/* CSS aynı şekilde korunmuştur */
 .orders-settings {
   background: #fff;
   border: 1px solid #e2e8f0;
@@ -241,6 +240,12 @@ const saveSettings = () => {
   padding: 30px;
   font-family: 'Inter', sans-serif;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+html.dark .orders-settings {
+  background: #1f1f1f;
+  border-color: #3a3a3a;
+  color: #f1f1f1;
 }
 
 .page-title {
@@ -249,12 +254,16 @@ const saveSettings = () => {
   margin-bottom: 28px;
   color: #1e293b;
 }
+html.dark .page-title {
+  color: #ffffff;
+}
 
 .setting-group {
   display: flex;
   align-items: flex-start;
   margin-bottom: 20px;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .setting-icon {
@@ -262,10 +271,15 @@ const saveSettings = () => {
   min-width: 40px;
   text-align: center;
   margin-top: 5px;
+  color: #3b82f6;
+}
+html.dark .setting-icon {
+  color: #60a5fa;
 }
 
 .setting-content {
   flex: 1;
+  min-width: 240px;
 }
 
 .setting-title {
@@ -277,11 +291,17 @@ const saveSettings = () => {
   gap: 8px;
   margin-bottom: 4px;
 }
+html.dark .setting-title {
+  color: #f1f1f1;
+}
 
 .setting-description {
   font-size: 14px;
   color: #6b7280;
   margin-bottom: 10px;
+}
+html.dark .setting-description {
+  color: #a1a1aa;
 }
 
 .setting-control {
@@ -290,6 +310,14 @@ const saveSettings = () => {
   border: 1px solid #d1d5db;
   font-size: 14px;
   width: 100%;
+  background-color: #ffffff;
+  color: #1f2937;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+html.dark .setting-control {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border-color: #555;
 }
 
 .setting-control[type='checkbox'] {
@@ -307,12 +335,19 @@ const saveSettings = () => {
   font-size: 12px;
   border-radius: 6px;
 }
+html.dark .badge {
+  background-color: #f87171;
+  color: #fff;
+}
 
 .section-divider {
   margin: 30px 0 20px;
   font-weight: 600;
   color: #334155;
   font-size: 15px;
+}
+html.dark .section-divider {
+  color: #cbd5e1;
 }
 
 .save-btn {
@@ -325,8 +360,28 @@ const saveSettings = () => {
   font-weight: 500;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 .save-btn:hover {
   background-color: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .orders-settings {
+    padding: 20px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  .setting-group {
+    flex-direction: column;
+  }
+
+  .save-btn {
+    width: 100%;
+  }
 }
 </style>

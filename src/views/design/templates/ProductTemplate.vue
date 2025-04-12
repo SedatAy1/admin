@@ -8,31 +8,31 @@
 
       <div class="tabs">
         <button :class="{ active: activeTab === 'general' }" @click="activeTab = 'general'">
-          Genel Bilgiler
+          {{ $t('productTemplate.tabs.general') }}
         </button>
         <button :class="{ active: activeTab === 'designer' }" @click="activeTab = 'designer'">
-          Şablon Tasarlama Aracı
+          {{ $t('productTemplate.tabs.builder') }}
         </button>
       </div>
 
       <div class="modal-body">
         <div v-if="activeTab === 'general'" class="form-layout">
           <div class="form">
-            <label>Kağıt Örneği</label>
+            <label>{{ $t('productTemplate.fields.sample') }}</label>
             <input type="file" />
 
-            <label>Kağıt Ebatı</label>
+            <label>{{ $t('productTemplate.fields.size') }}</label>
             <select>
-              <option>Özel</option>
+              <option>{{ $t('productTemplate.options.custom') }}</option>
             </select>
 
-            <label>Kağıt Genişliği (cm)</label>
+            <label>{{ $t('productTemplate.fields.width') }}</label>
             <input type="number" value="10.00" />
 
-            <label>Kağıt Yüksekliği (cm)</label>
+            <label>{{ $t('productTemplate.fields.height') }}</label>
             <input type="number" value="6.00" />
 
-            <label>Kopya</label>
+            <label>{{ $t('productTemplate.fields.copy') }}</label>
             <select>
               <option>1</option>
               <option>2</option>
@@ -48,10 +48,10 @@
           </div>
 
           <div class="field-checklist">
-            <div v-for="field in fields" :key="field">
+            <div v-for="key in fields" :key="key">
               <label>
                 <input type="checkbox" checked />
-                {{ field }}
+                {{ $t(`productTemplate.labels.${key}`) }}
               </label>
             </div>
           </div>
@@ -59,7 +59,7 @@
       </div>
 
       <div class="modal-footer">
-        <button class="save-btn" @click="close">✔ Kaydet</button>
+        <button class="save-btn" @click="close">✔ {{ $t('common.save') }}</button>
       </div>
     </div>
   </div>
@@ -67,16 +67,28 @@
 
 <script setup>
 import { ref } from 'vue'
+
 const props = defineProps({ title: String })
 const emit = defineEmits(['close'])
 const close = () => emit('close')
+
 const activeTab = ref('general')
 
 const fields = [
-  'Firma Logosu', 'Ürün Adı', 'Fatura Adı', 'Ürün Kodu',
-  'Ürün Barkodu', 'Ürün DİNG Kod', 'MPN', 'Kısa Açıklama',
-  'Kategori', 'KDV Oranı', 'Satış Fiyatı', 'Piyasa Fiyatı',
-  'Ürün Resmi', 'Varyant Bilgisi'
+  'companyLogo',
+  'productName',
+  'invoiceName',
+  'productCode',
+  'barcode',
+  'dingCode',
+  'mpn',
+  'shortDescription',
+  'category',
+  'vat',
+  'price',
+  'marketPrice',
+  'productImage',
+  'variantInfo'
 ]
 </script>
 

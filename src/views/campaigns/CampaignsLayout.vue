@@ -1,21 +1,20 @@
 <template>
   <div class="campaigns-layout">
     <div class="campaigns-nav">
-      <router-link to="/campaigns/coupons" class="nav-button">Kupon Yönetimi</router-link>
-      <router-link to="/campaigns/promotions" class="nav-button">Promosyonlar</router-link>
-      <router-link to="/campaigns/member-discounts" class="nav-button">Üye İndirimleri</router-link>
-      <router-link to="/campaigns/dealer-discounts" class="nav-button">Bayi İndirimleri</router-link>
-      <router-link to="/campaigns/dealer-commissions" class="nav-button">Bayi Komisyonları</router-link>
-      <router-link to="/campaigns/fixed-discounts" class="nav-button">Sabit İndirim</router-link>
-      <router-link to="/campaigns/order-limits" class="nav-button">Sipariş Limitleri</router-link>
-      <router-link to="/campaigns/sales-quotas" class="nav-button">Satış Kotaları</router-link>
-      <router-link to="/campaigns/email-tools" class="nav-button">E-Posta Araçları</router-link>
-      <router-link to="/campaigns/sms-tools" class="nav-button">SMS Araçları</router-link>
+      <router-link to="/campaigns/coupons" class="nav-button">{{ $t('campaigns.coupons') }}</router-link>
+      <router-link to="/campaigns/promotions" class="nav-button">{{ $t('campaigns.promotions') }}</router-link>
+      <router-link to="/campaigns/member-discounts" class="nav-button">{{ $t('campaigns.memberDiscounts') }}</router-link>
+      <router-link to="/campaigns/dealer-discounts" class="nav-button">{{ $t('campaigns.dealerDiscounts') }}</router-link>
+      <router-link to="/campaigns/dealer-commissions" class="nav-button">{{ $t('campaigns.dealerCommissions') }}</router-link>
+      <router-link to="/campaigns/fixed-discounts" class="nav-button">{{ $t('campaigns.fixedDiscount') }}</router-link>
+      <router-link to="/campaigns/order-limits" class="nav-button">{{ $t('campaigns.orderLimits') }}</router-link>
+      <router-link to="/campaigns/sales-quotas" class="nav-button">{{ $t('campaigns.salesQuotas') }}</router-link>
+      <router-link to="/campaigns/email-tools" class="nav-button">{{ $t('campaigns.emailTools') }}</router-link>
+      <router-link to="/campaigns/sms-tools" class="nav-button">{{ $t('campaigns.smsTools') }}</router-link>
     </div>
 
-    <!-- Eğer router içinde kullanılacaksa -->
     <div class="campaigns-content">
-      <router-view></router-view> <!-- Eğer slot sorun çıkarıyorsa -->
+      <router-view></router-view>
     </div>
   </div>
 </template>

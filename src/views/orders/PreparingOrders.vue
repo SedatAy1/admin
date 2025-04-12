@@ -3,7 +3,7 @@
     <!-- Filtreleme Seçenekleri -->
     <div class="filter-section">
       <div class="filter-header">
-        <span>🔍 Filtreleme Seçenekleri</span>
+        <span>🔍 {{ $t('orders.filters.title') }}</span>
         <button @click="toggleFilter" class="toggle-btn">
           <span v-if="showFilter">▲</span>
           <span v-else>▼</span>
@@ -20,21 +20,21 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Sipariş Bilgileri</th>
-            <th>Müşteri Bilgileri</th>
-            <th>Tutar</th>
-            <th>Durum</th>
-            <th>Kargo</th>
-            <th>Tarih</th>
-            <th>Yazdır</th>
-            <th>İşlemler</th>
+            <th>{{ $t('orders.table.orderInfo') }}</th>
+            <th>{{ $t('orders.table.customerInfo') }}</th>
+            <th>{{ $t('orders.table.amount') }}</th>
+            <th>{{ $t('orders.table.status') }}</th>
+            <th>{{ $t('orders.table.shipping') }}</th>
+            <th>{{ $t('orders.table.date') }}</th>
+            <th>{{ $t('orders.table.print') }}</th>
+            <th>{{ $t('orders.table.actions') }}</th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="orders.length === 0">
             <td colspan="9" class="no-data">
               <img src="@/assets/no-data.png" alt="No Data" class="no-data-img" />
-              <p>Kayıt bulunamadı.</p>
+              <p>{{ $t('orders.noData') }}</p>
             </td>
           </tr>
           <tr v-for="(order, index) in orders" :key="index">
@@ -59,11 +59,16 @@
         <option value="20">20</option>
         <option value="50">50</option>
       </select>
-      <span>{{ orders.length }} kayıttan 1 ile {{ orders.length }} arası gösteriliyor</span>
+      <span>
+        {{
+          $t("orders.footer.showing", {
+            total: orders.length
+          })
+        }}
+      </span>
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: "NewOrders",
@@ -98,6 +103,7 @@ export default {
   align-items: center;
   font-size: 16px;
   margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
 .toggle-btn {
@@ -112,15 +118,17 @@ export default {
 .orders-table {
   background: white;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .orders-table table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 800px;
 }
 
-.orders-table th, .orders-table td {
+.orders-table th,
+.orders-table td {
   padding: 12px;
   border-bottom: 1px solid #ddd;
   text-align: center;
@@ -148,11 +156,65 @@ export default {
   align-items: center;
   padding: 10px;
   font-size: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .table-footer select {
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #ddd;
+}
+
+/* 🌙 Dark Mode */
+.dark-mode .filter-section {
+  background: #1e2a3a;
+  color: white;
+}
+
+.dark-mode .toggle-btn {
+  color: white;
+}
+
+.dark-mode .orders-table {
+  background: #2b2f3a;
+}
+
+.dark-mode .orders-table th {
+  background: #39414f;
+  color: white;
+}
+
+.dark-mode .orders-table td {
+  color: #eee;
+  border-color: #444;
+}
+
+.dark-mode .table-footer {
+  color: #ddd;
+}
+
+.dark-mode .table-footer select {
+  background: #39414f;
+  color: white;
+  border: 1px solid #555;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .filter-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .orders-table table {
+    font-size: 14px;
+  }
+
+  .table-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 </style>

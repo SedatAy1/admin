@@ -2,54 +2,61 @@
   <Teleport to="body">
     <div class="modal-overlay">
       <div class="invoice-modal">
+        <!-- Başlık ve Sekmeler -->
         <div class="header">
-          <h2>Fatura Şablonu</h2>
+          <h2>{{ $t('invoice.title') }}</h2>
           <div class="tabs">
-            <button :class="{ active: activeTab === 'genel' }" @click="activeTab = 'genel'">Genel Bilgiler</button>
-            <button :class="{ active: activeTab === 'sablon' }" @click="activeTab = 'sablon'">Şablon Tasarlama Aracı</button>
+            <button :class="{ active: activeTab === 'genel' }" @click="activeTab = 'genel'">
+              {{ $t('invoice.tabs.general') }}
+            </button>
+            <button :class="{ active: activeTab === 'sablon' }" @click="activeTab = 'sablon'">
+              {{ $t('invoice.tabs.builder') }}
+            </button>
           </div>
         </div>
 
+        <!-- İçerik -->
         <div class="content">
           <!-- Genel Bilgiler -->
           <div v-if="activeTab === 'genel'" class="form-section">
-            <label>Şablon Adı</label>
-            <input type="text" placeholder="Fatura Şablonu" />
+            <label>{{ $t('invoice.fields.name') }}</label>
+            <input type="text" :placeholder="$t('invoice.fields.namePlaceholder')" />
 
-            <label>Varsayılan Kağıt Tipi</label>
+            <label>{{ $t('invoice.fields.paper') }}</label>
             <select>
               <option>A4</option>
               <option>Letter</option>
             </select>
 
-            <label>Açıklama</label>
-            <textarea placeholder="Bu şablon, standart e-fatura yapısı içindir." />
+            <label>{{ $t('invoice.fields.description') }}</label>
+            <textarea :placeholder="$t('invoice.fields.descriptionPlaceholder')" />
           </div>
 
           <!-- Şablon Tasarlama Aracı -->
           <div v-else class="builder-section">
             <div class="preview">
               <div class="preview-box">
-                <h4 v-if="options.header">🔵 Başlık</h4>
-                <p v-if="options.address">📍 Adres Bilgisi</p>
-                <p v-if="options.logo">🖼 Logo</p>
-                <p v-if="options.table">📄 Ürün Tablosu</p>
-                <p v-if="options.footer">🔻 Alt Bilgi</p>
+                <h4 v-if="options.header">🔵 {{ $t('invoice.preview.header') }}</h4>
+                <p v-if="options.address">📍 {{ $t('invoice.preview.address') }}</p>
+                <p v-if="options.logo">🖼 {{ $t('invoice.preview.logo') }}</p>
+                <p v-if="options.table">📄 {{ $t('invoice.preview.table') }}</p>
+                <p v-if="options.footer">🔻 {{ $t('invoice.preview.footer') }}</p>
               </div>
             </div>
             <div class="options">
-              <label><input type="checkbox" v-model="options.header" /> Başlık</label>
-              <label><input type="checkbox" v-model="options.address" /> Adres</label>
-              <label><input type="checkbox" v-model="options.logo" /> Logo</label>
-              <label><input type="checkbox" v-model="options.table" /> Ürün Tablosu</label>
-              <label><input type="checkbox" v-model="options.footer" /> Alt Bilgi</label>
+              <label><input type="checkbox" v-model="options.header" /> {{ $t('invoice.preview.header') }}</label>
+              <label><input type="checkbox" v-model="options.address" /> {{ $t('invoice.preview.address') }}</label>
+              <label><input type="checkbox" v-model="options.logo" /> {{ $t('invoice.preview.logo') }}</label>
+              <label><input type="checkbox" v-model="options.table" /> {{ $t('invoice.preview.table') }}</label>
+              <label><input type="checkbox" v-model="options.footer" /> {{ $t('invoice.preview.footer') }}</label>
             </div>
           </div>
         </div>
 
+        <!-- Footer -->
         <div class="footer">
-          <button class="btn-primary">Kaydet</button>
-          <button class="btn-secondary" @click="$emit('close')">İptal</button>
+          <button class="btn-primary">{{ $t('common.save') }}</button>
+          <button class="btn-secondary" @click="$emit('close')">{{ $t('common.cancel') }}</button>
         </div>
       </div>
     </div>
@@ -58,7 +65,6 @@
 
 <script setup>
 import { ref } from 'vue'
-
 const activeTab = ref('genel')
 const options = ref({
   header: true,

@@ -82,7 +82,16 @@ const tokens = [
   border-radius: 6px;
   padding: 8px;
   font-size: 14px;
+  background-color: #fff;
+  color: #1e293b;
+  transition: background 0.3s ease, color 0.3s ease;
 }
+html.dark .input {
+  background-color: #1f2937;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
 .btn-save {
   background: #3b82f6;
   color: white;
@@ -90,32 +99,41 @@ const tokens = [
   padding: 10px 16px;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+.btn-save:hover {
+  background: #2563eb;
+}
+
 .switch {
   position: relative;
   display: inline-block;
   width: 46px;
   height: 24px;
 }
+
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
+
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-color: #ccc;
   border-radius: 24px;
   transition: .4s;
 }
+html.dark .slider {
+  background-color: #4b5563;
+}
+
 input:checked + .slider {
   background-color: #3b82f6;
 }
+
 .slider:before {
   position: absolute;
   content: "";
@@ -127,9 +145,14 @@ input:checked + .slider {
   border-radius: 50%;
   transition: .4s;
 }
+html.dark .slider:before {
+  background-color: #f9fafb;
+}
+
 input:checked + .slider:before {
   transform: translateX(22px);
 }
+
 .icon-box {
   width: 40px;
   height: 40px;
@@ -139,5 +162,23 @@ input:checked + .slider:before {
   justify-content: center;
   border-radius: 10px;
   font-size: 20px;
+  color: #1e293b;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+html.dark .icon-box {
+  background: #334155;
+  color: #f9fafb;
+}
+
+/* Responsive destek (isteğe bağlı alan genişliği için örnek) */
+@media (max-width: 640px) {
+  .btn-save {
+    width: 100%;
+    text-align: center;
+  }
+
+  .input {
+    font-size: 13px;
+  }
 }
 </style>

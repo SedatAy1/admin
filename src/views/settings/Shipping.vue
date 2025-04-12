@@ -174,12 +174,24 @@ const marketplaces = [
   background: white;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+html.dark .shipping-settings {
+  background: #1e1e1e;
+  border-color: #3a3a3a;
+  color: #f1f1f1;
+}
+
 .title {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 16px;
+  color: #1e293b;
 }
+html.dark .title {
+  color: #ffffff;
+}
+
 .tabs button {
   padding: 12px 20px;
   background: #f1f5f9;
@@ -187,30 +199,62 @@ const marketplaces = [
   font-weight: 500;
   margin-right: 8px;
   cursor: pointer;
+  color: #1f2937;
 }
 .tabs button.active {
   background: #475569;
   color: white;
 }
+html.dark .tabs button {
+  background: #374151;
+  color: #e2e8f0;
+}
+html.dark .tabs button.active {
+  background: #3b82f6;
+  color: white;
+}
+
 .info-box {
   background: #f9fafb;
   padding: 16px;
   border-radius: 8px;
   margin-bottom: 16px;
   font-size: 14px;
+  color: #334155;
 }
+html.dark .info-box {
+  background: #2c2c2c;
+  color: #f1f1f1;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin-bottom: 16px;
 }
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 input, select {
   padding: 10px;
   width: 100%;
   border-radius: 8px;
   border: 1px solid #d1d5db;
+  background-color: #fff;
+  color: #1f2937;
+  transition: background-color 0.3s ease;
 }
+html.dark input,
+html.dark select {
+  background-color: #2a2a2a;
+  border-color: #4b5563;
+  color: #f1f1f1;
+}
+
 .primary-btn {
   margin-top: 20px;
   padding: 10px 16px;
@@ -221,27 +265,46 @@ input, select {
   font-weight: 600;
   cursor: pointer;
 }
+.primary-btn:hover {
+  background-color: #2563eb;
+}
+
 .search-bar {
   display: flex;
   gap: 10px;
   margin-bottom: 16px;
+  flex-wrap: wrap;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
   background: white;
   font-size: 14px;
 }
+html.dark table {
+  background: #2c2c2c;
+  color: #f1f1f1;
+}
 th, td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #e5e7eb;
 }
+html.dark th,
+html.dark td {
+  border-color: #444;
+}
+
 .empty {
   text-align: center;
   color: #9ca3af;
   padding: 20px;
 }
+html.dark .empty {
+  color: #d1d5db;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -254,6 +317,7 @@ th, td {
   justify-content: center;
   z-index: 1000;
 }
+
 .modal-content {
   background: white;
   padding: 24px;
@@ -263,16 +327,26 @@ th, td {
   flex-direction: column;
   gap: 12px;
 }
+html.dark .modal-content {
+  background: #2a2a2a;
+  color: #f1f1f1;
+}
+
 .marketplaces {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
+
 .close-btn {
   padding: 8px;
   background: #e5e7eb;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+}
+html.dark .close-btn {
+  background: #374151;
+  color: #f1f1f1;
 }
 </style>

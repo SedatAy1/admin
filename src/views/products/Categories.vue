@@ -3,79 +3,79 @@
     <div class="filter-container">
       <div class="filter-header" @click="toggleFilter">
         <i class="fas fa-filter"></i>
-        <span>Filtreleme Seçenekleri</span>
+        <span>{{ $t('category.filterOptions') }}</span>
         <i class="fas" :class="showFilter ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
       </div>
       <div v-show="showFilter" class="filter-content">
         <div class="filter-row">
           <div class="filter-group">
-            <label>Kategori Adı</label>
-            <input type="text" v-model="filters.categoryName" placeholder="Kategori adı giriniz" />
+            <label>{{ $t('category.name') }}</label>
+            <input type="text" v-model="filters.categoryName" :placeholder="$t('category.enterName')" />
           </div>
           <div class="filter-group">
-            <label>Üst Kategori</label>
+            <label>{{ $t('category.parent') }}</label>
             <select v-model="filters.parentCategory">
-              <option value="">Seçilmedi</option>
+              <option value="">{{ $t('common.notSelected') }}</option>
               <option v-for="cat in categories" :key="cat.id" :value="cat.id">{{ cat.name }}</option>
             </select>
           </div>
           <div class="filter-group">
-            <label>Gelişmiş Filtreleme</label>
+            <label>{{ $t('category.advancedFilter') }}</label>
             <select v-model="filters.advancedFilter">
-              <option value="">Seçilmedi</option>
-              <option value="aktif">Aktif Kategoriler</option>
-              <option value="pasif">Pasif Kategoriler</option>
+              <option value="">{{ $t('common.notSelected') }}</option>
+              <option value="aktif">{{ $t('category.active') }}</option>
+              <option value="pasif">{{ $t('category.passive') }}</option>
             </select>
           </div>
         </div>
         <div class="filter-actions">
-          <button class="clear-btn" @click="clearFilters">Temizle</button>
-          <button class="filter-btn" @click="applyFilters">Filtrele</button>
+          <button class="clear-btn" @click="clearFilters">{{ $t('common.clear') }}</button>
+          <button class="filter-btn" @click="applyFilters">{{ $t('common.filter') }}</button>
         </div>
       </div>
     </div>
 
     <div class="buttons">
-      <button class="btn primary" @click="showNewCategoryModal = true">+ Yeni Kategori</button>
-      <button class="btn gold" @click="showCategoryTreeModal = true">📂 Kategori Ağacı</button>
-      <button class="btn dark" @click="showQuickMatchModal = true">≡ Hızlı Kategori Eşleştirme</button>
-      <button class="btn green">📊 Excel İşlemleri</button>
+      <button class="btn primary" @click="showNewCategoryModal = true">{{ $t('category.new') }}</button>
+      <button class="btn gold" @click="showCategoryTreeModal = true">{{ $t('category.tree') }}</button>
+      <button class="btn dark" @click="showQuickMatchModal = true">{{ $t('category.quickMatch') }}</button>
+      <button class="btn green">{{ $t('category.excel') }}</button>
     </div>
 
-    <Modal :isOpen="showNewCategoryModal" title="Yeni Kategori" @close="showNewCategoryModal = false">
+    <Modal :isOpen="showNewCategoryModal" :title="$t('category.newTitle')" @close="showNewCategoryModal = false">
       <div class="modal-body">
         <div class="form-group">
-          <label>Kategori Adı</label>
+          <label>{{ $t('category.name') }}</label>
           <input type="text" v-model="newCategory.name" />
         </div>
         <div class="form-group">
-          <label>Üst Kategori</label>
+          <label>{{ $t('category.parent') }}</label>
           <select v-model="newCategory.parent">
-            <option value="">Hiçbiri</option>
+            <option value="">{{ $t('common.none') }}</option>
             <option v-for="cat in categories" :key="cat.id" :value="cat.id">{{ cat.name }}</option>
           </select>
         </div>
         <div class="form-group">
-          <label>Kategori Açıklaması</label>
+          <label>{{ $t('category.description') }}</label>
           <textarea v-model="newCategory.description"></textarea>
         </div>
       </div>
       <template v-slot:footer>
-        <button class="submit-btn" @click="saveCategory">Kaydet</button>
+        <button class="submit-btn" @click="saveCategory">{{ $t('category.save') }}</button>
       </template>
     </Modal>
 
-    <Modal :isOpen="showCategoryTreeModal" title="Kategori Ağacı" @close="showCategoryTreeModal = false">
+    <Modal :isOpen="showCategoryTreeModal" :title="$t('category.treeTitle')" @close="showCategoryTreeModal = false">
       <div class="category-tree-modal">
         <div class="modal-header">
-          <h2>Kategori Ağacı</h2>
+          <h2>{{ $t('category.treeTitle') }}</h2>
           <button class="close-btn" @click="showCategoryTreeModal = false">&times;</button>
         </div>
 
         <div class="modal-body">
           <div class="info-box">
-            <p>Bir kategoriyi başka bir kategorinin altına taşımak için sürükle bırak yapabilirsiniz.</p>
-            <p>Yaptığınız değişiklikler otomatik olarak kaydedilmektedir.</p>
+            <p>{{ $t('category.infoText1') }}</p>
+            <p>{{ $t('category.infoText2') }}</p>
           </div>
 
           <ul class="category-list">
@@ -156,24 +156,24 @@
         </div>
 
         <div class="modal-footer">
-          <button class="add-main-category" @click="addMainCategory"> + Ana Kategori Ekle</button>
-          <button class="close-modal-btn" @click="showCategoryTreeModal = false">Kapat</button>
+          <button class="add-main-category" @click="addMainCategory">{{ $t('category.addMain') }}</button>
+          <button class="close-modal-btn" @click="showCategoryTreeModal = false">{{ $t('category.close') }}</button>
         </div>
       </div>
     </Modal>
 
-    <Modal :isOpen="showQuickMatchModal" title="Hızlı Kategori Eşleştirme" @close="showQuickMatchModal = false">
+        <Modal :isOpen="showQuickMatchModal" :title="$t('category.quickMatchTitle')" @close="showQuickMatchModal = false">
       <div class="modal-body">
         <div class="form-group">
-          <label>Üst Kategori</label>
+          <label>{{ $t('category.parent') }}</label>
           <div class="category-header">
-            <span>Tümü</span>
-            <a href="#" class="change-category">Değiştir</a>
+            <span>{{ $t('category.all') }}</span>
+            <a href="#" class="change-category">{{ $t('category.change') }}</a>
           </div>
         </div>
 
         <div class="form-group">
-          <label>Platform</label>
+          <label>{{ $t('category.platform') }}</label>
           <select v-model="quickMatch.platform">
             <option>N11</option>
             <option>Hepsiburada</option>
@@ -183,45 +183,46 @@
         </div>
 
         <div class="form-group">
-          <label>Durum</label>
+          <label>{{ $t('category.status') }}</label>
           <select v-model="quickMatch.status">
-            <option>Eşleştirilmemiş</option>
-            <option>Eşleştirilmiş</option>
+            <option>{{ $t('category.unmatched') }}</option>
+            <option>{{ $t('category.matched') }}</option>
           </select>
         </div>
       </div>
 
       <template v-slot:footer>
-        <button class="submit-btn" @click="startMatching">✔ Eşleştirmeye Başla</button>
+        <button class="submit-btn" @click="startMatching">✔ {{ $t('category.startMatching') }}</button>
       </template>
     </Modal>
-    <Modal :isOpen="showExcelModal" title="Kategoriler - Excel İşlemleri" @close="showExcelModal = false">
+
+    <Modal :isOpen="showExcelModal" :title="$t('category.excelTitle')" @close="showExcelModal = false">
       <div class="modal-body">
-        <!-- Sekmeler -->
+        <!-- Tabs -->
         <div class="tabs">
           <button v-for="tab in excelTabs" :key="tab" @click="activeExcelTab = tab"
             :class="{ active: activeExcelTab === tab }">
-            {{ tab }}
+            {{ $t(`category.tabs.${tab}`) }}
           </button>
         </div>
 
-        <!-- İçerik -->
+        <!-- Content -->
         <div v-if="activeExcelTab === 'Dışa Aktar'">
           <div class="info-box">
             <i class="fas fa-info-circle"></i>
-            <span>Tüm veriler excel olarak dışarı aktarılacaktır.</span>
+            <span>{{ $t('category.exportInfo') }}</span>
           </div>
           <button class="download-btn" @click="downloadExcel">
-            <i class="fas fa-download"></i> İndir
+            <i class="fas fa-download"></i> {{ $t('category.download') }}
           </button>
         </div>
 
         <div v-if="activeExcelTab === 'Dışa Aktar 2'">
-          <p>Burada farklı bir dışa aktarma yöntemi olabilir.</p>
+          <p>{{ $t('category.export2Info') }}</p>
         </div>
 
         <div v-if="activeExcelTab === 'İçe Aktar'">
-          <p>Excel dosyanızı buraya yükleyerek içe aktarabilirsiniz.</p>
+          <p>{{ $t('category.importInfo') }}</p>
           <input type="file" />
         </div>
       </div>
@@ -395,57 +396,64 @@ export default {
 };
 </script>
 <style scoped>
-/* Categories.vue stilleri */
 .categories {
   padding: 20px;
+  background: #ffffff;
+  min-height: 100vh;
+  transition: background 0.3s ease;
 }
 
-/* Filtreleme */
+/* 🎯 Filtreleme */
 .filter-container {
-  background: #0d47a1;
-  color: white;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
-  margin-bottom: 15px;
-  padding: 15px;
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
 }
 
 .filter-header {
+  padding: 16px;
+  font-weight: 600;
+  font-size: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
-  font-weight: bold;
   cursor: pointer;
+  background: #14319a;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .filter-content {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
 }
 
 .filter-row {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  gap: 20px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 
 .filter-group {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
+  flex: 1;
+  min-width: 220px;
 }
 
 .filter-group label {
-  font-size: 14px;
+  font-weight: 500;
   margin-bottom: 5px;
-  color: black;
+  font-size: 14px;
+  display: block;
 }
 
-.filter-input {
+.filter-group input,
+.filter-group select {
   padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  width: 100%;
   font-size: 14px;
 }
 
@@ -456,130 +464,104 @@ export default {
 }
 
 .clear-btn, .filter-btn {
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
   cursor: pointer;
-}
-
-.filter-btn {
-  background: #003c8f;
-  color: white;
+  border: none;
 }
 
 .clear-btn {
-  background: #f8f9fa;
-  color: black;
+  background: #f1f5f9;
+  color: #1f2937;
 }
 
-/* Butonlar */
+.filter-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* 🎨 Butonlar */
 .buttons {
   display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .btn {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
   cursor: pointer;
+  border: none;
 }
 
-.primary { background: #003c8f; color: white; }
-.gold { background: #daa520; color: white; }
-.dark { background: #4a4a4a; color: white; }
-.green { background: #228b22; color: white; }
+.primary { background: #2563eb; color: white; }
+.gold    { background: #d4af37; color: white; }
+.dark    { background: #374151; color: white; }
+.green   { background: #10b981; color: white; }
 
-/* Modal (Genel) */
-
-
+/* 📦 Formlar */
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .form-group label {
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 
-.form-group input, .form-group select, .form-group textarea{
+.form-group input,
+.form-group select,
+.form-group textarea {
   padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
 }
+
 .submit-btn {
-  width: 100%;
   padding: 10px;
-  background: #007bff;
+  width: 100%;
+  background: #2563eb;
   color: white;
   border: none;
-  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
   font-size: 16px;
-  border-radius: 5px;
+  cursor: pointer;
 }
 
-/* Kategori Ağacı Modalı */
+/* 🌲 Kategori Ağacı */
 .category-tree-modal {
-  width: 500px; /* Resme göre biraz daha geniş */
-  background: white;
+  background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .modal-header {
+  background: #2563eb;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px 8px 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
-  font-weight: bold;
-  background: #0d47a1; /* Koyu mavi başlık */
-  color: white;
-  padding: 10px;
-  border-radius: 8px 8px 0 0; /* Üst köşeler yuvarlatılmış */
-}
-
-.modal-header h2{
-    margin:0;
+  font-weight: 600;
 }
 
 .close-btn {
   background: none;
   border: none;
+  font-size: 22px;
   color: white;
-  font-size: 24px; /* Çarpı daha büyük */
   cursor: pointer;
-    padding: 0;
-}
-
-.modal-body {
-  padding: 10px;
-}
-
-.info-box {
-  background: #f0f8ff; /* Açık mavi arka plan */
-  padding: 10px;
-  border-left: 4px solid #4285f4; /* Daha belirgin mavi kenarlık */
-  margin-bottom: 15px;
-  border-radius: 4px; /* Hafif yuvarlatılmış köşeler */
-}
-.info-box p{
-    margin: 5px 0;
-}
-
-.category-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.category-item {
-  background: #f8f9fa;
-  padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-   border: 1px solid #ddd; /* Hafif bir border */
 }
 
 .category-row {
@@ -588,107 +570,63 @@ export default {
   align-items: center;
 }
 
-.expand-btn {
-  margin-right: 8px;
-  background: none;
-  border: none;
-  font-size: 18px; /* Daha büyük artı/eksi */
-  cursor: pointer;
-   padding: 0;
-    line-height: 1;
-}
-
 .category-actions {
   display: flex;
-  align-items: center; /* Dikey hizalama */
   gap: 8px;
+  align-items: center;
 }
 
 .action-btn {
-  border: none;
   background: none;
+  border: none;
   cursor: pointer;
-  font-size: 16px; /* Simgeler daha büyük */
-  padding: 0;
-  color: #0d47a1; /* Mavi renk */
-}
-.action-btn:hover {
-    color: #0056b3; /* Hover'da daha koyu mavi */
-    text-decoration: underline;
+  font-size: 16px;
+  color: #2563eb;
 }
 
-/* Alt kategori listesi */
-.sub-category-list {
-  list-style-type: none;
-  padding-left: 30px; /* Daha fazla girinti */
+.category-id {
+  font-size: 12px;
+  color: #6b7280;
 }
-/* Modal Alt Bilgi */
-.modal-footer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Dikey hizalama */
-    padding: 15px;
-    border-top: 1px solid #ddd;
+
+.expand-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.category-item {
+  padding: 10px;
+  margin-bottom: 6px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+
+.sub-category-list {
+  padding-left: 30px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0 0;
 }
 
 .add-main-category,
 .close-modal-btn {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.add-main-category {
-  background-color: #4285f4; /* Mavi tonu */
-  color: white;
-}
-.add-main-category:hover{
-     background-color: #0d47a1;
-}
-
-.close-modal-btn {
-  background-color: #db4437; /* Kırmızı tonu */
-  color: white;
-}
-.close-modal-btn:hover{
-    background-color: #c9302c;
-}
-.category-id{
-    color:#888;
-    font-size: 12px;
-    margin-right: 5px;
-}
-.category-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.change-category {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.submit-btn {
-  background: #003c8f;
-  color: white;
-  padding: 10px;
+  padding: 8px 16px;
   border: none;
-  width: 100%;
-  font-size: 16px;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-weight: 500;
   cursor: pointer;
-
 }
 
+.add-main-category { background: #2563eb; color: white; }
+.close-modal-btn { background: #ef4444; color: white; }
 
-
-/* Sekmeler */
+/* 💾 Sekmeler */
 .tabs {
   display: flex;
   gap: 10px;
@@ -697,48 +635,114 @@ export default {
 
 .tabs button {
   padding: 8px 12px;
+  background: #f3f4f6;
   border: none;
-  background: #f0f0f0;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 5px;
+  font-size: 14px;
 }
 
 .tabs button.active {
-  background: #007bff;
+  background: #2563eb;
   color: white;
 }
 
-/* Bilgilendirme Kutusu */
+/* 🔽 Bilgilendirme & İndirme */
 .info-box {
-  background: #f0f8ff;
+  background: #e0f2fe;
   padding: 10px;
-  border-left: 5px solid #007bff;
+  border-left: 5px solid #3b82f6;
+  border-radius: 4px;
   display: flex;
   align-items: center;
+  gap: 10px;
   font-size: 14px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .info-box i {
-  margin-right: 10px;
-  color: #007bff;
+  color: #3b82f6;
 }
 
-/* İndir Butonu */
 .download-btn {
-  padding: 10px 15px;
-  background: #007bff;
+  background: #2563eb;
   color: white;
+  padding: 10px 14px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 16px;
+  font-size: 15px;
 }
 
-.download-btn i {
-  font-size: 18px;
+/* 🌙 Dark Mode */
+.dark-mode .categories,
+.dark-mode .filter-container,
+.dark-mode .filter-content,
+.dark-mode .category-tree-modal {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+.dark-mode .filter-header {
+  background: #334155;
+  color: #f8fafc;
+}
+
+.dark-mode .filter-group input,
+.dark-mode .filter-group select,
+.dark-mode .form-group input,
+.dark-mode .form-group select,
+.dark-mode .form-group textarea {
+  background: #1e293b;
+  color: #f8fafc;
+  border-color: #475569;
+}
+
+.dark-mode .clear-btn {
+  background: #334155;
+  color: #f1f5f9;
+  border: 1px solid #475569;
+}
+
+.dark-mode .filter-btn,
+.dark-mode .submit-btn,
+.dark-mode .add-main-category,
+.dark-mode .download-btn {
+  background: #3b82f6;
+}
+
+.dark-mode .tabs button {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+.dark-mode .tabs button.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.dark-mode .info-box {
+  background: #1e3a8a;
+  color: #bfdbfe;
+  border-color: #60a5fa;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .filter-row {
+    flex-direction: column;
+  }
+  .filter-group {
+    width: 100%;
+  }
+  .buttons {
+    flex-direction: column;
+  }
+  .tabs {
+    flex-direction: column;
+  }
 }
 </style>

@@ -82,64 +82,133 @@ const seoPages = ref([
   padding: 32px;
   background: #f9fafb;
   font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+html.dark .seo-settings-container {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+
+/* Başlık */
 .title {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 24px;
+  color: #1e293b;
 }
+html.dark .title {
+  color: #ffffff;
+}
+
+/* Kart */
 .card {
   background: white;
   padding: 24px;
   margin-bottom: 24px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.3s ease;
 }
+html.dark .card {
+  background: #2c2c2c;
+}
+
+/* Bölüm başlığı */
 .section-title {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 12px;
+  color: #1e293b;
 }
+html.dark .section-title {
+  color: #f1f1f1;
+}
+
+/* Açıklama */
 .description {
   font-size: 14px;
   color: #64748b;
   margin-bottom: 20px;
 }
+html.dark .description {
+  color: #a1a1aa;
+}
+
+/* Grid sistem */
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  align-items: start;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  align-items: flex-start;
 }
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Form alanları */
 .form-group {
   display: flex;
   flex-direction: column;
 }
+
 input,
 textarea {
   padding: 10px;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   margin-top: 6px;
+  font-size: 14px;
+  background-color: white;
+  color: #1f2937;
+  width: 100%;
+  box-sizing: border-box;
 }
+html.dark input,
+html.dark textarea {
+  background-color: #3a3a3a;
+  border-color: #555;
+  color: #f1f1f1;
+}
+
+/* Önizleme kutusu */
 .preview-box {
   background: #f1f5f9;
   padding: 12px 16px;
   border-radius: 8px;
   font-size: 14px;
+  width: 100%;
 }
+html.dark .preview-box {
+  background: #2a2a2a;
+  color: #e5e5e5;
+}
+
+/* Alanlar */
 .domain {
   display: block;
   color: #94a3b8;
+  font-size: 13px;
 }
+html.dark .domain {
+  color: #cbd5e1;
+}
+
 .preview-title {
   color: #1d4ed8;
   font-weight: 500;
 }
+html.dark .preview-title {
+  color: #60a5fa;
+}
+
+/* Tablo */
 .seo-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 16px;
+  overflow-x: auto;
 }
 .seo-table th,
 .seo-table td {
@@ -148,6 +217,14 @@ textarea {
   text-align: left;
   font-size: 14px;
 }
+html.dark .seo-table th,
+html.dark .seo-table td {
+  border-color: #444;
+  background-color: #2e2e2e;
+  color: #f1f1f1;
+}
+
+/* Butonlar */
 .edit-button {
   background: #facc15;
   border: none;
@@ -156,6 +233,11 @@ textarea {
   cursor: pointer;
   font-weight: 500;
 }
+html.dark .edit-button {
+  background: #fde047;
+  color: #1f1f1f;
+}
+
 .save-button {
   background: #3b82f6;
   color: white;
@@ -164,10 +246,41 @@ textarea {
   border-radius: 8px;
   font-weight: bold;
   margin-top: 24px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 200px;
 }
+.save-button:hover {
+  background-color: #2563eb;
+}
+
+/* Karakter sayacı */
 .count {
   color: #94a3b8;
   font-size: 12px;
   margin-left: 6px;
+}
+html.dark .count {
+  color: #cbd5e1;
+}
+
+/* Mobil görünüm için ayarlamalar */
+@media (max-width: 480px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .save-button {
+    width: 100%;
+  }
+
+  .form-grid {
+    gap: 16px;
+  }
+
+  input,
+  textarea {
+    font-size: 13px;
+  }
 }
 </style>

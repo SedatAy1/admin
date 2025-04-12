@@ -81,29 +81,56 @@ function save() {
   padding: 32px;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  transition: background 0.3s ease, color 0.3s ease;
 }
+html.dark .sms-settings {
+  background: #1f1f1f;
+  color: #f1f1f1;
+}
+
 .title {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 24px;
+  color: #1e293b;
 }
+html.dark .title {
+  color: #f9fafb;
+}
+
 .setting-row {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-bottom: 24px;
+  flex-wrap: wrap;
 }
+
 .setting-row .icon {
   font-size: 24px;
+  color: #3b82f6;
 }
+html.dark .setting-row .icon {
+  color: #60a5fa;
+}
+
 .setting-row label {
   font-weight: 600;
+  color: #374151;
 }
+html.dark .setting-row label {
+  color: #e2e8f0;
+}
+
 .setting-row p {
   margin: 0;
   font-size: 13px;
   color: #6b7280;
 }
+html.dark .setting-row p {
+  color: #9ca3af;
+}
+
 .setting-row input[type="text"],
 .setting-row input[type="number"],
 .setting-row input[type="tel"],
@@ -113,11 +140,24 @@ function save() {
   padding: 10px 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  background-color: white;
+  color: #1f2937;
+  transition: 0.3s;
 }
+html.dark .setting-row input[type="text"],
+html.dark .setting-row input[type="number"],
+html.dark .setting-row input[type="tel"],
+html.dark .setting-row select {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border-color: #444;
+}
+
 .toggle {
   margin-left: auto;
   transform: scale(1.4);
 }
+
 .save-btn {
   margin-top: 20px;
   background: #3b82f6;
@@ -127,10 +167,36 @@ function save() {
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
+.save-btn:hover {
+  background-color: #2563eb;
+}
+
 hr {
   border: none;
   border-top: 1px dashed #ddd;
   margin: 24px 0;
+}
+html.dark hr {
+  border-top: 1px dashed #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .setting-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .setting-row input,
+  .setting-row select {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .save-btn {
+    width: 100%;
+  }
 }
 </style>

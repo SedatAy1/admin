@@ -1,23 +1,23 @@
 <template>
   <div class="commissions-container">
-    <!-- Üst Kısım: Arama ve Buton -->
+    <!-- Üst Kısım -->
     <div class="header-section">
-      <input type="text" class="search-input" placeholder="🔍 Ara...">
+      <input type="text" class="search-input" :placeholder="$t('commission.search')" />
       <button class="btn btn-primary" @click="openNewCommissionModal">
-        ➕ Yeni Komisyon Tanımla
+        ➕ {{ $t('commission.new') }}
       </button>
     </div>
 
-    <!-- Tablo (Boşsa "Kayıt Bulunamadı" göster) -->
+    <!-- Tablo -->
     <div class="table-container">
       <table v-if="commissions.length > 0">
         <thead>
           <tr>
-            <th>Ürün</th>
-            <th>Bayi Grubu</th>
-            <th>Bayi</th>
-            <th>Komisyon</th>
-            <th>İşlem</th>
+            <th>{{ $t('commission.product') }}</th>
+            <th>{{ $t('commission.dealerGroup') }}</th>
+            <th>{{ $t('commission.dealer') }}</th>
+            <th>{{ $t('commission.amount') }}</th>
+            <th>{{ $t('common.actions') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -27,16 +27,17 @@
             <td>{{ commission.dealer }}</td>
             <td>{{ commission.commissionAmount }}</td>
             <td>
-              <button class="btn btn-sm btn-danger" @click="deleteCommission(index)">❌ Sil</button>
+              <button class="btn btn-sm btn-danger" @click="deleteCommission(index)">
+                ❌ {{ $t('common.delete') }}
+              </button>
             </td>
           </tr>
         </tbody>
       </table>
 
-      <!-- Eğer hiç komisyon yoksa -->
       <div v-else class="empty-state">
         <img src="@/assets/empty.svg" alt="No Data" />
-        <p>Kayıt bulunamadı.</p>
+        <p>{{ $t('common.noData') }}</p>
       </div>
     </div>
   </div>
@@ -45,51 +46,51 @@
   <div v-if="showNewCommissionModal" class="modal-overlay" @click.self="closeNewCommissionModal">
     <div class="modal">
       <div class="modal-header">
-        <h2>Yeni Komisyon Tanımla</h2>
+        <h2>{{ $t('commission.newTitle') }}</h2>
         <button class="close-btn" @click="closeNewCommissionModal">✖</button>
       </div>
 
       <div class="form-section">
-        <h3>🛈 Ürün Bilgileri</h3>
-        <label>Ürün</label>
+        <h3>🛈 {{ $t('commission.productInfo') }}</h3>
+        <label>{{ $t('commission.product') }}</label>
         <select v-model="newCommission.product">
-          <option>Tümü</option>
-          <option>Ürün 1</option>
-          <option>Ürün 2</option>
+          <option>{{ $t('common.all') }}</option>
+          <option>Product 1</option>
+          <option>Product 2</option>
         </select>
       </div>
 
       <div class="form-section">
-        <h3>🚨 Bayi Grubu Bilgileri</h3>
-        <label>Bayi Grubu</label>
+        <h3>🚨 {{ $t('commission.dealerInfo') }}</h3>
+        <label>{{ $t('commission.dealerGroup') }}</label>
         <select v-model="newCommission.dealerGroup">
-          <option>Tümü</option>
-          <option>Grup 1</option>
-          <option>Grup 2</option>
+          <option>{{ $t('common.all') }}</option>
+          <option>Group 1</option>
+          <option>Group 2</option>
         </select>
 
-        <label>Bayi</label>
+        <label>{{ $t('commission.dealer') }}</label>
         <select v-model="newCommission.dealer">
-          <option>Tümü</option>
-          <option>Bayi 1</option>
-          <option>Bayi 2</option>
+          <option>{{ $t('common.all') }}</option>
+          <option>Dealer 1</option>
+          <option>Dealer 2</option>
         </select>
       </div>
 
       <div class="form-section">
-        <h3>💰 Komisyon Bilgileri</h3>
-        <label>Komisyon Tipi</label>
+        <h3>💰 {{ $t('commission.commissionInfo') }}</h3>
+        <label>{{ $t('commission.type') }}</label>
         <select v-model="newCommission.commissionType">
-          <option>Sabit Tutar</option>
-          <option>Yüzde (%)</option>
+          <option>{{ $t('commission.fixed') }}</option>
+          <option>{{ $t('commission.percent') }}</option>
         </select>
 
-        <label>Komisyon Tutarı</label>
+        <label>{{ $t('commission.amount') }}</label>
         <input type="number" v-model="newCommission.commissionAmount">
       </div>
 
       <div class="modal-buttons">
-        <button class="btn btn-primary" @click="saveCommission">✔ Kaydet</button>
+        <button class="btn btn-primary" @click="saveCommission">✔ {{ $t('common.save') }}</button>
       </div>
     </div>
   </div>
@@ -136,23 +137,33 @@ export default {
 </script>
 
 <style scoped>
+/* Container */
+.commissions-container {
+  padding: 20px;
+}
+
 /* Üst Kısım */
 .header-section {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   padding: 15px;
-  background: white;
-  border-bottom: 1px solid #ddd;
+  background: var(--header-bg, #ffffff);
+  border-bottom: 1px solid var(--border-color, #ddd);
+  border-radius: 8px;
 }
 
 .search-input {
   width: 250px;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color, #ccc);
   border-radius: 5px;
+  background: var(--input-bg, #fff);
+  color: var(--text-color, #000);
 }
 
+/* Butonlar */
 .btn {
   padding: 8px 14px;
   font-size: 14px;
@@ -160,96 +171,87 @@ export default {
   cursor: pointer;
   border-radius: 5px;
   transition: 0.3s;
+  font-weight: 500;
 }
-
 .btn-primary {
   background: #3b82f6;
   color: white;
 }
-
 .btn-primary:hover {
   background: #2563eb;
 }
-
 .btn-danger {
   background: #ef4444;
   color: white;
 }
-
 .btn-danger:hover {
   background: #dc2626;
 }
 
 /* Tablo */
 .table-container {
-  background: white;
+  background: var(--card-bg, #fff);
   padding: 20px;
   border-radius: 10px;
   margin-top: 10px;
+  overflow-x: auto;
 }
-
 table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 750px;
 }
-
 th, td {
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color, #ddd);
   text-align: left;
+  color: var(--text-color, #000);
 }
-
 th {
-  background: #f3f4f6;
+  background: var(--thead-bg, #f3f4f6);
   font-weight: bold;
 }
-
 .empty-state {
   text-align: center;
   padding: 30px;
+  color: var(--text-muted, #9ca3af);
 }
-
 .empty-state img {
   width: 100px;
   opacity: 0.5;
 }
 
-/* Modal Overlay (Arka Plan) */
+/* Modal Overlay */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Daha koyu yap, şeffaflık artırıldı */
-  z-index: 99998 !important; /* Üst katmanda olsun */
-  display: flex !important; /* Emin olmak için */
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99998;
+  display: flex;
   justify-content: center;
   align-items: center;
-  visibility: visible !important; /* Eğer gizliyse göster */
 }
 
 /* Modal İçeriği */
 .modal {
-  background: white;
+  background: var(--card-bg, #fff);
   padding: 20px;
   border-radius: 10px;
-  width: 500px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 99999 !important; /* Modal her şeyin üstünde olsun */
-  display: block !important; /* Eğer hala görünmüyorsa, ekle */
-  position: relative;
-  transform: translateY(0); /* Modal kaybolmasın */
-  opacity: 1 !important;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: var(--text-color, #000);
 }
-
-/* Kapat Butonu */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .close-btn {
   background: none;
   border: none;
   font-size: 18px;
   cursor: pointer;
-  float: right;
 }
 
 /* Form */
@@ -257,25 +259,25 @@ th {
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 5px;
-  background: #eef2ff;
+  background: var(--form-bg, #eef2ff);
 }
-
 h3 {
   margin-bottom: 10px;
   font-size: 14px;
   font-weight: bold;
 }
-
 label {
   display: block;
   margin: 5px 0;
+  font-weight: 500;
 }
-
 select, input {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color, #ccc);
   border-radius: 5px;
+  background: var(--input-bg, #fff);
+  color: var(--text-color, #000);
 }
 
 /* Butonlar */
@@ -283,5 +285,34 @@ select, input {
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
+}
+
+/* 🌙 Koyu Mod Değişkenleri */
+:root.dark {
+  --header-bg: #1f2937;
+  --card-bg: #1e293b;
+  --input-bg: #111827;
+  --thead-bg: #374151;
+  --form-bg: #2b3548;
+  --border-color: #374151;
+  --text-color: #f3f4f6;
+  --text-muted: #9ca3af;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .header-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-input {
+    width: 100%;
+  }
+  .btn {
+    width: 100%;
+  }
+  .modal {
+    width: 95%;
+  }
 }
 </style>

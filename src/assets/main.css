@@ -21,3 +21,8 @@ body {
 h2 {
   color: #333;
 }
+html.dark .sidebar {
+  background-color: #0f172a !important;
+  border-right: 1px solid #1e293b !important;
+  color: white !important;
+}

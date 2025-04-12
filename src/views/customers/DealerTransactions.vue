@@ -7,16 +7,13 @@
     <div class="container">
       <div class="top-section">
         <button class="send-btn" @click="showErrorModal = true">
-          <i class="icon-send"></i> Gönder
+          <i class="icon-send"></i> {{ $t("password.send") }}
         </button>
       </div>
 
       <div class="info-box">
         <i class="icon-info"></i>
-        <span>
-          Toplu şifre gönderme işleminde tüm aktif bayilere yeni şifre oluşturulur ve mail adreslerine gönderilir.
-          Bu işlemin gerçekleşmesi için "Ayarlar → E-posta ayarları" sayfasından Mailjet kurulumun tamamlanmış olması gerekmektedir.
-        </span>
+        <span>{{ $t("password.info") }}</span>
       </div>
     </div>
 
@@ -24,9 +21,9 @@
     <div v-if="showErrorModal" class="modal">
       <div class="modal-content">
         <i class="icon-error"></i>
-        <h3>Hata!</h3>
-        <p>Demo hesapta bu işlem gerçekleştirilemez!</p>
-        <button class="close-btn" @click="showErrorModal = false">Tamam</button>
+        <h3>{{ $t("common.error") }}</h3>
+        <p>{{ $t("password.errorMessage") }}</p>
+        <button class="close-btn" @click="showErrorModal = false">{{ $t("common.ok") }}</button>
       </div>
     </div>
   </div>
@@ -47,6 +44,25 @@ export default {
 </script>
 
 <style scoped>
+:root {
+  --bg: #ffffff;
+  --text: #1f2937;
+  --card: #f9fafb;
+  --border: #e5e7eb;
+  --accent: #3b82f6;
+  --accent-dark: #2554c7;
+  --modal-bg: #ffffff;
+}
+body.dark {
+  --bg: #1a1c2c;
+  --text: #f3f4f6;
+  --card: #24263b;
+  --border: #3f3f46;
+  --accent: #3b82f6;
+  --accent-dark: #60a5fa;
+  --modal-bg: #2c2f44;
+}
+
 .layout-container {
   display: flex;
   flex-direction: column;
@@ -120,5 +136,20 @@ export default {
   padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    padding: 16px;
+  }
+  .send-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .info-box {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 </style>

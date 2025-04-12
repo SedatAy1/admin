@@ -2,50 +2,56 @@
   <div class="modal-overlay">
     <div class="modal">
       <div class="modal-header">
-        <h3>Kargo Fişi Şablonu</h3>
+        <h3>{{ $t('shippingTemplate.title') }}</h3>
         <button class="close-btn" @click="$emit('close')">✖</button>
       </div>
 
       <div class="tabs">
-        <button :class="{ active: activeTab === 'general' }" @click="activeTab = 'general'">Genel Bilgiler</button>
-        <button :class="{ active: activeTab === 'design' }" @click="activeTab = 'design'">Şablon Tasarlama Aracı</button>
+        <button :class="{ active: activeTab === 'general' }" @click="activeTab = 'general'">
+          {{ $t('shippingTemplate.tabs.general') }}
+        </button>
+        <button :class="{ active: activeTab === 'design' }" @click="activeTab = 'design'">
+          {{ $t('shippingTemplate.tabs.builder') }}
+        </button>
       </div>
 
       <div class="modal-body">
+        <!-- Genel Bilgiler -->
         <div v-if="activeTab === 'general'" class="form-grid">
-          <label>Kağıt Örneği</label>
+          <label>{{ $t('shippingTemplate.fields.sample') }}</label>
           <input type="file" />
 
-          <label>Kağıt Ebatı</label>
-          <select><option>Özel</option></select>
+          <label>{{ $t('shippingTemplate.fields.size') }}</label>
+          <select><option>{{ $t('shippingTemplate.options.custom') }}</option></select>
 
-          <label>Kağıt Genişliği (cm)</label>
+          <label>{{ $t('shippingTemplate.fields.width') }}</label>
           <input type="number" value="12.00" />
 
-          <label>Kağıt Yüksekliği (cm)</label>
+          <label>{{ $t('shippingTemplate.fields.height') }}</label>
           <input type="number" value="12.00" />
 
-          <label>Kopya</label>
+          <label>{{ $t('shippingTemplate.fields.copy') }}</label>
           <select><option>1</option><option>2</option></select>
 
           <div class="preview-box"></div>
         </div>
 
+        <!-- Tasarım Aracı -->
         <div v-else class="design-grid">
           <div class="design-preview">
             <img src="https://i.imgur.com/fake-shipping-sample.png" alt="Kargo Şablonu" />
           </div>
           <div class="design-options">
-            <div v-for="(field, i) in fields" :key="i" class="checkbox">
-              <input type="checkbox" :id="field" checked />
-              <label :for="field">{{ field }}</label>
+            <div v-for="(key, i) in fields" :key="i" class="checkbox">
+              <input type="checkbox" :id="key" checked />
+              <label :for="key">{{ $t(`shippingTemplate.labels.${key}`) }}</label>
             </div>
           </div>
         </div>
       </div>
 
       <div class="modal-footer">
-        <button class="success-btn">✔ Kaydet</button>
+        <button class="success-btn">✔ {{ $t('common.save') }}</button>
       </div>
     </div>
   </div>
@@ -53,16 +59,28 @@
 
 <script setup>
 import { ref } from 'vue'
+
 const activeTab = ref('general')
 
 const fields = [
-  'Firma Logosu', 'Teslimat Ünvanı', 'Adres', 'Telefon',
-  'Kargo Firması', 'Barkod', 'Müşteri Notu', 'Kampanya Kodu',
-  'Sipariş Tarihi', 'Vergi Dairesi', 'Vergi No', 'Ödeme Tipi',
-  'Ürün Listesi', 'Ürün Adı', 'Toplam', 'Özel Not 1'
+  'companyLogo',
+  'deliveryTitle',
+  'address',
+  'phone',
+  'shippingCompany',
+  'barcode',
+  'customerNote',
+  'campaignCode',
+  'orderDate',
+  'taxOffice',
+  'taxNumber',
+  'paymentType',
+  'productList',
+  'productName',
+  'total',
+  'customNote1'
 ]
 </script>
-
 <style scoped>
 
 

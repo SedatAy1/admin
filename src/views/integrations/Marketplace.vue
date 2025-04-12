@@ -2,9 +2,9 @@
   <MarketLayout>
     <div class="container my-5">
       <div class="bg-white shadow rounded p-4">
-        <h2 class="text-primary mb-4">Pazaryeri Mağazaları</h2>
+        <h2 class="text-primary mb-4">{{ $t('marketplaces.title') }}</h2>
         <p class="text-secondary">
-          Pazaryerindeki mağazalarınızı tanımlayabilir, kar oranlarını ve kısıtlamalarını düzenleyebilirsiniz.
+          {{ $t('marketplaces.description') }}
         </p>
 
         <div class="row mt-4">
@@ -24,7 +24,7 @@
               </ul>
 
               <button class="btn btn-success mt-3" @click="addShop(store)">
-                <i class="bi bi-plus-circle"></i> Mağaza Ekle
+                <i class="bi bi-plus-circle"></i> {{ $t('marketplaces.addShop') }}
               </button>
             </div>
           </div>
@@ -32,20 +32,20 @@
 
         <div v-if="modalOpen" class="modal-overlay">
           <div class="modal-content">
-            <h5 class="mb-3">Yeni Mağaza Ekle</h5>
+            <h5 class="mb-3">{{ $t('marketplaces.newShopTitle') }}</h5>
             <form @submit.prevent="saveShop">
               <div class="mb-2">
-                <label class="form-label">Mağaza Adı</label>
+                <label class="form-label">{{ $t('marketplaces.shopName') }}</label>
                 <input v-model="newShop.name" class="form-control" required />
               </div>
               <div class="mb-3">
-                <label class="form-label">Mağaza Logosu (URL)</label>
+                <label class="form-label">{{ $t('marketplaces.shopLogo') }}</label>
                 <input v-model="newShop.logo" class="form-control" required />
               </div>
 
               <div class="d-flex justify-content-end">
-                <button class="btn btn-secondary me-2" @click="modalOpen = false" type="button">İptal</button>
-                <button class="btn btn-primary" type="submit">Kaydet</button>
+                <button class="btn btn-secondary me-2" @click="modalOpen = false" type="button">{{ $t('common.cancel') }}</button>
+                <button class="btn btn-primary" type="submit">{{ $t('common.save') }}</button>
               </div>
             </form>
           </div>
@@ -54,7 +54,6 @@
     </div>
   </MarketLayout>
 </template>
-
 <script>
 import MarketLayout from '@/views/integrations/MarketLayout.vue';
 
@@ -108,6 +107,7 @@ export default {
 @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css');
 
+/* Logolar */
 .store-logo {
   width: 60px;
   height: 60px;
@@ -123,6 +123,7 @@ export default {
   border-radius: 5px;
 }
 
+/* Modal Arkaplan */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -134,13 +135,33 @@ export default {
   align-items: center;
   justify-content: center;
   z-index: 1050;
+  padding: 1rem;
 }
 
+/* Modal İçerik */
 .modal-content {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: #212529;
+}
+
+/* Dark Mode */
+html.dark .modal-content {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+}
+
+html.dark .modal-content input {
+  background-color: #3a3a3a;
+  color: #f1f1f1;
+  border-color: #555;
+}
+
+html.dark .modal-content input::placeholder {
+  color: #bbb;
 }
 </style>
