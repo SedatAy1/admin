@@ -8,8 +8,7 @@ import Settings from '../views/Settings.vue'
 
 // Ürünler ve Siparişler için Layout
 import ProductLayout from '@/views/products/ProductLayout.vue'
-import Products from '@/views/products/Products.vue'
-import Orders from '@/views/orders/Orders.vue'
+
 // Ürün Sayfaları
 import ManageProducts from '@/views/products/ManageProducts.vue'
 import Categories from '@/views/products/Categories.vue'
@@ -158,7 +157,6 @@ import WebService from '@/views/settings/WebService.vue';
 import AdminAccounts from '@/views/settings/AdminAccounts.vue';
 import Security from '@/views/settings/Security.vue';
 import Site from '@/views/settings/Site.vue';
-import Orders from "@/views/settings/Orders.vue";
 
 import ManageCustomers from '@/views/customers/ManageCustomers.vue'
 import RiskCustomers from '@/views/customers/RiskCustomers.vue'
