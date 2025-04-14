@@ -288,13 +288,7 @@ export default {
   --radius: 12px;
   --transition: all 0.3s ease;
 }
-.option-btn.active[data-v-c970699f] {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
-    font-weight: 500;
-    background-color: #5b4ddb;
-}
+
 
 
 
@@ -535,18 +529,18 @@ export default {
   font-size: 14px;
   border-radius: 999px;
   border: 1px solid #d1d5db;
-  background: #f9fafb;
+  background: #5b4ddb;
   color: #374151;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 .option-btn:hover {
-  background: #ede9fe;
+  background: #5b4ddb;
   border-color: var(--primary);
   color: var(--primary);
 }
 .option-btn.active {
-  background: var(--primary);
+  background: #5b4ddb;
   color: white;
   border-color: var(--primary);
   font-weight: 500;

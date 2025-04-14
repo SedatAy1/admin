@@ -547,13 +547,7 @@ export default {
   max-width: 100%;
   object-fit: contain;
 }
-.sidebar-header[data-v-6dec5f19][data-v-6dec5f19] {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-bottom: 0px;
-    padding-left: 13px;
-}
+
 .sidebar.collapsed .logo-image {
   height: 32px;
 }
@@ -588,15 +582,9 @@ export default {
 .sidebar-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 32px;
-}
-.sidebar-header[data-v-6dec5f19] {
-    display: flex
-;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: -22px;
+  justify-content: left;
+  margin-bottom: 0px;
+  padding-left: 13px;
 }
 
 .logo {
