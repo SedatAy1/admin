@@ -133,7 +133,7 @@ import Languages from '@/views/settings/Languages.vue';
 import Sms from '@/views/settings/Sms.vue';
 import SmsTemplates from '@/views/settings/SmsTemplates.vue';
 import Email from '@/views/settings/Email.vue';
-import EmailTemplates from '@/views/settings/EmailTemplates.vue';
+import EmailTemplatesSettings from '@/views/settings/EmailTemplates.vue';
 import Maintenance from '@/views/settings/Maintenance.vue';
 import Balance from '@/views/settings/Balance.vue';
 import Dealer from '@/views/settings/Dealer.vue';
@@ -158,6 +158,7 @@ import BulkMarketplace from '@/views/integrations/BulkMarketplace.vue';
 import Hepsiburada from '@/views/integrations/Hepsiburada.vue';
 import Monitor from '@/views/integrations/Monitor.vue';
 import SettingsLayout from "@/views/settings/SettingsLayout.vue";
+import EmailTemplatesDesign from '@/views/design/EmailTemplates.vue';
 const routes = [
     {
         path: '/',
@@ -214,9 +215,9 @@ const routes = [
                 component: () => import('@/views/design/PrintTemplates.vue')
             },
             {
-                path: 'email-templates',
-                name: 'EmailTemplates',
-                component: () => import('@/views/design/EmailTemplates.vue')
+                path: '/design/email-templates',
+                name: 'EmailTemplatesDesign',
+                component: EmailTemplatesDesign
             }
         ]
     },
@@ -487,7 +488,11 @@ const routes = [
             { path: "sms", name: "Sms", component: Sms },
             { path: "sms-templates", name: "SmsTemplates", component: SmsTemplates },
             { path: "email", name: "Email", component: Email },
-            { path: "email-templates", name: "EmailTemplatesSettings", component: EmailTemplates },
+            {
+                path: 'email-templates',
+                name: 'EmailTemplatesSettings',
+                component: EmailTemplatesSettings
+            },
             { path: "maintenance", name: "Maintenance", component: Maintenance },
             { path: "balance", name: "Balance", component: Balance },
             { path: "dealer", name: "Dealer", component: Dealer },
