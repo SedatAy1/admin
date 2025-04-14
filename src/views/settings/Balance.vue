@@ -1,6 +1,6 @@
 <template>
   <div class="balance-settings p-6">
-    <h2 class="text-xl font-semibold mb-6">Bakiye Ayarları</h2>
+    <h2 class="text-xl font-semibold mb-6">{{ $t('balance.title') }}</h2>
 
     <div class="flex items-center justify-between mb-6">
       <div class="flex items-start gap-4">
@@ -8,8 +8,8 @@
           <i class="i-tabler-wallet"></i>
         </div>
         <div>
-          <p class="font-medium">Müşteri Cüzdan - Bakiye Yükleme</p>
-          <p class="text-sm text-gray-500">Bakiye(Cüzdan) ödemelerini aktif/pasif yapabilirsiniz</p>
+          <p class="font-medium">{{ $t('balance.walletTitle') }}</p>
+          <p class="text-sm text-gray-500">{{ $t('balance.walletDescription') }}</p>
         </div>
       </div>
       <label class="switch">
@@ -20,41 +20,41 @@
 
     <div class="grid grid-cols-2 gap-6 mb-6">
       <div>
-        <label class="block mb-1 font-medium">Ödeme Yöntemi</label>
+        <label class="block mb-1 font-medium">{{ $t('balance.paymentMethod') }}</label>
         <select v-model="form.method" class="input">
-          <option>Kredi Kartı</option>
-          <option>Havale/EFT</option>
+          <option>{{ $t('balance.card') }}</option>
+          <option>{{ $t('balance.transfer') }}</option>
         </select>
       </div>
       <div>
-        <label class="block mb-1 font-medium">Bakiye Yükleme Durumu</label>
+        <label class="block mb-1 font-medium">{{ $t('balance.approvalStatus') }}</label>
         <select v-model="form.approval" class="input">
-          <option>Yönetici Onayı</option>
-          <option>Otomatik Onay</option>
+          <option>{{ $t('balance.adminApproval') }}</option>
+          <option>{{ $t('balance.autoApproval') }}</option>
         </select>
       </div>
       <div>
-        <label class="block mb-1 font-medium">Yüklenebilecek En Düşük Tutar (TRY)</label>
+        <label class="block mb-1 font-medium">{{ $t('balance.minAmount') }}</label>
         <input type="number" class="input" v-model="form.min" />
       </div>
       <div>
-        <label class="block mb-1 font-medium">Yüklenebilecek En Yüksek Tutar (TRY)</label>
+        <label class="block mb-1 font-medium">{{ $t('balance.maxAmount') }}</label>
         <input type="number" class="input" v-model="form.max" />
       </div>
     </div>
 
     <div class="mb-6">
-      <label class="block mb-1 font-medium">Bakiye Yükleme Dekontu</label>
+      <label class="block mb-1 font-medium">{{ $t('balance.receipt') }}</label>
       <textarea rows="6" class="input font-mono" v-model="form.receipt"></textarea>
       <div class="mt-3 text-sm text-gray-500">
-        Kullanılacak Değişkenler:
+        {{ $t('balance.availableTokens') }}:
         <div class="flex flex-wrap gap-2 mt-2">
           <span v-for="token in tokens" :key="token" class="bg-gray-200 text-xs px-2 py-1 rounded">{{ token }}</span>
         </div>
       </div>
     </div>
 
-    <button class="btn-save">✓ Kaydet</button>
+    <button class="btn-save">✓ {{ $t('balance.save') }}</button>
   </div>
 </template>
 
@@ -74,7 +74,6 @@ const tokens = [
   '{islem_no}', '{unvani}', '{address}', '{telefon}', '{tutar}', '{tarih}'
 ]
 </script>
-
 <style scoped>
 .input {
   width: 100%;

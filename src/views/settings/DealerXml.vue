@@ -1,63 +1,63 @@
 <template>
   <div class="dealer-xml-settings">
-    <h2 class="title">Bayi XML Ayarları</h2>
+    <h2 class="title">{{ $t('dealerXml.title') }}</h2>
 
     <div class="form-grid">
       <div class="form-item">
         <label>
-          <strong>XML Aboneliği Süreli Olsun</strong>
-          <p>Açıklama girilecek.</p>
+          <strong>{{ $t('dealerXml.hasSubscription.title') }}</strong>
+          <p>{{ $t('dealerXml.hasSubscription.desc') }}</p>
         </label>
         <ToggleSwitch v-model="form.hasSubscription" />
       </div>
 
       <div class="form-item">
         <label>
-          <strong>XML Abonelik Ödemeleri</strong>
-          <p>Açıklama girilecek.</p>
+          <strong>{{ $t('dealerXml.hasPayments.title') }}</strong>
+          <p>{{ $t('dealerXml.hasPayments.desc') }}</p>
         </label>
         <ToggleSwitch v-model="form.hasPayments" />
       </div>
 
       <div class="form-item three-col">
-        <BaseInput label="XML Ücreti(1 Ay, TL)" v-model="form.price1" />
-        <BaseInput label="XML Ücreti(3 Ay, TL)" v-model="form.price3" />
-        <BaseInput label="XML Ücreti(6 Ay, TL)" v-model="form.price6" />
-        <BaseInput label="XML Ücreti(12 Ay, TL)" v-model="form.price12" />
+        <BaseInput :label="$t('dealerXml.price1')" v-model="form.price1" />
+        <BaseInput :label="$t('dealerXml.price3')" v-model="form.price3" />
+        <BaseInput :label="$t('dealerXml.price6')" v-model="form.price6" />
+        <BaseInput :label="$t('dealerXml.price12')" v-model="form.price12" />
       </div>
 
       <div class="form-item">
         <label>
-          <strong>XML İçin IP İzni Gereksin</strong>
-          <p>Açıklama girilecek.</p>
+          <strong>{{ $t('dealerXml.requireIP.title') }}</strong>
+          <p>{{ $t('dealerXml.requireIP.desc') }}</p>
         </label>
         <ToggleSwitch v-model="form.requireIP" />
       </div>
 
       <div class="form-item">
         <label>
-          <strong>Yeni Kayıt Olan Bayilerde XML'i Otomatik Aktif Et</strong>
-          <p>Açıklama girilecek.</p>
+          <strong>{{ $t('dealerXml.autoActivate.title') }}</strong>
+          <p>{{ $t('dealerXml.autoActivate.desc') }}</p>
         </label>
         <ToggleSwitch v-model="form.autoActivateForNewDealers" />
       </div>
 
-      <BaseInput label="XML Ürün Limiti" v-model="form.productLimit" />
-      <BaseInput label="Minimum Stok (Bu stoktan aşağısı XML'de 0 stok olarak gönderilir)" v-model="form.minStock" />
+      <BaseInput :label="$t('dealerXml.productLimit')" v-model="form.productLimit" />
+      <BaseInput :label="$t('dealerXml.minStock')" v-model="form.minStock" />
 
       <div class="form-item">
-        <label>Marka Kısıtlama</label>
+        <label>{{ $t('dealerXml.brandRestriction') }}</label>
         <select v-model="form.brandRestriction">
-          <option>Marka Seçilmedi</option>
+          <option>{{ $t('common.notSelected') }}</option>
           <option>Marka 1</option>
           <option>Marka 2</option>
         </select>
       </div>
 
       <div class="form-item">
-        <label>Kategori Kısıtlama</label>
+        <label>{{ $t('dealerXml.categoryRestriction') }}</label>
         <select v-model="form.categoryRestriction">
-          <option>Kategori Seçilmedi</option>
+          <option>{{ $t('common.notSelected') }}</option>
           <option>Kategori 1</option>
           <option>Kategori 2</option>
         </select>
@@ -65,14 +65,14 @@
 
       <div class="form-item full">
         <label>
-          <strong>İzinli IP Listesi (Her satıra 1 ip adresi)</strong>
-          <p>IP adreslerini buraya giriniz.</p>
+          <strong>{{ $t('dealerXml.allowedIPs.title') }}</strong>
+          <p>{{ $t('dealerXml.allowedIPs.desc') }}</p>
         </label>
         <textarea v-model="form.allowedIPs" rows="5"></textarea>
       </div>
     </div>
 
-    <button class="save-button">✓ Kaydet</button>
+    <button class="save-button">✓ {{ $t('common.save') }}</button>
   </div>
 </template>
 

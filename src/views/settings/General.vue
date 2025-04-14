@@ -2,11 +2,11 @@
   <div class="general-settings">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title mb-4">Genel Ayarlar</h5>
+        <h5 class="card-title mb-4">{{ $t('general.title') }}</h5>
 
         <!-- Para Birimi Gösterimi -->
         <div class="mb-3">
-          <label class="form-label">Para Birimi Gösterimi</label>
+          <label class="form-label">{{ $t('general.currencyFormat') }}</label>
           <select v-model="form.currencyFormat" class="form-select">
             <option value="eur">X.XXX,XX (13.232,99 TL)</option>
             <option value="usd">X,XXX.XX (13,232.99 TL)</option>
@@ -15,90 +15,61 @@
 
         <!-- Ondalık Basamak Sayısı -->
         <div class="mb-3">
-          <label class="form-label">Ondalık Basamak Sayısı</label>
+          <label class="form-label">{{ $t('general.decimalPlaces') }}</label>
           <input type="number" v-model="form.decimalPlaces" class="form-control" />
         </div>
 
         <!-- Sadece Üye Erişimi ve Telefon Zorunluluğu -->
         <div class="form-check form-switch mb-3">
           <input class="form-check-input" type="checkbox" v-model="form.membersOnly" />
-          <label class="form-check-label">Sadece Üye Erişimi</label>
+          <label class="form-check-label">{{ $t('general.membersOnly') }}</label>
         </div>
 
         <div class="form-check form-switch mb-3">
           <input class="form-check-input" type="checkbox" v-model="form.phoneRequired" />
-          <label class="form-check-label">Telefon Zorunluluğu</label>
+          <label class="form-check-label">{{ $t('general.phoneRequired') }}</label>
         </div>
 
         <!-- Diğer input alanları -->
         <div class="row">
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Müşteri Hizmetleri</label>
-            <input type="text" v-model="form.supportPhone" class="form-control" />
-          </div>
-          <div class="col-md-6 mb-3">
-            <label class="form-label">E-Mail</label>
-            <input type="email" v-model="form.email" class="form-control" />
-          </div>
-          <div class="col-md-6 mb-3">
-            <label class="form-label">WhatsApp</label>
-            <input type="text" v-model="form.whatsapp" class="form-control" />
-          </div>
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Google Merchant Mağaza Kodu</label>
-            <input type="text" v-model="form.googleMerchant" class="form-control" />
-          </div>
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Facebook</label>
-            <input type="text" v-model="form.facebook" class="form-control" />
-          </div>
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Instagram</label>
-            <input type="text" v-model="form.instagram" class="form-control" />
-          </div>
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Youtube</label>
-            <input type="text" v-model="form.youtube" class="form-control" />
-          </div>
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Twitter (X)</label>
-            <input type="text" v-model="form.twitter" class="form-control" />
+          <div class="col-md-6 mb-3" v-for="field in fields" :key="field.key">
+            <label class="form-label">{{ $t(field.label) }}</label>
+            <input :type="field.type" v-model="form[field.key]" class="form-control" />
           </div>
         </div>
 
-        <!-- App ve Play Store -->
+        <!-- App Store & Play Store -->
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label class="form-label">App Store</label>
+            <label class="form-label">{{ $t('general.appStore') }}</label>
             <input type="text" v-model="form.appStore" class="form-control" />
           </div>
           <div class="col-md-6 mb-3">
-            <label class="form-label">Play Store</label>
+            <label class="form-label">{{ $t('general.playStore') }}</label>
             <input type="text" v-model="form.playStore" class="form-control" />
           </div>
         </div>
 
         <!-- Google Maps -->
         <div class="mb-3">
-          <label class="form-label">Google Maps Kodu</label>
+          <label class="form-label">{{ $t('general.mapsCode') }}</label>
           <textarea v-model="form.mapsCode" class="form-control" rows="3"></textarea>
         </div>
 
-        <!-- Footer Alanı -->
+        <!-- Footer -->
         <div class="mb-3">
-          <label class="form-label">Footer</label>
+          <label class="form-label">{{ $t('general.footer') }}</label>
           <textarea v-model="form.footer" class="form-control" rows="4"></textarea>
         </div>
 
-        <!-- Footer İletişim Bilgisi -->
+        <!-- Footer İletişim -->
         <div class="mb-3">
-          <label class="form-label">Footer İletişim Bilgisi</label>
+          <label class="form-label">{{ $t('general.footerContact') }}</label>
           <textarea v-model="form.footerContact" class="form-control" rows="3"></textarea>
         </div>
 
-        <!-- Kaydet Butonu -->
         <div class="text-end">
-          <button class="btn btn-primary" @click="saveSettings">✓ Kaydet</button>
+          <button class="btn btn-primary" @click="saveSettings">✓ {{ $t('general.save') }}</button>
         </div>
       </div>
     </div>
@@ -128,8 +99,18 @@ const form = reactive({
   footerContact: ''
 })
 
+const fields = [
+  { key: 'supportPhone', label: 'general.supportPhone', type: 'text' },
+  { key: 'email', label: 'general.email', type: 'email' },
+  { key: 'whatsapp', label: 'general.whatsapp', type: 'text' },
+  { key: 'googleMerchant', label: 'general.googleMerchant', type: 'text' },
+  { key: 'facebook', label: 'general.facebook', type: 'text' },
+  { key: 'instagram', label: 'general.instagram', type: 'text' },
+  { key: 'youtube', label: 'general.youtube', type: 'text' },
+  { key: 'twitter', label: 'general.twitter', type: 'text' }
+]
+
 const saveSettings = () => {
-  console.log('Kaydedilen Ayarlar:', form)
   alert('Ayarlar başarıyla kaydedildi.')
 }
 </script>

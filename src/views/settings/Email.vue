@@ -1,32 +1,35 @@
 <template>
   <div class="email-settings">
-    <h2 class="title">E-Posta Ayarları</h2>
+    <h2 class="title">{{ $t('email.title') }}</h2>
 
     <div class="section">
       <label class="field-label">
         <i class="icon">📧</i>
-        <span>Yönetici E-posta Bildirim Adresi <small title="E-Posta adresi giriniz.">?</small></span>
+        <span>
+          {{ $t('email.adminAddress.label') }}
+          <small :title="$t('email.adminAddress.tooltip')">?</small>
+        </span>
       </label>
-      <input v-model="form.adminEmail" type="email" placeholder="E-posta adresi giriniz." class="input" />
+      <input v-model="form.adminEmail" type="email" :placeholder="$t('email.adminAddress.placeholder')" class="input" />
     </div>
 
     <div class="section toggle-section">
       <label class="toggle-label">
-        <span>Standart SMTP</span>
+        <span>{{ $t('email.smtp') }}</span>
         <input type="checkbox" v-model="form.smtpEnabled" />
       </label>
     </div>
 
     <div class="section toggle-section">
       <label class="toggle-label">
-        <span>Mailjet</span>
+        <span>{{ $t('email.mailjet') }}</span>
         <input type="checkbox" v-model="form.mailjetEnabled" />
       </label>
     </div>
 
     <div class="action-buttons">
-      <button class="save-btn" @click="save">✓ Kaydet</button>
-      <button class="test-btn" @click="testEmail">Test Et</button>
+      <button class="save-btn" @click="save">✓ {{ $t('common.save') }}</button>
+      <button class="test-btn" @click="testEmail">{{ $t('email.test') }}</button>
     </div>
   </div>
 </template>

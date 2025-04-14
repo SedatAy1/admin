@@ -1,18 +1,18 @@
 <template>
   <div class="exchange-rates">
-    <h2 class="title">Döviz Kurları</h2>
-    <input v-model="search" type="text" placeholder="🔍 Ara..." class="search-box" />
+    <h2 class="title">{{ $t('exchangeRates.title') }}</h2>
+    <input v-model="search" type="text" :placeholder="$t('exchangeRates.search')" class="search-box" />
 
     <table class="rates-table">
       <thead>
         <tr>
-          <th>No</th>
-          <th>Kodu</th>
-          <th>Adı</th>
-          <th>Kur</th>
-          <th>Site Durumu</th>
-          <th>TCMB</th>
-          <th>İşlemler</th>
+          <th>#</th>
+          <th>{{ $t('exchangeRates.code') }}</th>
+          <th>{{ $t('exchangeRates.name') }}</th>
+          <th>{{ $t('exchangeRates.value') }}</th>
+          <th>{{ $t('exchangeRates.siteStatus') }}</th>
+          <th>{{ $t('exchangeRates.tcmb') }}</th>
+          <th>{{ $t('exchangeRates.actions') }}</th>
         </tr>
       </thead>
       <tbody>
@@ -23,20 +23,20 @@
           <td>{{ rate.value }}</td>
           <td>
             <span :class="['status', rate.siteStatus ? 'active' : 'passive']">
-              {{ rate.siteStatus ? 'Aktif' : 'Pasif' }}
+              {{ rate.siteStatus ? $t('exchangeRates.active') : $t('exchangeRates.passive') }}
             </span>
           </td>
           <td>
             <span :class="['status', rate.tcmb ? 'active' : 'passive']">
-              {{ rate.tcmb ? 'Aktif' : 'Pasif' }}
+              {{ rate.tcmb ? $t('exchangeRates.active') : $t('exchangeRates.passive') }}
             </span>
           </td>
           <td>
             <div class="dropdown">
-              <button @click.stop="toggleDropdown(rate.code)">İşlemler ⏷</button>
+              <button @click.stop="toggleDropdown(rate.code)">{{ $t('exchangeRates.actions') }} ⏷</button>
               <ul v-if="dropdownOpen === rate.code" class="dropdown-menu">
-                <li @click.stop="editRate(rate)">Düzenle</li>
-                <li @click.stop="deleteRate(rate.code)">Sil</li>
+                <li @click.stop="editRate(rate)">{{ $t('exchangeRates.edit') }}</li>
+                <li @click.stop="deleteRate(rate.code)">{{ $t('exchangeRates.delete') }}</li>
               </ul>
             </div>
           </td>
@@ -109,7 +109,6 @@ onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside)
 })
 </script>
-
 <style scoped>
 .exchange-rates {
   background: #fff;

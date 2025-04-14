@@ -1,13 +1,13 @@
 <template>
   <div class="maintenance-settings">
-    <h2 class="title">Bakım Modu</h2>
+    <h2 class="title">{{ $t('maintenance.title') }}</h2>
 
     <div class="setting-item">
       <div class="setting-label">
         <div class="icon">🔖</div>
         <div>
-          <h3>Bakım Modu</h3>
-          <p>Sitenizi bakım moduna alarak ziyaretçilerin erişimini engelleyebilirsiniz.</p>
+          <h3>{{ $t('maintenance.modeTitle') }}</h3>
+          <p>{{ $t('maintenance.modeDescription') }}</p>
         </div>
       </div>
       <label class="switch">
@@ -20,8 +20,8 @@
       <div class="setting-label">
         <div class="icon">🔓</div>
         <div>
-          <h3>Yönetici Siteye Erişebilsin</h3>
-          <p>Bakım modu aktifken yöneticilerin siteye erişebilmesini sağlar.</p>
+          <h3>{{ $t('maintenance.adminAccessTitle') }}</h3>
+          <p>{{ $t('maintenance.adminAccessDescription') }}</p>
         </div>
       </div>
       <label class="switch">
@@ -34,14 +34,14 @@
       <div class="setting-label">
         <div class="icon">📄</div>
         <div>
-          <h3>Açıklama</h3>
-          <p>Bakım modu aktif olduğunda ziyaretçilere gösterilecek açıklama metnini buradan düzenleyebilirsiniz.</p>
+          <h3>{{ $t('maintenance.noteTitle') }}</h3>
+          <p>{{ $t('maintenance.noteDescription') }}</p>
         </div>
       </div>
       <textarea v-model="description" class="textarea"></textarea>
     </div>
 
-    <button class="save-btn" @click="saveSettings">✓ Kaydet</button>
+    <button class="save-btn" @click="saveSettings">✓ {{ $t('common.save') }}</button>
   </div>
 </template>
 
@@ -54,7 +54,6 @@ const description = ref('Sitemizde altyapı çalışması yapılmaktadır.')
 
 const saveSettings = () => {
   alert('Ayarlar kaydedildi.')
-  // API gönderimi buraya eklenebilir
 }
 </script>
 

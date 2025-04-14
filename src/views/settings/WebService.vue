@@ -2,68 +2,70 @@
   <div>
     <!-- Web Servis Ayarları -->
     <section class="web-service-settings">
-      <div class="alert">Web servisi paketinizde bulunmamaktadır. Web servisi kullanmak için sistem yöneticiniz ile iletişime geçin.</div>
+      <div class="alert">
+        {{ $t("webService.alert") }}
+      </div>
 
       <div class="toolbar">
-        <input type="text" placeholder="🔍 Ara..." class="search" />
-        <button class="btn primary">+ Yeni Kullanıcı</button>
-        <button class="btn">API Dökümanını İndir</button>
-        <button class="btn">Örnek Kodları İndir</button>
+        <input type="text" :placeholder="$t('webService.searchPlaceholder')" class="search" />
+        <button class="btn primary">{{ $t("webService.newUser") }}</button>
+        <button class="btn">{{ $t("webService.downloadDocs") }}</button>
+        <button class="btn">{{ $t("webService.downloadSamples") }}</button>
       </div>
 
       <table class="table">
         <thead>
           <tr>
-            <th>Kullanıcı No</th>
-            <th>Kullanıcı Adı</th>
-            <th>Kullanıcı Durumu</th>
-            <th>İşlemler</th>
+            <th>{{ $t("webService.userNo") }}</th>
+            <th>{{ $t("webService.username") }}</th>
+            <th>{{ $t("webService.status") }}</th>
+            <th>{{ $t("webService.actions") }}</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td colspan="4" class="no-data">Kayıt bulunamadı.</td>
+            <td colspan="4" class="no-data">{{ $t("webService.noData") }}</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <!-- Yeni Kullanıcı Modalı (Açıldığında görünür olacak) -->
+    <!-- Yeni Kullanıcı Modalı -->
     <section class="web-service-modal">
-      <div class="modal-header">Yeni Web Servis Kullanıcısı</div>
+      <div class="modal-header">{{ $t("webService.modal.title") }}</div>
       <div class="modal-body">
         <label>
-          Kullanıcı Adı
-          <input type="text" placeholder="Zorunlu" />
+          {{ $t("webService.modal.username") }}
+          <input type="text" :placeholder="$t('webService.required')" />
         </label>
 
         <label>
-          Kullanıcı Durumu
+          {{ $t("webService.modal.status") }}
           <select>
-            <option>Aktif</option>
-            <option>Pasif</option>
+            <option>{{ $t("webService.active") }}</option>
+            <option>{{ $t("webService.passive") }}</option>
           </select>
         </label>
 
         <label>
-          Yetkiler
+          {{ $t("webService.modal.permissions") }}
           <select>
-            <option>Seçilmedi</option>
+            <option>{{ $t("webService.notSelected") }}</option>
           </select>
         </label>
 
         <label>
-          API Key
+          {{ $t("webService.modal.apiKey") }}
           <input type="text" value="78e421ea-3e00-48a8-99de-1c12e64082d4" readonly />
         </label>
 
         <label>
-          API Secret
+          {{ $t("webService.modal.apiSecret") }}
           <input type="text" value="397e5486bc91b5b58afebe0b7e4fb1c64QoZUZ4X2quaC/+9sQ==" readonly />
         </label>
       </div>
       <div class="modal-footer">
-        <button class="btn primary">✓ Kaydet</button>
+        <button class="btn primary">{{ $t("webService.save") }}</button>
       </div>
     </section>
   </div>

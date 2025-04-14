@@ -1,41 +1,41 @@
 <template>
   <div class="countries-page">
-    <h2 class="title">Ülkeler</h2>
+    <h2 class="title">{{ $t('country.title') }}</h2>
     <div class="top-bar">
-      <input v-model="search" placeholder="🔍 Ara..." class="search-input" />
-      <button @click="openAddCountryModal" class="add-btn">+ Yeni Ülke Ekle</button>
+      <input v-model="search" :placeholder="$t('common.search')" class="search-input" />
+      <button @click="openAddCountryModal" class="add-btn">+ {{ $t('country.add') }}</button>
     </div>
 
     <table class="table">
       <thead>
         <tr>
           <th><input type="checkbox" /></th>
-          <th>Ülke No</th>
-          <th>Adı</th>
-          <th>Durum</th>
-          <th>Min. Sip. Lim.</th>
-          <th>Min. Sip. Tutar.</th>
-          <th>Sıra</th>
-          <th>İşlemler</th>
+          <th>{{ $t('country.id') }}</th>
+          <th>{{ $t('country.name') }}</th>
+          <th>{{ $t('country.status') }}</th>
+          <th>{{ $t('country.minLimit') }}</th>
+          <th>{{ $t('country.minAmount') }}</th>
+          <th>{{ $t('country.order') }}</th>
+          <th>{{ $t('common.actions') }}</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(country, index) in filteredCountries" :key="country.id">
+        <tr v-for="country in filteredCountries" :key="country.id">
           <td><input type="checkbox" /></td>
           <td>{{ country.id }}</td>
           <td>{{ country.name }}</td>
-          <td><span :class="['status', country.status ? 'active' : 'passive']">{{ country.status ? 'Aktif' : 'Pasif' }}</span></td>
-          <td><span :class="['status', country.minLimit ? 'active' : 'passive']">{{ country.minLimit ? 'Aktif' : 'Pasif' }}</span></td>
+          <td><span :class="['status', country.status ? 'active' : 'passive']">{{ $t(`common.${country.status ? 'active' : 'passive'}`) }}</span></td>
+          <td><span :class="['status', country.minLimit ? 'active' : 'passive']">{{ $t(`common.${country.minLimit ? 'active' : 'passive'}`) }}</span></td>
           <td>{{ country.minAmount.toFixed(2) }} TL</td>
           <td>{{ country.order }}</td>
           <td>
             <div class="dropdown">
-              <button @click="toggleDropdown(country.id)">İşlemler ⏷</button>
+              <button @click="toggleDropdown(country.id)">{{ $t('common.actions') }} ⏷</button>
               <ul v-if="dropdownOpen === country.id" class="dropdown-menu">
-                <li @click="quickView(country)">👁️ Hızlı Görüntüle</li>
-                <li @click="editCountry(country)">✏️ Düzenle</li>
-                <li @click="viewCities(country)">📍 İller</li>
-                <li @click="deleteCountry(country)">🗑️ Sil</li>
+                <li @click="quickView(country)">👁️ {{ $t('common.quickView') }}</li>
+                <li @click="editCountry(country)">✏️ {{ $t('common.edit') }}</li>
+                <li @click="viewCities(country)">📍 {{ $t('country.cities') }}</li>
+                <li @click="deleteCountry(country)">🗑️ {{ $t('common.delete') }}</li>
               </ul>
             </div>
           </td>
@@ -43,36 +43,37 @@
       </tbody>
     </table>
 
+    <!-- Modal -->
     <div v-if="showModal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h3>Yeni Ülke</h3>
+          <h3>{{ $t('country.add') }}</h3>
           <button @click="closeModal">✕</button>
         </div>
         <div class="tabs">
-          <button :class="{ active: tab === 'general' }" @click="tab = 'general'">Genel Bilgiler</button>
-          <button :class="{ active: tab === 'cities' }" @click="tab = 'cities'">İller</button>
+          <button :class="{ active: tab === 'general' }" @click="tab = 'general'">{{ $t('common.general') }}</button>
+          <button :class="{ active: tab === 'cities' }" @click="tab = 'cities'">{{ $t('country.cities') }}</button>
         </div>
 
         <div v-if="tab === 'general'" class="form">
-          <input v-model="form.name" placeholder="Adı" />
+          <input v-model="form.name" :placeholder="$t('country.name')" />
           <select v-model="form.status">
-            <option value="true">Aktif</option>
-            <option value="false">Pasif</option>
+            <option value="true">{{ $t('common.active') }}</option>
+            <option value="false">{{ $t('common.passive') }}</option>
           </select>
-          <input v-model.number="form.order" type="number" placeholder="Sıra" />
+          <input v-model.number="form.order" type="number" :placeholder="$t('country.order')" />
           <select v-model="form.minLimit">
-            <option value="true">Aktif</option>
-            <option value="false">Pasif</option>
+            <option value="true">{{ $t('common.active') }}</option>
+            <option value="false">{{ $t('common.passive') }}</option>
           </select>
-          <input v-model.number="form.minAmount" type="number" placeholder="Minimum Sipariş Tutarı (TL)" />
+          <input v-model.number="form.minAmount" type="number" :placeholder="$t('country.minAmount')" />
           <input v-model="form.iso2" placeholder="ISO2" />
           <input v-model="form.iso3" placeholder="ISO3" />
-          <button class="save-btn" @click="saveCountry">✓ Kaydet</button>
+          <button class="save-btn" @click="saveCountry">✓ {{ $t('common.save') }}</button>
         </div>
 
         <div v-if="tab === 'cities'">
-          <p>İller tablosu burada olacak (bir sonraki adımda eklenecek)</p>
+          <p>{{ $t('country.citiesPlaceholder') }}</p>
         </div>
       </div>
     </div>
@@ -146,7 +147,6 @@ const saveCountry = () => {
 
 const closeModal = () => showModal.value = false
 </script>
-
 
 <style scoped>
 .countries-page {

@@ -3064,5 +3064,754 @@
   "products": "Ürün Raporları",
   "members": "Üye / Bayi Raporları",
   "system": "Sistem Raporları"
-}
+},
+"adminAccounts": {
+  "title": "Yönetici Hesapları",
+  "searchPlaceholder": "🔍 Ara...",
+  "newAdminBtn": "+ Yeni Yönetici",
+  "id": "Yönetici No",
+  "username": "Kullanıcı Adı",
+  "role": "Yetki",
+  "ipRestriction": "IP Kısıtlaması",
+  "timeRestriction": "Saat Kısıtlaması",
+  "actions": "İşlemler",
+  "noData": "Kayıt bulunamadı.",
+  "totalText": "{total} kayıttan {start} ile {end} arası gösteriliyor"
+},
+"assembly": {
+  "title": "Montaj Noktaları",
+  "search": "🔍 Ara...",
+  "company": "Firma Adı",
+  "phone": "Telefon",
+  "city": "İl",
+  "district": "İlçe",
+  "actions": "İşlemler",
+  "edit": "Düzenle",
+  "delete": "Sil",
+  "noData": "Kayıt bulunamadı."
+},
+"balance": {
+  "title": "Bakiye Ayarları",
+  "walletTitle": "Müşteri Cüzdan - Bakiye Yükleme",
+  "walletDescription": "Bakiye(Cüzdan) ödemelerini aktif/pasif yapabilirsiniz",
+  "paymentMethod": "Ödeme Yöntemi",
+  "approvalStatus": "Bakiye Yükleme Durumu",
+  "minAmount": "Yüklenebilecek En Düşük Tutar (TRY)",
+  "maxAmount": "Yüklenebilecek En Yüksek Tutar (TRY)",
+  "receipt": "Bakiye Yükleme Dekontu",
+  "availableTokens": "Kullanılacak Değişkenler",
+  "save": "Kaydet",
+  "card": "Kredi Kartı",
+  "transfer": "Havale/EFT",
+  "adminApproval": "Yönetici Onayı",
+  "autoApproval": "Otomatik Onay"
+},
+"contracts": {
+  "description1": "Aşağıdaki butonlara tıklayarak sözleşmeleri düzenleyebilirsiniz.",
+  "description2": "Sözleşmeler üye kayıt ve sipariş adımlarında kullanılmaktadır.",
+  "types": {
+    "membership": "Üyelik Kuralları",
+    "kvkk": "KVKK Politikası",
+    "orderPre": "Sipariş Ön Bilgilendirme Kuralları",
+    "distance": "Sipariş Mesafeli Satış Sözleşmesi",
+    "email": "Ticari Elektronik İleti İzni Aydınlatma Metni",
+    "dealer": "Bayiilik Sözleşmesi"
+  }
+},
+  "country": {
+    "title": "Ülkeler",
+    "add": "Yeni Ülke Ekle",
+    "id": "Ülke No",
+    "name": "Adı",
+    "status": "Durum",
+    "minLimit": "Min. Sip. Lim.",
+    "minAmount": "Min. Sip. Tutar.",
+    "order": "Sıra",
+    "cities": "İller",
+    "citiesPlaceholder": "İller tablosu burada olacak"
+  },
+  "common": {
+    "search": "🔍 Ara...",
+    "actions": "İşlemler",
+    "quickView": "Hızlı Görüntüle",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "active": "Aktif",
+    "passive": "Pasif",
+    "save": "Kaydet",
+    "general": "Genel Bilgiler"
+  },
+  "dealerSettings": {
+    "title": "Bayi Ayarları",
+    "save": "Kaydet",
+    "options": {
+      "sale": "Satış Fiyatı",
+      "discount": "İndirimli Fiyat"
+    },
+    "settings": [
+      {
+        "label": "Bayi Başvuru Sayfası",
+        "description": "Bayi başvuru sayfasını aktif ederseniz bayilik başvurusu yapılabilecektir."
+      },
+      {
+        "label": "Açık Hesap Eksik Bakiye Limit (0: limitsiz)",
+        "description": "Bayilerin açık hesap bakiyelerinin eksik limitini belirler."
+      },
+      {
+        "label": "Sadece Onaylı Bayiler Giriş Yapabilir",
+        "description": "Aktif edildiğinde sadece onaylı bayiler sisteme giriş yapabilir."
+      },
+      {
+        "label": "Dropship Bayi Kargo Fişini Kullan",
+        "description": "Dropshipping yapan bayiler için özel kargo fişi şablonu."
+      },
+      {
+        "label": "Eksik(-) Stok Sınırı",
+        "description": "Bayilerin sipariş verebileceği minimum stok miktarını belirler."
+      },
+      {
+        "label": "Sepete Eklenen Ürünlerde Eksik(-) Stok Sınırı",
+        "description": "Sepete eklenebilecek ürünler için minimum stok miktarını belirler."
+      },
+      {
+        "label": "Bayi Fiyat Tanımı (Varsayılan)",
+        "description": "Bayilere gösterilecek varsayılan fiyat tipini seçin."
+      },
+      {
+        "label": "Üyeler İçin Eksik(-) Stok Sınırı",
+        "description": "Üyelerin sipariş verebileceği minimum stok miktarını belirler."
+      },
+      {
+        "label": "Üyeler İçin Sepete Eklenen Ürünlerde Eksik(-) Stok Sınırı",
+        "description": "Üyelerin sepete ekleyebileceği ürünler için minimum stok miktarını belirler."
+      },
+      {
+        "label": "Ziyaretçiler İçin Eksik(-) Stok Sınırı",
+        "description": "Ziyaretçilerin sipariş verebileceği minimum stok miktarını belirler."
+      },
+      {
+        "label": "Ziyaretçiler İçin Sepete Eklenen Ürünlerde Eksik(-) Stok Sınırı",
+        "description": "Ziyaretçilerin sepete ekleyebileceği ürünler için minimum stok miktarını belirler."
+      },
+      {
+        "label": "Bayi Siparişleri Bayi Hareketlerine İşlensin",
+        "description": "Bayi siparişlerinin bayi hareket listesinde görüntülenmesini sağlar."
+      },
+      {
+        "label": "Bayilere Özel Minimum Sipariş Tutarı",
+        "description": "Bayilerin sipariş verebilmesi için minimum sipariş tutarı zorunluluğu getirir."
+      },
+      {
+        "label": "Bayi Minimum Sipariş Tutarı (TL)",
+        "description": "Bayilerin sipariş verebilmesi için gerekli olan minimum tutarı belirler."
+      }
+    ]
+  },
+  "dealerXml": {
+    "title": "Bayi XML Ayarları",
+    "hasSubscription": {
+      "title": "XML Aboneliği Süreli Olsun",
+      "desc": "Aboneliğin süresi olacak şekilde belirlenmesini sağlar."
+    },
+    "hasPayments": {
+      "title": "XML Abonelik Ödemeleri",
+      "desc": "Bayiler XML aboneliği için ödeme yapmak zorundadır."
+    },
+    "price1": "XML Ücreti (1 Ay, TL)",
+    "price3": "XML Ücreti (3 Ay, TL)",
+    "price6": "XML Ücreti (6 Ay, TL)",
+    "price12": "XML Ücreti (12 Ay, TL)",
+    "requireIP": {
+      "title": "XML İçin IP İzni Gereksin",
+      "desc": "Yalnızca izinli IP adreslerinden XML erişimine izin verilir."
+    },
+    "autoActivate": {
+      "title": "Yeni Kayıt Olan Bayilerde XML'i Otomatik Aktif Et",
+      "desc": "Yeni bayi kaydıyla birlikte XML erişimi otomatik aktif edilir."
+    },
+    "productLimit": "XML Ürün Limiti",
+    "minStock": "Minimum Stok (Bu stoktan aşağısı XML'de 0 olarak gönderilir)",
+    "brandRestriction": "Marka Kısıtlama",
+    "categoryRestriction": "Kategori Kısıtlama",
+    "allowedIPs": {
+      "title": "İzinli IP Listesi (Her satıra 1 IP adresi)",
+      "desc": "XML'e erişmesine izin verilecek IP adreslerini giriniz."
+    }
+  },
+  "common": {
+    "notSelected": "Seçilmedi",
+    "save": "Kaydet"
+  },
+  "email": {
+    "title": "E-Posta Ayarları",
+    "adminAddress": {
+      "label": "Yönetici E-posta Bildirim Adresi",
+      "tooltip": "E-Posta adresi giriniz.",
+      "placeholder": "E-posta adresi giriniz."
+    },
+    "smtp": "Standart SMTP",
+    "mailjet": "Mailjet",
+    "test": "Test Et"
+  },
+  "common": {
+    "save": "Kaydet"
+  },
+  "smsTemplates": {
+    "title": "SMS Şablonları",
+    "selectPrompt": "Lütfen sms gönderim aksiyonunu seçin",
+    "selectOption": "Lütfen seçim yapın",
+    "selected": "Seçilen Şablon:",
+    "groups": {
+      "member": "Üye ve Şifre Aksiyonları",
+      "contact": "İletişim Aksiyonları",
+      "issue": "Arıza Bildirimleri",
+      "order": "Sipariş Aksiyonları",
+      "payment": "Ödeme ve Bayi Aksiyonları",
+      "suggestion": "Ürün Tavsiye ve Uyarılar"
+    },
+    "templates": {
+      "newMember": "Yeni üye kayıt",
+      "passwordReset": "Şifre sıfırlama talebi",
+      "newContact": "Yeni iletişim talebi",
+      "contactReply": "İletişim talebi yanıtı",
+      "newIssue": "Yeni arıza bildirimi",
+      "issueAdminReply": "Arıza bildirimi yönetici yanıtı",
+      "issueUserReply": "Arıza bildirimi üye yanıtı",
+      "newOrder": "Yeni sipariş",
+      "orderPreparing": "Sipariş hazırlanıyor",
+      "orderShipped": "Sipariş kargolandı",
+      "orderDelivered": "Sipariş teslim edildi",
+      "orderCancelled": "Sipariş iptali",
+      "orderCustom": "Siparişe özel aksiyonlar",
+      "customerTransfer": "Müşteri havale bildirimi",
+      "newDealerPayment": "Yeni bayi ödemesi",
+      "dealerApproved": "Bayi ödeme onayı",
+      "dealerRejected": "Bayi ödeme reddi",
+      "newDealerPassword": "Yeni bayi şifresi",
+      "quickPayment": "Hızlı ödeme işlemi",
+      "productSuggestion": "Müşteri ürün tavsiyesi",
+      "priceAlert": "Müşteri fiyat alarmı",
+      "stockAlert": "Müşteri stok alarmı",
+      "newSuggestion": "Yeni ürün önerisi",
+      "suggestionReply": "Ürün önerisi yanıtı"
+    }
+  },
+  "exchangeRates": {
+    "title": "Döviz Kurları",
+    "search": "🔍 Ara...",
+    "code": "Kodu",
+    "name": "Adı",
+    "value": "Kur",
+    "siteStatus": "Site Durumu",
+    "tcmb": "TCMB",
+    "actions": "İşlemler",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "active": "Aktif",
+    "passive": "Pasif"
+  },
+  "general": {
+    "title": "Genel Ayarlar",
+    "currencyFormat": "Para Birimi Gösterimi",
+    "decimalPlaces": "Ondalık Basamak Sayısı",
+    "membersOnly": "Sadece Üye Erişimi",
+    "phoneRequired": "Telefon Zorunluluğu",
+    "supportPhone": "Müşteri Hizmetleri",
+    "email": "E-Mail",
+    "whatsapp": "WhatsApp",
+    "googleMerchant": "Google Merchant Mağaza Kodu",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "youtube": "Youtube",
+    "twitter": "Twitter (X)",
+    "appStore": "App Store",
+    "playStore": "Play Store",
+    "mapsCode": "Google Maps Kodu",
+    "footer": "Footer",
+    "footerContact": "Footer İletişim Bilgisi",
+    "save": "Kaydet"
+  },
+  "languages": {
+    "title": "Diller",
+    "search": "🔍 Ara...",
+    "translationCenter": "Çeviri Merkezi",
+    "newTranslation": "Yeni Çeviri",
+    "operations": "İşlemler",
+    "id": "Dil No",
+    "code": "Kodu",
+    "name": "Adı",
+    "realName": "Gerçek Adı",
+    "currency": "Varsayılan Para Birimi",
+    "status": "Durum",
+    "default": "Varsayılan",
+    "actions": "İşlemler",
+    "active": "Aktif",
+    "passive": "Pasif",
+    "quickView": "Hızlı Görüntüle",
+    "delete": "Sil",
+    "startTranslation": "Çeviriye Başla",
+    "uniqueKey": "Benzersiz Kod",
+    "value": "Değer",
+    "save": "Kaydet",
+    "languageOperations": "Dil İşlemleri",
+    "export": "Dışa Aktar",
+    "import": "İçe Aktar",
+    "reset": "Sıfırla",
+    "exportInfo": "Çeviri merkezindeki tüm veriler excel olarak dışarı aktarılacaktır.",
+    "download": "İndir"
+  },
+  "maintenance": {
+    "title": "Bakım Modu",
+    "modeTitle": "Bakım Modu",
+    "modeDescription": "Sitenizi bakım moduna alarak ziyaretçilerin erişimini engelleyebilirsiniz.",
+    "adminAccessTitle": "Yönetici Siteye Erişebilsin",
+    "adminAccessDescription": "Bakım modu aktifken yöneticilerin siteye erişebilmesini sağlar.",
+    "noteTitle": "Açıklama",
+    "noteDescription": "Bakım modu aktif olduğunda ziyaretçilere gösterilecek açıklama metnini buradan düzenleyebilirsiniz."
+  },
+  "common": {
+    "save": "Kaydet"
+  },
+  "marketing": {
+    "title": "Pazarlama Araçları",
+    "tools": {
+      "verification": {
+        "title": "Arama Motoru Doğrulama",
+        "desc": "E-ticaret sitenizin Google, Facebook, Yandex, Bing, Alexa ve Pinterest platformlarında doğrulanmasını ve daha hızlı indekslenebilmesini sağlar."
+      },
+      "robots": {
+        "title": "Robots.txt",
+        "desc": "Robots.txt dosyası, arama motoru botlarının sitenizle ilgili davranışlarını belirten bir komut dosyasıdır."
+      },
+      "analytics": {
+        "title": "Google Analytics",
+        "desc": "Google Analytics servisiyle e-ticaret sitenize gelen ziyaretçilerin istatistiklerini görüntüleyebilir, davranışlarını inceleyebilirsiniz."
+      },
+      "metrica": {
+        "title": "Yandex Metrica",
+        "desc": "Yandex Metrica servisiyle e-ticaret sitenize gelen ziyaretçilerin istatistiklerini görüntüleyebilir, davranışlarını inceleyebilirsiniz."
+      },
+      "ads": {
+        "title": "Google Ads",
+        "desc": "Google Ads entegrasyonuyla oluşturduğunuz reklam kampanyalarını takip edebilir ve performansınızı artırabilirsiniz."
+      },
+      "html": {
+        "title": "Head-Body HTML Kodları",
+        "desc": "<code>&lt;head&gt;</code> veya <code>&lt;/body&gt;</code> etiketi öncesine HTML kodlarınızı ekleyebilirsiniz."
+      },
+      "customCodes": {
+        "title": "Özelleştirilebilir Pazarlama Kodları",
+        "desc": "Raporlama, dönüşüm ve yeniden pazarlama için oluşturulan ortak alanlara kodlarınızı ekleyebilirsiniz. Bu araç uzmanlık gerektirebilir."
+      },
+      "tawkto": {
+        "title": "tawk.to",
+        "desc": "Canlı Sohbet uygulaması <strong>Tawk.to</strong> ile ziyaretçilerinizle anlık sohbet edebilirsiniz."
+      },
+      "sendpulse": {
+        "title": "SendPulse Web Push",
+        "desc": "<strong>Sendpulse.com.tr</strong> ile ziyaretçilerinize tarayıcı üzerinden kampanya bildirimleri gönderebilirsiniz."
+      }
+    }
+  },
+  "common": {
+    "settings": "Ayarlar"
+  },
+  "order": {
+    "title": "Sipariş Ayarları",
+    "badge": "Yeni Özellik",
+    "giftCoupon": {
+      "title": "Hediye Kuponu",
+      "description": "Müşterilerinizin ödeme sayfasında kupon kodu girebilmelerine izin verin."
+    },
+    "giftPackage": {
+      "title": "Hediye Paketi Hizmeti",
+      "description": "Hediye paketini ücretsiz/satışlı sunabilirsiniz."
+    },
+    "giftAmount": {
+      "title": "Hediye Paket Tutarı (TRY)",
+      "description": "Hediye paketinin fiyatı."
+    },
+    "excludeVAT": {
+      "title": "KDV Hariç Fiyatlandırma",
+      "description": "Ürün sayfalarında fiyatları KDV hariç gösterin."
+    },
+    "identityRequired": {
+      "title": "T.C. Kimlik Numarası",
+      "description": "Sipariş için TC Kimlik numarası zorunlu hale getirilebilir."
+    },
+    "userStatus": {
+      "title": "Kullanıcı Durumu",
+      "description": "Kayıt sırasında kullanıcı durumu manuel olarak değiştirilebilir."
+    },
+    "forceRegister": {
+      "title": "Üyelik Zorunlu",
+      "description": "Ziyaretçilerin sipariş için üye olmasını zorunlu hale getirin."
+    },
+    "noteActive": {
+      "title": "Sipariş Notu",
+      "description": "Müşteri sipariş adımında not alanına yazı yazabilir."
+    },
+    "cancelAllowed": {
+      "title": "Sipariş İptal İzni",
+      "description": "Müşteri onaylanmamış siparişi iptal edebilsin."
+    },
+    "restockOnCancel": {
+      "title": "Stok Güncelleme",
+      "description": "İptal edilen siparişlerin stokları geri eklensin."
+    },
+    "orderNoteText": {
+      "title": "Sipariş Notu Açıklaması",
+      "description": "Sipariş notu altına görünen açıklama."
+    },
+    "invoiceSerial": {
+      "title": "Fatura Seri Numarası",
+      "description": "Fatura üzerinde yazacak numara."
+    },
+    "separateItems": {
+      "title": "Ürünleri Ayır",
+      "description": "Aynı ürünleri sepet içinde ayırmak için kullanılır."
+    },
+    "priceBased": {
+      "title": "Fiyat Bazlı Ürünler",
+      "description": "Fiyata göre ürünleri sıralamak için kullanılır."
+    },
+    "minAmount": {
+      "title": "Minimum Sipariş Tutarı (TL)",
+      "description": "Müşterilerin bu tutarın altında sipariş vermesini engelleyin."
+    },
+    "requiredOrderFieldsTitle": "Sipariş Sayfasında hangi bilgiler zorunlu olarak istersin?",
+    "reqTCKN": "TC/VKN Bilgisi",
+    "reqEmail": "Eposta Adresi",
+    "requiredFastSaleFieldsTitle": "Hızlı Satış ekranında hangi bilgiler zorunlu olarak istersin?",
+    "reqNameFast": "Müşteri Adı",
+    "reqPhoneFast": "Telefon Numarası",
+    "reqAddressFast": "Adres Bilgisi",
+    "reqTerminalFast": "Satış Terminali"
+  },
+  "ui": {
+    "save": "Kaydet"
+  },
+  "paymentMethods": {
+    "title": "Ödeme Yöntemleri",
+    "activeMethods": "Aktif Ödeme Yöntemleri",
+    "passiveMethods": "Pasif Ödeme Yöntemleri",
+    "creditCard": "Kredi Kartı",
+    "bankTransfer": "Havale / EFT",
+    "bankTransferName": "Banka Havalesi",
+    "labelName": "Listeleme Adı",
+    "labelOrder": "Listeleme Sırası",
+    "installments": "Taksit Seçenekleri",
+    "restrictions": "Kısıtlamalar",
+    "settings": "Ayarlar",
+    "bankAccounts": "Banka Hesapları",
+    "virtualPOS": "Garanti Bankası Sanal Pos",
+    "details": "Bilgiler",
+    "activate": "Aktif Et"
+  },
+  "productSettings": {
+    "title": "Ürün Ayarları",
+    "priceRounding": "Fiyat Yuvarlama",
+    "shippingInfo": "Kargo Bilgisi",
+    "shippingDescription": "Ürünü sipariş verdiğiniz gün saat 18:00 ve öncesi ise siparişiniz aynı gün kargoya verilir. Ve ertesi gün teslim edilir.\n\nEğer kargoyu saat 18:00'den sonra verdiyseniz ürününüzün stoklarda olması durumunda ertesi gün kargolama yapılmaktadır.",
+    "removeOutOfStock": {
+      "title": "Stoksuz Ürünleri Kaldır",
+      "description": "Stok u biten ürünler otomatik olarak pasif olsun istiyorsanız aktif edebilirsiniz."
+    },
+    "publishStocked": {
+      "title": "Stoklu Ürünleri Yayınla",
+      "description": "En az 1 adet ve üstü stok miktarına sahip ürünlerin otomatik olarak satışa sunulmasını istiyorsanız aktif ediniz."
+    },
+    "marketplaceStock": {
+      "title": "Pazaryerine Özel Stok",
+      "description": "Pazaryerleri için ürünlerinize farklı stok miktarı belirtebilmek istiyorsanız aktif ediniz."
+    },
+    "passiveCategory": {
+      "title": "Pasif Kategori Ürünleri",
+      "description": "Kategori pasif edildiğinde içindeki ürünlerin de pasif olmasını istiyorsanız aktif edin."
+    },
+    "searchFields": {
+      "title": "Arama Alanları",
+      "description": "Arama yapılacak alanları virgülle ayırarak yazınız (örn: Ürün Adı, Ürün Kodu, Barkod)"
+    },
+    "barcodeCountry": {
+      "title": "Barkod Ülke Kodu",
+      "description": "3 karakterlik barkod ülke kodunuzu girin."
+    },
+    "barcodeCompany": {
+      "title": "Barkod Şirket Kodu",
+      "description": "4 karakterlik şirket kodunuzu girin."
+    },
+    "hidePrices": {
+      "title": "Ürün Fiyatlarını Gizle",
+      "description": "Ürün sayfalarında fiyat bilgisini gizlemek için bu ayarı aktif edin."
+    },
+    "fastLoadCategories": {
+      "title": "Kategoriler Bellekten Yüklensin",
+      "description": "Kategori ilk açıldığında 1 gün boyunca bellekte tutulur."
+    },
+    "stockLimit": {
+      "title": "Stok Alt Miktarı",
+      "description": "Belirtilen stok altına düşen ürünler yayından kaldırılır."
+    },
+    "requireImage": {
+      "title": "Görsel Zorunluluğu",
+      "description": "Görseli olmayan ürünler yayınlanmaz."
+    },
+    "hideOutOfStock": {
+      "title": "Stoksuz Ürün Gösterimi",
+      "description": "Stok biten ürünleri liste sonuna almak için bu seçeneği aktif edin."
+    }
+  },
+  "common": {
+    "save": "Kaydet"
+  },
+  "quickPayment": {
+    "title": "Hızlı Ödeme Ayarları",
+    "minAmount": "Minimum Ödeme Tutarı",
+    "paymentMethod": "Ödeme Yöntemi",
+    "methods": {
+      "card": "Kredi Kartı",
+      "bank": "Havale / EFT",
+      "cash": "Kapıda Ödeme"
+    },
+    "toggles": {
+      "tckn": {
+        "label": "TCKN / VKN Zorunluluğu",
+        "desc": "TCKN ya da vergi numarası girilmesini zorunlu hale getirir."
+      },
+      "telefon": {
+        "label": "Telefon Zorunluluğu",
+        "desc": "Telefon numarası alanının doldurulması zorunludur."
+      },
+      "eposta": {
+        "label": "E-Posta Zorunluluğu",
+        "desc": "E-posta adresi alanı boş bırakılamaz."
+      },
+      "adres": {
+        "label": "Adres Zorunluluğu",
+        "desc": "Teslimat adresi girilmesi zorunludur."
+      }
+    }
+  },
+  "common": {
+    "save": "Kaydet"
+  },
+  "security": {
+    "title": "Güvenlik Ayarları",
+    "blockedIPs": {
+      "label": "Engellenen IP Listesi",
+      "description": "Her satıra 1 IP adresi yazınız.",
+      "placeholder": "IP Numaralarını buraya ekleyiniz."
+    }
+  },
+  "common": {
+    "save": "Kaydet"
+  },
+  "seo": {
+    "title": "SEO Ayarları",
+    "default": {
+      "title": "Varsayılan SEO Ayarları",
+      "description": "Sitenize ait varsayılan SEO bilgilerini aşağıdaki alanları doldurarak ayarlayabilirsiniz."
+    },
+    "fields": {
+      "title": "SEO Başlığı",
+      "description": "SEO Açıklaması",
+      "keywords": "SEO Anahtar Kelimeleri"
+    },
+    "pages": {
+      "title": "Sayfa Bazlı SEO Alanları",
+      "page": "Sayfa",
+      "seoTitle": "SEO Başlığı",
+      "seoDescription": "SEO Açıklaması"
+    }
+  },
+  "common": {
+    "save": "Kaydet",
+    "edit": "Düzenle"
+  },
+  "settingsMenu": {
+    "general": "Genel Ayarlar",
+    "seo": "SEO Ayarları",
+    "marketing": "Pazarlama Araçları",
+    "contracts": "Sözleşmeler",
+    "orders": "Sipariş Ayarları",
+    "products": "Ürün Ayarları",
+    "payment-methods": "Ödeme Yöntemleri",
+    "exchange-rates": "Döviz Kurları",
+    "shipping-companies": "Kargo Firmaları",
+    "shipping": "Kargo Ayarları",
+    "assembly-points": "Montaj Noktaları",
+    "countries": "Ülkeler",
+    "languages": "Diller",
+    "sms": "SMS Ayarları",
+    "sms-templates": "SMS Şablonları",
+    "email": "E-Posta Ayarları",
+    "email-templates": "E-Posta Şablonları",
+    "maintenance": "Bakım Modu",
+    "balance": "Bakiye Ayarları",
+    "dealer": "Bayi Ayarları",
+    "dealer-xml": "Bayi XML Ayarları",
+    "quick-payment": "Hızlı Ödeme Ayarları",
+    "web-service": "Web Servis Ayarları",
+    "admin-accounts": "Yönetici Hesapları",
+    "security": "Güvenlik Ayarları",
+    "site": "Site Ayarları"
+  },
+  "shippingSettings": {
+    "title": "Kargo Ayarları",
+    "fixed": "Sabit Kargo Ücretleri",
+    "category": "Kategori Bazlı Kargo Ücretleri",
+    "desi": "Desi Bazlı Kargo Ücretleri",
+    "rule1": "Sabit kargo ücretleri sepet tutarına eklenmektedir.",
+    "rule2": "Kategori bazlı ücretler sepetteki her ürün için eklenir.",
+    "rule3": "Bir ürünü aynı anda sabit, kategori ve desi bazlı kargo ücreti uygulanamaz.",
+    "rule4": "Ürünlere kargo ücreti eklenmesi için 'Kargo Alıcı Öder' seçeneğinin aktif edilmesi gerekir.",
+    "fixedPrice": "Sabit Kargo Ücreti",
+    "fixedType": "Sabit Kargo Ücret Tipi",
+    "option1": "Alıcı Ödemeli Ürünlere Ekle",
+    "option2": "Tüm Ürünlere Uygula",
+    "freeLimit": "Ücretsiz Kargo Limiti",
+    "addCategoryFee": "Yeni Kategori Ücreti",
+    "addDesiFee": "Yeni Desi Ücreti",
+    "fee": "Kargo Ücreti",
+    "desiNo": "Desi No",
+    "desiType": "Desi Tipi",
+    "desiStart": "Desi Başlangıç Değeri",
+    "desiEnd": "Desi Bitiş Değeri"
+  },
+  "common": {
+    "search": "🔍 Ara...",
+    "no": "No",
+    "title": "Başlık",
+    "site": "Site",
+    "marketplace": "Pazaryeri",
+    "actions": "İşlemler",
+    "noData": "Kayıt bulunamadı.",
+    "save": "Kaydet"
+  },
+  "shippingCompanies": {
+    "title": "Kargo Firmaları",
+    "addNew": "Yeni Kargo Firması Ekle",
+    "deliveryHours": "Teslimat Saatleri",
+    "editModal": {
+      "title": "Firması Detayı"
+    },
+    "addModal": {
+      "title": "Yeni Kargo Firması",
+      "description": "Lütfen eklemek istediğiniz kargo firmasını seçin. Eğer listede bulunmayan bir firma ise 'Diğer' seçeneğini seçebilirsiniz."
+    },
+    "description": "Kısa Açıklaması",
+    "order": "Sıra",
+    "taxNumber": "Taşıyıcı VKN",
+    "memberGroup": "Üye Grubu",
+    "customLogo": "Özel Logo",
+    "customDeliveryTime": "Bayiler İçin Özel Teslimat Süresi"
+  },
+  "common": {
+    "active": "✓ Aktif",
+    "passive": "✕ Pasif",
+    "settings": "Ayarlar",
+    "save": "Kaydet",
+    "next": "İleri",
+    "general": "Genel",
+    "api": "API",
+    "name": "Adı",
+    "status": "Durum",
+    "all": "Hepsi"
+  },
+  "siteSettings": {
+    "title": "Site Settings",
+    "siteUrl": "Site URL",
+    "domain": "Domain",
+    "licenseKey": "License Key",
+    "version": "Version",
+    "serverIp": "Server IP Address"
+  },
+  "siteSettings": {
+    "title": "Site Ayarları",
+    "siteUrl": "Site Adresi",
+    "domain": "Domain",
+    "licenseKey": "Lisans Kodu",
+    "version": "Versiyon",
+    "serverIp": "Sunucu IP Adresi"
+  },
+  "smsSettings": {
+    "title": "SMS Ayarları",
+    "enabledLabel": "SMS Gönderimi",
+    "enabledDesc": "SMS gönderimini aktif etmek için bu özelliği aktif edebilirsiniz.",
+    "providerLabel": "SMS Firması",
+    "providerDesc": "SMS gönderimleriniz için kullanılacak SMS firmasını seçebilirsiniz.",
+    "titleLabel": "SMS Başlığı",
+    "titleDesc": "SMS gönderimi yapılırken kullanılacak başlığı giriniz.",
+    "adminPhoneLabel": "Yönetici Telefonu (SMS bildirimleri için)",
+    "adminPhoneDesc": "SMS bildirimi için kullanılacak yönetici telefon numarasını giriniz.",
+    "apiKeyLabel": "SMS API Key",
+    "apiKeyDesc": "SMS API keyinizi giriniz.",
+    "save": "✓ Kaydet"
+  },
+  "smsTemplates": {
+    "title": "SMS Şablonları",
+    "selectLabel": "Lütfen sms gönderim aksiyonunu seçin",
+    "selectPlaceholder": "Lütfen seçim yapın",
+    "selectedTemplate": "Seçilen Şablon:",
+    "groups": {
+      "member": "Üye ve Şifre Aksiyonları",
+      "contact": "İletişim Aksiyonları",
+      "fault": "Arıza Bildirimleri",
+      "order": "Sipariş Aksiyonları",
+      "payment": "Ödeme ve Bayi Aksiyonları",
+      "product": "Ürün Tavsiye ve Uyarılar"
+    },
+    "templates": {
+      "newMember": "Yeni üye kayıt",
+      "passwordReset": "Şifre sıfırlama talebi",
+      "newContact": "Yeni iletişim talebi",
+      "contactReply": "İletişim talebi yanıtı",
+      "newFault": "Yeni arıza bildirimi",
+      "faultAdminReply": "Arıza bildirimi yönetici yanıtı",
+      "faultUserReply": "Arıza bildirimi üye yanıtı",
+      "newOrder": "Yeni sipariş",
+      "orderPreparing": "Sipariş hazırlanıyor",
+      "orderShipped": "Sipariş kargolandı",
+      "orderDelivered": "Sipariş teslim edildi",
+      "orderCancelled": "Sipariş iptali",
+      "orderCustomAction": "Siparişe özel aksiyonlar",
+      "moneyTransfer": "Müşteri havale bildirimi",
+      "newDealerPayment": "Yeni bayi ödemesi",
+      "dealerPaymentApproved": "Bayi ödeme onayı",
+      "dealerPaymentRejected": "Bayi ödeme reddi",
+      "newDealerPassword": "Yeni bayi şifresi",
+      "quickPayment": "Hızlı ödeme işlemi",
+      "productSuggest": "Müşteri ürün tavsiyesi",
+      "priceAlert": "Müşteri fiyat alarmı",
+      "stockAlert": "Müşteri stok alarmı",
+      "newSuggestion": "Yeni ürün önerisi",
+      "suggestionReply": "Ürün önerisi yanıtı"
+    }
+  },
+  "webService": {
+    "alert": "Web servisi paketinizde bulunmamaktadır. Web servisi kullanmak için sistem yöneticiniz ile iletişime geçin.",
+    "searchPlaceholder": "🔍 Ara...",
+    "newUser": "+ Yeni Kullanıcı",
+    "downloadDocs": "API Dökümanını İndir",
+    "downloadSamples": "Örnek Kodları İndir",
+    "userNo": "Kullanıcı No",
+    "username": "Kullanıcı Adı",
+    "status": "Kullanıcı Durumu",
+    "actions": "İşlemler",
+    "noData": "Kayıt bulunamadı.",
+    "active": "Aktif",
+    "passive": "Pasif",
+    "notSelected": "Seçilmedi",
+    "required": "Zorunlu",
+    "save": "✓ Kaydet",
+    "modal": {
+      "title": "Yeni Web Servis Kullanıcısı",
+      "username": "Kullanıcı Adı",
+      "status": "Kullanıcı Durumu",
+      "permissions": "Yetkiler",
+      "apiKey": "API Key",
+      "apiSecret": "API Secret"
+    }
+  }
 }

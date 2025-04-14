@@ -3013,6 +3013,747 @@
   "products": "Product Reports",
   "members": "Member / Dealer Reports",
   "system": "System Reports"
-}
+},
+"adminAccounts": {
+  "title": "Admin Accounts",
+  "searchPlaceholder": "🔍 Search...",
+  "newAdminBtn": "+ New Admin",
+  "id": "Admin ID",
+  "username": "Username",
+  "role": "Role",
+  "ipRestriction": "IP Restriction",
+  "timeRestriction": "Time Restriction",
+  "actions": "Actions",
+  "noData": "No records found.",
+  "totalText": "Showing {start} to {end} of {total} records"
+},
+"assembly": {
+  "title": "Assembly Points",
+  "search": "🔍 Search...",
+  "company": "Company Name",
+  "phone": "Phone",
+  "city": "City",
+  "district": "District",
+  "actions": "Actions",
+  "edit": "Edit",
+  "delete": "Delete",
+  "noData": "No records found."
+},
+"balance": {
+  "title": "Balance Settings",
+  "walletTitle": "Customer Wallet - Load Balance",
+  "walletDescription": "You can enable/disable wallet balance payments",
+  "paymentMethod": "Payment Method",
+  "approvalStatus": "Balance Approval Method",
+  "minAmount": "Minimum Loadable Amount (TRY)",
+  "maxAmount": "Maximum Loadable Amount (TRY)",
+  "receipt": "Balance Receipt Template",
+  "availableTokens": "Available Tokens",
+  "save": "Save",
+  "card": "Credit Card",
+  "transfer": "Bank Transfer",
+  "adminApproval": "Admin Approval",
+  "autoApproval": "Auto Approval"
+},
+"contracts": {
+  "description1": "You can edit the contracts by clicking the buttons below.",
+  "description2": "Contracts are used during member registration and order steps.",
+  "types": {
+    "membership": "Membership Terms",
+    "kvkk": "KVKK Policy",
+    "orderPre": "Order Pre-Information Terms",
+    "distance": "Distance Sales Agreement",
+    "email": "Commercial Electronic Message Consent",
+    "dealer": "Dealership Agreement"
+  }
+},
+  "country": {
+    "title": "Countries",
+    "add": "Add New Country",
+    "id": "Country ID",
+    "name": "Name",
+    "status": "Status",
+    "minLimit": "Min. Order Limit",
+    "minAmount": "Min. Order Amount",
+    "order": "Order",
+    "cities": "Cities",
+    "citiesPlaceholder": "Cities table will be shown here"
+  },
+  "common": {
+    "search": "🔍 Search...",
+    "actions": "Actions",
+    "quickView": "Quick View",
+    "edit": "Edit",
+    "delete": "Delete",
+    "active": "Active",
+    "passive": "Passive",
+    "save": "Save",
+    "general": "General"
+  },
+  "dealerSettings": {
+    "title": "Dealer Settings",
+    "save": "Save",
+    "options": {
+      "sale": "Sale Price",
+      "discount": "Discounted Price"
+    },
+    "settings": [
+      {
+        "label": "Dealer Application Page",
+        "description": "If active, dealers can submit applications."
+      },
+      {
+        "label": "Open Account Negative Balance Limit (0: unlimited)",
+        "description": "Specifies the negative limit for dealer open balances."
+      },
+      {
+        "label": "Only Approved Dealers Can Log In",
+        "description": "If active, only approved dealers can access the system."
+      },
+      {
+        "label": "Use Dropship Dealer Shipping Template",
+        "description": "Special shipping template for dropshipping dealers."
+      },
+      {
+        "label": "Negative Stock Limit",
+        "description": "Sets the minimum stock amount for dealers to place orders."
+      },
+      {
+        "label": "Negative Stock Limit in Cart",
+        "description": "Sets the minimum stock amount for items added to the cart."
+      },
+      {
+        "label": "Dealer Price Type (Default)",
+        "description": "Select the default price type shown to dealers."
+      },
+      {
+        "label": "Negative Stock Limit for Members",
+        "description": "Sets the minimum stock amount for members to place orders."
+      },
+      {
+        "label": "Cart Negative Stock Limit for Members",
+        "description": "Sets the minimum stock amount for items members can add to cart."
+      },
+      {
+        "label": "Negative Stock Limit for Visitors",
+        "description": "Sets the minimum stock amount for visitors to place orders."
+      },
+      {
+        "label": "Cart Negative Stock Limit for Visitors",
+        "description": "Sets the minimum stock amount for items visitors can add to cart."
+      },
+      {
+        "label": "Include Dealer Orders in Dealer Movements",
+        "description": "Enables viewing dealer orders in dealer movement history."
+      },
+      {
+        "label": "Minimum Order Amount Requirement for Dealers",
+        "description": "Enforces a minimum order amount for dealers."
+      },
+      {
+        "label": "Dealer Minimum Order Amount (TRY)",
+        "description": "Sets the required minimum order amount for dealers."
+      }
+    ]
+  },
+  "dealerXml": {
+    "title": "Dealer XML Settings",
+    "hasSubscription": {
+      "title": "Enable XML Subscription",
+      "desc": "Defines the subscription to be time-based."
+    },
+    "hasPayments": {
+      "title": "Enable XML Payments",
+      "desc": "Dealers must pay for XML subscription."
+    },
+    "price1": "XML Fee (1 Month, TRY)",
+    "price3": "XML Fee (3 Months, TRY)",
+    "price6": "XML Fee (6 Months, TRY)",
+    "price12": "XML Fee (12 Months, TRY)",
+    "requireIP": {
+      "title": "Require IP Authorization for XML",
+      "desc": "Only allowed IPs can access XML."
+    },
+    "autoActivate": {
+      "title": "Auto Enable XML for New Dealers",
+      "desc": "Automatically enables XML for new dealer registrations."
+    },
+    "productLimit": "XML Product Limit",
+    "minStock": "Minimum Stock (Anything below will be sent as 0)",
+    "brandRestriction": "Brand Restriction",
+    "categoryRestriction": "Category Restriction",
+    "allowedIPs": {
+      "title": "Allowed IP List (One per line)",
+      "desc": "Enter IP addresses allowed to access XML."
+    }
+  },
+  "common": {
+    "notSelected": "Not Selected",
+    "save": "Save"
+  },
+  "email": {
+    "title": "Email Settings",
+    "adminAddress": {
+      "label": "Admin Notification Email Address",
+      "tooltip": "Enter an email address.",
+      "placeholder": "Enter email address"
+    },
+    "smtp": "Standard SMTP",
+    "mailjet": "Mailjet",
+    "test": "Test"
+  },
+  "common": {
+    "save": "Save"
+  },
+  "smsTemplates": {
+    "title": "SMS Templates",
+    "selectPrompt": "Please select the SMS action",
+    "selectOption": "Please select",
+    "selected": "Selected Template:",
+    "groups": {
+      "member": "Member and Password Actions",
+      "contact": "Contact Actions",
+      "issue": "Issue Notifications",
+      "order": "Order Actions",
+      "payment": "Payment and Dealer Actions",
+      "suggestion": "Product Suggestions and Alerts"
+    },
+    "templates": {
+      "newMember": "New member registration",
+      "passwordReset": "Password reset request",
+      "newContact": "New contact request",
+      "contactReply": "Contact request reply",
+      "newIssue": "New issue report",
+      "issueAdminReply": "Issue admin reply",
+      "issueUserReply": "Issue user reply",
+      "newOrder": "New order",
+      "orderPreparing": "Order is being prepared",
+      "orderShipped": "Order shipped",
+      "orderDelivered": "Order delivered",
+      "orderCancelled": "Order cancelled",
+      "orderCustom": "Custom order actions",
+      "customerTransfer": "Customer bank transfer",
+      "newDealerPayment": "New dealer payment",
+      "dealerApproved": "Dealer payment approved",
+      "dealerRejected": "Dealer payment rejected",
+      "newDealerPassword": "New dealer password",
+      "quickPayment": "Quick payment action",
+      "productSuggestion": "Customer product suggestion",
+      "priceAlert": "Customer price alert",
+      "stockAlert": "Customer stock alert",
+      "newSuggestion": "New product suggestion",
+      "suggestionReply": "Product suggestion reply"
+    }
+  },
+  "exchangeRates": {
+    "title": "Exchange Rates",
+    "search": "🔍 Search...",
+    "code": "Code",
+    "name": "Name",
+    "value": "Rate",
+    "siteStatus": "Site Status",
+    "tcmb": "CBRT",
+    "actions": "Actions",
+    "edit": "Edit",
+    "delete": "Delete",
+    "active": "Active",
+    "passive": "Passive"
+  },
+  "general": {
+    "title": "General Settings",
+    "currencyFormat": "Currency Format",
+    "decimalPlaces": "Decimal Places",
+    "membersOnly": "Members Only Access",
+    "phoneRequired": "Phone Required",
+    "supportPhone": "Customer Support",
+    "email": "E-Mail",
+    "whatsapp": "WhatsApp",
+    "googleMerchant": "Google Merchant Store Code",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "youtube": "YouTube",
+    "twitter": "Twitter (X)",
+    "appStore": "App Store",
+    "playStore": "Play Store",
+    "mapsCode": "Google Maps Embed Code",
+    "footer": "Footer",
+    "footerContact": "Footer Contact Info",
+    "save": "Save"
+  },
+  "languages": {
+    "title": "Languages",
+    "search": "🔍 Search...",
+    "translationCenter": "Translation Center",
+    "newTranslation": "New Translation",
+    "operations": "Operations",
+    "id": "ID",
+    "code": "Code",
+    "name": "Name",
+    "realName": "Real Name",
+    "currency": "Default Currency",
+    "status": "Status",
+    "default": "Default",
+    "actions": "Actions",
+    "active": "Active",
+    "passive": "Inactive",
+    "quickView": "Quick View",
+    "delete": "Delete",
+    "startTranslation": "Start Translation",
+    "uniqueKey": "Unique Key",
+    "value": "Value",
+    "save": "Save",
+    "languageOperations": "Language Operations",
+    "export": "Export",
+    "import": "Import",
+    "reset": "Reset",
+    "exportInfo": "All data in the translation center will be exported as Excel.",
+    "download": "Download"
+  },
+  "maintenance": {
+    "title": "Maintenance Mode",
+    "modeTitle": "Enable Maintenance Mode",
+    "modeDescription": "Enable maintenance mode to block visitor access to the site.",
+    "adminAccessTitle": "Allow Admin Access",
+    "adminAccessDescription": "Allows administrators to access the site while in maintenance mode.",
+    "noteTitle": "Notice Message",
+    "noteDescription": "You can edit the message shown to visitors while the site is in maintenance mode."
+  },
+  "common": {
+    "save": "Save"
+  },
+  "marketing": {
+    "title": "Marketing Tools",
+    "tools": {
+      "verification": {
+        "title": "Search Engine Verification",
+        "desc": "Helps verify your store on Google, Facebook, Yandex, Bing, Alexa, and Pinterest and improves indexing speed."
+      },
+      "robots": {
+        "title": "Robots.txt",
+        "desc": "The robots.txt file defines how search engine bots should behave on your site."
+      },
+      "analytics": {
+        "title": "Google Analytics",
+        "desc": "Track your visitor statistics and behavior using Google Analytics."
+      },
+      "metrica": {
+        "title": "Yandex Metrica",
+        "desc": "Track your visitor statistics and behavior using Yandex Metrica."
+      },
+      "ads": {
+        "title": "Google Ads",
+        "desc": "Track your ad campaign performance with Google Ads integration."
+      },
+      "html": {
+        "title": "Head-Body HTML Codes",
+        "desc": "Add your HTML code between <code>&lt;head&gt;</code> or before <code>&lt;/body&gt;</code>."
+      },
+      "customCodes": {
+        "title": "Custom Marketing Codes",
+        "desc": "Add tracking, conversion, and remarketing codes. This may require advanced knowledge."
+      },
+      "tawkto": {
+        "title": "tawk.to",
+        "desc": "Add <strong>Tawk.to</strong> live chat to engage with visitors in real-time."
+      },
+      "sendpulse": {
+        "title": "SendPulse Web Push",
+        "desc": "Send browser-based campaign notifications using <strong>Sendpulse.com.tr</strong>."
+      }
+    }
+  },
+  "common": {
+    "settings": "Settings"
+  },
+  "order": {
+    "title": "Order Settings",
+    "badge": "New Feature",
+    "giftCoupon": {
+      "title": "Gift Coupon",
+      "description": "Allow customers to enter a coupon code on the checkout page."
+    },
+    "giftPackage": {
+      "title": "Gift Package Service",
+      "description": "You can offer gift packages for free or for a price."
+    },
+    "giftAmount": {
+      "title": "Gift Package Price (TRY)",
+      "description": "Price of the gift package."
+    },
+    "excludeVAT": {
+      "title": "Exclude VAT from Prices",
+      "description": "Show product prices excluding VAT on the product pages."
+    },
+    "identityRequired": {
+      "title": "Turkish ID Number",
+      "description": "Make Turkish ID number required for orders."
+    },
+    "userStatus": {
+      "title": "User Status",
+      "description": "Allow manual adjustment of user status during registration."
+    },
+    "forceRegister": {
+      "title": "Force Registration",
+      "description": "Require users to sign up before placing orders."
+    },
+    "noteActive": {
+      "title": "Order Note",
+      "description": "Allow customers to add notes on the order page."
+    },
+    "cancelAllowed": {
+      "title": "Order Cancellation",
+      "description": "Let customers cancel unconfirmed orders."
+    },
+    "restockOnCancel": {
+      "title": "Restock on Cancel",
+      "description": "Return cancelled order products back to stock."
+    },
+    "orderNoteText": {
+      "title": "Order Note Info",
+      "description": "Text shown under the order note input field."
+    },
+    "invoiceSerial": {
+      "title": "Invoice Serial Number",
+      "description": "Text to appear on the invoice."
+    },
+    "separateItems": {
+      "title": "Separate Items",
+      "description": "Use this to separate identical products in the cart."
+    },
+    "priceBased": {
+      "title": "Price-Based Sorting",
+      "description": "Use this to sort products based on their price."
+    },
+    "minAmount": {
+      "title": "Minimum Order Amount (TRY)",
+      "description": "Prevent customers from placing orders below this amount."
+    },
+    "requiredOrderFieldsTitle": "Which fields should be required on the order page?",
+    "reqTCKN": "ID/VAT Number",
+    "reqEmail": "Email Address",
+    "requiredFastSaleFieldsTitle": "Which fields should be required on the fast sale screen?",
+    "reqNameFast": "Customer Name",
+    "reqPhoneFast": "Phone Number",
+    "reqAddressFast": "Address Info",
+    "reqTerminalFast": "Sales Terminal"
+  },
+  "ui": {
+    "save": "Save"
+  },
+  "paymentMethods": {
+    "title": "Payment Methods",
+    "activeMethods": "Active Payment Methods",
+    "passiveMethods": "Inactive Payment Methods",
+    "creditCard": "Credit Card",
+    "bankTransfer": "Bank Transfer / EFT",
+    "bankTransferName": "Bank Transfer",
+    "labelName": "Listing Name",
+    "labelOrder": "Listing Order",
+    "installments": "Installment Options",
+    "restrictions": "Restrictions",
+    "settings": "Settings",
+    "bankAccounts": "Bank Accounts",
+    "virtualPOS": "Garanti Bank Virtual POS",
+    "details": "Details",
+    "activate": "Activate"
+  },
+  "productSettings": {
+    "title": "Product Settings",
+    "priceRounding": "Price Rounding",
+    "shippingInfo": "Shipping Information",
+    "shippingDescription": "If you place the order before 6:00 PM, your order will be shipped the same day and delivered the next day.\n\nIf you place the order after 6:00 PM, it will be shipped the next day if in stock.",
+    "removeOutOfStock": {
+      "title": "Remove Out-of-Stock Products",
+      "description": "Automatically deactivate products when stock reaches zero."
+    },
+    "publishStocked": {
+      "title": "Auto-Publish In-Stock Products",
+      "description": "Automatically list products with stock ≥ 1."
+    },
+    "marketplaceStock": {
+      "title": "Marketplace-Specific Stock",
+      "description": "Enable separate stock values for marketplaces."
+    },
+    "passiveCategory": {
+      "title": "Passive Category Products",
+      "description": "Deactivate products when the parent category is deactivated."
+    },
+    "searchFields": {
+      "title": "Search Fields",
+      "description": "Specify searchable fields (e.g., Product Name, Code, Barcode)."
+    },
+    "barcodeCountry": {
+      "title": "Barcode Country Code",
+      "description": "Enter your 3-digit country barcode prefix."
+    },
+    "barcodeCompany": {
+      "title": "Barcode Company Code",
+      "description": "Enter your 4-digit company barcode prefix."
+    },
+    "hidePrices": {
+      "title": "Hide Product Prices",
+      "description": "Enable this to hide product prices on the site."
+    },
+    "fastLoadCategories": {
+      "title": "Load Categories from Memory",
+      "description": "Cache categories for 1 day to improve load speed."
+    },
+    "stockLimit": {
+      "title": "Stock Threshold",
+      "description": "Unlist products that fall below this stock limit."
+    },
+    "requireImage": {
+      "title": "Image Requirement",
+      "description": "Prevent publishing products without an image."
+    },
+    "hideOutOfStock": {
+      "title": "Out-of-Stock Product Display",
+      "description": "Move out-of-stock products to the bottom of the list."
+    }
+  },
+  "common": {
+    "save": "Save"
+  },
+  "quickPayment": {
+    "title": "Quick Payment Settings",
+    "minAmount": "Minimum Payment Amount",
+    "paymentMethod": "Payment Method",
+    "methods": {
+      "card": "Credit Card",
+      "bank": "Wire Transfer / EFT",
+      "cash": "Cash on Delivery"
+    },
+    "toggles": {
+      "tckn": {
+        "label": "TCKN / VKN Required",
+        "desc": "Require national ID or tax number input."
+      },
+      "telefon": {
+        "label": "Phone Required",
+        "desc": "Phone number field must be filled in."
+      },
+      "eposta": {
+        "label": "Email Required",
+        "desc": "Email address is mandatory."
+      },
+      "adres": {
+        "label": "Address Required",
+        "desc": "Delivery address must be provided."
+      }
+    }
+  },
+  "common": {
+    "save": "Save"
+  },
+  "security": {
+    "title": "Security Settings",
+    "blockedIPs": {
+      "label": "Blocked IP List",
+      "description": "Write 1 IP address per line.",
+      "placeholder": "Enter IP addresses here."
+    }
+  },
+  "common": {
+    "save": "Save"
+  },
+  "seo": {
+    "title": "SEO Settings",
+    "default": {
+      "title": "Default SEO Settings",
+      "description": "You can set default SEO information of your site by filling in the fields below."
+    },
+    "fields": {
+      "title": "SEO Title",
+      "description": "SEO Description",
+      "keywords": "SEO Keywords"
+    },
+    "pages": {
+      "title": "Page-Based SEO Fields",
+      "page": "Page",
+      "seoTitle": "SEO Title",
+      "seoDescription": "SEO Description"
+    }
+  },
+  "common": {
+    "save": "Save",
+    "edit": "Edit"
+  },
+  "settingsMenu": {
+    "general": "General Settings",
+    "seo": "SEO Settings",
+    "marketing": "Marketing Tools",
+    "contracts": "Contracts",
+    "orders": "Order Settings",
+    "products": "Product Settings",
+    "payment-methods": "Payment Methods",
+    "exchange-rates": "Exchange Rates",
+    "shipping-companies": "Shipping Companies",
+    "shipping": "Shipping Settings",
+    "assembly-points": "Assembly Points",
+    "countries": "Countries",
+    "languages": "Languages",
+    "sms": "SMS Settings",
+    "sms-templates": "SMS Templates",
+    "email": "Email Settings",
+    "email-templates": "Email Templates",
+    "maintenance": "Maintenance Mode",
+    "balance": "Balance Settings",
+    "dealer": "Dealer Settings",
+    "dealer-xml": "Dealer XML Settings",
+    "quick-payment": "Quick Payment Settings",
+    "web-service": "Web Service Settings",
+    "admin-accounts": "Admin Accounts",
+    "security": "Security Settings",
+    "site": "Site Settings"
+  },
+  "shippingSettings": {
+    "title": "Shipping Settings",
+    "fixed": "Fixed Shipping Fees",
+    "category": "Category-Based Shipping Fees",
+    "desi": "Desi-Based Shipping Fees",
+    "rule1": "Fixed shipping fees are added to the cart total.",
+    "rule2": "Category-based fees are added per item in the cart.",
+    "rule3": "A product cannot have fixed, category and desi-based fees simultaneously.",
+    "rule4": "To apply shipping fees, the 'Buyer Pays Shipping' option must be enabled.",
+    "fixedPrice": "Fixed Shipping Fee",
+    "fixedType": "Fixed Shipping Fee Type",
+    "option1": "Apply to Buyer Pays Products",
+    "option2": "Apply to All Products",
+    "freeLimit": "Free Shipping Limit",
+    "addCategoryFee": "Add New Category Fee",
+    "addDesiFee": "Add New Desi Fee",
+    "fee": "Shipping Fee",
+    "desiNo": "Desi No",
+    "desiType": "Desi Type",
+    "desiStart": "Desi Start Value",
+    "desiEnd": "Desi End Value"
+  },
+  "common": {
+    "search": "🔍 Search...",
+    "no": "No",
+    "title": "Title",
+    "site": "Site",
+    "marketplace": "Marketplace",
+    "actions": "Actions",
+    "noData": "No records found.",
+    "save": "Save"
+  },
+  "shippingCompanies": {
+    "title": "Shipping Companies",
+    "addNew": "Add New Shipping Company",
+    "deliveryHours": "Delivery Hours",
+    "editModal": {
+      "title": "Company Details"
+    },
+    "addModal": {
+      "title": "New Shipping Company",
+      "description": "Please select the shipping company you want to add. If it's not listed, choose 'Other'."
+    },
+    "description": "Short Description",
+    "order": "Order",
+    "taxNumber": "Carrier Tax Number",
+    "memberGroup": "Member Group",
+    "customLogo": "Custom Logo",
+    "customDeliveryTime": "Custom Delivery Time for Dealers"
+  },
+  "common": {
+    "active": "✓ Active",
+    "passive": "✕ Passive",
+    "settings": "Settings",
+    "save": "Save",
+    "next": "Next",
+    "general": "General",
+    "api": "API",
+    "name": "Name",
+    "status": "Status",
+    "all": "All"
+  },
+  "siteSettings": {
+    "title": "Site Settings",
+    "siteUrl": "Site URL",
+    "domain": "Domain",
+    "licenseKey": "License Key",
+    "version": "Version",
+    "serverIp": "Server IP Address"
+  },
+  "smsSettings": {
+    "title": "SMS Settings",
+    "enabledLabel": "SMS Sending",
+    "enabledDesc": "You can enable this feature to activate SMS sending.",
+    "providerLabel": "SMS Provider",
+    "providerDesc": "You can choose the SMS provider to be used for sending messages.",
+    "titleLabel": "SMS Title",
+    "titleDesc": "Enter the title to be used when sending SMS.",
+    "adminPhoneLabel": "Admin Phone (for SMS notifications)",
+    "adminPhoneDesc": "Enter the admin phone number to be used for SMS notifications.",
+    "apiKeyLabel": "SMS API Key",
+    "apiKeyDesc": "Enter your SMS API key.",
+    "save": "✓ Save"
+  },
+  "smsTemplates": {
+    "title": "SMS Templates",
+    "selectLabel": "Please select the SMS sending action",
+    "selectPlaceholder": "Please select",
+    "selectedTemplate": "Selected Template:",
+    "groups": {
+      "member": "Member & Password Actions",
+      "contact": "Contact Actions",
+      "fault": "Fault Notifications",
+      "order": "Order Actions",
+      "payment": "Payment & Dealer Actions",
+      "product": "Product Suggestions & Alerts"
+    },
+    "templates": {
+      "newMember": "New member registration",
+      "passwordReset": "Password reset request",
+      "newContact": "New contact request",
+      "contactReply": "Contact request reply",
+      "newFault": "New fault notification",
+      "faultAdminReply": "Fault admin reply",
+      "faultUserReply": "Fault user reply",
+      "newOrder": "New order",
+      "orderPreparing": "Order is being prepared",
+      "orderShipped": "Order shipped",
+      "orderDelivered": "Order delivered",
+      "orderCancelled": "Order cancelled",
+      "orderCustomAction": "Custom order actions",
+      "moneyTransfer": "Customer bank transfer notification",
+      "newDealerPayment": "New dealer payment",
+      "dealerPaymentApproved": "Dealer payment approved",
+      "dealerPaymentRejected": "Dealer payment rejected",
+      "newDealerPassword": "New dealer password",
+      "quickPayment": "Quick payment process",
+      "productSuggest": "Customer product suggestion",
+      "priceAlert": "Customer price alert",
+      "stockAlert": "Customer stock alert",
+      "newSuggestion": "New product suggestion",
+      "suggestionReply": "Product suggestion reply"
+    }
+  },
+  "webService": {
+    "alert": "Web service is not included in your package. Please contact your system administrator to activate it.",
+    "searchPlaceholder": "🔍 Search...",
+    "newUser": "+ New User",
+    "downloadDocs": "Download API Docs",
+    "downloadSamples": "Download Sample Code",
+    "userNo": "User No",
+    "username": "Username",
+    "status": "Status",
+    "actions": "Actions",
+    "noData": "No records found.",
+    "active": "Active",
+    "passive": "Passive",
+    "notSelected": "Not Selected",
+    "required": "Required",
+    "save": "✓ Save",
+    "modal": {
+      "title": "New Web Service User",
+      "username": "Username",
+      "status": "User Status",
+      "permissions": "Permissions",
+      "apiKey": "API Key",
+      "apiSecret": "API Secret"
+    }
+  }
 }
 

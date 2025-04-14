@@ -1,37 +1,34 @@
 <template>
   <div class="payment-methods-page">
-    <h2 class="section-title">
-      Ödeme Yöntemleri
-    </h2>
+    <h2 class="section-title">{{ $t('paymentMethods.title') }}</h2>
 
     <div class="method-section active">
       <div class="section-header">
-        <span class="active-indicator">✔</span> Aktif Ödeme Yöntemleri
+        <span class="active-indicator">✔</span> {{ $t('paymentMethods.activeMethods') }}
       </div>
 
       <!-- Kredi Kartı -->
       <div class="payment-box">
         <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png" class="icon" />
         <div class="info">
-          <strong>Kredi Kartı</strong>
-          <p>Listeleme Adı: Kredi Kartı</p>
-          <p>Listeleme Sırası: 1</p>
+          <strong>{{ $t('paymentMethods.creditCard') }}</strong>
+          <p>{{ $t('paymentMethods.labelName') }}: {{ $t('paymentMethods.creditCard') }}</p>
+          <p>{{ $t('paymentMethods.labelOrder') }}: 1</p>
         </div>
         <div class="actions">
-          <button>Taksit Seçenekleri</button>
-          <button>Kısıtlamalar</button>
-          <button>Ayarlar</button>
+          <button>{{ $t('paymentMethods.installments') }}</button>
+          <button>{{ $t('paymentMethods.restrictions') }}</button>
+          <button>{{ $t('paymentMethods.settings') }}</button>
         </div>
       </div>
 
       <!-- Sanal POS Listesi -->
       <div class="sub-method">
-        <span class="sub-title">✔ Garanti Bankası Sanal Pos
-        </span>
+        <span class="sub-title">✔ {{ $t('paymentMethods.virtualPOS') }}</span>
         <ul>
           <li v-for="method in posMethods" :key="method.name">
             <span>{{ method.name }}</span>
-            <button>Bilgiler</button>
+            <button>{{ $t('paymentMethods.details') }}</button>
           </li>
         </ul>
       </div>
@@ -40,14 +37,14 @@
       <div class="payment-box">
         <img src="https://cdn-icons-png.flaticon.com/512/2203/2203140.png" class="icon" />
         <div class="info">
-          <strong>Havale / EFT</strong>
-          <p>Listeleme Adı: Banka Havalesi</p>
-          <p>Listeleme Sırası: 2</p>
+          <strong>{{ $t('paymentMethods.bankTransfer') }}</strong>
+          <p>{{ $t('paymentMethods.labelName') }}: {{ $t('paymentMethods.bankTransferName') }}</p>
+          <p>{{ $t('paymentMethods.labelOrder') }}: 2</p>
         </div>
         <div class="actions">
-          <button>Banka Hesapları</button>
-          <button>Kısıtlamalar</button>
-          <button>Ayarlar</button>
+          <button>{{ $t('paymentMethods.bankAccounts') }}</button>
+          <button>{{ $t('paymentMethods.restrictions') }}</button>
+          <button>{{ $t('paymentMethods.settings') }}</button>
         </div>
       </div>
     </div>
@@ -55,22 +52,18 @@
     <!-- Pasif Ödeme Yöntemleri -->
     <div class="method-section passive">
       <div class="section-header">
-        ❌ Pasif Ödeme Yöntemleri
+        ❌ {{ $t('paymentMethods.passiveMethods') }}
       </div>
 
-      <div
-        class="payment-box"
-        v-for="method in passiveMethods"
-        :key="method.name"
-      >
+      <div class="payment-box" v-for="method in passiveMethods" :key="method.name">
         <img :src="method.icon" class="icon" />
         <div class="info">
           <strong>{{ method.name }}</strong>
-          <p>Listeleme Adı: {{ method.listing }}</p>
-          <p>Listeleme Sırası: {{ method.order }}</p>
+          <p>{{ $t('paymentMethods.labelName') }}: {{ method.listing }}</p>
+          <p>{{ $t('paymentMethods.labelOrder') }}: {{ method.order }}</p>
         </div>
         <div class="actions">
-          <button>Aktif Et</button>
+          <button>{{ $t('paymentMethods.activate') }}</button>
         </div>
       </div>
     </div>

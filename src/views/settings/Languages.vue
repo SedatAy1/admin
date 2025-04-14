@@ -1,12 +1,12 @@
 <template>
   <div class="language-settings">
-    <h2 class="title">Diller</h2>
+    <h2 class="title">{{ $t('languages.title') }}</h2>
     <div class="top-bar">
-      <input v-model="search" placeholder="🔍 Ara..." class="search-input" />
+      <input v-model="search" :placeholder="$t('languages.search')" class="search-input" />
       <div class="actions">
-        <button class="gray-btn" @click="openModal('center')">🌐 Çeviri Merkezi</button>
-        <button class="yellow-btn" @click="openModal('new')">📝 Yeni Çeviri</button>
-        <button class="blue-btn" @click="openModal('operations')">📘 İşlemler</button>
+        <button class="gray-btn" @click="openModal('center')">🌐 {{ $t('languages.translationCenter') }}</button>
+        <button class="yellow-btn" @click="openModal('new')">📝 {{ $t('languages.newTranslation') }}</button>
+        <button class="blue-btn" @click="openModal('operations')">📘 {{ $t('languages.operations') }}</button>
       </div>
     </div>
 
@@ -14,14 +14,14 @@
       <thead>
         <tr>
           <th><input type="checkbox" /></th>
-          <th>Dil No</th>
-          <th>Kodu</th>
-          <th>Adı</th>
-          <th>Gerçek Adı</th>
-          <th>Varsayılan Para Birimi</th>
-          <th>Durum</th>
-          <th>Varsayılan</th>
-          <th>İşlemler</th>
+          <th>{{ $t('languages.id') }}</th>
+          <th>{{ $t('languages.code') }}</th>
+          <th>{{ $t('languages.name') }}</th>
+          <th>{{ $t('languages.realName') }}</th>
+          <th>{{ $t('languages.currency') }}</th>
+          <th>{{ $t('languages.status') }}</th>
+          <th>{{ $t('languages.default') }}</th>
+          <th>{{ $t('languages.actions') }}</th>
         </tr>
       </thead>
       <tbody>
@@ -32,14 +32,14 @@
           <td>{{ lang.name }}</td>
           <td>{{ lang.realName }}</td>
           <td>{{ lang.currency }}</td>
-          <td><span :class="['status', lang.active ? 'active' : 'passive']">{{ lang.active ? 'Aktif' : 'Pasif' }}</span></td>
-          <td><span :class="['status', lang.default ? 'active' : 'passive']">{{ lang.default ? 'Aktif' : 'Pasif' }}</span></td>
+          <td><span :class="['status', lang.active ? 'active' : 'passive']">{{ lang.active ? $t('languages.active') : $t('languages.passive') }}</span></td>
+          <td><span :class="['status', lang.default ? 'active' : 'passive']">{{ lang.default ? $t('languages.active') : $t('languages.passive') }}</span></td>
           <td>
             <div class="dropdown">
-              <button @click="toggleDropdown(lang.id)">İşlemler ⏷</button>
+              <button @click="toggleDropdown(lang.id)">{{ $t('languages.actions') }} ⏷</button>
               <ul v-if="dropdownOpen === lang.id" class="dropdown-menu">
-                <li>Hızlı Görüntüle</li>
-                <li>Sil</li>
+                <li>{{ $t('languages.quickView') }}</li>
+                <li>{{ $t('languages.delete') }}</li>
               </ul>
             </div>
           </td>
@@ -50,11 +50,11 @@
     <!-- Çeviri Merkezi Modal -->
     <div v-if="activeModal === 'center'" class="modal">
       <div class="modal-content">
-        <h3>Çeviri Merkezi</h3>
+        <h3>{{ $t('languages.translationCenter') }}</h3>
         <select v-model="selectedLang">
           <option v-for="lang in languages" :value="lang.code">{{ lang.name }}</option>
         </select>
-        <button class="blue-btn">✓ Çeviriye Başla</button>
+        <button class="blue-btn">✓ {{ $t('languages.startTranslation') }}</button>
         <button class="close-btn" @click="closeModal">✕</button>
       </div>
     </div>
@@ -62,12 +62,12 @@
     <!-- Yeni Çeviri Modal -->
     <div v-if="activeModal === 'new'" class="modal">
       <div class="modal-content">
-        <h3>Yeni Çeviri</h3>
-        <input placeholder="Benzersiz Kod" />
+        <h3>{{ $t('languages.newTranslation') }}</h3>
+        <input :placeholder="$t('languages.uniqueKey')" />
         <div v-for="lang in languages" :key="lang.code">
-          <input :placeholder="`[${lang.name} - ${lang.code}] Değer`" />
+          <input :placeholder="`[${lang.name} - ${lang.code}] ${$t('languages.value')}`" />
         </div>
-        <button class="blue-btn">✓ Kaydet</button>
+        <button class="blue-btn">✓ {{ $t('languages.save') }}</button>
         <button class="close-btn" @click="closeModal">✕</button>
       </div>
     </div>
@@ -75,14 +75,14 @@
     <!-- Dil İşlemleri Modal -->
     <div v-if="activeModal === 'operations'" class="modal">
       <div class="modal-content">
-        <h3>Dil İşlemleri</h3>
+        <h3>{{ $t('languages.languageOperations') }}</h3>
         <div class="tabs">
-          <button class="active">Dışa Aktar</button>
-          <button>İçe Aktar</button>
-          <button>Sıfırla</button>
+          <button class="active">{{ $t('languages.export') }}</button>
+          <button>{{ $t('languages.import') }}</button>
+          <button>{{ $t('languages.reset') }}</button>
         </div>
-        <p>Çeviri merkezindeki tüm veriler excel olarak dışarı aktarılacaktır.</p>
-        <button class="blue-btn">⬇ İndir</button>
+        <p>{{ $t('languages.exportInfo') }}</p>
+        <button class="blue-btn">⬇ {{ $t('languages.download') }}</button>
         <button class="close-btn" @click="closeModal">✕</button>
       </div>
     </div>

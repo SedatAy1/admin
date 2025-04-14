@@ -1,27 +1,27 @@
 <template>
   <div class="admin-accounts-page">
-    <h2 class="title">Yönetici Hesapları</h2>
+    <h2 class="title">{{ $t('adminAccounts.title') }}</h2>
     <div class="top-bar">
-      <input v-model="search" class="search-input" placeholder="🔍 Ara..." />
-      <button class="add-btn" @click="openNewAdminModal">+ Yeni Yönetici</button>
+      <input v-model="search" class="search-input" :placeholder="$t('adminAccounts.searchPlaceholder')" />
+      <button class="add-btn" @click="openNewAdminModal">{{ $t('adminAccounts.newAdminBtn') }}</button>
     </div>
 
     <table class="table">
       <thead>
         <tr>
-          <th>Yönetici No</th>
-          <th>Kullanıcı Adı</th>
-          <th>Yetki</th>
-          <th>IP Kısıtlaması</th>
-          <th>Saat Kısıtlaması</th>
-          <th>İşlemler</th>
+          <th>{{ $t('adminAccounts.id') }}</th>
+          <th>{{ $t('adminAccounts.username') }}</th>
+          <th>{{ $t('adminAccounts.role') }}</th>
+          <th>{{ $t('adminAccounts.ipRestriction') }}</th>
+          <th>{{ $t('adminAccounts.timeRestriction') }}</th>
+          <th>{{ $t('adminAccounts.actions') }}</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td colspan="6" class="no-data">
             <img src="https://cdn-icons-png.flaticon.com/512/6134/6134065.png" width="48" />
-            <p>Kayıt bulunamadı.</p>
+            <p>{{ $t('adminAccounts.noData') }}</p>
           </td>
         </tr>
       </tbody>
@@ -38,18 +38,18 @@
       <button>›</button>
       <button>»</button>
     </div>
-    <div class="total">7408 kayıttan 1 ile 15 arası gösteriliyor</div>
+    <div class="total">{{ $t('adminAccounts.totalText', { start: 1, end: 15, total: 7408 }) }}</div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+
 const search = ref('')
 const openNewAdminModal = () => {
   alert('Yeni Yönetici ekleme modalı açılacak.')
 }
 </script>
-
 <style scoped>
 .admin-accounts-page {
   font-family: 'Inter';

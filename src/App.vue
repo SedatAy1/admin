@@ -46,18 +46,56 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+/* === Font Ayarı: Tüm Projeye DM Sans ve Inter === */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;700&display=swap");
+
+body {
+  font-family: 'DM Sans', 'Inter', sans-serif;
+  font-size: 13px;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Başlıklar */
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+/* Metinler */
+p, td, th, span {
+  font-weight: 400;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+/* === Uygulama Ana Yapı === */
 .app-container {
   display: flex;
   min-height: 100vh;
   background: #f8f9fa;
   transition: background 0.3s ease;
 }
+
 html.dark .app-container {
   background: #0f172a;
 }
 
-/* Main Content */
+/* === Ana İçerik === */
 .main-content {
   flex-grow: 1;
   padding: 20px;
@@ -66,22 +104,22 @@ html.dark .app-container {
   background: #ffffff;
   color: #1f2937;
   transition: all 0.3s ease;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.03); /* soft border */
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03);
 }
 
 html.dark .main-content {
-  background: #1f2937; /* ✅ Koyu gri */
+  background: #1f2937;
   color: #f1f5f9;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
-/* Collapsed Sidebar (Desktop) */
+/* === Sidebar Daraltılmış Hali === */
 .sidebar.collapsed + .main-content {
   margin-left: 80px !important;
   width: calc(100% - 80px) !important;
 }
 
-/* Sidebar Temel Yapı (Mobil için) */
+/* === Mobil Görünüm === */
 @media (max-width: 992px) {
   .app-container {
     flex-direction: column;
@@ -127,6 +165,7 @@ html.dark .main-content {
     z-index: 1000;
   }
 }
+
 html.dark .sidebar {
   background-color: #0f172a !important;
   border-right: 1px solid #1e293b !important;

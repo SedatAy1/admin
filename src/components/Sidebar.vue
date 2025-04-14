@@ -2,11 +2,12 @@
   <aside :class="['sidebar', { 'collapsed': isCollapsed, 'mobile': isMobile }]">
 
     <!-- Sidebar Üst Kısım: Logo -->
-    <div class="sidebar-header">
-      <router-link to="/" class="logo">
-        <span v-if="!isCollapsed">{{ $t('sidebar.title') }}</span>
+    <div class="sidebar-header logo-wrapper">
+      <router-link to="/" class="logo-link">
+        <img src="@/assets/cropped_image.png" alt="Admin Panel Logo" class="logo-image" />
       </router-link>
     </div>
+
 
     <ul class="sidebar-menu">
       <!-- Siparişler -->
@@ -492,8 +493,8 @@ export default {
 <style scoped>
 /* === GENEL === */
 .icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   margin-right: 12px;
   stroke-width: 1.6;
   flex-shrink: 0;
@@ -508,39 +509,72 @@ export default {
   border: none;
   background: none;
   color: inherit;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 10px 14px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 15px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+
 .btn-toggle:hover {
-  background-color: #f5f5f5;
-  color: #007bff;
+  background-color: #f3f4f6;
+  color: #111827;
 }
 
 .btn-toggle:hover .icon {
-  stroke: #007bff;
-  transform: scale(1.15);
+  stroke: #111827;
+  transform: scale(1.05);
+}
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 0 16px 0; /* tüm padding'leri sıfırla, sadece alt boşluk */
+  margin-bottom: 12px; /* Menüden biraz ayır */
 }
 
+.logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+.logo-image {
+  height: 40px;
+  max-width: 100%;
+  object-fit: contain;
+}
+.sidebar-header[data-v-6dec5f19][data-v-6dec5f19] {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 0px;
+    padding-left: 13px;
+}
+.sidebar.collapsed .logo-image {
+  height: 32px;
+}
 .sidebar {
-  width: 250px;
+  width: 260px;
   height: 100vh;
   background: #fff;
-  border-right: 1px solid #ddd;
-  padding: 20px;
+  border-right: 1px solid #e5e7eb;
+  padding: 24px 18px;
   position: fixed;
   left: 0;
   top: 0;
   overflow-y: auto;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
   z-index: 1000;
 }
 
 .sidebar.collapsed {
   width: 80px;
-  padding: 10px;
+  padding: 24px 10px;
 }
 
 .sidebar.collapsed .btn-toggle {
@@ -555,16 +589,20 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
+}
+.sidebar-header[data-v-6dec5f19] {
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -22px;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
-  color: #333;
+  color: #111827;
 }
 
 .sidebar-menu {
@@ -574,83 +612,82 @@ export default {
 }
 
 .sidebar-menu li {
-  margin-bottom: 10px;
-  position: relative;
+  margin-bottom: 6px;
 }
 
 .sidebar-menu a {
   text-decoration: none;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  color: #333;
-  padding: 10px;
-  border-radius: 5px;
-  transition: 0.3s;
+  color: #374151;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: 0.2s ease;
 }
 
 .sidebar-menu a:hover {
-  background: #f8f9fa;
+  background: #f3f4f6;
+  color: #111827;
 }
 
 .sidebar-menu .router-link-active {
-  background: #e9f1ff;
-  color: #007bff;
+  background: #f97316;
+  color: #fff;
   font-weight: 500;
 }
 
 .sidebar-menu .router-link-active .icon {
-  stroke: #007bff;
+  stroke: #fff;
 }
 
 .submenu {
   list-style: none;
-  padding-left: 20px;
-  margin-top: 5px;
+  padding-left: 16px;
+  margin-top: 6px;
 }
 
 .submenu li a {
-  font-size: 14px;
+  font-size: 13px;
   padding: 8px 10px;
-  color: #555;
+  color: #6b7280;
   display: block;
-  border-radius: 4px;
-  transition: 0.2s ease;
+  border-radius: 8px;
 }
 
 .submenu li a:hover {
-  background: #f1f1f1;
-  color: #000;
+  background: #f1f5f9;
+  color: #111827;
 }
 
 /* === DARK MODE === */
 :deep(html.dark) .sidebar {
-  background-color: #0f172a !important;
-  border-right: 1px solid #1e293b !important;
-  color: #f1f5f9 !important;
+  background-color: #0f172a;
+  border-right: 1px solid #1e293b;
+  color: #f1f5f9;
 }
 
 :deep(html.dark) .sidebar-menu a {
-  color: #cbd5e1 !important;
+  color: #94a3b8;
 }
 
 :deep(html.dark) .sidebar-menu a:hover {
-  background: #1e293b !important;
-  color: #ffffff !important;
+  background: #1e293b;
+  color: #ffffff;
 }
 
 :deep(html.dark) .sidebar-menu .router-link-active {
-  background: #2563eb !important;
-  color: #ffffff !important;
+  background: #2563eb;
+  color: #ffffff;
   font-weight: 600;
 }
 
 :deep(html.dark) .sidebar-menu .router-link-active .icon {
-  stroke: #ffffff !important;
+  stroke: #ffffff;
 }
 
 :deep(html.dark) .icon {
-  stroke: #f1f5f9 !important;
+  stroke: #f1f5f9;
 }
 
 /* === RESPONSIVE === */
@@ -671,11 +708,6 @@ export default {
 
   .sidebar.mobile-open {
     transform: translateX(0);
-  }
-
-  :deep(html.dark) .sidebar {
-    background: #0f172a !important;
-    border-color: #1e293b !important;
   }
 
   .sidebar.collapsed {

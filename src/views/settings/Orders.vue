@@ -1,6 +1,6 @@
 <template>
   <div class="orders-settings">
-    <h2 class="page-title">Sipariş Ayarları</h2>
+    <h2 class="page-title">{{ $t('order.title') }}</h2>
 
     <div class="setting-group" v-for="setting in settings" :key="setting.key">
       <div class="setting-icon">
@@ -8,10 +8,10 @@
       </div>
       <div class="setting-content">
         <h3 class="setting-title">
-          {{ setting.title }}
-          <span v-if="setting.badge" class="badge">{{ setting.badge }}</span>
+          {{ $t(`order.${setting.key}.title`) }}
+          <span v-if="setting.badge" class="badge">{{ $t('order.badge') }}</span>
         </h3>
-        <p class="setting-description">{{ setting.description }}</p>
+        <p class="setting-description">{{ $t(`order.${setting.key}.description`) }}</p>
         <component
           :is="setting.type === 'toggle' ? 'input' : 'input'"
           v-if="setting.type !== 'textarea'"
@@ -27,32 +27,31 @@
       </div>
     </div>
 
-    <div class="section-divider">Sipariş Sayfasında hangi bilgiler zorunlu olarak istersin?</div>
+    <div class="section-divider">{{ $t('order.requiredOrderFieldsTitle') }}</div>
     <div class="setting-group" v-for="setting in orderRequiredFields" :key="setting.key">
       <div class="setting-icon">
         <span v-html="setting.icon" />
       </div>
       <div class="setting-content">
-        <h3 class="setting-title">{{ setting.title }}</h3>
+        <h3 class="setting-title">{{ $t(`order.${setting.key}`) }}</h3>
         <input type="checkbox" v-model="formData[setting.key]" class="setting-control" />
       </div>
     </div>
 
-    <div class="section-divider">Hızlı Satış ekranında hangi bilgiler zorunlu olarak istersin?</div>
+    <div class="section-divider">{{ $t('order.requiredFastSaleFieldsTitle') }}</div>
     <div class="setting-group" v-for="setting in fastSaleFields" :key="setting.key">
       <div class="setting-icon">
         <span v-html="setting.icon" />
       </div>
       <div class="setting-content">
-        <h3 class="setting-title">{{ setting.title }}</h3>
+        <h3 class="setting-title">{{ $t(`order.${setting.key}`) }}</h3>
         <input type="checkbox" v-model="formData[setting.key]" class="setting-control" />
       </div>
     </div>
 
-    <button class="save-btn" @click="saveSettings">✓ Kaydet</button>
+    <button class="save-btn" @click="saveSettings">✓ {{ $t('ui.save') }}</button>
   </div>
 </template>
-
 <script setup>
 import { reactive } from 'vue'
 

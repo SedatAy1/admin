@@ -1,24 +1,24 @@
 <template>
   <div class="assembly-points">
-    <h2 class="title">Montaj Noktaları</h2>
-    <input v-model="search" type="text" placeholder="🔍 Ara..." class="search-box" />
+    <h2 class="title">{{ $t('assembly.title') }}</h2>
+    <input v-model="search" type="text" :placeholder="$t('assembly.search')" class="search-box" />
 
     <table class="table">
       <thead>
         <tr>
           <th>#</th>
-          <th>Firma Adı</th>
-          <th>Telefon</th>
-          <th>İl</th>
-          <th>İlçe</th>
-          <th>İşlemler</th>
+          <th>{{ $t('assembly.company') }}</th>
+          <th>{{ $t('assembly.phone') }}</th>
+          <th>{{ $t('assembly.city') }}</th>
+          <th>{{ $t('assembly.district') }}</th>
+          <th>{{ $t('assembly.actions') }}</th>
         </tr>
       </thead>
       <tbody>
         <tr v-if="filteredPoints.length === 0">
           <td colspan="6" class="empty">
             <img src="https://www.svgrepo.com/show/397426/empty-box.svg" alt="empty" width="80" />
-            <p>Kayıt bulunamadı.</p>
+            <p>{{ $t('assembly.noData') }}</p>
           </td>
         </tr>
         <tr v-for="(point, index) in filteredPoints" :key="point.id">
@@ -28,8 +28,8 @@
           <td>{{ point.city }}</td>
           <td>{{ point.district }}</td>
           <td>
-            <button class="action-btn">Düzenle</button>
-            <button class="action-btn delete">Sil</button>
+            <button class="action-btn">{{ $t('assembly.edit') }}</button>
+            <button class="action-btn delete">{{ $t('assembly.delete') }}</button>
           </td>
         </tr>
       </tbody>
@@ -41,7 +41,7 @@
 import { ref, computed } from 'vue'
 
 const search = ref('')
-const points = ref([]) // API'den gelecek veya elle eklenecek
+const points = ref([]) // API'den veri gelecek
 
 const filteredPoints = computed(() => {
   return points.value.filter(point =>
@@ -49,7 +49,6 @@ const filteredPoints = computed(() => {
   )
 })
 </script>
-
 <style scoped>
 .assembly-points {
   background: #fff;

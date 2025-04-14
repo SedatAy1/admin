@@ -1,12 +1,12 @@
 <template>
   <div class="sms-settings">
-    <h2 class="title">SMS Ayarları</h2>
+    <h2 class="title">{{ $t("smsSettings.title") }}</h2>
 
     <div class="setting-row">
       <i class="icon">💬</i>
       <div>
-        <label>SMS Gönderimi</label>
-        <p>SMS gönderimini aktif etmek için bu özelliği aktif edebilirsiniz.</p>
+        <label>{{ $t("smsSettings.enabledLabel") }}</label>
+        <p>{{ $t("smsSettings.enabledDesc") }}</p>
       </div>
       <input type="checkbox" v-model="form.enabled" class="toggle" />
     </div>
@@ -14,8 +14,8 @@
     <div class="setting-row">
       <i class="icon">📩</i>
       <div>
-        <label>SMS Firması</label>
-        <p>SMS gönderimleriniz için kullanılacak SMS firmasını seçebilirsiniz.</p>
+        <label>{{ $t("smsSettings.providerLabel") }}</label>
+        <p>{{ $t("smsSettings.providerDesc") }}</p>
       </div>
       <select v-model="form.provider">
         <option value="NormalSMS">NormalSMS</option>
@@ -29,31 +29,31 @@
     <div class="setting-row">
       <i class="icon">📝</i>
       <div>
-        <label>SMS Başlığı</label>
-        <p>SMS gönderimi yapılırken kullanılacak başlığı giriniz.</p>
+        <label>{{ $t("smsSettings.titleLabel") }}</label>
+        <p>{{ $t("smsSettings.titleDesc") }}</p>
       </div>
-      <input v-model="form.title" placeholder="SMS Başlığı giriniz." />
+      <input v-model="form.title" :placeholder="$t('smsSettings.titleDesc')" />
     </div>
 
     <div class="setting-row">
       <i class="icon">📱</i>
       <div>
-        <label>Yönetici Telefonu (SMS bildirimleri için)</label>
-        <p>SMS bildirimi için kullanılacak yönetici telefon numarasını giriniz.</p>
+        <label>{{ $t("smsSettings.adminPhoneLabel") }}</label>
+        <p>{{ $t("smsSettings.adminPhoneDesc") }}</p>
       </div>
-      <input v-model="form.phone" placeholder="Yönetici telefon numarası giriniz." />
+      <input v-model="form.phone" :placeholder="$t('smsSettings.adminPhoneDesc')" />
     </div>
 
     <div class="setting-row">
       <i class="icon">🔑</i>
       <div>
-        <label>SMS API Key</label>
-        <p>SMS API keyinizi giriniz.</p>
+        <label>{{ $t("smsSettings.apiKeyLabel") }}</label>
+        <p>{{ $t("smsSettings.apiKeyDesc") }}</p>
       </div>
-      <input v-model="form.apiKey" placeholder="API keyinizi giriniz." />
+      <input v-model="form.apiKey" :placeholder="$t('smsSettings.apiKeyDesc')" />
     </div>
 
-    <button class="save-btn" @click="save">✓ Kaydet</button>
+    <button class="save-btn" @click="save">{{ $t("smsSettings.save") }}</button>
   </div>
 </template>
 

@@ -1,17 +1,21 @@
 <template>
   <div class="security-settings">
-    <h2 class="title">Güvenlik Ayarları</h2>
+    <h2 class="title">{{ $t('security.title') }}</h2>
 
     <div class="card">
       <label class="label">
         <span class="icon">🔒</span>
-        Engellenen IP Listesi
+        {{ $t('security.blockedIPs.label') }}
       </label>
-      <p class="description">Her satıra 1 IP adresi yazınız.</p>
-      <textarea v-model="ipList" placeholder="IP Numaralarını buraya ekleyiniz." class="textarea"></textarea>
+      <p class="description">{{ $t('security.blockedIPs.description') }}</p>
+      <textarea
+        v-model="ipList"
+        :placeholder="$t('security.blockedIPs.placeholder')"
+        class="textarea"
+      ></textarea>
     </div>
 
-    <button class="save-btn" @click="save">✓ Kaydet</button>
+    <button class="save-btn" @click="save">✓ {{ $t('common.save') }}</button>
   </div>
 </template>
 

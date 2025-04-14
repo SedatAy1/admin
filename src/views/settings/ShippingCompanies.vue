@@ -1,13 +1,11 @@
 <template>
   <div class="shipping-page">
-    <h2 class="page-title">Kargo Firmaları</h2>
+    <h2 class="page-title">{{ $t('shippingCompanies.title') }}</h2>
 
-    <!-- Yeni Ekle Butonu -->
     <div class="add-box" @click="showAddModal = true">
-      <span>＋ Yeni Kargo Firması Ekle</span>
+      <span>＋ {{ $t('shippingCompanies.addNew') }}</span>
     </div>
 
-    <!-- Firma Kartları -->
     <div v-for="company in shippingCompanies" :key="company.id" class="company-card">
       <div class="left">
         <img :src="company.logo" class="logo" />
@@ -15,30 +13,28 @@
       </div>
       <div class="center">
         <button :class="company.active ? 'btn-active' : 'btn-passive'">
-          {{ company.active ? '✓ Aktif' : '✕ Pasif' }}
+          {{ company.active ? $t('common.active') : $t('common.passive') }}
         </button>
-        <button class="btn-outline">📦 Teslimat Saatleri</button>
-        <button class="btn-settings" @click="openEditModal(company)">⚙ Ayarlar</button>
+        <button class="btn-outline">{{ $t('shippingCompanies.deliveryHours') }}</button>
+        <button class="btn-settings" @click="openEditModal(company)">{{ $t('common.settings') }}</button>
       </div>
       <div class="right">0</div>
     </div>
 
-    <!-- Yeni Firma Seçim Modali -->
+    <!-- Yeni Firma Modali -->
     <div class="modal" v-if="showAddModal">
       <div class="modal-box">
         <div class="modal-header">
-          <h3>Yeni Kargo Firması</h3>
+          <h3>{{ $t('shippingCompanies.addModal.title') }}</h3>
           <button class="close" @click="showAddModal = false">×</button>
         </div>
-        <p class="info-text">
-          Lütfen eklemek istediğiniz kargo firmasını seçin. Eğer listede bulunmayan bir firma ise "Diğer" seçeneğini seçebilirsiniz.
-        </p>
+        <p class="info-text">{{ $t('shippingCompanies.addModal.description') }}</p>
         <div class="radio-list">
           <label v-for="firm in firmOptions" :key="firm">
             <input type="radio" v-model="selectedFirm" :value="firm" /> {{ firm }}
           </label>
         </div>
-        <button class="next-btn" @click="confirmAdd">➡ İleri</button>
+        <button class="next-btn" @click="confirmAdd">➡ {{ $t('common.next') }}</button>
       </div>
     </div>
 
@@ -46,49 +42,50 @@
     <div class="modal" v-if="showEditModal">
       <div class="modal-box">
         <div class="modal-header">
-          <h3>{{ selectedCompany.name }} Firması Detayı</h3>
+          <h3>{{ selectedCompany.name }} {{ $t('shippingCompanies.editModal.title') }}</h3>
           <button class="close" @click="showEditModal = false">×</button>
         </div>
 
         <div class="tabs">
-          <button :class="activeTab === 'genel' ? 'active' : ''" @click="activeTab = 'genel'">⚙ Genel Bilgiler</button>
-          <button :class="activeTab === 'api' ? 'active' : ''" @click="activeTab = 'api'"></button>
+          <button :class="{ active: activeTab === 'genel' }" @click="activeTab = 'genel'">
+            ⚙ {{ $t('common.general') }}
+          </button>
+          <button :class="{ active: activeTab === 'api' }" @click="activeTab = 'api'">
+            {{ $t('common.api') }}
+          </button>
         </div>
 
         <div v-if="activeTab === 'genel'" class="form">
           <div class="form-row">
-            <label>Adı</label>
+            <label>{{ $t('common.name') }}</label>
             <input v-model="selectedCompany.name" />
-            <label>Durum</label>
+            <label>{{ $t('common.status') }}</label>
             <select v-model="selectedCompany.active">
-              <option :value="true">Aktif</option>
-              <option :value="false">Pasif</option>
+              <option :value="true">{{ $t('common.active') }}</option>
+              <option :value="false">{{ $t('common.passive') }}</option>
             </select>
           </div>
           <div class="form-row">
-            <label>Kısa Açıklaması</label>
+            <label>{{ $t('shippingCompanies.description') }}</label>
             <input />
-            <label>Sıra</label>
+            <label>{{ $t('shippingCompanies.order') }}</label>
             <input type="number" />
           </div>
           <div class="form-row">
-            <label>Taşıyıcı VKN</label>
+            <label>{{ $t('shippingCompanies.taxNumber') }}</label>
             <input />
-            <label>Üye Grubu</label>
-            <select>
-              <option>Hepsi</option>
-            </select>
+            <label>{{ $t('shippingCompanies.memberGroup') }}</label>
+            <select><option>{{ $t('common.all') }}</option></select>
           </div>
-          <label><input type="checkbox" /> Özel Logo</label>
-          <label><input type="checkbox" /> Bayiler İçin Özel Teslimat Süresi</label>
+          <label><input type="checkbox" /> {{ $t('shippingCompanies.customLogo') }}</label>
+          <label><input type="checkbox" /> {{ $t('shippingCompanies.customDeliveryTime') }}</label>
         </div>
 
-        <button class="save-btn">✓ Kaydet</button>
+        <button class="save-btn">✓ {{ $t('common.save') }}</button>
       </div>
     </div>
   </div>
 </template>
-
 <script setup>
 import { ref } from 'vue'
 

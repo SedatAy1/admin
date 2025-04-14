@@ -1,13 +1,13 @@
 <template>
   <div class="dealer-settings">
-    <h2 class="title">Bayi Ayarları</h2>
+    <h2 class="title">{{ $t('dealerSettings.title') }}</h2>
 
     <div class="setting" v-for="(setting, index) in settings" :key="index">
       <div class="setting-header">
         <div class="icon">{{ setting.icon }}</div>
         <div>
-          <div class="label">{{ setting.label }}</div>
-          <div class="description">{{ setting.description }}</div>
+          <div class="label">{{ $t(`dealerSettings.settings[${index}].label`) }}</div>
+          <div class="description">{{ $t(`dealerSettings.settings[${index}].description`) }}</div>
         </div>
         <div v-if="setting.type === 'toggle'" class="switch">
           <input type="checkbox" v-model="setting.value" />
@@ -17,13 +17,15 @@
         </div>
         <div v-if="setting.type === 'select'" class="select">
           <select v-model="setting.value">
-            <option v-for="option in setting.options" :key="option" :value="option">{{ option }}</option>
+            <option v-for="option in setting.options" :key="option" :value="option">
+              {{ $t(`dealerSettings.options.${option}`) }}
+            </option>
           </select>
         </div>
       </div>
     </div>
 
-    <button class="save-btn">✓ Kaydet</button>
+    <button class="save-btn">✓ {{ $t('dealerSettings.save') }}</button>
   </div>
 </template>
 
@@ -31,20 +33,20 @@
 import { reactive } from 'vue'
 
 const settings = reactive([
-  { label: 'Bayi Başvuru Sayfası', description: 'Bayi başvuru sayfasını aktif ederseniz bayilik başvurusu yapılabilecektir.', icon: '📄', type: 'toggle', value: false },
-  { label: 'Açık Hesap Eksik Bakiye Limit (0: limitsiz)', description: 'Bayilerin açık hesap bakiyelerinin eksik limitini belirler.', icon: '📉', type: 'input', value: '1000' },
-  { label: 'Sadece Onaylı Bayiler Giriş Yapabilir', description: 'Aktif edildiğinde sadece onaylı bayiler sisteme giriş yapabilir.', icon: '✅', type: 'toggle', value: false },
-  { label: 'Dropship Bayi Kargo Fişini Kullan', description: 'Dropshipping yapan bayiler için özel kargo fişi şablonu.', icon: '📦', type: 'toggle', value: false },
-  { label: 'Eksik(-) Stok Sınırı', description: 'Bayilerin sipariş verebileceği minimum stok miktarını belirler.', icon: '📉', type: 'input', value: '0' },
-  { label: 'Sepete Eklenen Ürünlerde Eksik(-) Stok Sınırı', description: 'Sepete eklenebilecek ürünler için minimum stok miktarını belirler.', icon: '🛒', type: 'input', value: '0' },
-  { label: 'Bayi Fiyat Tanımı (Varsayılan)', description: 'Bayilere gösterilecek varsayılan fiyat tipini seçin.', icon: '💰', type: 'select', options: ['Satış Fiyatı', 'İndirimli Fiyat'], value: 'Satış Fiyatı' },
-  { label: 'Üyeler İçin Eksik(-) Stok Sınırı', description: 'Üyelerin sipariş verebileceği minimum stok miktarını belirler.', icon: '👥', type: 'input', value: '0' },
-  { label: 'Üyeler İçin Sepete Eklenen Ürünlerde Eksik(-) Stok Sınırı', description: 'Üyelerin sepete ekleyebileceği ürünler için minimum stok miktarını belirler.', icon: '🛍️', type: 'input', value: '0' },
-  { label: 'Ziyaretçiler İçin Eksik(-) Stok Sınırı', description: 'Ziyaretçilerin sipariş verebileceği minimum stok miktarını belirler.', icon: '🌐', type: 'input', value: '0' },
-  { label: 'Ziyaretçiler İçin Sepete Eklenen Ürünlerde Eksik(-) Stok Sınırı', description: 'Ziyaretçilerin sepete ekleyebileceği ürünler için minimum stok miktarını belirler.', icon: '🛒', type: 'input', value: '0' },
-  { label: 'Bayi Siparişleri Bayi Hareketlerine İşlensin', description: 'Bayi siparişlerinin bayi hareket listesinde görüntülenmesini sağlar.', icon: '📊', type: 'toggle', value: true },
-  { label: 'Bayilere Özel Minimum Sipariş Tutarı', description: 'Bayilerin sipariş verebilmesi için minimum sipariş tutarı zorunluluğu getirir.', icon: '⚠️', type: 'toggle', value: false },
-  { label: 'Bayi Minimum Sipariş Tutarı (TL)', description: 'Bayilerin sipariş verebilmesi için gerekli olan minimum tutarı belirler.', icon: '💵', type: 'input', value: '0' }
+  { icon: '📄', type: 'toggle', value: false },
+  { icon: '📉', type: 'input', value: '1000' },
+  { icon: '✅', type: 'toggle', value: false },
+  { icon: '📦', type: 'toggle', value: false },
+  { icon: '📉', type: 'input', value: '0' },
+  { icon: '🛒', type: 'input', value: '0' },
+  { icon: '💰', type: 'select', options: ['sale', 'discount'], value: 'sale' },
+  { icon: '👥', type: 'input', value: '0' },
+  { icon: '🛍️', type: 'input', value: '0' },
+  { icon: '🌐', type: 'input', value: '0' },
+  { icon: '🛒', type: 'input', value: '0' },
+  { icon: '📊', type: 'toggle', value: true },
+  { icon: '⚠️', type: 'toggle', value: false },
+  { icon: '💵', type: 'input', value: '0' }
 ])
 </script>
 

@@ -3,15 +3,20 @@
     <div class="info-box">
       <i class="bi bi-info-circle-fill"></i>
       <p>
-        Aşağıdaki butonlara tıklayarak sözleşmeleri düzenleyebilirsiniz. <br />
-        Sözleşmeler üye kayıt ve sipariş adımlarında kullanılmaktadır.
+        {{ $t('contracts.description1') }}<br />
+        {{ $t('contracts.description2') }}
       </p>
     </div>
 
     <div class="contract-grid">
-      <div v-for="contract in contracts" :key="contract.key" class="contract-card" @click="editContract(contract)">
+      <div
+        v-for="contract in contracts"
+        :key="contract.key"
+        class="contract-card"
+        @click="editContract(contract)"
+      >
         <i :class="contract.icon"></i>
-        <h5>{{ contract.title }}</h5>
+        <h5>{{ $t(`contracts.types.${contract.key}`) }}</h5>
       </div>
     </div>
   </div>
@@ -21,17 +26,16 @@
 import { ref } from 'vue'
 
 const contracts = ref([
-  { key: 'membership', title: 'Üyelik Kuralları', icon: 'bi bi-person-shield-fill' },
-  { key: 'kvkk', title: 'KVKK Politikası', icon: 'bi bi-person-fill-lock' },
-  { key: 'orderPre', title: 'Sipariş Ön Bilgilendirme Kuralları', icon: 'bi bi-file-earmark-text-fill' },
-  { key: 'distance', title: 'Sipariş Mesafeli Satış Sözleşmesi', icon: 'bi bi-handshake-fill' },
-  { key: 'email', title: 'Ticari Elektronik İleti İzni Aydınlatma Metni', icon: 'bi bi-envelope-fill' },
-  { key: 'dealer', title: 'Bayiilik Sözleşmesi', icon: 'bi bi-people-fill' }
+  { key: 'membership', icon: 'bi bi-person-shield-fill' },
+  { key: 'kvkk', icon: 'bi bi-person-fill-lock' },
+  { key: 'orderPre', icon: 'bi bi-file-earmark-text-fill' },
+  { key: 'distance', icon: 'bi bi-handshake-fill' },
+  { key: 'email', icon: 'bi bi-envelope-fill' },
+  { key: 'dealer', icon: 'bi bi-people-fill' }
 ])
 
 const editContract = (contract) => {
-  alert(`Düzenle: ${contract.title}`)
-  // Modal veya başka işlem burada açılacak
+  alert(`Düzenle: ${contract.key}`)
 }
 </script>
 

@@ -1,31 +1,31 @@
 <template>
   <div class="quick-payment-settings">
-    <h2 class="title">Hızlı Ödeme Ayarları</h2>
+    <h2 class="title">{{ $t('quickPayment.title') }}</h2>
 
     <div class="grid grid-cols-2 gap-4">
       <div class="toggle-item" v-for="item in toggles" :key="item.key">
-        <label class="label">{{ item.label }}</label>
-        <p class="desc">Açıklama yazılacak.</p>
+        <label class="label">{{ $t(`quickPayment.toggles.${item.key}.label`) }}</label>
+        <p class="desc">{{ $t(`quickPayment.toggles.${item.key}.desc`) }}</p>
         <input type="checkbox" v-model="item.value" />
       </div>
     </div>
 
     <div class="form-grid">
       <div>
-        <label>Minimum Ödeme Tutarı</label>
+        <label>{{ $t('quickPayment.minAmount') }}</label>
         <input type="number" v-model="minAmount" class="input" />
       </div>
       <div>
-        <label>Ödeme Yöntemi</label>
+        <label>{{ $t('quickPayment.paymentMethod') }}</label>
         <select v-model="paymentMethod" class="input">
-          <option>Kredi Kartı</option>
-          <option>Havale / EFT</option>
-          <option>Kapıda Ödeme</option>
+          <option value="Kredi Kartı">{{ $t('quickPayment.methods.card') }}</option>
+          <option value="Havale / EFT">{{ $t('quickPayment.methods.bank') }}</option>
+          <option value="Kapıda Ödeme">{{ $t('quickPayment.methods.cash') }}</option>
         </select>
       </div>
     </div>
 
-    <button class="save-button" @click="save">✓ Kaydet</button>
+    <button class="save-button" @click="save">✓ {{ $t('common.save') }}</button>
   </div>
 </template>
 
@@ -33,10 +33,10 @@
 import { reactive, ref } from 'vue'
 
 const toggles = reactive([
-  { key: 'tckn', label: 'TCKN / VKN Zorunluluğu', value: false },
-  { key: 'telefon', label: 'Telefon Zorunluluğu', value: false },
-  { key: 'eposta', label: 'E-Posta Zorunluluğu', value: false },
-  { key: 'adres', label: 'Adres Zorunluluğu', value: false }
+  { key: 'tckn', value: false },
+  { key: 'telefon', value: false },
+  { key: 'eposta', value: false },
+  { key: 'adres', value: false }
 ])
 
 const minAmount = ref(0)

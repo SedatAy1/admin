@@ -1,170 +1,118 @@
 <template>
   <div class="shipping-settings">
-    <h2 class="title">Kargo Ayarları</h2>
+    <h2 class="title">{{ $t('shippingSettings.title') }}</h2>
 
     <div class="tabs">
       <button :class="{ active: activeTab === 'fixed' }" @click="activeTab = 'fixed'">
-        Sabit Kargo Ücretleri
+        {{ $t('shippingSettings.fixed') }}
       </button>
       <button :class="{ active: activeTab === 'category' }" @click="activeTab = 'category'">
-        Kategori Bazlı Kargo Ücretleri
+        {{ $t('shippingSettings.category') }}
       </button>
       <button :class="{ active: activeTab === 'desi' }" @click="activeTab = 'desi'">
-        Desi Bazlı Kargo Ücretleri
+        {{ $t('shippingSettings.desi') }}
       </button>
     </div>
 
+    <div class="info-box">
+      <ul>
+        <li>{{ $t('shippingSettings.rule1') }}</li>
+        <li>{{ $t('shippingSettings.rule2') }}</li>
+        <li>{{ $t('shippingSettings.rule3') }}</li>
+        <li>{{ $t('shippingSettings.rule4') }}</li>
+      </ul>
+    </div>
+
     <div v-if="activeTab === 'fixed'">
-      <div class="info-box">
-        <ul>
-          <li>Sabit kargo ücretleri sepet tutarına eklenmektedir.</li>
-          <li>Kategori bazlı ücretler sepetteki her ürün için eklenir.</li>
-          <li>Bir ürünü aynı anda sabit, kategori ve desi bazlı kargo ücreti uygulanamaz.</li>
-          <li>Ürünlere kargo ücreti eklenmesi için "Kargo Alıcı Öder" seçeneğinin aktif edilmesi gerekir.</li>
-        </ul>
-      </div>
       <div class="grid">
         <div>
-          <label>Sabit Kargo Ücreti</label>
+          <label>{{ $t('shippingSettings.fixedPrice') }}</label>
           <input type="number" v-model="fixed.price" />
         </div>
         <div>
-          <label>Sabit Kargo Ücret Tipi</label>
+          <label>{{ $t('shippingSettings.fixedType') }}</label>
           <select v-model="fixed.type">
-            <option>Alıcı Ödemeli Ürünlere Ekle</option>
-            <option>Tüm Ürünlere Uygula</option>
+            <option>{{ $t('shippingSettings.option1') }}</option>
+            <option>{{ $t('shippingSettings.option2') }}</option>
           </select>
         </div>
       </div>
       <div>
-        <label>Ücretsiz Kargo Limiti</label>
+        <label>{{ $t('shippingSettings.freeLimit') }}</label>
         <input type="number" v-model="fixed.freeLimit" />
       </div>
-      <button class="primary-btn">Kaydet</button>
+      <button class="primary-btn">{{ $t('common.save') }}</button>
     </div>
 
     <div v-if="activeTab === 'category'">
-      <div class="info-box">
-        <ul>
-          <li>Sabit kargo ücretleri sepet tutarına eklenmektedir.</li>
-          <li>Kategori bazlı ücretler sepetteki her ürün için eklenir.</li>
-          <li>Bir ürünü aynı anda sabit, kategori ve desi bazlı kargo ücreti uygulanamaz.</li>
-          <li>Ürünlere kargo ücreti eklenmesi için "Kargo Alıcı Öder" seçeneğinin aktif edilmesi gerekir.</li>
-        </ul>
-      </div>
       <div class="search-bar">
-        <input type="text" placeholder="🔍 Ara..." />
+        <input type="text" :placeholder="$t('common.search')" />
         <button class="primary-btn" @click="showCategoryModal = true">
-          + Yeni Kategori Ücreti
+          + {{ $t('shippingSettings.addCategoryFee') }}
         </button>
       </div>
       <table>
         <thead>
           <tr>
             <th>#</th>
-            <th>No</th>
-            <th>Başlık</th>
-            <th>Kargo Ücreti</th>
-            <th>Site</th>
-            <th>Pazaryeri</th>
-            <th>İşlemler</th>
+            <th>{{ $t('common.no') }}</th>
+            <th>{{ $t('common.title') }}</th>
+            <th>{{ $t('shippingSettings.fee') }}</th>
+            <th>{{ $t('common.site') }}</th>
+            <th>{{ $t('common.marketplace') }}</th>
+            <th>{{ $t('common.actions') }}</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td colspan="7" class="empty">Kayıt bulunamadı.</td>
+            <td colspan="7" class="empty">{{ $t('common.noData') }}</td>
           </tr>
         </tbody>
       </table>
     </div>
 
     <div v-if="activeTab === 'desi'">
-      <div class="info-box">
-        <ul>
-          <li>Sabit kargo ücretleri sepet tutarına eklenmektedir.</li>
-          <li>Kategori bazlı ücretler sepetteki her ürün için eklenir.</li>
-          <li>Bir ürünü aynı anda sabit, kategori ve desi bazlı kargo ücreti uygulanamaz.</li>
-          <li>Ürünlere kargo ücreti eklenmesi için "Kargo Alıcı Öder" seçeneğinin aktif edilmesi gerekir.</li>
-        </ul>
-      </div>
       <div class="search-bar">
-        <input type="text" placeholder="🔍 Ara..." />
+        <input type="text" :placeholder="$t('common.search')" />
         <button class="primary-btn" @click="showDesiModal = true">
-          + Yeni Desi Ücreti
+          + {{ $t('shippingSettings.addDesiFee') }}
         </button>
       </div>
       <table>
         <thead>
           <tr>
             <th>#</th>
-            <th>Desi No</th>
-            <th>Desi Tipi</th>
-            <th>Desi Başlangıç Değeri</th>
-            <th>Desi Bitiş Değeri</th>
-            <th>Ücret</th>
-            <th>Pazaryeri</th>
-            <th>İşlemler</th>
+            <th>{{ $t('shippingSettings.desiNo') }}</th>
+            <th>{{ $t('shippingSettings.desiType') }}</th>
+            <th>{{ $t('shippingSettings.desiStart') }}</th>
+            <th>{{ $t('shippingSettings.desiEnd') }}</th>
+            <th>{{ $t('shippingSettings.fee') }}</th>
+            <th>{{ $t('common.marketplace') }}</th>
+            <th>{{ $t('common.actions') }}</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td colspan="8" class="empty">Kayıt bulunamadı.</td>
+            <td colspan="8" class="empty">{{ $t('common.noData') }}</td>
           </tr>
         </tbody>
       </table>
-    </div>
-
-    <!-- Kategori Modalı -->
-    <div v-if="showCategoryModal" class="modal">
-      <div class="modal-content">
-        <h3>Yeni Kategori Ücreti Ekle</h3>
-        <input placeholder="Tanımlayıcı Başlık" />
-        <input placeholder="Kargo Ücreti" type="number" />
-        <select>
-          <option>Hiçbiri seçilmedi</option>
-        </select>
-        <div class="marketplaces">
-          <label v-for="site in marketplaces" :key="site">
-            <input type="checkbox" /> {{ site }}
-          </label>
-        </div>
-        <button class="primary-btn">Kaydet</button>
-        <button class="close-btn" @click="showCategoryModal = false">Kapat</button>
-      </div>
-    </div>
-
-    <!-- Desi Modalı -->
-    <div v-if="showDesiModal" class="modal">
-      <div class="modal-content">
-        <h3>Yeni Desi Ücreti Ekle</h3>
-        <select>
-          <option>Ürün Bazında</option>
-        </select>
-        <input placeholder="Desi Başlangıç Değeri" type="number" />
-        <input placeholder="Desi Bitiş Değeri" type="number" />
-        <input placeholder="Ücret" type="number" />
-        <div class="marketplaces">
-          <label v-for="site in marketplaces" :key="site">
-            <input type="checkbox" /> {{ site }}
-          </label>
-        </div>
-        <button class="primary-btn">Kaydet</button>
-        <button class="close-btn" @click="showDesiModal = false">Kapat</button>
-      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+
 const activeTab = ref('fixed')
 const showCategoryModal = ref(false)
 const showDesiModal = ref(false)
-const fixed = ref({ price: 9.99, type: 'Alıcı Ödemeli Ürünlere Ekle', freeLimit: 250 })
-const marketplaces = [
-  'N11', 'Hepsiburada', 'ePttAVM', 'Amazon', 'Trendyol', 'ÇiçekSepeti',
-  'Modanisa', 'Pazarama', 'Goturc', 'Allesgo', 'Idefix', 'Reistrend'
-]
+
+const fixed = ref({
+  price: 9.99,
+  type: 'Alıcı Ödemeli Ürünlere Ekle',
+  freeLimit: 250
+})
 </script>
 
 <style scoped>

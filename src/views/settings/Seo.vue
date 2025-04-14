@@ -1,15 +1,17 @@
 <template>
   <div class="seo-settings-container">
-    <h1 class="title">SEO Ayarları</h1>
+    <h1 class="title">{{ $t('seo.title') }}</h1>
 
     <!-- Varsayılan SEO Alanları -->
     <div class="card">
-      <h2 class="section-title">Varsayılan SEO Ayarları</h2>
-      <p class="description">Sitenize ait varsayılan SEO bilgilerini aşağıdaki alanları doldurarak ayarlayabilirsiniz.</p>
+      <h2 class="section-title">{{ $t('seo.default.title') }}</h2>
+      <p class="description">{{ $t('seo.default.description') }}</p>
 
       <div class="form-grid">
         <div class="form-group">
-          <label>SEO Başlığı <span class="count">({{ seo.title.length }})</span></label>
+          <label>
+            {{ $t('seo.fields.title') }} <span class="count">({{ seo.title.length }})</span>
+          </label>
           <input v-model="seo.title" type="text" />
         </div>
         <div class="preview-box">
@@ -18,12 +20,16 @@
         </div>
 
         <div class="form-group">
-          <label>SEO Açıklaması <span class="count">({{ seo.description.length }})</span></label>
+          <label>
+            {{ $t('seo.fields.description') }} <span class="count">({{ seo.description.length }})</span>
+          </label>
           <textarea v-model="seo.description" rows="2" />
         </div>
 
         <div class="form-group">
-          <label>SEO Anahtar Kelimeleri <span class="count">({{ seo.keywords.length }})</span></label>
+          <label>
+            {{ $t('seo.fields.keywords') }} <span class="count">({{ seo.keywords.length }})</span>
+          </label>
           <textarea v-model="seo.keywords" rows="2" />
         </div>
       </div>
@@ -31,13 +37,13 @@
 
     <!-- Sayfa Bazlı SEO Listesi -->
     <div class="card">
-      <h2 class="section-title">Sayfa Bazlı SEO Alanları</h2>
+      <h2 class="section-title">{{ $t('seo.pages.title') }}</h2>
       <table class="seo-table">
         <thead>
           <tr>
-            <th>Sayfa</th>
-            <th>SEO Başlığı</th>
-            <th>SEO Açıklaması</th>
+            <th>{{ $t('seo.pages.page') }}</th>
+            <th>{{ $t('seo.pages.seoTitle') }}</th>
+            <th>{{ $t('seo.pages.seoDescription') }}</th>
             <th></th>
           </tr>
         </thead>
@@ -46,13 +52,15 @@
             <td>{{ item.page }}</td>
             <td>{{ item.title }}</td>
             <td>{{ item.description }}</td>
-            <td><button class="edit-button">✏️ Düzenle</button></td>
+            <td>
+              <button class="edit-button">{{ $t('common.edit') }}</button>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <button class="save-button">✓ Kaydet</button>
+    <button class="save-button">✓ {{ $t('common.save') }}</button>
   </div>
 </template>
 
@@ -73,7 +81,7 @@ const seoPages = ref([
   { page: 'Ürün Detay Sayfası', title: '{urun_seo_basilik}', description: '{urun_seo_aciklama}', key: 'product-detail' },
   { page: 'Blog Sayfası', title: '{cevir(blog)} | {varsayilan_basilik}', description: '{cevir(blog)} - {varsayilan_aciklama}', key: 'blog' },
   { page: 'Ödeme Sayfası', title: '{cevir(odeme_title)}', description: '{varsayilan_aciklama}', key: 'checkout' },
-  { page: '404 Hata Sayfası', title: '{cevir(404_hata)}', description: '{varsayilan_aciklama}', key: '404' },
+  { page: '404 Hata Sayfası', title: '{cevir(404_hata)}', description: '{varsayilan_aciklama}', key: '404' }
 ])
 </script>
 

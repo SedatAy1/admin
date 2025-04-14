@@ -1,54 +1,60 @@
 <template>
   <div class="sms-templates-page">
-    <h2 class="title">SMS Şablonları</h2>
+    <h2 class="title">{{ $t('smsTemplates.title') }}</h2>
 
     <div class="template-selector">
       <label class="selector-label">
-        » Lütfen sms gönderim aksiyonunu seçin
+        » {{ $t('smsTemplates.selectPrompt') }}
       </label>
       <select v-model="selectedTemplate" class="template-dropdown">
-        <option disabled value="">Lütfen seçim yapın</option>
-        <optgroup label="Üye ve Şifre Aksiyonları">
-          <option>Yeni üye kayıt</option>
-          <option>Şifre sıfırlama talebi</option>
+        <option disabled value="">{{ $t('smsTemplates.selectOption') }}</option>
+
+        <optgroup :label="$t('smsTemplates.groups.member')">
+          <option>{{ $t('smsTemplates.templates.newMember') }}</option>
+          <option>{{ $t('smsTemplates.templates.passwordReset') }}</option>
         </optgroup>
-        <optgroup label="İletişim Aksiyonları">
-          <option>Yeni iletişim talebi</option>
-          <option>İletişim talebi yanıtı</option>
+
+        <optgroup :label="$t('smsTemplates.groups.contact')">
+          <option>{{ $t('smsTemplates.templates.newContact') }}</option>
+          <option>{{ $t('smsTemplates.templates.contactReply') }}</option>
         </optgroup>
-        <optgroup label="Arıza Bildirimleri">
-          <option>Yeni arıza bildirimi</option>
-          <option>Arıza bildirimi yönetici yanıtı</option>
-          <option>Arıza bildirimi üye yanıtı</option>
+
+        <optgroup :label="$t('smsTemplates.groups.issue')">
+          <option>{{ $t('smsTemplates.templates.newIssue') }}</option>
+          <option>{{ $t('smsTemplates.templates.issueAdminReply') }}</option>
+          <option>{{ $t('smsTemplates.templates.issueUserReply') }}</option>
         </optgroup>
-        <optgroup label="Sipariş Aksiyonları">
-          <option>Yeni sipariş</option>
-          <option>Sipariş hazırlanıyor</option>
-          <option>Sipariş kargolandı</option>
-          <option>Sipariş teslim edildi</option>
-          <option>Sipariş iptali</option>
-          <option>Siparişe özel aksiyonlar</option>
+
+        <optgroup :label="$t('smsTemplates.groups.order')">
+          <option>{{ $t('smsTemplates.templates.newOrder') }}</option>
+          <option>{{ $t('smsTemplates.templates.orderPreparing') }}</option>
+          <option>{{ $t('smsTemplates.templates.orderShipped') }}</option>
+          <option>{{ $t('smsTemplates.templates.orderDelivered') }}</option>
+          <option>{{ $t('smsTemplates.templates.orderCancelled') }}</option>
+          <option>{{ $t('smsTemplates.templates.orderCustom') }}</option>
         </optgroup>
-        <optgroup label="Ödeme ve Bayi Aksiyonları">
-          <option>Müşteri havale bildirimi</option>
-          <option>Yeni bayi ödemesi</option>
-          <option>Bayi ödeme onayı</option>
-          <option>Bayi ödeme reddi</option>
-          <option>Yeni bayi şifresi</option>
-          <option>Hızlı ödeme işlemi</option>
+
+        <optgroup :label="$t('smsTemplates.groups.payment')">
+          <option>{{ $t('smsTemplates.templates.customerTransfer') }}</option>
+          <option>{{ $t('smsTemplates.templates.newDealerPayment') }}</option>
+          <option>{{ $t('smsTemplates.templates.dealerApproved') }}</option>
+          <option>{{ $t('smsTemplates.templates.dealerRejected') }}</option>
+          <option>{{ $t('smsTemplates.templates.newDealerPassword') }}</option>
+          <option>{{ $t('smsTemplates.templates.quickPayment') }}</option>
         </optgroup>
-        <optgroup label="Ürün Tavsiye ve Uyarılar">
-          <option>Müşteri ürün tavsiyesi</option>
-          <option>Müşteri fiyat alarmı</option>
-          <option>Müşteri stok alarmı</option>
-          <option>Yeni ürün önerisi</option>
-          <option>Ürün önerisi yanıtı</option>
+
+        <optgroup :label="$t('smsTemplates.groups.suggestion')">
+          <option>{{ $t('smsTemplates.templates.productSuggestion') }}</option>
+          <option>{{ $t('smsTemplates.templates.priceAlert') }}</option>
+          <option>{{ $t('smsTemplates.templates.stockAlert') }}</option>
+          <option>{{ $t('smsTemplates.templates.newSuggestion') }}</option>
+          <option>{{ $t('smsTemplates.templates.suggestionReply') }}</option>
         </optgroup>
       </select>
     </div>
 
     <div v-if="selectedTemplate" class="selected-info">
-      <strong>Seçilen Şablon:</strong> {{ selectedTemplate }}
+      <strong>{{ $t('smsTemplates.selected') }}</strong> {{ selectedTemplate }}
     </div>
   </div>
 </template>
@@ -57,7 +63,6 @@
 import { ref } from 'vue'
 const selectedTemplate = ref('')
 </script>
-
 <style scoped>
 .sms-templates-page {
   font-family: 'Inter', sans-serif;

@@ -1,15 +1,15 @@
 <template>
   <div class="site-settings">
     <div class="box">
-      <h3 class="title">Site Ayarları</h3>
-      <p><strong>Site Adresi</strong> https://demo.eticaret.tv.tr</p>
-      <p><strong>Domain</strong> demo.eticaret.tv.tr</p>
+      <h3 class="title">{{ $t("siteSettings.title") }}</h3>
+      <p><strong>{{ $t("siteSettings.siteUrl") }}</strong> https://demo.eticaret.tv.tr</p>
+      <p><strong>{{ $t("siteSettings.domain") }}</strong> demo.eticaret.tv.tr</p>
       <p>
-        <strong>Lisans Kodu</strong> Eticarettvtr - 838981 -
-        9dGnWm1FZK-jX5oV1tsTf-8EJ9HxdfL
+        <strong>{{ $t("siteSettings.licenseKey") }}</strong>
+        Eticarettvtr - 838981 - 9dGnWm1FZK-jX5oV1tsTf-8EJ9HxdfL
       </p>
-      <p><strong>Versiyon</strong> v2024.08.22</p>
-      <p><strong>Sunucu IP Adresi</strong> 89.252.175.206</p>
+      <p><strong>{{ $t("siteSettings.version") }}</strong> v2024.08.22</p>
+      <p><strong>{{ $t("siteSettings.serverIp") }}</strong> 89.252.175.206</p>
     </div>
   </div>
 </template>

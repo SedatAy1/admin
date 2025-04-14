@@ -1,6 +1,6 @@
 <template>
   <div class="product-settings">
-    <h2 class="page-title">Ürün Ayarları</h2>
+    <h2 class="page-title">{{ $t('productSettings.title') }}</h2>
 
     <div class="setting-group" v-for="setting in settings" :key="setting.key">
       <div class="setting-icon">
@@ -8,55 +8,31 @@
       </div>
       <div class="setting-content">
         <h3 class="setting-title">
-          {{ setting.title }}
+          {{ $t(`productSettings.${setting.key}.title`) }}
           <span v-if="setting.badge" class="badge">{{ setting.badge }}</span>
         </h3>
-        <p class="setting-description">{{ setting.description }}</p>
+        <p class="setting-description">{{ $t(`productSettings.${setting.key}.description`) }}</p>
 
-        <input
-          v-if="setting.type === 'toggle'"
-          type="checkbox"
-          v-model="formData[setting.key]"
-          class="setting-control"
-        />
-
-        <input
-          v-else-if="setting.type === 'text'"
-          type="text"
-          v-model="formData[setting.key]"
-          class="setting-control"
-        />
-
-        <input
-          v-else-if="setting.type === 'number'"
-          type="number"
-          v-model="formData[setting.key]"
-          class="setting-control"
-        />
-
-        <textarea
-          v-else-if="setting.type === 'textarea'"
-          v-model="formData[setting.key]"
-          class="setting-control textarea"
-        ></textarea>
+        <input v-if="setting.type === 'toggle'" type="checkbox" v-model="formData[setting.key]" class="setting-control" />
+        <input v-else-if="setting.type === 'text'" type="text" v-model="formData[setting.key]" class="setting-control" />
+        <input v-else-if="setting.type === 'number'" type="number" v-model="formData[setting.key]" class="setting-control" />
+        <textarea v-else-if="setting.type === 'textarea'" v-model="formData[setting.key]" class="setting-control textarea"></textarea>
       </div>
     </div>
 
-    <div class="section-divider">Fiyat Yuvarlama</div>
+    <div class="section-divider">{{ $t('productSettings.priceRounding') }}</div>
     <div class="wysiwyg-box">
       <textarea class="wysiwyg-editor"></textarea>
     </div>
 
-    <div class="section-divider">Kargo Bilgisi</div>
+    <div class="section-divider">{{ $t('productSettings.shippingInfo') }}</div>
     <div class="wysiwyg-box">
       <textarea class="wysiwyg-editor">
-Ürünü sipariş verdiğiniz gün saat 18:00 ve öncesi ise siparişiniz aynı gün kargoya verilir. Ve ertesi gün teslim edilir.
-
-Eğer kargoyu saat 18:00'den sonra verdiyseniz ürününüzün stoklarda olması durumunda ertesi gün kargolama yapılmaktadır.
+{{ $t('productSettings.shippingDescription') }}
       </textarea>
     </div>
 
-    <button class="save-btn" @click="saveSettings">✓ Kaydet</button>
+    <button class="save-btn" @click="saveSettings">✓ {{ $t('common.save') }}</button>
   </div>
 </template>
 

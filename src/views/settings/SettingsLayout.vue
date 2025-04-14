@@ -9,7 +9,7 @@
           :class="{ active: isActive(item.route) }"
           @click="navigateTo(item.route)"
         >
-          {{ item.label }}
+          {{ $t(`settingsMenu.${item.route}`) }}
         </li>
       </ul>
     </aside>
@@ -28,32 +28,32 @@ const route = useRoute()
 const router = useRouter()
 
 const menuItems = [
-  { label: "Genel Ayarlar", route: "general" },
-  { label: "SEO Ayarları", route: "seo" },
-  { label: "Pazarlama Araçları", route: "marketing" },
-  { label: "Sözleşmeler", route: "contracts" },
-  { label: "Sipariş Ayarları", route: "orders" },
-  { label: "Ürün Ayarları", route: "products" },
-  { label: "Ödeme Yöntemleri", route: "payment-methods" },
-  { label: "Döviz Kurları", route: "exchange-rates" },
-  { label: "Kargo Firmaları", route: "shipping-companies" },
-  { label: "Kargo Ayarları", route: "shipping" },
-  { label: "Montaj Noktaları", route: "assembly-points" },
-  { label: "Ülkeler", route: "countries" },
-  { label: "Diller", route: "languages" },
-  { label: "SMS Ayarları", route: "sms" },
-  { label: "SMS Şablonları", route: "sms-templates" },
-  { label: "E-Posta Ayarları", route: "email" },
-  { label: "E-Posta Şablonları", route: "email-templates" },
-  { label: "Bakım Modu", route: "maintenance" },
-  { label: "Bakiye Ayarları", route: "balance" },
-  { label: "Bayi Ayarları", route: "dealer" },
-  { label: "Bayi XML Ayarları", route: "dealer-xml" },
-  { label: "Hızlı Ödeme Ayarları", route: "quick-payment" },
-  { label: "Web Servis Ayarları", route: "web-service" },
-  { label: "Yönetici Hesapları", route: "admin-accounts" },
-  { label: "Güvenlik Ayarları", route: "security" },
-  { label: "Site Ayarları", route: "site" }
+  { route: "general" },
+  { route: "seo" },
+  { route: "marketing" },
+  { route: "contracts" },
+  { route: "orders" },
+  { route: "products" },
+  { route: "payment-methods" },
+  { route: "exchange-rates" },
+  { route: "shipping-companies" },
+  { route: "shipping" },
+  { route: "assembly-points" },
+  { route: "countries" },
+  { route: "languages" },
+  { route: "sms" },
+  { route: "sms-templates" },
+  { route: "email" },
+  { route: "email-templates" },
+  { route: "maintenance" },
+  { route: "balance" },
+  { route: "dealer" },
+  { route: "dealer-xml" },
+  { route: "quick-payment" },
+  { route: "web-service" },
+  { route: "admin-accounts" },
+  { route: "security" },
+  { route: "site" }
 ]
 
 const navigateTo = (path) => {
@@ -64,7 +64,6 @@ const isActive = (path) => {
   return route.path.startsWith(`/settings/${path}`)
 }
 </script>
-
 <style scoped>
 .settings-layout {
   display: flex;
