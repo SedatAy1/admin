@@ -16,18 +16,18 @@
       <div class="language-switcher" @click="toggleLangDropdown" ref="langDropdown">
         <img
           :src="currentLanguage === 'tr'
-            ? '/src/assets/png-transparent-flag-of-turkey-turkish-flag-miscellaneous-flag-turkey-thumbnail.png'
-            : '/src/assets/png-transparent-flag-of-england-flag-of-the-united-kingdom-english-flag-of-great-britain-england-english-flag-world-thumbnail.png'"
+            ? '/flags/turkey.png'
+            : '/flags/england.png'"
           alt="Lang"
           class="flag"
         />
         <ul v-show="isLangDropdownOpen" class="lang-dropdown shadow">
           <li @click="changeLang('tr')">
-            <img src="/src/assets/png-transparent-flag-of-turkey-turkish-flag-miscellaneous-flag-turkey-thumbnail.png" />
+            <img src="/flags/turkey.png" />
             Türkçe
           </li>
           <li @click="changeLang('en')">
-            <img src="/src/assets/png-transparent-flag-of-england-flag-of-the-united-kingdom-english-flag-of-great-britain-england-english-flag-world-thumbnail.png" />
+            <img src="/flags/england.png" />
             English
           </li>
         </ul>
