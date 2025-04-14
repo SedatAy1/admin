@@ -147,7 +147,6 @@ import Languages from '@/views/settings/Languages.vue';
 import Sms from '@/views/settings/Sms.vue';
 import SmsTemplates from '@/views/settings/SmsTemplates.vue';
 import Email from '@/views/settings/Email.vue';
-import EmailTemplates from '@/views/settings/EmailTemplates.vue'
 import Maintenance from '@/views/settings/Maintenance.vue';
 import Balance from '@/views/settings/Balance.vue';
 import Dealer from '@/views/settings/Dealer.vue';

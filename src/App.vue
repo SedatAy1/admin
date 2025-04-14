@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <SidebarComponent :isCollapsed="isSidebarCollapsed" />
-    <div class="main-content">
+    <div class="main-content" :class="{ collapsed: isSidebarCollapsed }">
       <HeaderComponent @toggle-sidebar="toggleSidebar" />
       <OrderTabs v-if="showOrderTabs" />
       <router-view />
@@ -27,15 +27,7 @@ export default {
   },
   computed: {
     showOrderTabs() {
-      return [
-        "/orders/new",
-        "/orders/preparing",
-        "/orders/shipped",
-        "/orders/delivered",
-        "/orders/requests",
-        "/orders/cancelled",
-        "/orders/incomplete",
-      ].some(route => this.$route.path.startsWith(route));
+      return this.$route.path.startsWith("/orders");
     },
   },
   methods: {
@@ -46,9 +38,18 @@ export default {
 };
 </script>
 
-<style>
-/* === Font Ayarı: Tüm Projeye DM Sans ve Inter === */
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;700&display=swap");
+
+:root {
+  --primary: #5b4ddb;
+  --light-bg: #ffffff;
+  --dark-bg: #1e1e2f;
+  --light-text: #1f2937;
+  --dark-text: #f5f5f5;
+  --radius: 12px;
+  --transition: all 0.3s ease;
+}
 
 body {
   font-family: 'DM Sans', 'Inter', sans-serif;
@@ -59,7 +60,6 @@ body {
   line-height: 1.6;
 }
 
-/* Başlıklar */
 h1 {
   font-size: 20px;
   font-weight: 600;
@@ -76,14 +76,12 @@ h3 {
   letter-spacing: -0.3px;
 }
 
-/* Metinler */
 p, td, th, span {
   font-weight: 400;
   font-size: 12.5px;
   line-height: 1.6;
 }
 
-/* === Uygulama Ana Yapı === */
 .app-container {
   display: flex;
   min-height: 100vh;
@@ -95,7 +93,6 @@ html.dark .app-container {
   background: #0f172a;
 }
 
-/* === Ana İçerik === */
 .main-content {
   flex-grow: 1;
   padding: 20px;
@@ -107,16 +104,15 @@ html.dark .app-container {
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03);
 }
 
+.main-content.collapsed {
+  margin-left: 80px !important;
+  width: calc(100% - 80px) !important;
+}
+
 html.dark .main-content {
   background: #1f2937;
   color: #f1f5f9;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-}
-
-/* === Sidebar Daraltılmış Hali === */
-.sidebar.collapsed + .main-content {
-  margin-left: 80px !important;
-  width: calc(100% - 80px) !important;
 }
 
 /* === Mobil Görünüm === */
