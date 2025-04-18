@@ -28,10 +28,6 @@
       @click="toggleLangDropdown"
     />
     <ul v-show="isLangDropdownOpen" class="lang-dropdown shadow">
-      <li @click="changeLang('tr')">
-        <img src="/flags/turkey.png" />
-        Türkçe
-      </li>
       <li @click="changeLang('en')">
         <img src="/flags/england.png" />
         English
