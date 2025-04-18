@@ -1,6 +1,19 @@
 <template>
   <div class="app-container">
-    <SidebarComponent :isCollapsed="isSidebarCollapsed" />
+    <!-- Sidebar -->
+    <SidebarComponent
+      :isCollapsed="isSidebarCollapsed"
+      :class="{ 'mobile-open': isSidebarOpen }"
+    />
+
+    <!-- Mobilde karartma alanı -->
+    <div
+      v-if="isSidebarOpen && isMobile"
+      class="overlay"
+      @click="closeSidebar"
+    ></div>
+
+    <!-- Ana içerik -->
     <div class="main-content" :class="{ collapsed: isSidebarCollapsed }">
       <HeaderComponent @toggle-sidebar="toggleSidebar" />
       <OrderTabs v-if="showOrderTabs" />
@@ -23,6 +36,8 @@ export default {
   data() {
     return {
       isSidebarCollapsed: false,
+      isSidebarOpen: false,
+      isMobile: window.innerWidth < 992,
     };
   },
   computed: {
@@ -32,8 +47,27 @@ export default {
   },
   methods: {
     toggleSidebar() {
-      this.isSidebarCollapsed = !this.isSidebarCollapsed;
+      if (this.isMobile) {
+        this.isSidebarOpen = !this.isSidebarOpen;
+      } else {
+        this.isSidebarCollapsed = !this.isSidebarCollapsed;
+      }
     },
+    closeSidebar() {
+      this.isSidebarOpen = false;
+    },
+    handleResize() {
+      this.isMobile = window.innerWidth < 992;
+      if (!this.isMobile) {
+        this.isSidebarOpen = false;
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener("resize", this.handleResize);
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.handleResize);
   },
 };
 </script>
@@ -60,20 +94,9 @@ body {
   line-height: 1.6;
 }
 
-h1 {
-  font-size: 20px;
+h1, h2, h3 {
   font-weight: 600;
   letter-spacing: -0.5px;
-}
-h2 {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.4px;
-}
-h3 {
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: -0.3px;
 }
 
 p, td, th, span {
@@ -85,21 +108,22 @@ p, td, th, span {
 .app-container {
   display: flex;
   min-height: 100vh;
-  background: #f8f9fa;
+  background: var(--light-bg);
   transition: background 0.3s ease;
 }
 
 html.dark .app-container {
-  background: #0f172a;
+  background: var(--dark-bg);
 }
 
+/* === MAIN CONTENT === */
 .main-content {
   flex-grow: 1;
   padding: 20px;
   margin-left: 250px;
   width: calc(100% - 250px);
-  background: #ffffff;
-  color: #1f2937;
+  background: var(--light-bg);
+  color: var(--light-text);
   transition: all 0.3s ease;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03);
 }
@@ -110,12 +134,12 @@ html.dark .app-container {
 }
 
 html.dark .main-content {
-  background: #1f2937;
-  color: #f1f5f9;
+  background: #000000;
+  color: var(--dark-text);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
-/* === Mobil Görünüm === */
+/* === MOBİL === */
 @media (max-width: 992px) {
   .app-container {
     flex-direction: column;
@@ -133,18 +157,13 @@ html.dark .main-content {
     left: 0;
     height: 100vh;
     width: 260px;
-    background: #ffffff;
+    background: var(--light-bg);
     border-right: 1px solid #e5e7eb;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
-    z-index: 1001;
+    z-index: 1050;
     padding: 20px;
     overflow-y: auto;
-  }
-
-  html.dark .sidebar {
-    background: #0f172a !important;
-    border-color: #1e293b;
   }
 
   .sidebar.mobile-open {
@@ -158,7 +177,12 @@ html.dark .main-content {
     height: 100vh;
     width: 100%;
     background: rgba(0, 0, 0, 0.4);
-    z-index: 1000;
+    z-index: 1049;
+  }
+
+  html.dark .sidebar {
+    background: #0f172a !important;
+    border-color: #1e293b;
   }
 }
 

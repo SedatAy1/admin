@@ -3813,5 +3813,26 @@
       "apiKey": "API Key",
       "apiSecret": "API Secret"
     }
+  },
+  "dashboard": {
+  "dateRangePlaceholder": "28/02/2025 - 30/03/2025",
+  "filter": "Filtrele",
+  "thisWeek": "Bu hafta",
+  "salesChart": "Satış İstatistikleri",
+  "deviceChart": "Cihaza Göre Ziyaretçiler",
+  "recentOrders": "Son Siparişler",
+  "recentTransactions": "Son İşlemler",
+  "totalRevenue": "Toplam Gelir",
+  "totalCustomers": "Toplam Müşteri",
+  "totalTransactions": "Toplam İşlem",
+  "totalProducts": "Toplam Ürün",
+  "table": {
+    "product": "Ürün",
+    "category": "Kategori",
+    "status": "Durum",
+    "customer": "Müşteri",
+    "qty": "Adet",
+    "date": "Tarih"
   }
+}
 }

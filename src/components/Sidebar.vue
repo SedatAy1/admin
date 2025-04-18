@@ -1,22 +1,33 @@
 <template>
-  <aside :class="['sidebar', { 'collapsed': isCollapsed, 'mobile': isMobile }]">
+  <aside :class="['sidebar', {
+    'collapsed': isCollapsed && !isMobile,
+    'mobile-open': isSidebarOpen
+  }]">
+    <!-- Mobil Menü Açma Butonu -->
+    <button v-if="isMobile" @click="toggleSidebar" class="mobile-toggle-btn">
+      <i class="bi bi-x-lg"></i>
+    </button>
 
-    <!-- Sidebar Üst Kısım: Logo -->
+    <!-- Logo -->
     <div class="sidebar-header logo-wrapper">
       <router-link to="/" class="logo-link">
-        <img src="@/assets/cropped_image.png" alt="Admin Panel Logo" class="logo-image" />
+        <img src="@/assets/image2.png" alt="Admin Panel Logo" class="logo-image" />
       </router-link>
     </div>
-
 
     <ul class="sidebar-menu">
       <!-- Siparişler -->
 <!-- Siparişler -->
 <li>
-  <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#ordersMenu">
-    <Package class="icon" />
-    <span v-if="!isCollapsed">{{ $t('sidebar.orders') }}</span>
-  </button>
+  <button
+  class="btn btn-toggle d-flex align-items-center"
+  data-bs-toggle="collapse"
+  data-bs-target="#ordersMenu"
+  :class="{ active: $route.path.startsWith('/orders') }"
+>
+  <Package class="icon" />
+  <span v-if="!isCollapsed">{{ $t('sidebar.orders') }}</span>
+</button>
   <div class="collapse" id="ordersMenu">
     <ul class="submenu">
       <!-- Siparişler Alt Başlığı -->
@@ -64,10 +75,15 @@
 <!-- Ürünler -->
 <!-- Ürünler -->
 <li>
-  <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#productsMenu">
-    <ShoppingBag class="icon" />
-    <span v-if="!isCollapsed">{{ $t('sidebar.products') }}</span>
-  </button>
+  <button
+  class="btn btn-toggle d-flex align-items-center"
+  data-bs-toggle="collapse"
+  data-bs-target="#productsMenu"
+  :class="{ active: $route.path.startsWith('/products') }"
+>
+  <ShoppingBag class="icon" />
+  <span v-if="!isCollapsed">{{ $t('sidebar.products') }}</span>
+</button>
   <div class="collapse" id="productsMenu">
     <ul class="submenu">
       <!-- Ürünler Alt Başlığı -->
@@ -114,10 +130,15 @@
 <!-- Kampanyalar -->
 <!-- Kampanyalar -->
 <li>
-  <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#campaignsMenu">
-    <Target class="icon" />
-    <span v-if="!isCollapsed">{{ $t('sidebar.campaigns') }}</span>
-  </button>
+  <button
+  class="btn btn-toggle d-flex align-items-center"
+  data-bs-toggle="collapse"
+  data-bs-target="#campaignsMenu"
+  :class="{ active: $route.path.startsWith('/campaigns') }"
+>
+  <Target class="icon" />
+  <span v-if="!isCollapsed">{{ $t('sidebar.campaigns') }}</span>
+</button>
   <div class="collapse" id="campaignsMenu">
     <ul class="submenu">
 
@@ -176,10 +197,15 @@
 <!-- İçerikler -->
 <!-- İçerikler -->
 <li>
-  <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#contentMenu">
-    <FileText class="icon" />
-    <span v-if="!isCollapsed">{{ $t('sidebar.contents') }}</span>
-  </button>
+  <button
+  class="btn btn-toggle d-flex align-items-center"
+  data-bs-toggle="collapse"
+  data-bs-target="#contentMenu"
+  :class="{ active: $route.path.startsWith('/contents') }"
+>
+  <FileText class="icon" />
+  <span v-if="!isCollapsed">{{ $t('sidebar.contents') }}</span>
+</button>
   <div class="collapse" id="contentMenu">
     <ul class="submenu">
 
@@ -223,10 +249,15 @@
 <!-- Müşteriler -->
 <!-- Müşteriler -->
 <li>
-  <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#customersMenu">
-    <Users class="icon" />
-    <span v-if="!isCollapsed">{{ $t('sidebar.customers') }}</span>
-  </button>
+  <button
+  class="btn btn-toggle d-flex align-items-center"
+  data-bs-toggle="collapse"
+  data-bs-target="#customersMenu"
+  :class="{ active: $route.path.startsWith('/customers') }"
+>
+  <Users class="icon" />
+  <span v-if="!isCollapsed">{{ $t('sidebar.customers') }}</span>
+</button>
   <div class="collapse" id="customersMenu">
     <ul class="submenu">
       <li><router-link to="/customers/manage">{{ $t('sidebar.customers_sub.manage') }}</router-link></li>
@@ -242,10 +273,15 @@
 <!-- Entegrasyonlar -->
 <!-- Entegrasyonlar -->
 <li>
-  <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#integrationsMenu">
-    <Network class="icon" />
-    <span v-if="!isCollapsed">{{ $t('sidebar.integrations') }}</span>
-  </button>
+  <button
+  class="btn btn-toggle d-flex align-items-center"
+  data-bs-toggle="collapse"
+  data-bs-target="#integrationsMenu"
+  :class="{ active: $route.path.startsWith('/integrations') }"
+>
+  <Network class="icon" />
+  <span v-if="!isCollapsed">{{ $t('sidebar.integrations') }}</span>
+</button>
   <div class="collapse" id="integrationsMenu">
     <ul class="submenu">
       <li><router-link to="/integrations/marketplace">{{ $t('sidebar.integrations_sub.marketplace') }}</router-link></li>
@@ -262,10 +298,15 @@
 
 <!-- Tasarım -->
 <li>
-  <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#designMenu">
-    <Palette class="icon" />
-    <span v-if="!isCollapsed">{{ $t('sidebar.design') }}</span>
-  </button>
+  <button
+  class="btn btn-toggle d-flex align-items-center"
+  data-bs-toggle="collapse"
+  data-bs-target="#designMenu"
+  :class="{ active: $route.path.startsWith('/design') }"
+>
+  <Palette class="icon" />
+  <span v-if="!isCollapsed">{{ $t('sidebar.design') }}</span>
+</button>
   <div class="collapse" id="designMenu">
     <ul class="submenu">
       <li><router-link to="/design/theme-settings">{{ $t('sidebar.design_sub.theme_settings') }}</router-link></li>
@@ -278,10 +319,15 @@
 <!-- Raporlar -->
 <!-- Raporlar -->
 <li>
-  <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#reportsMenu">
-    <BarChart2 class="icon" />
-    <span v-if="!isCollapsed">{{ $t('sidebar.reports') }}</span>
-  </button>
+  <button
+  class="btn btn-toggle d-flex align-items-center"
+  data-bs-toggle="collapse"
+  data-bs-target="#reportsMenu"
+  :class="{ active: $route.path.startsWith('/reports') }"
+>
+  <BarChart2 class="icon" />
+  <span v-if="!isCollapsed">{{ $t('sidebar.reports') }}</span>
+</button>
   <div class="collapse" id="reportsMenu">
     <ul class="submenu">
 
@@ -380,10 +426,15 @@
 </li>
 <!-- Ayarlar -->
 <li>
-  <button class="btn btn-toggle d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#settingsMenu">
-    <Settings class="icon" />
-    <span v-if="!isCollapsed">{{ $t('sidebar.settings') }}</span>
-  </button>
+  <button
+  class="btn btn-toggle d-flex align-items-center"
+  data-bs-toggle="collapse"
+  data-bs-target="#settingsMenu"
+  :class="{ active: $route.path.startsWith('/settings') }"
+>
+  <Settings class="icon" />
+  <span v-if="!isCollapsed">{{ $t('sidebar.settings') }}</span>
+</button>
   <div class="collapse" id="settingsMenu">
     <ul class="submenu">
       <li><router-link to="/settings/general">{{ $t('sidebar.settings_sub.general') }}</router-link></li>
@@ -471,15 +522,28 @@ export default {
   },
   data() {
     return {
-      isMobile: window.innerWidth < 768
+      isMobile: window.innerWidth < 992, // 992px altında mobil kabul ettik
+      isSidebarOpen: false
     };
   },
   methods: {
     toggleSidebar() {
-      this.isCollapsed = !this.isCollapsed;
+      if (this.isMobile) {
+        this.isSidebarOpen = !this.isSidebarOpen;
+      } else {
+        this.$emit('toggleCollapse'); // Ana layout collapsible özelliği
+      }
+    },
+    closeSidebar() {
+      if (this.isMobile) {
+        this.isSidebarOpen = false;
+      }
     },
     handleResize() {
-      this.isMobile = window.innerWidth < 768;
+      this.isMobile = window.innerWidth < 992;
+      if (!this.isMobile) {
+        this.isSidebarOpen = false;
+      }
     }
   },
   mounted() {
@@ -516,34 +580,38 @@ export default {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-
 .btn-toggle:hover {
   background-color: #f3f4f6;
   color: #111827;
+}
+.btn-toggle.active {
+  color: #5b4ddb !important;
+  font-weight: 600;
+}
+
+.btn-toggle.active .icon {
+  stroke: #5b4ddb !important;
 }
 
 .btn-toggle:hover .icon {
   stroke: #111827;
   transform: scale(1.05);
 }
+
 .logo-wrapper {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0 0 16px 0; /* tüm padding'leri sıfırla, sadece alt boşluk */
-  margin-bottom: 12px; /* Menüden biraz ayır */
 }
 
 .logo-link {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0;
-  margin: 0;
 }
 
 .logo-image {
-  height: 40px;
+  height: 100px;
   max-width: 100%;
   object-fit: contain;
 }
@@ -551,12 +619,13 @@ export default {
 .sidebar.collapsed .logo-image {
   height: 32px;
 }
+
 .sidebar {
   width: 260px;
   height: 100vh;
   background: #fff;
   border-right: 1px solid #e5e7eb;
-  padding: 24px 18px;
+  padding: 2px 18px;
   position: fixed;
   left: 0;
   top: 0;
@@ -583,14 +652,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: left;
-  margin-bottom: 0px;
   padding-left: 13px;
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #111827;
 }
 
 .sidebar-menu {
@@ -619,14 +681,15 @@ export default {
   color: #111827;
 }
 
+/* 🔥 Aktif menü yazı ve ikon rengi */
 .sidebar-menu .router-link-active {
-  background: #f97316;
-  color: #fff;
-  font-weight: 500;
+  background: none;
+  color: #5b4ddb !important;
+  font-weight: 600;
 }
 
 .sidebar-menu .router-link-active .icon {
-  stroke: #fff;
+  stroke: #5b4ddb !important;
 }
 
 .submenu {
@@ -664,14 +727,15 @@ export default {
   color: #ffffff;
 }
 
+/* 🔥 Dark mode: Aktif menü rengi */
 :deep(html.dark) .sidebar-menu .router-link-active {
-  background: #2563eb;
-  color: #ffffff;
+  background: none;
+  color: #5b4ddb !important;
   font-weight: 600;
 }
 
 :deep(html.dark) .sidebar-menu .router-link-active .icon {
-  stroke: #ffffff;
+  stroke: #5b4ddb !important;
 }
 
 :deep(html.dark) .icon {
@@ -681,17 +745,8 @@ export default {
 /* === RESPONSIVE === */
 @media (max-width: 992px) {
   .sidebar {
-    width: 260px;
     transform: translateX(-100%);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1050;
-    height: 100vh;
-    overflow-y: auto;
-    background: #ffffff;
-    transition: transform 0.3s ease;
-    border-right: 1px solid #e5e7eb;
+    width: 260px;
   }
 
   .sidebar.mobile-open {
@@ -700,10 +755,26 @@ export default {
 
   .sidebar.collapsed {
     width: 260px;
+    padding: 24px 18px;
   }
 
   .sidebar.collapsed .btn-toggle .icon + span {
     display: inline;
+  }
+
+  .mobile-toggle-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    z-index: 1100;
+    color: #374151;
+  }
+
+  html.dark .mobile-toggle-btn {
+    color: #f1f5f9;
   }
 }
 </style>

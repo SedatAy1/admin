@@ -12,26 +12,41 @@
 
     <!-- Sağ Taraf -->
     <div class="d-flex align-items-center gap-3">
-      <!-- Dil Seçici -->
-      <div class="language-switcher" @click="toggleLangDropdown" ref="langDropdown">
-        <img
-          :src="currentLanguage === 'tr'
-            ? '/flags/turkey.png'
-            : '/flags/england.png'"
-          alt="Lang"
-          class="flag"
-        />
-        <ul v-show="isLangDropdownOpen" class="lang-dropdown shadow">
-          <li @click="changeLang('tr')">
-            <img src="/flags/turkey.png" />
-            Türkçe
-          </li>
-          <li @click="changeLang('en')">
-            <img src="/flags/england.png" />
-            English
-          </li>
-        </ul>
-      </div>
+      <div class="d-flex align-items-center gap-3">
+  <!-- Dil Seçici -->
+  <div class="language-switcher" ref="langDropdown">
+    <img
+      :src="currentLanguage === 'tr'
+        ? '/flags/turkey.png'
+        : currentLanguage === 'en'
+        ? '/flags/england.png'
+        : currentLanguage === 'fr'
+        ? '/flags/france.png'
+        : '/flags/germany.jpg'"
+      alt="Lang"
+      class="flag"
+      @click="toggleLangDropdown"
+    />
+    <ul v-show="isLangDropdownOpen" class="lang-dropdown shadow">
+      <li @click="changeLang('tr')">
+        <img src="/flags/turkey.png" />
+        Türkçe
+      </li>
+      <li @click="changeLang('en')">
+        <img src="/flags/england.png" />
+        English
+      </li>
+      <li @click="changeLang('fr')">
+        <img src="/flags/france.png" />
+        Français
+      </li>
+      <li @click="changeLang('de')">
+        <img src="/flags/germany.jpg" />
+        Deutsch
+      </li>
+    </ul>
+  </div>
+</div>
 
       <button class="btn btn-light icon-btn" @click="toggleTheme">
         <i :class="isDarkMode ? 'bi bi-moon-fill' : 'bi bi-sun-fill'"></i>
@@ -194,14 +209,16 @@ export default {
     };
   },
   created() {
-    const storedLang = localStorage.getItem("lang");
-    if (storedLang) {
-      this.currentLanguage = storedLang;
-      this.$i18n.locale = storedLang;
-    } else {
-      this.currentLanguage = this.$i18n.locale;
-    }
-  },
+  const storedLang = localStorage.getItem("lang");
+  if (storedLang) {
+    this.currentLanguage = storedLang;
+    this.$i18n.locale = storedLang;
+  } else {
+    this.currentLanguage = 'en';
+    this.$i18n.locale = 'en';
+    localStorage.setItem('lang', 'en');
+  }
+},
   mounted() {
     this.applyDarkMode();
     document.addEventListener("click", this.handleOutsideClick);
@@ -343,6 +360,7 @@ export default {
   position: relative;
   cursor: pointer;
 }
+
 .language-switcher .flag {
   width: 36px;
   height: 36px;
@@ -353,32 +371,37 @@ export default {
 
 .lang-dropdown {
   position: absolute;
-  top: 120%;
+  top: 110%;
   right: 0;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  min-width: 140px;
+  min-width: 160px;
   overflow: hidden;
 }
 
 .lang-dropdown li {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  font-size: 14px;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 12px 1px;
+  font-size: 15px;
   cursor: pointer;
   transition: background 0.2s ease;
+  font-weight: 500;
 }
+
 .lang-dropdown li:hover {
   background: #f3f4f6;
 }
+
 .lang-dropdown img {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 /* === ICONS === */
@@ -578,44 +601,111 @@ export default {
   color: var(--dark-text);
   border-bottom: 1px solid #334155;
 }
+
 .dark-mode .search-bar input {
   background: #1f2937;
-  color: #f9fafb;
+  color: #f9fafb !important;
 }
+
+.dark-mode .search-bar input::placeholder {
+  color: #cbd5e1 !important;
+}
+
 .dark-mode .search-bar::before {
   color: #9ca3af;
 }
+
 .dark-mode .icon-btn {
   background: #1f2937;
   color: #e5e7eb;
 }
+
 .dark-mode .icon-btn:hover {
   background: #334155;
   color: var(--primary);
 }
+
 .dark-mode .settings-panel {
   background: #1f2937;
   color: #f1f5f9;
 }
+
+.dark-mode .settings-header h5,
+.dark-mode .setting-group h6 {
+  color: #f1f5f9;
+}
+
 .dark-mode .option-btn {
   background: #1e293b;
   border-color: #475569;
   color: #cbd5e1;
 }
+
 .dark-mode .option-btn:hover {
   background: #334155;
   color: var(--primary);
   border-color: var(--primary);
 }
+
 .dark-mode .option-btn.active {
   background: var(--primary);
   border-color: var(--primary);
   color: white;
 }
+
 .dark-mode .clear-btn {
   background: var(--primary);
 }
+
 .dark-mode .clear-btn:hover {
   background: #4338ca;
+}
+
+/* Dropdown Menü */
+.dark-mode .user-dropdown {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+.dark-mode .user-dropdown li {
+  color: #f1f5f9;
+}
+
+.dark-mode .user-dropdown li:hover {
+  background: #334155;
+}
+
+.dark-mode .user-dropdown li.text-danger {
+  color: #f87171;
+}
+
+.dark-mode .user-dropdown li.text-danger:hover {
+  background: #7f1d1d;
+  color: white;
+}
+
+/* Dil Değiştirici */
+.dark-mode .lang-dropdown {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+
+.dark-mode .lang-dropdown li {
+  color: #f1f5f9;
+}
+
+.dark-mode .lang-dropdown li:hover {
+  background: #334155;
+}
+
+/* Rozet (badge) rengi netliği */
+.dark-mode .badge {
+  background: #ef4444;
+  color: white;
+}
+
+.dark-mode .user-dropdown .badge {
+  background: #22c55e;
+  color: white;
 }
 </style>

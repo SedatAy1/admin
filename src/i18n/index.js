@@ -1,16 +1,17 @@
 import { createI18n } from 'vue-i18n'
-import tr from './locales/tr.json'
 import en from './locales/en.json'
+import tr from './locales/tr.json'
+import fr from './locales/fr.json'
+import de from './locales/de.json'
 
-const i18n = createI18n({
+export default createI18n({
   legacy: false,
-  globalInjection: true,
-  locale: 'tr', // varsayılan dil
-  fallbackLocale: 'tr',
+  locale: 'en', // veya 'tr'
+  fallbackLocale: 'en',
   messages: {
+    en,
     tr,
-    en
+    fr,
+    de
   }
 })
-
-export default i18n

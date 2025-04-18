@@ -1,0 +1,783 @@
+{
+  "sidebar": {
+    "orders": "Bestellungen",
+    "title": "Admin-Panel",
+    "orders_sub": {
+      "orders": "Bestellungen",
+      "new": "Neue Bestellungen",
+      "preparing": "In Vorbereitung",
+      "shipped": "Versendet",
+      "delivered": "Zugestellt",
+      "requests": "Bestellanfragen",
+      "cancelled": "Stornierte Bestellungen",
+      "incomplete": "Unvollständige Bestellungen",
+      "other": "Andere",
+      "quick_sales": "Schnellverkäufe",
+      "phone_orders": "Telefonbestellungen",
+      "active_carts": "Aktive Warenkörbe",
+      "bank_transfer": "Banküberweisungen",
+      "fault_reports": "Fehlermeldungen",
+      "sales_terminals": "Verkaufsterminals",
+      "bulk_actions": "Massenaktionen",
+      "quick_payments": "Schnellzahlungen"
+    },
+    "products": "Produkte",
+    "products_sub": {
+      "products": "Produkte",
+      "manage": "Produktverwaltung",
+      "categories": "Kategorienverwaltung",
+      "brands": "Markenverwaltung",
+      "attributes": "Attributverwaltung",
+      "custom_fields": "Benutzerdefinierte Felder",
+      "compatibility_groups": "Kompatibilitätsgruppen",
+      "tags": "Produkt-Tags",
+      "search_matching": "Suchzuordnung",
+      "search_console": "Suchkonsole",
+      "other": "Andere",
+      "marketplace_matching": "Marketplace-Zuordnung",
+      "reviews": "Produktbewertungen",
+      "recommendations": "Produktempfehlungen",
+      "advanced_sorting": "Erweiterte Sortierung",
+      "bulk_actions": "Massenaktionen für Produkte",
+      "bulk_seo": "Massen-SEO-Aktualisierungen"
+    },
+    "campaigns": "Kampagnen",
+    "campaigns_sub": {
+      "campaigns": "Kampagnen",
+      "coupons": "Gutscheinverwaltung",
+      "promotions": "Promotionen",
+      "member_discounts": "Mitgliederrabatte",
+      "dealer_discounts": "Händlerrabatte",
+      "dealer_commissions": "Händlerprovisionen",
+      "fixed_discounts": "Feste Rabatte",
+      "order_limits": "Bestelllimits",
+      "sales_quotas": "Verkaufsquoten",
+      "email_tools": "E-Mail-Tools",
+      "email_list": "Newsletter-Liste",
+      "email_groups": "Newsletter-Gruppen",
+      "email_send": "E-Mail senden",
+      "sms_tools": "SMS-Tools",
+      "sms_list": "SMS-Liste",
+      "sms_groups": "SMS-Gruppen",
+      "sms_send": "SMS senden"
+    },
+    "contents": "Inhalte",
+    "contents_sub": {
+      "content_management": "Inhaltsverwaltung",
+      "pages": "Seiten",
+      "help": "Hilfsartikel",
+      "faq": "FAQ",
+      "blog": "Blog-Verwaltung",
+      "slides": "Slides-Verwaltung",
+      "banners": "Banner-Verwaltung",
+      "popup": "Popup",
+      "upload": "Bilder hochladen",
+      "url_management": "URL-Verwaltung",
+      "url_redirect": "URL-Weiterleitung",
+      "reports_404": "404-Berichte"
+    },
+    "customers": "Kunden",
+    "customers_sub": {
+      "manage": "Kundenverwaltung",
+      "risk": "Risikokunden",
+      "balances": "Kundenguthaben",
+      "dealers": "Händlerverwaltung",
+      "groups": "Händlergruppen",
+      "transactions": "Händlertransaktionen"
+    },
+    "integrations": "Integrationen",
+    "integrations_sub": {
+      "marketplace": "Marketplace-Integrationen",
+      "accounting": "Buchhaltungsintegrationen",
+      "excel": "Schnell-Excel-Operationen",
+      "xml_import": "XML importieren",
+      "xml_export": "XML exportieren",
+      "bulk_marketplace": "Marketplace-Massenaktionen",
+      "hepsiburada": "Hepsiburada-Aktionen",
+      "monitor": "Marketplace-Überwachung"
+    },
+    "design": "Design",
+    "design_sub": {
+      "theme_settings": "Design-Einstellungen",
+      "module_layout": "Modul-Layout",
+      "print_templates": "Druckvorlagen",
+      "email_templates": "E-Mail-Vorlagen"
+    },
+    "reports": "Berichte",
+    "settings": "Einstellungen"
+  },
+  "header": {
+    "search": "Suchen...",
+    "account": "Mein Konto",
+    "inbox": "Posteingang",
+    "tasks": "Meine Aufgaben",
+    "settings": "Einstellungen",
+    "support": "Support",
+    "logout": "Abmelden"
+  },
+  "analytics": {
+    "title": "Analyseübersicht",
+    "chart_title": "Besucher & Verkäufe",
+    "traffic_title": "Verkehrsquellen",
+    "stats": {
+      "total_visitors": "Gesamtbesucher",
+      "bounce_rate": "Absprungrate",
+      "avg_session": "Durchschn. Sitzung"
+    },
+    "traffic": {
+      "source": "Quelle",
+      "visitors": "Besucher",
+      "conversion": "Konversionsrate"
+    },
+    "traffic_sources": {
+      "organic": "Organische Suche",
+      "social": "Soziale Medien",
+      "direct": "Direkt"
+    }
+  },
+  "dashboard": {
+    "dateRangePlaceholder": "Datumsbereich auswählen",
+    "filter": "Filtern",
+    "thisWeek": "Diese Woche",
+    "cards": {
+      "revenue": "Gesamter Umsatz",
+      "customers": "Gesamtkunden",
+      "transactions": "Gesamttransaktionen",
+      "products": "Gesamtprodukte"
+    },
+    "salesChart": "Verkaufsstatistik",
+    "deviceChart": "Besucher nach Gerät",
+    "recentOrders": "Letzte Bestellungen",
+    "recentTransactions": "Letzte Transaktionen",
+    "table": {
+      "product": "Produkt",
+      "category": "Kategorie",
+      "status": "Status",
+      "customer": "Kunde",
+      "qty": "Menge",
+      "date": "Bestelldatum"
+    }
+  },
+  "coupon": {
+    "searchPlaceholder": "🔍 Suchen...",
+    "new": "Neuer Geschenkgutschein",
+    "excel": "Excel-Aktionen",
+    "delete": "Löschen",
+    "noData": "Keine Einträge gefunden.",
+    "export": "Exportieren",
+    "import": "Importieren",
+    "exportInfo": "Alle Daten werden als Excel exportiert.",
+    "importInfo": "Excel-Datei hochladen zum Importieren.",
+    "modal": {
+      "newTitle": "Neuer Gutschein",
+      "code": "Gutscheincode:",
+      "excelTitle": "Geschenkgutscheine - Excel-Aktionen"
+    },
+    "table": {
+      "id": "Gutschein-Nr.",
+      "name": "Name",
+      "code": "Code",
+      "freeShipping": "Kostenloser Versand",
+      "minCart": "Mindestwarenkorb",
+      "maxUsage": "Max. Verwendung",
+      "totalUsage": "Gesamte Verwendung",
+      "startDate": "Startdatum",
+      "endDate": "Enddatum",
+      "status": "Status",
+      "action": "Aktion"
+    }
+  },
+  "quickSale": {
+    "title": "Schnellverkauf",
+    "searchPlaceholder": "Nach Produktname, Code oder Barcode suchen",
+    "summaryTitle": "Bestellübersicht",
+    "discountRate": "Rabatt (%)",
+    "shippingFee": "Versandkosten",
+    "subTotal": "Zwischensumme",
+    "discount": "Rabatt",
+    "total": "Gesamtsumme",
+    "customerInfo": "Kundeninformationen",
+    "customerName": "Vollständiger Name / Firma",
+    "customerPhone": "Telefon",
+    "customerCity": "Stadt",
+    "customerAddress": "Adresse",
+    "select": "Bitte wählen",
+    "createOrder": "BESTELLUNG ERSTELLEN",
+    "orderCreated": "Bestellung wurde erstellt!",
+    "table": {
+      "product": "Produkt",
+      "vat": "MwSt",
+      "quantity": "Menge",
+      "price": "Preis",
+      "total": "Gesamt"
+    }
+  },
+  "carts": {
+    "title": "Aktive Warenkörbe",
+    "table": {
+      "orderId": "Bestellnummer",
+      "customer": "Kundeninfo",
+      "amount": "Betrag",
+      "productCount": "Anzahl Produkte",
+      "date": "Datum",
+      "actions": "Aktionen"
+    },
+    "noData": "Keine Einträge gefunden.",
+    "footer": {
+      "showing": "{{from}} bis {{to}} von Einträgen"
+    }
+  },
+  "transfers": {
+    "title": "Banküberweisungen",
+    "table": {
+      "id": "Überweisungs-Nr.",
+      "orderId": "Bestellnummer",
+      "name": "Vollständiger Name",
+      "phone": "Telefon",
+      "amount": "Betrag",
+      "bank": "Bank",
+      "bankAccount": "Bankkonto",
+      "status": "Status",
+      "date": "Datum",
+      "actions": "Aktionen"
+    },
+    "noData": "Keine Einträge gefunden.",
+    "footer": {
+      "showing": "{{from}} bis {{to}} von {{total}} Einträgen"
+    }
+  },
+  "fault": {
+    "title": "Fehlermeldungen",
+    "table": {
+      "id": "Meldungs-Nr.",
+      "orderId": "Bestellnummer",
+      "name": "Vollständiger Name",
+      "subject": "Betreff",
+      "date": "Datum",
+      "status": "Geschlossen",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "passive": "Inaktiv"
+    },
+    "actions": {
+      "label": "Aktionen",
+      "detail": "Details",
+      "update": "Aktualisieren",
+      "delete": "Löschen"
+    },
+    "noData": "Keine Einträge gefunden.",
+    "footer": {
+      "showing": "{{from}} bis {{to}} von {{total}} Einträgen"
+    }
+  },
+  "terminal": {
+    "filters": {
+      "title": "Filteroptionen",
+      "name": "Terminalname",
+      "status": "Status",
+      "date": "Datum"
+    },
+    "table": {
+      "id": "Terminal-Nr.",
+      "name": "Terminalname",
+      "status": "Status",
+      "date": "Datum",
+      "actions": "Aktionen"
+    },
+    "actions": {
+      "label": "Aktionen",
+      "edit": "Bearbeiten",
+      "delete": "Löschen"
+    },
+    "modal": {
+      "title": "Neues Verkaufsterminal",
+      "name": "Terminalname",
+      "status": "Status"
+    },
+    "new": "Neues Terminal",
+    "noData": "Keine Einträge gefunden."
+  },
+  "bulk": {
+    "title": "Massenoperationen für Produkte",
+    "selectActionLabel": "Aktion auswählen",
+    "selectActionPlaceholder": "Bitte wählen",
+    "actions": {
+      "priceUpdate": "Preis aktualisieren",
+      "stockUpdate": "Bestand aktualisieren",
+      "categoryChange": "Kategorie ändern",
+      "deleteProducts": "Produkte löschen"
+    }
+  },
+  "order": {
+    "title": "Bestelleinstellungen",
+    "badge": "Neue Funktion",
+    "giftCoupon": {
+      "title": "Geschenkgutschein",
+      "description": "Erlaube Kunden, Gutscheincode beim Checkout einzugeben."
+    },
+    "giftPackage": {
+      "title": "Geschenkverpackungsdienst",
+      "description": "Kostenlose oder kostenpflichtige Geschenkverpackung anbieten."
+    },
+    "giftAmount": {
+      "title": "Preis Geschenkverpackung (TRY)",
+      "description": "Preis für die Geschenkverpackung."
+    },
+    "excludeVAT": {
+      "title": "Preise ohne MwSt anzeigen",
+      "description": "Produktpreise ohne Mehrwertsteuer anzeigen."
+    },
+    "identityRequired": {
+      "title": "Türkische ID-Nummer",
+      "description": "Erfordert ID-Nummer für Bestellungen."
+    },
+    "userStatus": {
+      "title": "Benutzerstatus",
+      "description": "Erlaube manuelle Statusänderung bei Registrierung."
+    },
+    "forceRegister": {
+      "title": "Registrierung erzwingen",
+      "description": "Kunden müssen sich vor Bestellung registrieren."
+    },
+    "noteActive": {
+      "title": "Bestellnotiz",
+      "description": "Erlaube Kunden, Notiz zur Bestellung hinzuzufügen."
+    },
+    "cancelAllowed": {
+      "title": "Stornierung erlauben",
+      "description": "Kunden können unbestätigte Bestellungen stornieren."
+    },
+    "restockOnCancel": {
+      "title": "Wieder auf Lager bei Storno",
+      "description": "Stornierte Produkte wieder auf Lager legen."
+    },
+    "orderNoteText": {
+      "title": "Info zur Bestellnotiz",
+      "description": "Text unter dem Notizfeld auf der Bestellseite."
+    },
+    "invoiceSerial": {
+      "title": "Rechnungsseriennummer",
+      "description": "Text auf der Rechnung anzeigen."
+    },
+    "separateItems": {
+      "title": "Produkte trennen",
+      "description": "Gleiche Produkte im Warenkorb einzeln auflisten."
+    },
+    "priceBased": {
+      "title": "Nach Preis sortieren",
+      "description": "Produkte nach Preis sortieren."
+    },
+    "minAmount": {
+      "title": "Mindestbestellwert (TRY)",
+      "description": "Bestellungen unter diesem Wert blockieren."
+    },
+    "requiredOrderFieldsTitle": "Pflichtfelder auf der Bestellseite",
+    "reqTCKN": "ID-/Steuernummer",
+    "reqEmail": "E-Mail-Adresse",
+    "requiredFastSaleFieldsTitle": "Pflichtfelder beim Schnellverkauf",
+    "reqNameFast": "Kundenname",
+    "reqPhoneFast": "Telefonnummer",
+    "reqAddressFast": "Adresse",
+    "reqTerminalFast": "Verkaufsterminal"
+  },
+  "category": {
+    "filterOptions": "Filteroptionen",
+    "name": "Kategoriename",
+    "enterName": "Kategoriename eingeben",
+    "parent": "Übergeordnete Kategorie",
+    "advancedFilter": "Erweiterter Filter",
+    "active": "Aktive Kategorien",
+    "passive": "Inaktive Kategorien",
+    "new": "+ Neue Kategorie",
+    "tree": "📂 Kategoriebäume",
+    "quickMatch": "≡ Schnelle Kategoriezuordnung",
+    "excel": "📊 Excel-Aktionen",
+    "newTitle": "Neue Kategorie",
+    "description": "Kategoriebeschreibung",
+    "save": "Speichern",
+    "treeTitle": "Kategoriebäume",
+    "infoText1": "Ziehen Sie eine Kategorie unter eine andere, um sie zu verschieben.",
+    "infoText2": "Ihre Änderungen werden automatisch gespeichert.",
+    "addMain": "+ Hauptkategorie hinzufügen",
+    "close": "Schließen",
+    "quickMatchTitle": "Schnelle Kategoriezuordnung",
+    "platform": "Plattform",
+    "status": "Status",
+    "unmatched": "Nicht zugeordnet",
+    "matched": "Zugeordnet",
+    "startMatching": "Zuordnung starten",
+    "excelTitle": "Kategorien - Excel-Aktionen",
+    "tabs": {
+      "Dışa Aktar": "Exportieren",
+      "Dışa Aktar 2": "Export 2",
+      "İçe Aktar": "Importieren"
+    },
+    "exportInfo": "Alle Daten werden als Excel-Datei exportiert.",
+    "export2Info": "Dies kann eine andere Exportmethode sein.",
+    "importInfo": "Sie können eine Excel-Datei hochladen, um zu importieren.",
+    "download": "Herunterladen",
+    "all": "Alle",
+    "change": "Ändern"
+  },
+  "brand": {
+    "search": "🔍 Suchen...",
+    "new": "+ Neue Marke",
+    "excel": "📊 Excel-Aktionen",
+    "id": "Marken-Nr.",
+    "name": "Markenname",
+    "description": "Kurzbeschreibung der Marke",
+    "status": "Status",
+    "order": "Reihenfolge",
+    "logo": "Markenlogo",
+    "active": "Aktiv",
+    "passive": "Inaktiv",
+    "newTitle": "Neue Marke",
+    "excelTitle": "Marken - Excel-Aktionen",
+    "exportInfo": "Alle Daten werden als Excel-Datei exportiert.",
+    "importInfo": "Sie können eine Excel-Datei hochladen, um zu importieren.",
+    "tabs": {
+      "Genel Bilgiler": "Allgemeine Informationen"
+    }
+  },
+  "attribute": {
+    "search": "🔍 Suchen...",
+    "new": "+ Neues Attribut",
+    "newTitle": "Neues Attribut",
+    "id": "Attribut-Nr.",
+    "name": "Attributname",
+    "code": "Attributcode",
+    "order": "Reihenfolge",
+    "status": "Status",
+    "active": "Aktiv",
+    "passive": "Inaktiv",
+    "image": "Attributbild",
+    "noData": "Keine Einträge gefunden.",
+    "tabs": {
+      "general": "Allgemeine Infos",
+      "values": "Attributwerte"
+    },
+    "valuesInfo": "Attributwerte können hier verwaltet werden."
+  },
+  "customField": {
+    "search": "🔍 Suchen...",
+    "new": "+ Neues benutzerdefiniertes Feld",
+    "newTitle": "Neues benutzerdefiniertes Feld",
+    "id": "Nr.",
+    "name": "Feldname",
+    "type": "Feldtyp",
+    "status": "Status",
+    "required": "Erforderlich",
+    "order": "Reihenfolge",
+    "description": "Kurzbeschreibung",
+    "noData": "Keine Einträge gefunden.",
+    "statuses": {
+      "Aktif": "Aktiv",
+      "Pasif": "Inaktiv"
+    },
+    "types": {
+      "Metin Kutusu": "Textfeld",
+      "Seçim Kutusu": "Auswahlfeld",
+      "Dosya Yükleme": "Datei-Upload"
+    }
+  },
+  "group": {
+    "new": "Neue Gruppe",
+    "title": "Händlergruppen",
+    "id": "Gruppen-Nr.",
+    "name": "Gruppenname",
+    "discount": "Rabatt",
+    "priceType": "Händlerpreistyp",
+    "default": "Standard",
+    "sample": "Testgruppe"
+  },
+  "tag": {
+    "search": "🔍 Suchen...",
+    "new": "+ Neues Tag",
+    "newTitle": "Neues Tag",
+    "name": "Tag-Name",
+    "image": "Bild",
+    "positionDesc": "Beschreibung wird hinzugefügt.",
+    "positions": {
+      "homepage": "Startseite",
+      "productList": "Produktliste",
+      "productDetail": "Produktdetails"
+    }
+  },
+  "matching": {
+    "search": "🔍 Suchen...",
+    "new": "+ Neue Zuordnung",
+    "newTitle": "Neue Suchzuordnung",
+    "excel": "📊 Excel-Aktionen",
+    "excelTitle": "Suchzuordnung - Excel",
+    "info": "Sie können falsch geschriebene Begriffe mit korrekten verknüpfen.\nBeispiel: 'tishirt' oder 'tişört' → 'T-Shirt'.",
+    "searchWord": "Suchbegriff",
+    "matchWord": "Zielbegriff",
+    "tabs": {
+      "export": "Exportieren",
+      "import": "Importieren"
+    },
+    "exportInfo": "Alle Daten werden als Excel-Datei exportiert."
+  },
+  "filter": {
+    "title": "Filteroptionen",
+    "keyword": "Suchbegriff",
+    "keywordPlaceholder": "Suchwort eingeben",
+    "date": "Suchdatum",
+    "searchCount": "Suchanzahl",
+    "resultCount": "Ergebnisanzahl",
+    "and": "bis"
+  },
+  "match": {
+    "categoryTitle": "Kategoriezuordnung",
+    "categoryInfo": "Ordnen Sie Ihre Kategorien den Marketplace-Kategorien zu.",
+    "featureTitle": "Merkmalszuordnung",
+    "featureInfo": "Ordnen Sie Marketplace-Merkmale den passenden zu.",
+    "variantTitle": "Variantenzuordnung",
+    "variantInfo": "Ordnen Sie Marketplace-Varianten den Produktvarianten zu.",
+    "selectCategory": "Kategorie auswählen",
+    "allCategories": "Alle Kategorien",
+    "platform": "Plattform",
+    "status": "Status",
+    "unmatched": "Nicht zugeordnet",
+    "start": "Zuordnung starten"
+  },
+  "review": {
+    "search": "Suchen...",
+    "id": "Bewertungs-ID",
+    "user": "Benutzer",
+    "product": "Produktname",
+    "rating": "Bewertung",
+    "status": "Status",
+    "date": "Datum",
+    "statuses": {
+      "approved": "Genehmigt",
+      "pending": "Ausstehend",
+      "rejected": "Abgelehnt"
+    }
+  },
+  "suggestion": {
+    "filterTitle": "Filteroptionen",
+    "suggestionTitle": "Vorschlagstitel",
+    "readStatus": "Gelesen-Status",
+    "replyStatus": "Antwort-Status",
+    "name": "Vollständiger Name",
+    "namePlaceholder": "Name eingeben",
+    "email": "E-Mail-Adresse",
+    "emailPlaceholder": "E-Mail eingeben",
+    "productCode": "Produktcode",
+    "productCodePlaceholder": "Produktcode eingeben",
+    "productName": "Produktname",
+    "productNamePlaceholder": "Produktname eingeben",
+    "modalTitle": "Produktvorschlagstitel",
+    "modalInfo": "Sie können vordefinierte Vorschläge hinzufügen.",
+    "id": "Vorschlags-Nr."
+  },
+  "definition": {
+    "new": "+ Neue Definition",
+    "newTitle": "Neue Definition erstellen",
+    "excel": "📥 Excel-Aktionen",
+    "excelTitle": "Excel-Aktionen",
+    "excelInfo": "Alle Daten werden als Excel-Datei exportiert.",
+    "name": "Definitionsname",
+    "category": "Kategorie",
+    "priority": "Priorität",
+    "status": "Status",
+    "namePlaceholder": "Definitionsname",
+    "categoryPlaceholder": "Kategorie",
+    "priorityLevels": {
+      "Yüksek": "Hoch",
+      "Orta": "Mittel",
+      "Düşük": "Niedrig"
+    },
+    "statuses": {
+      "Aktif": "Aktiv",
+      "Pasif": "Inaktiv"
+    }
+  },
+  "seo": {
+    "title": "SEO-Einstellungen",
+    "default": {
+      "title": "Standard-SEO-Einstellungen",
+      "description": "Definieren Sie hier die Standard-SEO-Infos Ihrer Website."
+    },
+    "fields": {
+      "title": "SEO-Titel",
+      "description": "SEO-Beschreibung",
+      "keywords": "SEO-Schlüsselwörter"
+    },
+    "pages": {
+      "title": "Seitenspezifisches SEO",
+      "page": "Seite",
+      "seoTitle": "SEO-Titel",
+      "seoDescription": "SEO-Beschreibung"
+    }
+  },
+  "promotion": {
+    "search": "🔍 Suchen...",
+    "new": "Neue Promotion",
+    "id": "Promo-Nr.",
+    "name": "Beschreibung",
+    "minCart": "Mindestbestellwert",
+    "startDate": "Startdatum",
+    "endDate": "Enddatum",
+    "order": "Reihenfolge",
+    "totalUsage": "Gesamtnutzung",
+    "status": "Status",
+    "newTitle": "Neue Promotion",
+    "newInfo": "Wählen Sie den Promotion-Typ. Die Einstellungen werden nach dem Erstellen vorgenommen."
+  },
+  "discount": {
+    "search": "🔍 Suchen...",
+    "new": "Neuen Rabatt definieren",
+    "id": "Rabatt-Nr.",
+    "category": "Kategorie",
+    "brand": "Marke",
+    "product": "Produkt",
+    "group": "Benutzergruppe",
+    "user": "Benutzer",
+    "type": "Rabatt-Typ",
+    "amount": "Betrag",
+    "modalTitle": "Neuer Mitgliederrabatt",
+    "productInfo": "Produktgruppen-Info",
+    "userInfo": "Benutzergruppen-Info",
+    "discountInfo": "Rabatt-Informationen",
+    "productPlaceholder": "Produkt eingeben",
+    "userPlaceholder": "Benutzer eingeben",
+    "amountPlaceholder": "Betrag eingeben",
+    "typeAmount": "Betrag (TRY)",
+    "groupDefault": "Mitglieder"
+  },
+  "dealerDiscount": {
+    "search": "🔍 Suchen...",
+    "new": "Neuen Rabatt definieren",
+    "excel": "Excel-Aktionen",
+    "id": "Rabatt-Nr.",
+    "category": "Kategorie",
+    "brand": "Marke",
+    "product": "Produkt",
+    "group": "Händlergruppe",
+    "dealer": "Händler",
+    "type": "Rabatt-Typ",
+    "amount": "Betrag",
+    "newTitle": "Neuer Händlerrabatt",
+    "productInfo": "Produktgruppen-Info",
+    "productHint": "Dieser Rabatt gilt nur für das ausgewählte Produkt.",
+    "dealerInfo": "Händlergruppen-Info",
+    "dealerHint": "Dieser Rabatt gilt nur für den ausgewählten Händler.",
+    "discountInfo": "Rabattinformationen",
+    "typeAmount": "Betrag (TRY)",
+    "excelTitle": "Händlerrabatte - Excel-Aktionen",
+    "export": "Exportieren",
+    "import": "Importieren",
+    "exportInfo": "📂 Alle Daten werden als Excel-Datei exportiert.",
+    "importInfo": "📥 Excel-Datei hochladen"
+  },
+  "commission": {
+    "search": "🔍 Suchen...",
+    "new": "Neue Provision definieren",
+    "newTitle": "Neue Provision definieren",
+    "product": "Produkt",
+    "dealerGroup": "Händlergruppe",
+    "dealer": "Händler",
+    "amount": "Provision",
+    "type": "Provisionsart",
+    "fixed": "Fester Betrag",
+    "percent": "Prozent (%)",
+    "productInfo": "Produktinfo",
+    "dealerInfo": "Händlerinfo",
+    "commissionInfo": "Provisionsinfo"
+  },
+  "fixedDiscount": {
+    "title": "Fester Rabatt",
+    "label": "Warenkorbrabatt (%)"
+  },
+  "orderLimit": {
+    "search": "🔍 Suchen...",
+    "new": "Neues Bestelllimit",
+    "newTitle": "Neues Bestelllimit",
+    "id": "Limit-Nr.",
+    "name": "Limitname",
+    "min": "Mindestbetrag",
+    "max": "Höchstbetrag",
+    "variant": "Variantenkontrolle",
+    "groups": "Mitgliedergruppen",
+    "dateRange": "Datumsbereich",
+    "priority": "Priorität",
+    "status": "Status",
+    "form": {
+      "name": "Limitname",
+      "status": "Status",
+      "priority": "Priorität",
+      "min": "Mindestbestellwert",
+      "max": "Maximalbestellwert"
+    }
+  },
+  "email": {
+    "title": "E-Mail-Einstellungen",
+    "adminAddress": {
+      "label": "Administrator-Benachrichtigungsadresse",
+      "tooltip": "E-Mail-Adresse eingeben",
+      "placeholder": "E-Mail eingeben"
+    },
+    "smtp": "Standard-SMTP",
+    "mailjet": "Mailjet",
+    "test": "Test"
+  },
+  "sms": {
+    "search": "🔍 Suchen...",
+    "new": "Neue SMS",
+    "newTitle": "Neue SMS senden",
+    "newGroup": "Neue Gruppe",
+    "newGroupTitle": "Neue Newsletter-Gruppe",
+    "newRecord": "Neuer Eintrag",
+    "excelActions": "Excel-Aktionen",
+    "recordNo": "Eintrag-Nr.",
+    "groupId": "Gruppen-ID",
+    "groupName": "Gruppenname",
+    "number": "Telefonnummer",
+    "name": "Name",
+    "group": "Gruppe",
+    "ip": "IP",
+    "date": "Datum",
+    "no": "Nein",
+    "status": "Status",
+    "settings": "Einstellungen",
+    "content": "SMS-Inhalt",
+    "toNewsletter": "An Newsletter senden",
+    "toMembers": "An Mitglieder/Händler senden",
+    "toExtraNumbers": "An zusätzliche Nummern senden",
+    "message": "Nachricht",
+    "phoneInfo": "Nummer mit Vorwahl eingeben. z.B. +49123456789",
+    "language": "Sprache",
+    "excelTitle": "SMS-Newsletter - Excel-Aktionen"
+  },
+  "ui": {
+    "save": "Speichern"
+  },
+  "actions": {
+    "clear": "Löschen",
+    "generate": "Generieren"
+  },
+  "dashboard": {
+  "dateRangePlaceholder": "28.02.2025 - 30.03.2025",
+  "filter": "Filtern",
+  "thisWeek": "Diese Woche",
+  "salesChart": "Umsatzstatistiken",
+  "deviceChart": "Besucher nach Gerät",
+  "recentOrders": "Neueste Bestellungen",
+  "recentTransactions": "Neueste Transaktionen",
+  "totalRevenue": "Gesamter Umsatz",
+  "totalCustomers": "Gesamtkunden",
+  "totalTransactions": "Gesamttransaktionen",
+  "totalProducts": "Gesamtprodukte",
+  "table": {
+    "product": "Produkt",
+    "category": "Kategorie",
+    "status": "Status",
+    "customer": "Kunde",
+    "qty": "Menge",
+    "date": "Datum"
+  }
+}
+}

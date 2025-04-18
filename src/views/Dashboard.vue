@@ -1,6 +1,4 @@
 <template>
-
-
   <div class="dashboard-container">
     <!-- ÜST ALAN: Tarih ve Butonlar -->
     <div class="dashboard-header card d-flex justify-content-between align-items-center">
@@ -10,17 +8,16 @@
           <input
             type="text"
             class="form-control date-range"
-            placeholder="02/28/2025 - 03/30/2025"
+            :placeholder="$t('dashboard.dateRangePlaceholder')"
           />
         </div>
         <button class="upload-btn icon-btn"><i class="bi bi-upload"></i></button>
-        <button class="filter-btn"><i class="bi bi-funnel me-2"></i>Filter</button>
+        <button class="filter-btn"><i class="bi bi-funnel me-2"></i>{{ $t('dashboard.filter') }}</button>
       </div>
     </div>
 
     <!-- KARTLAR: Gelir, Müşteri vs. -->
     <div class="row mt-4">
-
       <div
         v-for="(card, index) in statCards"
         :key="index"
@@ -28,10 +25,10 @@
       >
         <div class="card stat-card">
           <div class="card-body text-center">
-            <h6 class="card-title">{{ card.title }}</h6>
+            <h6 class="card-title">{{ $t('dashboard.' + card.title) }}</h6>
             <p class="card-value">{{ card.value }}</p>
             <p class="card-change" :class="card.change > 0 ? 'text-success' : 'text-danger'">
-              {{ card.change > 0 ? '+' : '' }}{{ card.change }}% This week
+              {{ card.change > 0 ? '+' : '' }}{{ card.change }}% {{ $t('dashboard.thisWeek') }}
             </p>
           </div>
         </div>
@@ -43,7 +40,7 @@
       <div class="col-md-8 mb-3">
         <div class="card h-100">
           <div class="card-body">
-            <h6 class="card-title mb-3">Sales Statistics</h6>
+            <h6 class="card-title mb-3">{{ $t('dashboard.salesChart') }}</h6>
             <canvas id="salesChart"></canvas>
           </div>
         </div>
@@ -52,7 +49,7 @@
       <div class="col-md-4 mb-3">
         <div class="card h-100">
           <div class="card-body">
-            <h6 class="card-title mb-3">Visitors By Device</h6>
+            <h6 class="card-title mb-3">{{ $t('dashboard.deviceChart') }}</h6>
             <canvas id="deviceChart"></canvas>
           </div>
         </div>
@@ -64,16 +61,16 @@
       <div class="col-md-8 mb-3">
         <div class="card">
           <div class="card-body">
-            <h6 class="card-title mb-3">Recent Orders</h6>
+            <h6 class="card-title mb-3">{{ $t('dashboard.recentOrders') }}</h6>
             <table class="table table-borderless align-middle">
               <thead>
                 <tr>
-                  <th>Product</th>
-                  <th>Category</th>
-                  <th>Status</th>
-                  <th>Customer</th>
-                  <th>Qty</th>
-                  <th>Date</th>
+                  <th>{{ $t('dashboard.table.product') }}</th>
+                  <th>{{ $t('dashboard.table.category') }}</th>
+                  <th>{{ $t('dashboard.table.status') }}</th>
+                  <th>{{ $t('dashboard.table.customer') }}</th>
+                  <th>{{ $t('dashboard.table.qty') }}</th>
+                  <th>{{ $t('dashboard.table.date') }}</th>
                 </tr>
               </thead>
               <tbody>
@@ -96,7 +93,7 @@
       <div class="col-md-4 mb-3">
         <div class="card">
           <div class="card-body">
-            <h6 class="card-title mb-3">Recent Transactions</h6>
+            <h6 class="card-title mb-3">{{ $t('dashboard.recentTransactions') }}</h6>
             <ul class="list-group list-group-flush">
               <li
                 v-for="(transaction, index) in recentTransactions"
@@ -121,11 +118,11 @@ export default {
   data() {
     return {
       statCards: [
-        { title: 'Total Revenue', value: '$315,244', change: 12, icon: 'bi-currency-dollar' },
-        { title: 'Total Customers', value: '153,432', change: -5, icon: 'bi-people' },
-        { title: 'Total Transactions', value: '75,275', change: 11, icon: 'bi-credit-card' },
-        { title: 'Total Products', value: '626,532', change: 6.5, icon: 'bi-box-seam' },
-      ],
+       { title: 'totalRevenue', value: '$315,244', change: 12, icon: 'bi-currency-dollar' },
+      { title: 'totalCustomers', value: '153,432', change: -5, icon: 'bi-people' },
+      { title: 'totalTransactions', value: '75,275', change: 11, icon: 'bi-credit-card' },
+      { title: 'totalProducts', value: '626,532', change: 6.5, icon: 'bi-box-seam' },
+    ],
       recentOrders: [
         {
           product: 'Elegance Wall Clock',
@@ -497,6 +494,10 @@ export default {
   color: #f5f5f5;
   border-color: #5b4ddb;
 }
+
+.dark-mode .date-picker input::placeholder {
+  color: #cbd5e1 !important;
+}
 .dark-mode .date-picker .date-icon {
   color: #aaa;
 }
@@ -513,15 +514,49 @@ canvas {
 @media (max-width: 768px) {
   .dashboard-header {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px;
   }
+
   .dashboard-controls {
     flex-direction: column;
     width: 100%;
+    gap: 12px;
   }
+
+  .date-picker {
+    width: 100%;
+  }
+
   .date-picker input {
     width: 100%;
+    font-size: 14px;
+  }
+
+  .upload-btn,
+  .filter-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stat-card {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .card .card-body {
+    padding: 16px;
+  }
+
+  .table th,
+  .table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .table {
+    font-size: 13px;
   }
 }
 
