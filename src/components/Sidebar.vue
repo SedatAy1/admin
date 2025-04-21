@@ -633,6 +633,7 @@ export default {
   transition: all 0.3s ease;
   font-family: 'Inter', sans-serif;
   z-index: 1000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .sidebar.collapsed {
@@ -795,6 +796,7 @@ export default {
 
   .sidebar.mobile-open {
     transform: translateX(0);
+    background-color: #fff;
   }
 
   .sidebar.collapsed {
