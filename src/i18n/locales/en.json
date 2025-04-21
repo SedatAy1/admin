@@ -2384,6 +2384,7 @@
 
 "dashboard": {
   "dateRangePlaceholder": "02/28/2025 - 03/30/2025",
+  "header.darkMode":"Dark Mode",
   "filter": "Filter",
   "thisWeek": "This week",
   "salesChart": "Sales Statistics",

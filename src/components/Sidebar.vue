@@ -556,6 +556,7 @@ export default {
 </script>
 <style scoped>
 /* === GENEL === */
+/* === GENEL === */
 .icon {
   width: 20px;
   height: 20px;
@@ -584,6 +585,7 @@ export default {
   background-color: #f3f4f6;
   color: #111827;
 }
+
 .btn-toggle.active {
   color: #5b4ddb !important;
   font-weight: 600;
@@ -602,6 +604,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding: 10px 0;
 }
 
 .logo-link {
@@ -611,13 +614,10 @@ export default {
 }
 
 .logo-image {
-  height: 100px;
+  height: 80px;
   max-width: 100%;
   object-fit: contain;
-}
-
-.sidebar.collapsed .logo-image {
-  height: 32px;
+  transition: height 0.3s ease;
 }
 
 .sidebar {
@@ -640,8 +640,13 @@ export default {
   padding: 24px 10px;
 }
 
+.sidebar.collapsed .logo-image {
+  height: 32px;
+}
+
 .sidebar.collapsed .btn-toggle {
   justify-content: center;
+  padding: 10px 8px;
 }
 
 .sidebar.collapsed .btn-toggle .icon + span {
@@ -651,8 +656,9 @@ export default {
 .sidebar-header {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: space-between;
   padding-left: 13px;
+  margin-bottom: 20px;
 }
 
 .sidebar-menu {
@@ -727,6 +733,11 @@ export default {
   color: #ffffff;
 }
 
+:deep(html.dark) .btn-toggle:hover {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
 /* 🔥 Dark mode: Aktif menü rengi */
 :deep(html.dark) .sidebar-menu .router-link-active {
   background: none;
@@ -743,10 +754,43 @@ export default {
 }
 
 /* === RESPONSIVE === */
+.mobile-toggle-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #374151;
+  padding: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+:deep(html.dark) .mobile-toggle-btn {
+  color: #f1f5f9;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .sidebar.collapsed {
+    width: 70px;
+  }
+
+  .logo-image {
+    height: 60px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 992px) {
   .sidebar {
     transform: translateX(-100%);
-    width: 260px;
+    width: 280px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
   }
 
   .sidebar.mobile-open {
@@ -754,27 +798,74 @@ export default {
   }
 
   .sidebar.collapsed {
-    width: 260px;
-    padding: 24px 18px;
+    width: 280px;
+    padding: 20px;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.collapsed.mobile-open {
+    transform: translateX(0);
+  }
+
+  .sidebar.collapsed .logo-image {
+    height: 60px;
   }
 
   .sidebar.collapsed .btn-toggle .icon + span {
     display: inline;
   }
 
+  .sidebar.collapsed .btn-toggle {
+    justify-content: flex-start;
+  }
+
   .mobile-toggle-btn {
+    display: block;
     position: absolute;
     top: 16px;
     right: 16px;
-    background: none;
-    border: none;
-    font-size: 22px;
-    z-index: 1100;
-    color: #374151;
   }
 
-  html.dark .mobile-toggle-btn {
-    color: #f1f5f9;
+  .logo-wrapper {
+    padding-top: 40px;
+    justify-content: center;
+  }
+
+  .submenu {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+  .sidebar {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .sidebar.collapsed {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .logo-image {
+    height: 50px;
+  }
+
+  .btn-toggle {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .sidebar-menu a {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .submenu li a {
+    padding: 6px 8px;
+    font-size: 12px;
   }
 }
 </style>

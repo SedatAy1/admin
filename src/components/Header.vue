@@ -12,55 +12,133 @@
 
     <!-- Sağ Taraf -->
     <div class="d-flex align-items-center gap-3">
-      <div class="d-flex align-items-center gap-3">
-  <!-- Dil Seçici -->
-  <div class="language-switcher" ref="langDropdown">
-    <img
-      :src="currentLanguage === 'tr'
-        ? '/flags/turkey.png'
-        : currentLanguage === 'en'
-        ? '/flags/england.png'
-        : currentLanguage === 'fr'
-        ? '/flags/france.png'
-        : '/flags/germany.jpg'"
-      alt="Lang"
-      class="flag"
-      @click="toggleLangDropdown"
-    />
-    <ul v-show="isLangDropdownOpen" class="lang-dropdown shadow">
-      <li @click="changeLang('en')">
-        <img src="/flags/england.png" />
-        English
-      </li>
-      <li @click="changeLang('fr')">
-        <img src="/flags/france.png" />
-        Français
-      </li>
-      <li @click="changeLang('de')">
-        <img src="/flags/germany.jpg" />
-        Deutsch
-      </li>
-    </ul>
-  </div>
-</div>
+      <!-- Masaüstü görünümde normal gösterilen butonlar -->
+      <div class="desktop-buttons">
+        <!-- Dil Seçici -->
+        <div class="language-switcher" ref="langDropdown">
+          <img
+            :src="currentLanguage === 'tr'
+              ? '/flags/turkey.png'
+              : currentLanguage === 'en'
+              ? '/flags/england.png'
+              : currentLanguage === 'fr'
+              ? '/flags/france.png'
+              : '/flags/germany.jpg'"
+            alt="Lang"
+            class="flag"
+            @click="toggleLangDropdown"
+          />
+          <ul v-show="isLangDropdownOpen" class="lang-dropdown shadow">
+            <li @click="changeLang('en')">
+              <img src="/flags/england.png" />
+              English
+            </li>
+            <li @click="changeLang('fr')">
+              <img src="/flags/france.png" />
+              Français
+            </li>
+            <li @click="changeLang('de')">
+              <img src="/flags/germany.jpg" />
+              Deutsch
+            </li>
+          </ul>
+        </div>
 
-      <button class="btn btn-light icon-btn" @click="toggleTheme">
-        <i :class="isDarkMode ? 'bi bi-moon-fill' : 'bi bi-sun-fill'"></i>
-      </button>
+        <button class="btn btn-light icon-btn" @click="toggleTheme">
+          <i :class="isDarkMode ? 'bi bi-moon-fill' : 'bi bi-sun-fill'"></i>
+        </button>
 
-      <button class="btn btn-light icon-btn position-relative">
-        <i class="bi bi-cart2"></i>
-        <span class="badge"></span>
-      </button>
+        <button class="btn btn-light icon-btn position-relative">
+          <i class="bi bi-cart2"></i>
+          <span class="badge"></span>
+        </button>
 
-      <!-- Ayarlar Butonu -->
-      <button class="btn btn-light icon-btn" @click.stop="toggleSettingsPanel">
-        <i class="bi bi-gear-fill"></i>
-      </button>
+        <!-- Ayarlar Butonu -->
+        <button class="btn btn-light icon-btn" @click.stop="toggleSettingsPanel">
+          <i class="bi bi-gear-fill"></i>
+        </button>
 
-      <button class="btn btn-light icon-btn" @click="toggleFullscreen">
-        <i class="bi bi-arrows-fullscreen"></i>
-      </button>
+        <button class="btn btn-light icon-btn" @click="toggleFullscreen">
+          <i class="bi bi-arrows-fullscreen"></i>
+        </button>
+      </div>
+
+      <!-- Mobil görünümde 3 nokta menüsü -->
+      <div class="mobile-menu" ref="mobileMenu">
+        <button class="btn btn-light icon-btn" @click="toggleMobileMenu">
+          <i class="bi bi-three-dots-vertical"></i>
+        </button>
+        <div v-show="isMobileMenuOpen" class="mobile-dropdown shadow">
+          <!-- Dil Seçici -->
+          <div class="mobile-dropdown-item" @click="toggleMobileLangDropdown">
+            <div class="d-flex align-items-center justify-content-between w-100">
+              <div class="d-flex align-items-center gap-2">
+                <img
+                  :src="
+                    currentLanguage === 'en'
+                    ? '/flags/england.png'
+                    : currentLanguage === 'en'
+                    ? '/flags/england.png'
+                    : currentLanguage === 'fr'
+                    ? '/flags/france.png'
+                    : '/flags/germany.jpg'"
+                  alt="Lang"
+                  class="flag-small"
+                />
+                <span>{{ currentLanguage.toUpperCase() }}</span>
+              </div>
+              <i class="bi bi-chevron-right"></i>
+            </div>
+            <!-- Dil Alt Menü -->
+            <ul v-show="isMobileLangDropdownOpen" class="mobile-lang-submenu">
+              <li @click="changeLang('en')">
+                <img src="/flags/england.png" class="flag-small" />
+                English
+              </li>
+              <li @click="changeLang('fr')">
+                <img src="/flags/france.png" class="flag-small" />
+                Français
+              </li>
+              <li @click="changeLang('de')">
+                <img src="/flags/germany.jpg" class="flag-small" />
+                Deutsch
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tema Modu -->
+          <div class="mobile-dropdown-item" @click="toggleTheme">
+            <div class="d-flex align-items-center gap-2">
+              <i :class="isDarkMode ? 'bi bi-moon-fill' : 'bi bi-sun-fill'"></i>
+              <span>{{ isDarkMode ? $t('header.darkMode') : $t('header.lightMode') }}</span>
+            </div>
+          </div>
+
+          <!-- Sepet -->
+          <div class="mobile-dropdown-item" @click="goToCart">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-cart2"></i>
+              <span>{{ $t('header.cart') }}</span>
+            </div>
+          </div>
+
+          <!-- Ayarlar -->
+          <div class="mobile-dropdown-item" @click="toggleSettingsPanel">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-gear-fill"></i>
+              <span>{{ $t('header.settings') }}</span>
+            </div>
+          </div>
+
+          <!-- Tam Ekran -->
+          <div class="mobile-dropdown-item" @click="toggleFullscreen">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-arrows-fullscreen"></i>
+              <span>{{ $t('header.fullscreen') }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Avatar ve Menü -->
       <div class="dropdown" ref="dropdown">
@@ -79,7 +157,7 @@
           <li class="d-flex align-items-center gap-2 mb-2">
             <Mail class="text-muted" size="20" />
             <span>{{ $t('header.inbox') }}</span>
-            <span class="badge bg-success ms-auto">27</span>
+            <span class="badge bg-success ms-auto"></span>
           </li>
           <li class="d-flex align-items-center gap-2 mb-2">
             <ClipboardList class="text-muted" size="20" />
@@ -157,6 +235,8 @@ export default {
       isDropdownOpen: false,
       isLangDropdownOpen: false,
       showSettingsPanel: false,
+      isMobileMenuOpen: false,
+      isMobileLangDropdownOpen: false,
       settings: [
         {
           title: "Theme color mode:",
@@ -205,22 +285,25 @@ export default {
     };
   },
   created() {
-  const storedLang = localStorage.getItem("lang");
-  if (storedLang) {
-    this.currentLanguage = storedLang;
-    this.$i18n.locale = storedLang;
-  } else {
-    this.currentLanguage = 'en';
-    this.$i18n.locale = 'en';
-    localStorage.setItem('lang', 'en');
-  }
-},
+    const storedLang = localStorage.getItem("lang");
+    if (storedLang) {
+      this.currentLanguage = storedLang;
+      this.$i18n.locale = storedLang;
+    } else {
+      this.currentLanguage = 'en';
+      this.$i18n.locale = 'en';
+      localStorage.setItem('lang', 'en');
+    }
+  },
   mounted() {
     this.applyDarkMode();
     document.addEventListener("click", this.handleOutsideClick);
+    window.addEventListener("resize", this.checkScreenSize);
+    this.checkScreenSize();
   },
   beforeUnmount() {
     document.removeEventListener("click", this.handleOutsideClick);
+    window.removeEventListener("resize", this.checkScreenSize);
   },
   methods: {
     toggleSidebar() {
@@ -230,6 +313,9 @@ export default {
       this.isDarkMode = !this.isDarkMode;
       localStorage.setItem("darkMode", this.isDarkMode);
       this.applyDarkMode();
+      if (this.isMobileMenuOpen) {
+        this.isMobileMenuOpen = false;
+      }
     },
     applyDarkMode() {
       const html = document.documentElement;
@@ -248,22 +334,47 @@ export default {
       } else {
         document.exitFullscreen();
       }
+      if (this.isMobileMenuOpen) {
+        this.isMobileMenuOpen = false;
+      }
     },
     toggleDropdown() {
       this.isDropdownOpen = !this.isDropdownOpen;
+      if (this.isMobileMenuOpen) {
+        this.isMobileMenuOpen = false;
+      }
     },
     toggleLangDropdown() {
       this.isLangDropdownOpen = !this.isLangDropdownOpen;
     },
+    toggleMobileMenu() {
+      this.isMobileMenuOpen = !this.isMobileMenuOpen;
+      if (this.isMobileMenuOpen) {
+        this.isDropdownOpen = false;
+      }
+    },
+    toggleMobileLangDropdown(e) {
+      e.stopPropagation();
+      this.isMobileLangDropdownOpen = !this.isMobileLangDropdownOpen;
+    },
     toggleSettingsPanel() {
       this.showSettingsPanel = !this.showSettingsPanel;
+      if (this.isMobileMenuOpen) {
+        this.isMobileMenuOpen = false;
+      }
     },
     changeLang(lang) {
       this.currentLanguage = lang;
       this.$i18n.locale = lang;
       localStorage.setItem("lang", lang);
       this.isLangDropdownOpen = false;
+      this.isMobileLangDropdownOpen = false;
+      this.isMobileMenuOpen = false;
       this.$store.dispatch("changeLanguage", lang);
+    },
+    goToCart() {
+      // Sepet sayfasına yönlendirme kodu
+      this.isMobileMenuOpen = false;
     },
     handleOutsideClick(event) {
       if (this.$refs.dropdown && !this.$refs.dropdown.contains(event.target)) {
@@ -274,6 +385,10 @@ export default {
       }
       if (this.$refs.settingsPanel && !this.$refs.settingsPanel.contains(event.target)) {
         this.showSettingsPanel = false;
+      }
+      if (this.$refs.mobileMenu && !this.$refs.mobileMenu.contains(event.target)) {
+        this.isMobileMenuOpen = false;
+        this.isMobileLangDropdownOpen = false;
       }
     },
     selectOption(groupIndex, optionIndex) {
@@ -287,6 +402,21 @@ export default {
           opt.active = i === 0;
         });
       });
+    },
+    checkScreenSize() {
+      const isMobile = window.innerWidth < 768;
+      const desktopButtons = document.querySelector('.desktop-buttons');
+      const mobileMenu = document.querySelector('.mobile-menu');
+
+      if (desktopButtons && mobileMenu) {
+        if (isMobile) {
+          desktopButtons.style.display = 'none';
+          mobileMenu.style.display = 'block';
+        } else {
+          desktopButtons.style.display = 'flex';
+          mobileMenu.style.display = 'none';
+        }
+      }
     }
   }
 };
@@ -301,9 +431,6 @@ export default {
   --radius: 12px;
   --transition: all 0.3s ease;
 }
-
-
-
 
 /* === HEADER === */
 .header {
@@ -346,6 +473,13 @@ export default {
 }
 
 .d-flex.align-items-center.gap-3 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Desktop Buttons */
+.desktop-buttons {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -486,6 +620,73 @@ export default {
 }
 .user-dropdown li.text-danger:hover {
   background: #fee2e2;
+}
+
+/* === MOBILE MENU === */
+.mobile-menu {
+  display: none; /* Varsayılan olarak gizli */
+  position: relative;
+}
+
+.mobile-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  border-radius: 16px;
+  width: 240px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow: hidden;
+  animation: dropdownFade 0.25s ease-out;
+}
+
+.mobile-dropdown-item {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  position: relative;
+}
+
+.mobile-dropdown-item:hover {
+  background: #f3f4f6;
+}
+
+.mobile-dropdown-item i {
+  font-size: 18px;
+  color: #6b7280;
+  margin-right: 6px;
+}
+
+/* Mobil dil alt menüsü */
+.mobile-lang-submenu {
+  background: #f3f4f6;
+  margin-top: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mobile-lang-submenu li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.mobile-lang-submenu li:hover {
+  background: #e5e7eb;
+}
+
+.flag-small {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 /* === SETTINGS PANEL === */
@@ -658,16 +859,19 @@ export default {
 }
 
 /* Dropdown Menü */
-.dark-mode .user-dropdown {
+.dark-mode .user-dropdown,
+.dark-mode .mobile-dropdown {
   background: #1f2937;
   color: #f9fafb;
 }
 
-.dark-mode .user-dropdown li {
+.dark-mode .user-dropdown li,
+.dark-mode .mobile-dropdown-item {
   color: #f1f5f9;
 }
 
-.dark-mode .user-dropdown li:hover {
+.dark-mode .user-dropdown li:hover,
+.dark-mode .mobile-dropdown-item:hover {
   background: #334155;
 }
 
@@ -681,16 +885,19 @@ export default {
 }
 
 /* Dil Değiştirici */
-.dark-mode .lang-dropdown {
+.dark-mode .lang-dropdown,
+.dark-mode .mobile-lang-submenu {
   background: #1e293b;
   color: #f1f5f9;
 }
 
-.dark-mode .lang-dropdown li {
+.dark-mode .lang-dropdown li,
+.dark-mode .mobile-lang-submenu li {
   color: #f1f5f9;
 }
 
-.dark-mode .lang-dropdown li:hover {
+.dark-mode .lang-dropdown li:hover,
+.dark-mode .mobile-lang-submenu li:hover {
   background: #334155;
 }
 
@@ -703,5 +910,27 @@ export default {
 .dark-mode .user-dropdown .badge {
   background: #22c55e;
   color: white;
+}
+
+/* Mobil için responsive ayarlar */
+@media (max-width: 767px) {
+  .search-bar input {
+    width: 180px;
+  }
+
+  .settings-panel {
+    width: 300px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .search-bar input {
+    width: 150px;
+  }
 }
 </style>
