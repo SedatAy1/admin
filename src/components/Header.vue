@@ -18,7 +18,7 @@
         <div class="language-switcher" ref="langDropdown">
           <img
             :src="currentLanguage === 'tr'
-              ? '/flags/turkey.png'
+              ? '/flags/england.png'
               : currentLanguage === 'en'
               ? '/flags/england.png'
               : currentLanguage === 'fr'

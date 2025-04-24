@@ -308,31 +308,13 @@ export default {
   --text-light: #f8fafc;
   --text-dark: #0f172a;
   --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-  --transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-/* === ANİMASYONLAR === */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0px); }
-}
-
-@keyframes glowPulse {
-  0% { box-shadow: 0 0 3px rgba(124, 58, 237, 0.2), 0 0 6px rgba(124, 58, 237, 0.1); }
-  50% { box-shadow: 0 0 12px rgba(124, 58, 237, 0.4), 0 0 18px rgba(124, 58, 237, 0.2); }
-  100% { box-shadow: 0 0 3px rgba(124, 58, 237, 0.2), 0 0 6px rgba(124, 58, 237, 0.1); }
-}
-
-@keyframes shine {
-  0% { background-position: -100% 0; }
-  100% { background-position: 200% 0; }
+  --transition: all 0.3s ease;
 }
 
 /* === DASHBOARD CONTAINER === */
 .dashboard-container {
   padding: 24px;
-  padding-bottom: 5p;
+  padding-bottom: 5px;
   background-color: var(--light-bg);
   position: relative;
   border-radius: 28px;
@@ -373,7 +355,7 @@ export default {
 .dashboard-header {
   padding: 16px;
   border-radius: 24px;
-  margin-bottom: 5px; /* Kartlar ile arasındaki boşluk */
+  margin-bottom: 5px;
   background: var(--light-card);
   position: relative;
   z-index: 1;
@@ -467,13 +449,11 @@ export default {
 }
 
 .date-picker:hover .date-icon {
-  transform: translateY(-2px);
   color: var(--primary-dark);
 }
 
 .date-picker:hover::after {
   opacity: 0.15;
-  transform: scale(1.05);
 }
 
 .date-picker input:focus {
@@ -523,14 +503,8 @@ export default {
   z-index: 1;
 }
 
-.upload-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: none; /* Gölge kaldırıldı */
-}
-
 .upload-btn:hover i {
   color: white;
-  transform: scale(1.1);
 }
 
 .upload-btn:hover::before {
@@ -565,39 +539,8 @@ export default {
   transition: var(--transition);
 }
 
-/* Filtre animasyonu */
-.filter-btn::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: repeating-linear-gradient(
-    60deg,
-    transparent,
-    transparent 8px,
-    rgba(255, 255, 255, 0.05) 8px,
-    rgba(255, 255, 255, 0.05) 16px
-  );
-  animation: shine 5s infinite linear;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
 .filter-btn:hover {
   background: var(--primary-dark);
-  transform: translateY(-3px);
-  box-shadow: none; /* Gölge kaldırıldı */
-}
-
-.filter-btn:hover::before {
-  opacity: 1;
-}
-
-.filter-btn:hover i {
-  transform: rotate(180deg);
 }
 
 /* Dark Mode için filtre alanı düzenlemeleri */
@@ -640,11 +583,6 @@ export default {
   position: relative;
   z-index: 1;
   overflow: hidden;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: none; /* Gölge kaldırıldı */
 }
 
 .dark-mode .card {
@@ -720,11 +658,6 @@ export default {
 .stat-card:nth-child(4) {
   background: linear-gradient(135deg, #ec4899, #d946ef);
   color: white;
-}
-
-.stat-card:hover {
-  transform: translateY(-8px);
-  box-shadow: none; /* Gölge kaldırıldı */
 }
 
 /* Kart içeriği */
@@ -814,8 +747,6 @@ export default {
 
 .table tbody tr:hover td {
   background: var(--neutral-100);
-  transform: translateY(-2px);
-  /* Gölge olmadan */
 }
 
 .dark-mode .table th,
@@ -891,8 +822,6 @@ canvas {
 
 .list-group-item:hover {
   background: var(--neutral-100);
-  transform: translateX(3px);
-  box-shadow: none; /* Gölge yok */
 }
 
 .dark-mode .list-group-item {
@@ -944,7 +873,7 @@ canvas {
     flex-wrap: wrap;
     gap: 16px;
     width: 100%;
-    justify-content: flex-end; /* Sağa hizalama için eklendi */
+    justify-content: flex-end;
   }
 
   .date-picker,
@@ -988,12 +917,12 @@ canvas {
     flex-direction: column;
     width: 100%;
     gap: 12px;
-    align-items: flex-end; /* Mobil görünümde sağa hizalama için eklendi */
+    align-items: flex-end;
   }
 
   .date-picker {
-    align-self: flex-end; /* Tarih seçici için özel hizalama */
-    width: 100%; /* Genişliğin korunması için */
+    align-self: flex-end;
+    width: 100%;
   }
 
   .date-picker input,
@@ -1046,4 +975,5 @@ canvas {
     margin-top: 0 !important;
   }
 }
+
 </style>
