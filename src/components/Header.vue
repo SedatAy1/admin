@@ -1,13 +1,17 @@
 <template>
   <header class="header">
-    <!-- Sol: Arama -->
+    <!-- Sol: Menü + Arama -->
     <div class="left-section">
+      <!-- Hamburger Menü Butonu -->
+      <button class="hamburger-button" @click="toggleSidebar">
+        <i class="bi bi-list"></i>
+      </button>
+      <!-- Arama -->
       <div class="search-bar">
         <i class="bi bi-search search-icon"></i>
         <input type="text" :placeholder="$t('header.search')" />
       </div>
     </div>
-
     <!-- Mobil Menü Hamburger Butonu -->
     <button class="menu-toggle" @click="toggleMobileMenu">
       <i class="bi bi-three-dots-vertical"></i>
@@ -131,6 +135,7 @@
 <script>
 export default {
   name: "HeaderComponent",
+  emits: ['toggle-sidebar'], // parent'a sidebar aç/kapa sinyali gönderir
   data() {
     return {
       isDarkMode: localStorage.getItem("darkMode") === "true",
@@ -209,6 +214,9 @@ export default {
     window.removeEventListener("resize", this.checkScreenSize);
   },
   methods: {
+    toggleSidebar() {
+      this.$emit('toggle-sidebar');
+    },
     checkScreenSize() {
       this.windowWidth = window.innerWidth;
       this.isMobile = this.windowWidth < 992;
@@ -218,7 +226,6 @@ export default {
     },
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
-      // Mobil menü açıldığında diğer dropdown'ları kapat
       if (this.isMobileMenuOpen) {
         this.isLangDropdownOpen = false;
         this.isDropdownOpen = false;
@@ -230,7 +237,6 @@ export default {
     toggleLangDropdown(event) {
       event.stopPropagation();
       this.isLangDropdownOpen = !this.isLangDropdownOpen;
-      // Dil dropdown açıldığında kullanıcı dropdown'ı kapat
       if (this.isLangDropdownOpen) {
         this.isDropdownOpen = false;
       }
@@ -238,14 +244,12 @@ export default {
     toggleDropdown(event) {
       event.stopPropagation();
       this.isDropdownOpen = !this.isDropdownOpen;
-      // Kullanıcı dropdown açıldığında dil dropdown'ı kapat
       if (this.isDropdownOpen) {
         this.isLangDropdownOpen = false;
       }
     },
     toggleSettingsPanel() {
       this.showSettingsPanel = !this.showSettingsPanel;
-      // Ayarlar paneli açıldığında diğer açık menüleri kapat
       if (this.showSettingsPanel) {
         this.isMobileMenuOpen = false;
         this.isLangDropdownOpen = false;
@@ -392,6 +396,36 @@ export default {
   padding: 0;
 }
 .close-menu:hover {
+  color: #5b4ddb;
+}
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hamburger-button {
+  width: 38px;
+  height: 38px;
+  background: #f3f4f6;
+  border-radius: 50%;
+  border: none;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.hamburger-button:hover {
+  background: #e5e7eb;
+  color: #5b4ddb;
+}
+:global(.dark-mode) .hamburger-button {
+  background: #374151;
+  color: #e5e7eb;
+}
+:global(.dark-mode) .hamburger-button:hover {
+  background: #4b5563;
   color: #5b4ddb;
 }
 
