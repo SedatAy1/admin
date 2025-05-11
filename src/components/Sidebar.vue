@@ -556,7 +556,6 @@ export default {
 </script>
 <style scoped>
 /* === GENEL === */
-/* === GENEL === */
 .icon {
   width: 20px;
   height: 20px;
@@ -578,33 +577,33 @@ export default {
   border-radius: 12px;
   cursor: pointer;
   font-size: 15px;
+  font-weight: 600;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-toggle:hover {
-  background-color: #f3f4f6;
-  color: #111827;
+  background-color: #5b4ddb;
+  color: #ffffff;
+}
+
+.btn-toggle:hover .icon {
+  stroke: #ffffff;
+  transform: scale(1.05);
 }
 
 .btn-toggle.active {
   color: #5b4ddb !important;
-  font-weight: 600;
 }
 
 .btn-toggle.active .icon {
   stroke: #5b4ddb !important;
 }
 
-.btn-toggle:hover .icon {
-  stroke: #111827;
-  transform: scale(1.05);
-}
-
 .logo-wrapper {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 10px 0;
+  padding: 1px 0;
 }
 
 .logo-link {
@@ -614,7 +613,7 @@ export default {
 }
 
 .logo-image {
-  height: 80px;
+  height: 100px;
   max-width: 100%;
   object-fit: contain;
   transition: height 0.3s ease;
@@ -659,7 +658,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding-left: 13px;
-  margin-bottom: 20px;
+  margin-bottom: 2px;
 }
 
 .sidebar-menu {
@@ -680,19 +679,23 @@ export default {
   padding: 10px 14px;
   border-radius: 10px;
   font-size: 14px;
-  transition: 0.2s ease;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .sidebar-menu a:hover {
-  background: #f3f4f6;
-  color: #111827;
+  background: #5b4ddb;
+  color: #ffffff;
 }
 
-/* 🔥 Aktif menü yazı ve ikon rengi */
+.sidebar-menu a:hover .icon {
+  stroke: #ffffff;
+}
+
+/* Aktif menü */
 .sidebar-menu .router-link-active {
   background: none;
   color: #5b4ddb !important;
-  font-weight: 600;
 }
 
 .sidebar-menu .router-link-active .icon {
@@ -709,13 +712,15 @@ export default {
   font-size: 13px;
   padding: 8px 10px;
   color: #6b7280;
+  font-weight: 600;
   display: block;
   border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .submenu li a:hover {
-  background: #f1f5f9;
-  color: #111827;
+  background: #5b4ddb;
+  color: #ffffff;
 }
 
 /* === DARK MODE === */
@@ -730,20 +735,25 @@ export default {
 }
 
 :deep(html.dark) .sidebar-menu a:hover {
-  background: #1e293b;
+  background: #5b4ddb;
   color: #ffffff;
+}
+
+:deep(html.dark) .sidebar-menu a:hover .icon {
+  stroke: #ffffff;
 }
 
 :deep(html.dark) .btn-toggle:hover {
-  background-color: #1e293b;
+  background-color: #5b4ddb;
   color: #ffffff;
 }
 
-/* 🔥 Dark mode: Aktif menü rengi */
+:deep(html.dark) .btn-toggle:hover .icon {
+  stroke: #ffffff;
+}
+
 :deep(html.dark) .sidebar-menu .router-link-active {
-  background: none;
   color: #5b4ddb !important;
-  font-weight: 600;
 }
 
 :deep(html.dark) .sidebar-menu .router-link-active .icon {
@@ -770,7 +780,6 @@ export default {
   color: #f1f5f9;
 }
 
-/* Tablet */
 @media (max-width: 1024px) {
   .sidebar {
     width: 220px;
@@ -785,7 +794,6 @@ export default {
   }
 }
 
-/* Mobile */
 @media (max-width: 992px) {
   .sidebar {
     transform: translateX(-100%);
@@ -839,7 +847,6 @@ export default {
   }
 }
 
-/* Small Mobile */
 @media (max-width: 576px) {
   .sidebar {
     width: 100%;
@@ -869,5 +876,14 @@ export default {
     padding: 6px 8px;
     font-size: 12px;
   }
+}
+
+/* Genel Yazı Fontu */
+.sidebar,
+.sidebar * {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.25px;
 }
 </style>

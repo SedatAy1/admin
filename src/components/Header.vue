@@ -1,202 +1,119 @@
 <template>
-  <header class="header d-flex justify-content-between align-items-center px-3 py-2 shadow-sm">
-    <!-- Sol Taraf -->
-    <div class="left-section d-flex align-items-center">
-      <button class="btn btn-light me-2" @click="toggleSidebar">
-        <i class="bi bi-list"></i>
-      </button>
+  <header class="header">
+    <!-- Sol: Arama -->
+    <div class="left-section">
       <div class="search-bar">
-        <input type="text" class="form-control" :placeholder="$t('header.search')" />
+        <i class="bi bi-search search-icon"></i>
+        <input type="text" :placeholder="$t('header.search')" />
       </div>
     </div>
 
-    <!-- Sağ Taraf -->
-    <div class="d-flex align-items-center gap-3">
-      <!-- Masaüstü görünümde normal gösterilen butonlar -->
-      <div class="desktop-buttons">
-        <!-- Dil Seçici -->
-        <div class="language-switcher" ref="langDropdown">
-          <img
-            :src="currentLanguage === 'tr'
-              ? '/flags/england.png'
-              : currentLanguage === 'en'
-              ? '/flags/england.png'
-              : currentLanguage === 'fr'
-              ? '/flags/france.png'
-              : '/flags/germany.jpg'"
-            alt="Lang"
-            class="flag"
-            @click="toggleLangDropdown"
-          />
-          <ul v-show="isLangDropdownOpen" class="lang-dropdown shadow">
-            <li @click="changeLang('en')">
-              <img src="/flags/england.png" />
-              English
-            </li>
-            <li @click="changeLang('fr')">
-              <img src="/flags/france.png" />
-              Français
-            </li>
-            <li @click="changeLang('de')">
-              <img src="/flags/germany.jpg" />
-              Deutsch
-            </li>
-          </ul>
-        </div>
+    <!-- Mobil Menü Hamburger Butonu -->
+    <button class="menu-toggle" @click="toggleMobileMenu">
+      <i class="bi bi-three-dots-vertical"></i>
+    </button>
 
-        <button class="btn btn-light icon-btn" @click="toggleTheme">
-          <i :class="isDarkMode ? 'bi bi-moon-fill' : 'bi bi-sun-fill'"></i>
-        </button>
-
-        <button class="btn btn-light icon-btn position-relative">
-          <i class="bi bi-cart2"></i>
-          <span class="badge"></span>
-        </button>
-
-        <!-- Ayarlar Butonu -->
-        <button class="btn btn-light icon-btn" @click.stop="toggleSettingsPanel">
-          <i class="bi bi-gear-fill"></i>
-        </button>
-
-        <button class="btn btn-light icon-btn" @click="toggleFullscreen">
-          <i class="bi bi-arrows-fullscreen"></i>
+    <!-- Sağ: Butonlar ve Kullanıcı -->
+    <div class="right-section" :class="{ 'mobile-menu-open': isMobileMenuOpen }">
+      <div class="mobile-menu-header" v-if="isMobile">
+        <button class="close-menu" @click="closeMobileMenu">
+          <i class="bi bi-x-lg"></i>
         </button>
       </div>
 
-      <!-- Mobil görünümde 3 nokta menüsü -->
-      <div class="mobile-menu" ref="mobileMenu">
-        <button class="btn btn-light icon-btn" @click="toggleMobileMenu">
-          <i class="bi bi-three-dots-vertical"></i>
-        </button>
-        <div v-show="isMobileMenuOpen" class="mobile-dropdown shadow">
-          <!-- Dil Seçici -->
-          <div class="mobile-dropdown-item" @click="toggleMobileLangDropdown">
-            <div class="d-flex align-items-center justify-content-between w-100">
-              <div class="d-flex align-items-center gap-2">
-                <img
-                  :src="
-                    currentLanguage === 'en'
-                    ? '/flags/england.png'
-                    : currentLanguage === 'en'
-                    ? '/flags/england.png'
-                    : currentLanguage === 'fr'
-                    ? '/flags/france.png'
-                    : '/flags/germany.jpg'"
-                  alt="Lang"
-                  class="flag-small"
-                />
-                <span>{{ currentLanguage.toUpperCase() }}</span>
-              </div>
-              <i class="bi bi-chevron-right"></i>
-            </div>
-            <!-- Dil Alt Menü -->
-            <ul v-show="isMobileLangDropdownOpen" class="mobile-lang-submenu">
-              <li @click="changeLang('en')">
-                <img src="/flags/england.png" class="flag-small" />
-                English
-              </li>
-              <li @click="changeLang('fr')">
-                <img src="/flags/france.png" class="flag-small" />
-                Français
-              </li>
-              <li @click="changeLang('de')">
-                <img src="/flags/germany.jpg" class="flag-small" />
-                Deutsch
-              </li>
-            </ul>
-          </div>
-
-          <!-- Tema Modu -->
-          <div class="mobile-dropdown-item" @click="toggleTheme">
-            <div class="d-flex align-items-center gap-2">
-              <i :class="isDarkMode ? 'bi bi-moon-fill' : 'bi bi-sun-fill'"></i>
-              <span>{{ isDarkMode ? $t('header.darkMode') : $t('header.lightMode') }}</span>
-            </div>
-          </div>
-
-          <!-- Sepet -->
-          <div class="mobile-dropdown-item" @click="goToCart">
-            <div class="d-flex align-items-center gap-2">
-              <i class="bi bi-cart2"></i>
-              <span>{{ $t('header.cart') }}</span>
-            </div>
-          </div>
-
-          <!-- Ayarlar -->
-          <div class="mobile-dropdown-item" @click="toggleSettingsPanel">
-            <div class="d-flex align-items-center gap-2">
-              <i class="bi bi-gear-fill"></i>
-              <span>{{ $t('header.settings') }}</span>
-            </div>
-          </div>
-
-          <!-- Tam Ekran -->
-          <div class="mobile-dropdown-item" @click="toggleFullscreen">
-            <div class="d-flex align-items-center gap-2">
-              <i class="bi bi-arrows-fullscreen"></i>
-              <span>{{ $t('header.fullscreen') }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Avatar ve Menü -->
-      <div class="dropdown" ref="dropdown">
-        <button class="btn btn-light user-btn" @click.stop="toggleDropdown">
-          <img
-            src="https://static-00.iconduck.com/assets.00/user-icon-1024x1024-dtzturco.png"
-            alt="User Avatar"
-            class="avatar"
-          />
-        </button>
-        <ul v-show="isDropdownOpen" class="user-dropdown shadow p-3 border-0 rounded-4">
-          <li class="d-flex align-items-center gap-2 mb-2">
-            <User class="text-muted" size="20" />
-            <span>{{ $t('header.account') }}</span>
-          </li>
-          <li class="d-flex align-items-center gap-2 mb-2">
-            <Mail class="text-muted" size="20" />
-            <span>{{ $t('header.inbox') }}</span>
-            <span class="badge bg-success ms-auto"></span>
-          </li>
-          <li class="d-flex align-items-center gap-2 mb-2">
-            <ClipboardList class="text-muted" size="20" />
-            <span>{{ $t('header.tasks') }}</span>
-          </li>
-          <li class="d-flex align-items-center gap-2 mb-2">
-            <Settings class="text-muted" size="20" />
-            <span>{{ $t('header.settings') }}</span>
-          </li>
-          <li class="d-flex align-items-center gap-2 mb-2">
-            <Headphones class="text-muted" size="20" />
-            <span>{{ $t('header.support') }}</span>
-          </li>
-          <li class="d-flex align-items-center gap-2 text-danger fw-semibold">
-            <LogOut class="text-danger" size="20" />
-            <span>{{ $t('header.logout') }}</span>
-          </li>
+      <!-- Dil Seçici -->
+      <div class="icon-wrapper dropdown-wrapper" @click.stop="toggleLangDropdown" ref="langDropdown">
+        <img
+          class="flag"
+          :src="getFlag(currentLanguage)"
+          alt="language"
+        />
+        <ul v-show="isLangDropdownOpen" class="lang-dropdown">
+          <li @click="changeLang('en')"><img src="/flags/england.png" alt="English" /> English</li>
+          <li @click="changeLang('fr')"><img src="/flags/france.png" alt="French" /> Français</li>
+          <li @click="changeLang('de')"><img src="/flags/germany.jpg" alt="German" /> Deutsch</li>
         </ul>
       </div>
+
+      <!-- Karanlık Mod -->
+      <button class="icon-wrapper" @click="toggleTheme">
+        <i :class="isDarkMode ? 'bi bi-moon-fill' : 'bi bi-sun-fill'"></i>
+      </button>
+
+      <!-- Bildirim -->
+      <button class="icon-wrapper position-relative">
+        <i class="bi bi-bell"></i>
+
+      </button>
+
+      <!-- Mesajlar -->
+      <button class="icon-wrapper position-relative">
+        <i class="bi bi-chat-dots"></i>
+
+      </button>
+
+      <!-- Tam Ekran -->
+      <button class="icon-wrapper" @click="toggleFullscreen">
+        <i class="bi bi-arrows-fullscreen"></i>
+      </button>
+
+      <!-- Menü Butonu -->
+      <button class="icon-wrapper">
+        <i class="bi bi-grid-3x3-gap-fill"></i>
+      </button>
+
+      <!-- Kullanıcı Bilgisi (Dropdown ile birlikte) -->
+      <div class="user-info dropdown-wrapper" ref="dropdown" @click.stop="toggleDropdown">
+        <img
+          class="avatar"
+          src="https://static-00.iconduck.com/assets.00/user-icon-1024x1024-dtzturco.png"
+          alt="User"
+        />
+        <div class="user-text">
+          <div class="name">Soren Blackwell</div>
+          <div class="role">Sale Administrator</div>
+        </div>
+
+        <!-- Kullanıcı Dropdown Menüsü -->
+        <ul v-show="isDropdownOpen" class="user-dropdown">
+          <li><i class="bi bi-person"></i> <span>My Account</span></li>
+          <li><i class="bi bi-envelope"></i> <span>Inbox</span></li>
+          <li><i class="bi bi-clipboard-check"></i> <span>My Tasks</span></li>
+          <li><i class="bi bi-gear"></i> <span>Settings</span></li>
+          <li><i class="bi bi-headset"></i> <span>Support</span></li>
+          <li class="logout"><i class="bi bi-box-arrow-right"></i> <span>Logout</span></li>
+        </ul>
+      </div>
+
+      <!-- Ayarlar -->
+      <button class="icon-wrapper" @click="toggleSettingsPanel">
+        <i class="bi bi-gear-fill"></i>
+      </button>
     </div>
   </header>
 
-  <!-- Tema Ayar Paneli -->
+  <!-- Overlay - Mobile Menu için -->
+  <div v-if="isMobileMenuOpen" class="mobile-overlay" @click="closeMobileMenu"></div>
+
+  <!-- Ayarlar Paneli -->
   <Teleport to="body">
-    <div v-if="showSettingsPanel" class="settings-panel" ref="settingsPanel">
-      <div class="settings-header d-flex justify-content-between align-items-center">
+    <div v-if="showSettingsPanel" class="settings-panel" :class="{'dark-settings': isDarkMode}">
+      <div class="settings-header">
         <h5>Setting</h5>
-        <button @click="toggleSettingsPanel" class="close-btn"><i class="bi bi-x-lg"></i></button>
+        <button class="close-btn" @click="toggleSettingsPanel">
+          <i class="bi bi-x-lg"></i>
+        </button>
       </div>
       <div class="settings-body">
-        <div class="setting-group" v-for="(section, i) in settings" :key="i">
+        <div class="setting-group" v-for="(section, index) in settings" :key="index">
           <h6>{{ section.title }}</h6>
           <div class="options">
             <button
-              v-for="(opt, j) in section.options"
-              :key="j"
+              v-for="(opt, i) in section.options"
+              :key="i"
               class="option-btn"
               :class="{ active: opt.active }"
-              @click="selectOption(i, j)"
+              @click="selectOption(index, i)"
             >
               {{ opt.label }}
             </button>
@@ -206,37 +123,24 @@
       </div>
     </div>
   </Teleport>
+
+  <!-- Overlay - Settings Panel için -->
+  <div v-if="showSettingsPanel" class="settings-overlay" @click="toggleSettingsPanel"></div>
 </template>
 
 <script>
-import {
-  User,
-  Mail,
-  ClipboardList,
-  Settings,
-  Headphones,
-  LogOut
-} from "lucide-vue-next";
-
 export default {
   name: "HeaderComponent",
-  components: {
-    User,
-    Mail,
-    ClipboardList,
-    Settings,
-    Headphones,
-    LogOut
-  },
   data() {
     return {
       isDarkMode: localStorage.getItem("darkMode") === "true",
       currentLanguage: "en",
-      isDropdownOpen: false,
       isLangDropdownOpen: false,
+      isDropdownOpen: false,
       showSettingsPanel: false,
       isMobileMenuOpen: false,
-      isMobileLangDropdownOpen: false,
+      isMobile: false,
+      windowWidth: window.innerWidth,
       settings: [
         {
           title: "Theme color mode:",
@@ -290,77 +194,80 @@ export default {
       this.currentLanguage = storedLang;
       this.$i18n.locale = storedLang;
     } else {
-      this.currentLanguage = 'en';
-      this.$i18n.locale = 'en';
-      localStorage.setItem('lang', 'en');
+      localStorage.setItem("lang", "en");
+      this.$i18n.locale = "en";
     }
   },
   mounted() {
     this.applyDarkMode();
-    document.addEventListener("click", this.handleOutsideClick);
-    window.addEventListener("resize", this.checkScreenSize);
     this.checkScreenSize();
+    window.addEventListener("resize", this.checkScreenSize);
+    document.addEventListener("click", this.handleOutsideClick);
   },
   beforeUnmount() {
     document.removeEventListener("click", this.handleOutsideClick);
     window.removeEventListener("resize", this.checkScreenSize);
   },
   methods: {
-    toggleSidebar() {
-      this.$emit("toggle-sidebar");
+    checkScreenSize() {
+      this.windowWidth = window.innerWidth;
+      this.isMobile = this.windowWidth < 992;
+      if (!this.isMobile && this.isMobileMenuOpen) {
+        this.isMobileMenuOpen = false;
+      }
+    },
+    toggleMobileMenu() {
+      this.isMobileMenuOpen = !this.isMobileMenuOpen;
+      // Mobil menü açıldığında diğer dropdown'ları kapat
+      if (this.isMobileMenuOpen) {
+        this.isLangDropdownOpen = false;
+        this.isDropdownOpen = false;
+      }
+    },
+    closeMobileMenu() {
+      this.isMobileMenuOpen = false;
+    },
+    toggleLangDropdown(event) {
+      event.stopPropagation();
+      this.isLangDropdownOpen = !this.isLangDropdownOpen;
+      // Dil dropdown açıldığında kullanıcı dropdown'ı kapat
+      if (this.isLangDropdownOpen) {
+        this.isDropdownOpen = false;
+      }
+    },
+    toggleDropdown(event) {
+      event.stopPropagation();
+      this.isDropdownOpen = !this.isDropdownOpen;
+      // Kullanıcı dropdown açıldığında dil dropdown'ı kapat
+      if (this.isDropdownOpen) {
+        this.isLangDropdownOpen = false;
+      }
+    },
+    toggleSettingsPanel() {
+      this.showSettingsPanel = !this.showSettingsPanel;
+      // Ayarlar paneli açıldığında diğer açık menüleri kapat
+      if (this.showSettingsPanel) {
+        this.isMobileMenuOpen = false;
+        this.isLangDropdownOpen = false;
+        this.isDropdownOpen = false;
+      }
     },
     toggleTheme() {
       this.isDarkMode = !this.isDarkMode;
       localStorage.setItem("darkMode", this.isDarkMode);
       this.applyDarkMode();
-      if (this.isMobileMenuOpen) {
-        this.isMobileMenuOpen = false;
-      }
     },
     applyDarkMode() {
       const html = document.documentElement;
-      const body = document.body;
-      if (this.isDarkMode) {
-        html.classList.add("dark-mode");
-        body.classList.add("dark-mode");
-      } else {
-        html.classList.remove("dark-mode");
-        body.classList.remove("dark-mode");
-      }
+      html.classList.toggle("dark-mode", this.isDarkMode);
     },
     toggleFullscreen() {
       if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen();
-      } else {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.error(`Fullscreen error: ${err.message}`);
+        });
+      } else if (document.exitFullscreen) {
         document.exitFullscreen();
-      }
-      if (this.isMobileMenuOpen) {
-        this.isMobileMenuOpen = false;
-      }
-    },
-    toggleDropdown() {
-      this.isDropdownOpen = !this.isDropdownOpen;
-      if (this.isMobileMenuOpen) {
-        this.isMobileMenuOpen = false;
-      }
-    },
-    toggleLangDropdown() {
-      this.isLangDropdownOpen = !this.isLangDropdownOpen;
-    },
-    toggleMobileMenu() {
-      this.isMobileMenuOpen = !this.isMobileMenuOpen;
-      if (this.isMobileMenuOpen) {
-        this.isDropdownOpen = false;
-      }
-    },
-    toggleMobileLangDropdown(e) {
-      e.stopPropagation();
-      this.isMobileLangDropdownOpen = !this.isMobileLangDropdownOpen;
-    },
-    toggleSettingsPanel() {
-      this.showSettingsPanel = !this.showSettingsPanel;
-      if (this.isMobileMenuOpen) {
-        this.isMobileMenuOpen = false;
       }
     },
     changeLang(lang) {
@@ -368,32 +275,30 @@ export default {
       this.$i18n.locale = lang;
       localStorage.setItem("lang", lang);
       this.isLangDropdownOpen = false;
-      this.isMobileLangDropdownOpen = false;
-      this.isMobileMenuOpen = false;
-      this.$store.dispatch("changeLanguage", lang);
     },
-    goToCart() {
-      // Sepet sayfasına yönlendirme kodu
-      this.isMobileMenuOpen = false;
+    getFlag(lang) {
+      switch (lang) {
+        case "en":
+          return "/flags/england.png";
+        case "fr":
+          return "/flags/france.png";
+        case "de":
+          return "/flags/germany.jpg";
+        default:
+          return "/flags/england.png";
+      }
     },
     handleOutsideClick(event) {
-      if (this.$refs.dropdown && !this.$refs.dropdown.contains(event.target)) {
-        this.isDropdownOpen = false;
-      }
       if (this.$refs.langDropdown && !this.$refs.langDropdown.contains(event.target)) {
         this.isLangDropdownOpen = false;
       }
-      if (this.$refs.settingsPanel && !this.$refs.settingsPanel.contains(event.target)) {
-        this.showSettingsPanel = false;
-      }
-      if (this.$refs.mobileMenu && !this.$refs.mobileMenu.contains(event.target)) {
-        this.isMobileMenuOpen = false;
-        this.isMobileLangDropdownOpen = false;
+      if (this.$refs.dropdown && !this.$refs.dropdown.contains(event.target)) {
+        this.isDropdownOpen = false;
       }
     },
     selectOption(groupIndex, optionIndex) {
-      this.settings[groupIndex].options.forEach((opt, idx) => {
-        opt.active = idx === optionIndex;
+      this.settings[groupIndex].options.forEach((opt, i) => {
+        opt.active = i === optionIndex;
       });
     },
     resetSettings() {
@@ -402,308 +307,291 @@ export default {
           opt.active = i === 0;
         });
       });
-    },
-    checkScreenSize() {
-      const isMobile = window.innerWidth < 768;
-      const desktopButtons = document.querySelector('.desktop-buttons');
-      const mobileMenu = document.querySelector('.mobile-menu');
-
-      if (desktopButtons && mobileMenu) {
-        if (isMobile) {
-          desktopButtons.style.display = 'none';
-          mobileMenu.style.display = 'block';
-        } else {
-          desktopButtons.style.display = 'flex';
-          mobileMenu.style.display = 'none';
-        }
-      }
     }
   }
 };
 </script>
-<style scoped>
-:root {
-  --primary: #5b4ddb;
-  --light-bg: #ffffff;
-  --dark-bg: #1e1e2f;
-  --light-text: #1f2937;
-  --dark-text: #f5f5f5;
-  --radius: 12px;
-  --transition: all 0.3s ease;
-}
 
-/* === HEADER === */
+<style scoped>
+/* === GENEL HEADER === */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--light-bg);
-  padding: 16px 24px;
+  padding: 10px 24px;
+  background-color: #ffffff;
   border-bottom: 1px solid #e5e7eb;
   font-family: 'Inter', sans-serif;
+  position: sticky;
+  top: 0;
   z-index: 100;
 }
 
+/* === ARAMA === */
 .left-section {
   display: flex;
   align-items: center;
-  gap: 18px;
 }
-
 .search-bar {
   position: relative;
 }
 .search-bar input {
-  background: #f3f4f6;
-  border: none;
-  padding: 10px 14px 10px 40px;
+  padding: 8px 12px 8px 36px;
   border-radius: 999px;
+  border: none;
+  background-color: #f3f4f6;
   font-size: 14px;
   color: #374151;
-  width: 260px;
+  width: 240px;
+  outline: none;
 }
-.search-bar::before {
-  content: "🔍";
+.search-bar input:focus {
+  box-shadow: 0 0 0 2px rgba(91, 77, 219, 0.2);
+}
+.search-icon {
   position: absolute;
   top: 50%;
-  left: 14px;
+  left: 12px;
   transform: translateY(-50%);
   font-size: 16px;
   color: #6b7280;
 }
 
-.d-flex.align-items-center.gap-3 {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-/* Desktop Buttons */
-.desktop-buttons {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-/* === LANGUAGE === */
-.language-switcher {
-  position: relative;
-  cursor: pointer;
-}
-
-.language-switcher .flag {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #e5e7eb;
-}
-
-.lang-dropdown {
-  position: absolute;
-  top: 110%;
-  right: 0;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  min-width: 160px;
-  overflow: hidden;
-}
-
-.lang-dropdown li {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 12px;
-  padding: 12px 1px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  font-weight: 500;
-}
-
-.lang-dropdown li:hover {
+/* === MOBILE MENU TOGGLE === */
+.menu-toggle {
+  display: none;
+  width: 38px;
+  height: 38px;
   background: #f3f4f6;
-}
-
-.lang-dropdown img {
-  width: 28px;
-  height: 28px;
   border-radius: 50%;
-  object-fit: cover;
-}
-
-/* === ICONS === */
-.icon-btn {
-  background: #f3f4f6;
   border: none;
+  font-size: 20px;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-items: center;
+  justify-content: center;
+}
+.menu-toggle:hover {
+  background: #e5e7eb;
+  color: #5b4ddb;
+}
+.mobile-menu-header {
+  display: none;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 15px;
+}
+.close-menu {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+}
+.close-menu:hover {
+  color: #5b4ddb;
+}
+
+/* === SAĞ BUTONLAR === */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.icon-wrapper {
+  width: 38px;
+  height: 38px;
+  background: #f3f4f6;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  border: none;
   display: grid;
   place-items: center;
   font-size: 18px;
   color: #374151;
-  transition: var(--transition);
-}
-.icon-btn:hover {
-  background: #e5e7eb;
-  color: var(--primary);
-  transform: scale(1.05);
-}
-
-.badge {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  background: #ef4444;
-  color: white;
-  font-size: 11px;
-  border-radius: 999px;
-  padding: 2px 5px;
-}
-
-/* === USER === */
-.user-btn {
-  background: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
   cursor: pointer;
-  padding: 0;
+  position: relative;
+  transition: all 0.2s ease;
 }
-.avatar {
-  width: 40px;
-  height: 40px;
+.icon-wrapper:hover {
+  background: #e5e7eb;
+  color: #5b4ddb;
+}
+.flag {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   object-fit: cover;
 }
-.dropdown {
+
+/* === BADGE === */
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ef4444;
+  color: white;
+  font-size: 10px;
+  border-radius: 999px;
+  padding: 2px 6px;
+  transform: translate(25%, -25%);
+}
+.badge.bg-primary {
+  background: #3b82f6;
+}
+
+/* === DROPDOWN WRAPPER === */
+.dropdown-wrapper {
   position: relative;
+  cursor: pointer;
+}
+
+/* === DİL AÇILIR MENÜ === */
+.lang-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  min-width: 140px;
+  z-index: 999;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.lang-dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.lang-dropdown li:hover {
+  background: #f3f4f6;
+}
+.lang-dropdown img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+/* === KULLANICI === */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px;
+  border-radius: 50px;
+  background: #f3f4f6;
+  height: 40px;
+  transition: all 0.2s ease;
+}
+.user-info:hover {
+  background: #e5e7eb;
+}
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.user-text {
+  display: flex;
+  flex-direction: column;
+  padding-right: 5px;
+}
+.user-text .name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  white-space: nowrap;
+}
+.user-text .role {
+  font-size: 12px;
+  color: #6b7280;
+  white-space: nowrap;
 }
 .user-dropdown {
   position: absolute;
   top: 110%;
   right: 0;
   background: white;
-  border-radius: 16px;
-  padding: 12px 16px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  min-width: 200px;
-  animation: dropdownFade 0.25s ease-out;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  min-width: 180px;
+  padding: 8px 0;
+  z-index: 999;
+  margin: 0;
+  list-style: none;
 }
 .user-dropdown li {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 10px 16px;
   font-size: 14px;
-  padding: 8px 6px;
   color: #374151;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s;
 }
 .user-dropdown li:hover {
   background: #f3f4f6;
 }
-.user-dropdown .badge {
-  margin-left: auto;
-  background: #22c55e;
+.user-dropdown li i {
+  font-size: 16px;
+  color: #6b7280;
 }
-
-.user-dropdown li.text-danger {
+.user-dropdown li.logout {
   color: #ef4444;
-  font-weight: 600;
+  font-weight: 500;
 }
-.user-dropdown li.text-danger:hover {
+.user-dropdown li.logout i {
+  color: #ef4444;
+}
+.user-dropdown li.logout:hover {
   background: #fee2e2;
 }
 
-/* === MOBILE MENU === */
-.mobile-menu {
-  display: none; /* Varsayılan olarak gizli */
-  position: relative;
-}
-
-.mobile-dropdown {
-  position: absolute;
-  top: 110%;
-  right: 0;
-  background: white;
-  border-radius: 16px;
-  width: 240px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  overflow: hidden;
-  animation: dropdownFade 0.25s ease-out;
-}
-
-.mobile-dropdown-item {
-  padding: 12px 16px;
-  font-size: 14px;
-  color: #374151;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  position: relative;
-}
-
-.mobile-dropdown-item:hover {
-  background: #f3f4f6;
-}
-
-.mobile-dropdown-item i {
-  font-size: 18px;
-  color: #6b7280;
-  margin-right: 6px;
-}
-
-/* Mobil dil alt menüsü */
-.mobile-lang-submenu {
-  background: #f3f4f6;
-  margin-top: 8px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.mobile-lang-submenu li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.mobile-lang-submenu li:hover {
-  background: #e5e7eb;
-}
-
-.flag-small {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* === SETTINGS PANEL === */
+/* === AYARLAR PANELİ === */
 .settings-panel {
-  position: absolute;
-  top: 65px;
-  right: 20px;
-  width: 340px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 300px;
   background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
   z-index: 9999;
-  padding: 24px 20px;
+  padding: 24px;
   font-family: 'Inter', sans-serif;
-  animation: dropdownFade 0.25s ease-out;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+  overflow-y: auto;
 }
-
+.settings-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9998;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 .settings-header {
   display: flex;
   justify-content: space-between;
@@ -711,226 +599,285 @@ export default {
   margin-bottom: 24px;
 }
 .settings-header h5 {
-  font-weight: 700;
   font-size: 18px;
-  color: #1f2937;
+  font-weight: 700;
+  color: #111827;
   margin: 0;
 }
-.settings-header .close-btn {
+.close-btn {
   background: none;
   border: none;
   font-size: 20px;
   color: #6b7280;
   cursor: pointer;
-  transition: color 0.2s ease;
 }
-.settings-header .close-btn:hover {
-  color: var(--primary);
+.close-btn:hover {
+  color: #5b4ddb;
 }
-
 .settings-body {
+  flex: 1;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 .setting-group h6 {
   font-size: 14px;
   font-weight: 600;
+  color: #111827;
   margin-bottom: 10px;
-  color: #374151;
 }
 .options {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 .option-btn {
-  padding: 8px 20px;
-  font-size: 14px;
+  padding: 8px 18px;
+  font-size: 13px;
   border-radius: 999px;
-  border: 1px solid #d1d5db;
-  background: #5b4ddb;
-  color: #374151;
+  background: #ede9fe;
+  color: #5b4ddb;
+  border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: 0.2s;
 }
 .option-btn:hover {
-  background: #5b4ddb;
-  border-color: var(--primary);
-  color: var(--primary);
+  background: #ddd6fe;
 }
 .option-btn.active {
   background: #5b4ddb;
-  color: white;
-  border-color: var(--primary);
-  font-weight: 500;
+  color: #fff;
 }
 .clear-btn {
-  margin-top: 16px;
-  padding: 12px 0;
-  font-size: 14px;
-  font-weight: 500;
+  margin-top: 12px;
+  padding: 10px;
   border-radius: 999px;
-  background: var(--primary);
+  background: #5b4ddb;
   color: white;
+  font-size: 14px;
   border: none;
-  transition: background 0.2s ease;
-  width: 100%;
+  cursor: pointer;
 }
 .clear-btn:hover {
-  background: #4b3ed1;
-}
-
-@keyframes dropdownFade {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* === DARK MODE === */
-.dark-mode .header {
-  background: var(--dark-bg);
-  color: var(--dark-text);
-  border-bottom: 1px solid #334155;
-}
-
-.dark-mode .search-bar input {
-  background: #1f2937;
-  color: #f9fafb !important;
-}
-
-.dark-mode .search-bar input::placeholder {
-  color: #cbd5e1 !important;
-}
-
-.dark-mode .search-bar::before {
-  color: #9ca3af;
-}
-
-.dark-mode .icon-btn {
-  background: #1f2937;
-  color: #e5e7eb;
-}
-
-.dark-mode .icon-btn:hover {
-  background: #334155;
-  color: var(--primary);
-}
-
-.dark-mode .settings-panel {
-  background: #1f2937;
-  color: #f1f5f9;
-}
-
-.dark-mode .settings-header h5,
-.dark-mode .setting-group h6 {
-  color: #f1f5f9;
-}
-
-.dark-mode .option-btn {
-  background: #1e293b;
-  border-color: #475569;
-  color: #cbd5e1;
-}
-
-.dark-mode .option-btn:hover {
-  background: #334155;
-  color: var(--primary);
-  border-color: var(--primary);
-}
-
-.dark-mode .option-btn.active {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: white;
-}
-
-.dark-mode .clear-btn {
-  background: var(--primary);
-}
-
-.dark-mode .clear-btn:hover {
   background: #4338ca;
 }
 
-/* Dropdown Menü */
-.dark-mode .user-dropdown,
-.dark-mode .mobile-dropdown {
-  background: #1f2937;
-  color: #f9fafb;
+/* === DARK MODE === */
+:global(.dark-mode) .header {
+  background-color: #1f2937;
+  border-color: #374151;
 }
-
-.dark-mode .user-dropdown li,
-.dark-mode .mobile-dropdown-item {
-  color: #f1f5f9;
+:global(.dark-mode) .search-bar input {
+  background-color: #374151;
+  color: #f3f4f6;
 }
-
-.dark-mode .user-dropdown li:hover,
-.dark-mode .mobile-dropdown-item:hover {
-  background: #334155;
+:global(.dark-mode) .search-icon {
+  color: #9ca3af;
 }
-
-.dark-mode .user-dropdown li.text-danger {
-  color: #f87171;
+:global(.dark-mode) .icon-wrapper {
+  background: #374151;
+  color: #e5e7eb;
 }
-
-.dark-mode .user-dropdown li.text-danger:hover {
+:global(.dark-mode) .icon-wrapper:hover {
+  background: #4b5563;
+  color: #5b4ddb;
+}
+:global(.dark-mode) .user-info {
+  background: #333;
+}
+:global(.dark-mode) .user-info:hover {
+  background: #4b5563;
+}
+:global(.dark-mode) .user-text .name {
+  color: #f3f4f6;
+}
+:global(.dark-mode) .user-text .role {
+  color: #d1d5db;
+}
+:global(.dark-mode) .lang-dropdown,
+:global(.dark-mode) .user-dropdown {
+  background: #374151;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+:global(.dark-mode) .lang-dropdown li,
+:global(.dark-mode) .user-dropdown li {
+  color: #e5e7eb;
+}
+:global(.dark-mode) .lang-dropdown li:hover,
+:global(.dark-mode) .user-dropdown li:hover {
+  background: #4b5563;
+}
+:global(.dark-mode) .user-dropdown li i {
+  color: #9ca3af;
+}
+:global(.dark-mode) .user-dropdown li.logout:hover {
   background: #7f1d1d;
+}
+:global(.dark-mode) .dark-settings {
+  background: #1f2937;
+}
+:global(.dark-mode) .dark-settings .settings-header h5 {
+  color: #f3f4f6;
+}
+:global(.dark-mode) .dark-settings .close-btn {
+  color: #9ca3af;
+}
+:global(.dark-mode) .dark-settings .close-btn:hover {
+  color: #5b4ddb;
+}
+:global(.dark-mode) .dark-settings .setting-group h6 {
+  color: #f3f4f6;
+}
+:global(.dark-mode) .dark-settings .option-btn {
+  background: #374151;
+  color: #cbd5e1;
+}
+:global(.dark-mode) .dark-settings .option-btn:hover {
+  background: #475569;
+}
+:global(.dark-mode) .dark-settings .option-btn.active {
+  background: #5b4ddb;
   color: white;
 }
 
-/* Dil Değiştirici */
-.dark-mode .lang-dropdown,
-.dark-mode .mobile-lang-submenu {
-  background: #1e293b;
-  color: #f1f5f9;
+/* === MOBILE OVERLAY === */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 98;
+  animation: fadeIn 0.2s ease-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.dark-mode .lang-dropdown li,
-.dark-mode .mobile-lang-submenu li {
-  color: #f1f5f9;
+/* === RESPONSIVE === */
+@media (max-width: 1199px) {
+  .user-text .name {
+    font-size: 13px;
+  }
+  .user-text .role {
+    font-size: 11px;
+  }
 }
 
-.dark-mode .lang-dropdown li:hover,
-.dark-mode .mobile-lang-submenu li:hover {
-  background: #334155;
+@media (max-width: 991px) {
+  .menu-toggle {
+    display: flex;
+  }
+  .right-section {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 99;
+    transition: right 0.3s ease;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+  :global(.dark-mode) .right-section {
+    background: #1f2937;
+  }
+  .right-section.mobile-menu-open {
+    right: 0;
+  }
+  .mobile-menu-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .icon-wrapper {
+    width: 100%;
+    height: 45px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 15px;
+    gap: 15px;
+  }
+  .icon-wrapper::after {
+    content: attr(data-label);
+    font-size: 14px;
+  }
+  .icon-wrapper[data-label="Dark Mode"]::after {
+    content: "Dark Mode";
+  }
+  .icon-wrapper[data-label="Notifications"]::after {
+    content: "Notifications";
+  }
+  .icon-wrapper[data-label="Messages"]::after {
+    content: "Messages";
+  }
+  .icon-wrapper[data-label="Fullscreen"]::after {
+    content: "Fullscreen";
+  }
+  .icon-wrapper[data-label="Grid Menu"]::after {
+    content: "Grid Menu";
+  }
+  .icon-wrapper[data-label="Settings"]::after {
+    content: "Settings";
+  }
+  .dropdown-wrapper.icon-wrapper::after {
+    content: "Language";
+  }
+  .lang-dropdown {
+    position: static;
+    box-shadow: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .user-info {
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  .user-dropdown {
+    position: static;
+    box-shadow: none;
+    margin-top: 5px;
+    width: 100%;
+  }
+  .settings-panel {
+    width: 100%;
+  }
 }
 
-/* Rozet (badge) rengi netliği */
-.dark-mode .badge {
-  background: #ef4444;
-  color: white;
-}
-
-.dark-mode .user-dropdown .badge {
-  background: #22c55e;
-  color: white;
-}
-
-/* Mobil için responsive ayarlar */
 @media (max-width: 767px) {
+  .header {
+    padding: 8px 16px;
+  }
   .search-bar input {
     width: 180px;
   }
-
-  .settings-panel {
-    width: 300px;
-    right: 10px;
-  }
 }
 
-@media (max-width: 576px) {
-  .header {
-    padding: 12px 16px;
-  }
-
+@media (max-width: 575px) {
   .search-bar input {
-    width: 150px;
+    width: 140px;
+  }
+  .settings-panel {
+    padding: 16px;
+  }
+  .option-btn {
+    padding: 6px 12px;
+    font-size: 12px;
   }
 }
 </style>
